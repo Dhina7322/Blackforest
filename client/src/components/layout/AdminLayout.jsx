@@ -131,31 +131,31 @@ export default function AdminLayout() {
         </div>
 
         {/* User Badge & Logout */}
-        <div className="p-4 border-t border-white/10 bg-black/20">
+        <div className="p-4 border-t border-white/5 bg-[#10221b]">
           <div className="flex items-center gap-3 mb-3">
-            <div className="w-9 h-9 rounded-full bg-[#f29727] text-[#10221b] flex items-center justify-center font-bold text-xs">
+            <div className="w-8 h-8 rounded-lg bg-[#f29727] text-[#10221b] flex items-center justify-center font-bold text-xs shadow-sm">
               {user?.name?.charAt(0) || 'A'}
             </div>
             <div className="truncate flex-1">
-              <p className="text-xs font-bold text-white truncate">{user?.name}</p>
-              <p className="text-[10px] text-gray-400 uppercase tracking-wider">{user?.role}</p>
+              <p className="text-xs font-bold text-white truncate">{user?.name || 'Admin'}</p>
+              <p className="text-[10px] text-gray-400 uppercase tracking-wider">{user?.role || 'Administrator'}</p>
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid grid-cols-2 gap-2 mt-4">
             <Link
               to="/"
               target="_blank"
-              className="flex items-center justify-center gap-1 py-1.5 px-2 rounded-lg bg-white/5 hover:bg-white/10 text-gray-300 text-[11px] font-medium transition-colors"
+              className="flex items-center justify-center gap-1.5 py-2 px-2 rounded bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white text-[10px] font-bold uppercase tracking-wider transition-colors"
             >
-              <ExternalLink className="w-3 h-3" />
+              <ExternalLink className="w-3.5 h-3.5" />
               <span>Live Site</span>
             </Link>
             <button
               onClick={handleLogout}
-              className="flex items-center justify-center gap-1 py-1.5 px-2 rounded-lg bg-red-950/60 hover:bg-red-900 text-red-300 text-[11px] font-medium transition-colors"
+              className="flex items-center justify-center gap-1.5 py-2 px-2 rounded bg-red-500/10 hover:bg-red-500/20 text-red-400 hover:text-red-300 text-[10px] font-bold uppercase tracking-wider transition-colors"
             >
-              <LogOut className="w-3 h-3" />
+              <LogOut className="w-3.5 h-3.5" />
               <span>Logout</span>
             </button>
           </div>

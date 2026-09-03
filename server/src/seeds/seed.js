@@ -26,8 +26,8 @@ const seedDatabase = async () => {
     console.log('👤 Seeding Users...');
     const superAdmin = await User.create({
       name: 'Blackforest Super Admin',
-      email: 'admin@blackforestholidays.com',
-      password: 'Admin@123456',
+      email: 'admin',
+      password: 'admin@123',
       role: 'superadmin',
       avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80',
       status: 'active'

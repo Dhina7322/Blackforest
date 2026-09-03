@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
+import { useToast } from '../../context/ToastContext';
+import { enquiryService } from '../../services/allServices';
 import { useSettings } from '../../context/SiteSettingsContext';
 
 export default function ContactPage() {
   const { settings } = useSettings();
+  const { showToast } = useToast();
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -13,10 +17,30 @@ export default function ContactPage() {
     message: ''
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Submit logic goes here
+    setLoading(true);
+    try {
+      const res = await enquiryService.create(formData);
+      if (res.success) {
+        showToast('Message sent successfully! Our team will contact you soon.', 'success');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          destination: '',
+          travelers: '',
+          message: ''
+        });
+      } else {
+        showToast(res.message || 'Failed to send message', 'error');
+      }
+    } catch (err) {
+      console.error(err);
+      showToast('An error occurred. Please try again later.', 'error');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (e) => {
