@@ -78,14 +78,13 @@ export default function IndiaToursSection() {
 
   return (
     <section className="relative py-24 overflow-hidden bg-[#1a1a1a]">
-      {/* Dark overlay background */}
+      {/* Background image without overlay */}
       <div className="absolute inset-0 z-0">
         <img
           src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1920&q=80"
           alt="India Palace Background"
-          className="w-full h-full object-cover opacity-20"
+          className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/40" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-between">

@@ -1,139 +1,165 @@
 import React from 'react';
-import { useSettings } from '../../context/SiteSettingsContext';
+import HeroWave from '../../components/common/HeroWave';
+import ExpertiseLogosSection from '../../components/common/ExpertiseLogosSection';
+import TestimonialSlider from '../../components/home/TestimonialSlider';
 
 export default function AboutPage() {
-  const { openEnquiryModal } = useSettings();
-
   return (
-    <div className="pt-24 pb-20 bg-white animate-fadeIn">
-      {/* Hero Header */}
-      <div className="relative bg-[#10221b] text-white py-24 px-4 sm:px-6 lg:px-8 mb-16 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1920&q=80" 
-            alt="About Blackforest Holidays" 
-            className="w-full h-full object-cover opacity-30"
+    <div className="bg-white font-sans text-gray-800 animate-fadeIn overflow-x-hidden">
+      
+      {/* 1. Hero Section */}
+      <section className="relative h-[60vh] min-h-[500px] flex flex-col justify-end">
+        <div className="absolute inset-0 z-0 bg-[#0a1712]">
+          <img
+            src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=1920&q=80"
+            alt="About Blackforest Holidays"
+            className="w-full h-full object-cover opacity-70"
           />
         </div>
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-6xl font-serif font-bold text-white mb-6 uppercase tracking-widest drop-shadow-md">
+        
+        <div className="relative z-10 text-white mt-16 flex flex-col items-center pb-32">
+          <h1 className="text-4xl md:text-5xl lg:text-[60px] font-bold tracking-wider mb-4 drop-shadow-xl text-center">
             About
           </h1>
+          <div className="flex items-center justify-center gap-2 text-sm md:text-base font-light drop-shadow-md tracking-wider">
+            <a href="/" className="hover:text-gray-200 transition-colors">Home</a>
+            <span className="text-gray-300">&gt;</span>
+            <span>About</span>
+          </div>
         </div>
-      </div>
+        <HeroWave />
+      </section>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
-        
-        {/* Intro Section */}
-        <div className="text-center max-w-3xl mx-auto space-y-4">
-          <h3 className="text-sm font-bold uppercase tracking-widest text-[#f29727]">Travel Dreams Begins</h3>
-          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#10221b]">
+      {/* 2. Intro Section */}
+      <section className="pt-20 pb-16 relative z-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+          <span className="text-[#27B8B1] font-bold text-lg tracking-widest block font-['Caveat',cursive,serif]">Travel Dream Begins</span>
+          <h2 className="text-4xl md:text-[42px] font-bold text-[#7cb342] leading-tight max-w-4xl mx-auto">
             Redefining the Way You Explore the World
           </h2>
-          <p className="text-gray-600 text-base leading-relaxed pt-4">
-            At Blackforest Holidays, we believe that travel is more than just reaching a destination—it's about the transformative experiences, the connections made, and the memories crafted along the way.
-          </p>
         </div>
+      </section>
 
-        {/* Two Column Layout: Luxury vs Experiences */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-start">
-          <div className="space-y-6">
-            <h3 className="text-2xl font-serif font-bold text-[#10221b]">Where Luxury Meets Extraordinary Journeys</h3>
-            <p className="text-gray-600 leading-relaxed text-sm">
-              We specialize in curating bespoke travel itineraries that blend unparalleled luxury with authentic local experiences. Whether you are seeking a private villa in the Maldives or an exclusive safari in the Serengeti, our team ensures every detail is meticulously planned.
-            </p>
-            <h5 className="text-lg font-bold text-[#5e963b] pt-4">A Journey designed for activities to make sure you enjoy & stay thrilled.</h5>
-          </div>
-          <div className="space-y-6">
-            <h3 className="text-2xl font-serif font-bold text-[#10221b]">Beyond Travel - We Create Experiences</h3>
-            <p className="text-gray-600 leading-relaxed text-sm">
-              Our travel specialists are not just planners; they are passionate explorers who have personally vetted the world's most luxurious accommodations and experiences. We go above and beyond to grant you access to the inaccessible.
-            </p>
-          </div>
-        </div>
+      {/* 3. Luxury Meets Extraordinary */}
+      <section className="py-12 md:py-20 relative bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+            
+            {/* Left Content */}
+            <div className="space-y-8">
+              <h2 className="text-3xl md:text-[40px] font-bold text-[#7cb342] leading-tight">
+                Where
+                <br />
+                Luxury Meets
+                <br />
+                Extraordinary
+                <br />
+                Journeys
+              </h2>
+              
+              <div className="text-gray-600 text-[14px] font-light leading-[1.8] space-y-6 max-w-sm">
+                <p>Blackforest Holidays is a premier luxury travel agency, curating exceptional experiences since 2010. We are your one-stop travel planner, to design your perfect holiday and create custom itineraries.</p>
+                <p>Our goal is to assist in planning the entire vacation matching your requirements to ensure that every travel experience is meticulously memorable.</p>
+              </div>
 
-        {/* Curated Journeys Image Boxes */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="group relative overflow-hidden rounded-xl shadow-lg">
-            <img 
-              src="https://blackforestholidays.com/wp-content/uploads/2026/07/Blackforest-about-1.png" 
-              onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1540206351-d6465b3ac5c1?auto=format&fit=crop&w=800&q=80'; }}
-              alt="Exclusive Escapes" 
-              className="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-8 text-white">
-              <h5 className="text-2xl font-bold font-serif">Exclusive Escapes for Discerning Travelers</h5>
+              <a href="/contact" className="inline-block bg-[#10221b] text-white px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-[#7cb342] transition-colors shadow-md rounded-sm mt-8">
+                Start Your Journey
+              </a>
             </div>
-          </div>
-          <div className="group relative overflow-hidden rounded-xl shadow-lg">
-            <img 
-              src="https://blackforestholidays.com/wp-content/uploads/2026/07/Untitled-design-1.png" 
-              onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1517400508447-f8dd518b86db?auto=format&fit=crop&w=800&q=80'; }}
-              alt="Curated Journeys" 
-              className="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-8 text-white">
-              <h5 className="text-2xl font-bold font-serif">Curated Journeys for the Elite Traveler</h5>
+
+            {/* Right Images Collage */}
+            <div className="relative">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-4 mt-20">
+                  <div className="aspect-[4/5] rounded overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600&q=80" alt="Bali temple" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="aspect-[16/9] rounded overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=600&q=80" alt="Safari jeep" className="w-full h-full object-cover" />
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div className="aspect-square rounded overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=600&q=80" alt="Mountain peak" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="pt-8 pl-4">
+                    <h3 className="text-2xl md:text-[28px] font-bold text-[#7cb342] leading-tight">
+                      A Journey
+                      <br />Designed For
+                      <br />Activities To
+                      <br />Make Sure
+                      <br />You Enjoy &
+                      <br />Stay Thrilled.
+                    </h3>
+                  </div>
+                </div>
+              </div>
             </div>
+
           </div>
         </div>
+      </section>
 
-        {/* Eden's Trial Section */}
-        <div className="bg-[#fbfaf8] p-12 rounded-3xl border border-gray-100 shadow-sm mt-20">
-          <div className="text-center space-y-3 mb-12">
-            <h3 className="text-sm font-bold uppercase tracking-widest text-[#f29727]">The trial everyone loves</h3>
-            <h2 className="text-4xl font-serif font-bold text-[#10221b]">Eden's Trial</h2>
-          </div>
+      {/* 4. Beyond Travel Section */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="flex flex-col items-center text-center space-y-3">
-              <img src="https://blackforestholidays.com/wp-content/uploads/2021/07/about-icon-1.png" alt="Location" className="w-10 h-10 object-contain" />
-              <div>
-                <h5 className="font-bold text-[#10221b]">Location</h5>
-                <p className="text-sm text-gray-500">Masai Mara, Kenya</p>
+          <div className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#7cb342] mb-4">
+              Beyond Travel – We Create Experiences
+            </h2>
+            <div className="h-[2px] w-16 bg-[#27B8B1]"></div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
+            
+            {/* Block 1: Macau */}
+            <div className="space-y-6">
+              <div className="space-y-2 max-w-sm">
+                <span className="text-gray-400 text-xs tracking-widest uppercase block">Macau</span>
+                <p className="text-gray-600 text-[13px] leading-relaxed">an urban escape rich in culture, world-class entertainment, fine dining and unparalleled experiences.</p>
               </div>
-            </div>
-            <div className="flex flex-col items-center text-center space-y-3">
-              <img src="https://blackforestholidays.com/wp-content/uploads/2021/07/about-icon-4.png" alt="Distance" className="w-10 h-10 object-contain" />
-              <div>
-                <h5 className="font-bold text-[#10221b]">Distance</h5>
-                <p className="text-sm text-gray-500">73 km</p>
+              <div className="w-full aspect-[4/3] overflow-hidden shadow-md">
+                <img src="https://images.unsplash.com/photo-1534008897995-27a23e859048?auto=format&fit=crop&w=800&q=80" alt="Macau travel" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
               </div>
+              <h3 className="font-bold text-[#10221b] text-2xl max-w-xs leading-tight">Exclusive Escapes For Discerning Travelers</h3>
             </div>
-            <div className="flex flex-col items-center text-center space-y-3">
-              <img src="https://blackforestholidays.com/wp-content/uploads/2021/07/about-icon-2.png" alt="Lead Guide" className="w-10 h-10 object-contain" />
-              <div>
-                <h5 className="font-bold text-[#10221b]">Lead Guide</h5>
-                <p className="text-sm text-gray-500">James Conrad</p>
+            
+            {/* Block 2: Phuket */}
+            <div className="space-y-6">
+              <div className="space-y-2 max-w-sm">
+                <span className="text-gray-400 text-xs tracking-widest uppercase block">Phuket</span>
+                <p className="text-gray-600 text-[13px] leading-relaxed">where stunning coastlines meet vibrant culture, offering unforgettable island adventures and luxurious getaways.</p>
               </div>
-            </div>
-            <div className="flex flex-col items-center text-center space-y-3">
-              <img src="https://blackforestholidays.com/wp-content/uploads/2021/07/about-icon-3.png" alt="Difficulty" className="w-10 h-10 object-contain" />
-              <div>
-                <h5 className="font-bold text-[#10221b]">Difficulty Rating</h5>
-                <p className="text-sm text-gray-500">Intermediate</p>
+              <div className="w-full aspect-[4/3] overflow-hidden shadow-md">
+                <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=800&q=80" alt="Phuket travel" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
               </div>
+              <h3 className="font-bold text-[#10221b] text-2xl max-w-xs leading-tight">Curated Journeys For The Elite Traveler</h3>
             </div>
+            
           </div>
         </div>
+      </section>
 
-        {/* Knowledge Base */}
-        <div className="text-center space-y-12">
-          <h2 className="text-3xl font-serif font-bold text-[#10221b]">Knowledge Behind Every Journey</h2>
-          <div className="flex flex-wrap justify-center gap-8">
-            <a href="https://www.peru.travel/" target="_blank" rel="noopener noreferrer" className="px-8 py-3 bg-white border border-gray-200 rounded-full shadow-sm hover:shadow-md hover:border-[#f29727] transition-all font-bold text-[#10221b]">
-              Peru
-            </a>
-            <a href="https://english.visitkorea.or.kr/" target="_blank" rel="noopener noreferrer" className="px-8 py-3 bg-white border border-gray-200 rounded-full shadow-sm hover:shadow-md hover:border-[#f29727] transition-all font-bold text-[#10221b]">
-              Korea
-            </a>
-            <a href="https://www.visitgreece.gr/" target="_blank" rel="noopener noreferrer" className="px-8 py-3 bg-white border border-gray-200 rounded-full shadow-sm hover:shadow-md hover:border-[#f29727] transition-all font-bold text-[#10221b]">
-              Greece
-            </a>
+      {/* 5. Testimonial Section */}
+      <section className="py-24 bg-[#fbfaf8] relative overflow-hidden">
+        {/* Faint Mountain Background */}
+        <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80")', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16 space-y-4">
+            <span className="text-[#27B8B1] font-bold text-xl tracking-widest block font-['Caveat',cursive,serif]">Client Testimonial</span>
+            <h2 className="text-3xl md:text-5xl font-bold text-[#7cb342]">
+              Savoring your Taste Buds
+            </h2>
           </div>
+          <TestimonialSlider />
         </div>
+      </section>
 
-      </div>
+      {/* 6. Expertise Section */}
+      <ExpertiseLogosSection />
+      
     </div>
   );
 }

@@ -328,6 +328,14 @@ export default function AdminEnquiriesPage() {
                     <span>{selectedEnquiry.travelDate || 'Flexible'} • {selectedEnquiry.travellers || '2 Adults'}</span>
                   </p>
                 </div>
+                
+                <div className="p-3.5 bg-gray-50 rounded-xl border border-gray-100 space-y-1 sm:col-span-2">
+                  <span className="text-gray-400 font-bold uppercase text-[10px]">Budget Per Person</span>
+                  <p className="font-semibold text-gray-900 flex items-center gap-1.5">
+                    <DollarSign className="w-3.5 h-3.5 text-[#f29727]" />
+                    <span>{selectedEnquiry.budget || 'Not specified'}</span>
+                  </p>
+                </div>
               </div>
 
               {/* Message */}

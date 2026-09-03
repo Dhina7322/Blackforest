@@ -230,7 +230,7 @@ export default function ConciergePage() {
         </div>
         
         {/* Content with angled breadcrumb */}
-        <div className="relative z-10 text-white mt-16 flex flex-col items-center pb-24">
+        <div className="relative z-10 text-white mt-32 md:mt-40 flex flex-col items-center pb-24">
           <h1 className="text-5xl md:text-7xl lg:text-[80px] font-bold tracking-wide mb-6 drop-shadow-2xl text-center">
             {data.title}
           </h1>

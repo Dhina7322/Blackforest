@@ -10,14 +10,7 @@ export default function FloatingActions() {
 
   return (
     <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3 pointer-events-auto">
-      {/* Plan My Trip Button */}
-      <button
-        onClick={() => openEnquiryModal({ source: 'Floating Action Button' })}
-        className="group flex items-center gap-2 px-4 py-2.5 bg-[#10221b] text-[#f29727] hover:text-white rounded-full shadow-2xl border border-[#f29727]/30 hover:bg-[#1c382e] hover:border-[#f29727] transition-all duration-300 transform hover:-translate-y-0.5"
-      >
-        <CalendarCheck className="w-4 h-4 text-[#f29727] group-hover:scale-110 transition-transform" />
-        <span className="text-xs font-semibold tracking-wider uppercase pr-1">Plan Your Trip</span>
-      </button>
+     
 
       <div className="flex items-center gap-2 mt-2">
         {/* Scroll to Top */}
