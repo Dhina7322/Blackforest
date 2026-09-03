@@ -19,26 +19,17 @@ export default function FloatingActions() {
         <span className="text-xs font-semibold tracking-wider uppercase pr-1">Plan Your Trip</span>
       </button>
 
-      <div className="flex items-center gap-2">
-        {/* Phone Call */}
-        <a
-          href={`tel:${cleanPhone.replace(/\s+/g, '')}`}
-          aria-label="Call Blackforest Holidays"
-          className="w-12 h-12 bg-white text-[#10221b] hover:bg-[#10221b] hover:text-[#f29727] rounded-full shadow-xl border border-gray-100 flex items-center justify-center transition-all duration-300 transform hover:scale-110"
+      <div className="flex items-center gap-2 mt-2">
+        {/* Scroll to Top */}
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          aria-label="Scroll to top"
+          className="w-12 h-12 bg-[#f29727] text-white hover:bg-[#db841a] rounded-full shadow-xl border border-transparent flex items-center justify-center transition-all duration-300 transform hover:scale-110"
         >
-          <Phone className="w-5 h-5" />
-        </a>
-
-        {/* WhatsApp */}
-        <a
-          href={`https://wa.me/${cleanWhatsApp}?text=Hello%20Blackforest%20Holidays%2C%20I%20would%20like%20to%20plan%20a%20customized%20travel%20experience.`}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Chat with Blackforest Holidays on WhatsApp"
-          className="w-12 h-12 bg-[#25D366] text-white rounded-full shadow-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:bg-[#20ba59]"
-        >
-          <MessageCircle className="w-6 h-6 fill-current" />
-        </a>
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 15l7-7 7 7" />
+          </svg>
+        </button>
       </div>
     </div>
   );

@@ -37,17 +37,17 @@ export const SiteSettingsProvider = ({ children }) => {
 
   const fetchSettingsAndNav = useCallback(async () => {
     try {
-      const [settingsRes, navRes] = await Promise.all([
-        settingsService.get().catch(() => null),
-        navigationService.getAll({ type: 'header' }).catch(() => null)
-      ]);
-
-      if (settingsRes?.success && settingsRes.data) {
-        setSettings((prev) => ({ ...prev, ...settingsRes.data }));
-      }
-      if (navRes?.success && navRes.data) {
-        setNavigation(navRes.data);
-      }
+      // Mocked to prevent API proxy errors when no backend is running
+      const dummyNav = [
+        { id: 1, title: 'Destinations', path: '/destinations', hasDropdown: true },
+        { id: 2, title: 'Experiences', path: '/experiences', hasDropdown: true },
+        { id: 3, title: 'Concierge', path: '/concierge', hasDropdown: true },
+        { id: 4, title: 'Corporate Travel', path: '/corporate-travel', hasDropdown: false },
+        { id: 5, title: 'Coach Tour', path: '/coach-tour', hasDropdown: false },
+        { id: 6, title: 'About', path: '/about', hasDropdown: false },
+        { id: 7, title: 'Contact', path: '/contact', hasDropdown: false },
+      ];
+      setNavigation(dummyNav);
     } catch (err) {
       console.warn('Could not fetch dynamic settings:', err);
     } finally {

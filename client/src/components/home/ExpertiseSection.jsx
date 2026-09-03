@@ -1,87 +1,59 @@
-import React, { useState, useEffect } from 'react';
-import { ShieldCheck, Award, Globe, CheckCircle2 } from 'lucide-react';
-import { expertiseService } from '../../services/allServices';
+import React from 'react';
 
 export default function ExpertiseSection() {
-  const [expertiseList, setExpertiseList] = useState([]);
-
-  useEffect(() => {
-    const fetchExpertise = async () => {
-      try {
-        const res = await expertiseService.getAll({ status: 'published' });
-        if (res.success && res.data) {
-          setExpertiseList(res.data);
-        }
-      } catch (err) {
-        console.error('Error loading expertise:', err);
-      }
-    };
-    fetchExpertise();
-  }, []);
-
-  const pillars = [
-    { title: 'Target Markets', desc: 'Deep on-ground relationships with premier hoteliers and local operators.' },
-    { title: 'Expert Knowledge', desc: 'Destination specialists certified by international national tourism boards.' },
-    { title: 'Trusted Expertise', desc: 'Over 15 years crafting verified private journeys with zero compromise.' },
-    { title: 'Better Journeys', desc: 'Authentic encounters that connect you directly with local cultures.' },
-    { title: 'Committed to You', desc: '24/7 dedicated personal concierge from reservation to return.' }
+  const partners = [
+    { id: 1, name: 'IATA', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/IATA_logo.svg/512px-IATA_logo.svg.png' },
+    { id: 2, name: 'ATOL', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/0/05/ATOL_logo.svg/200px-ATOL_logo.svg.png' },
+    { id: 3, name: 'ABTA', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/ABTA_logo.svg/200px-ABTA_logo.svg.png' },
+    { id: 4, name: 'Travel Trust Association', logo: 'https://www.traveltrust.co.uk/Images/TTA-Logo.png' },
+    { id: 5, name: 'CLIA', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/CLIA_logo.svg/200px-CLIA_logo.svg.png' },
+    { id: 6, name: 'AITO', logo: 'https://www.aito.com/img/aito-logo.png' },
+    { id: 7, name: 'British Airways', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/9/98/British_Airways_Logo.svg/200px-British_Airways_Logo.svg.png' },
+    { id: 8, name: 'Emirates', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emirates_logo.svg/200px-Emirates_logo.svg.png' },
+    { id: 9, name: 'Virgin Atlantic', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Virgin_Atlantic_logo.svg/200px-Virgin_Atlantic_logo.svg.png' },
+    { id: 10, name: 'Qatar Airways', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/9/9b/Qatar_Airways_Logo.svg/200px-Qatar_Airways_Logo.svg.png' }
   ];
 
   return (
-    <section className="py-24 bg-[#10221b] text-white relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-xs uppercase tracking-widest text-[#f29727] font-bold block mb-2">
-            Blackforest Holidays
+    <section className="pt-20 pb-10 bg-[#f7f9f8] text-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Title */}
+        <div className="mb-12">
+          <span className="text-[#c7a456] font-semibold text-xs uppercase tracking-widest block mb-2">
+            Our Expertise
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white leading-tight">
+          <h2 className="text-3xl sm:text-4xl font-serif text-[#10221b] mb-4">
             Knowledge Behind Every Journey
           </h2>
-          <p className="text-gray-300 text-sm mt-3">
-            Accredited by international travel boards and leading tourism organizations worldwide.
+          <p className="text-gray-500 text-sm max-w-2xl mx-auto italic">
+            We collaborate with the world's finest travel networks and luxury partners to ensure an unparalleled standard of excellence.
           </p>
         </div>
 
-        {/* Partner Logos & Accreditations */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4 mb-16">
-          {expertiseList.map((item) => (
-            <a
-              key={item.id}
-              href={item.link || '#'}
-              target={item.link ? '_blank' : '_self'}
-              rel="noopener noreferrer"
-              className="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-[#f29727]/50 hover:bg-white/10 transition-all duration-300 flex flex-col items-center justify-center text-center group"
+        {/* Logos Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+          {partners.map((partner) => (
+            <div 
+              key={partner.id} 
+              className="bg-white border border-gray-200 p-6 flex flex-col items-center justify-center min-h-[120px] rounded hover:shadow-md transition-shadow"
             >
-              <div className="w-12 h-12 rounded-full overflow-hidden mb-2 border border-white/20 group-hover:border-[#f29727]">
-                <img
-                  src={item.logo || 'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=100&q=80'}
-                  alt={item.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform"
-                />
-              </div>
-              <span className="text-xs font-semibold text-gray-200 group-hover:text-[#f29727] transition-colors leading-tight">
-                {item.name}
+              <img 
+                src={partner.logo} 
+                alt={partner.name} 
+                className="max-h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = 'https://via.placeholder.com/100x50?text='+partner.name;
+                }}
+              />
+              <span className="text-[10px] uppercase tracking-wider text-gray-400 mt-3 font-semibold text-center leading-tight">
+                {partner.name}
               </span>
-            </a>
-          ))}
-        </div>
-
-        {/* 5 Strategic Pillars */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-6 pt-12 border-t border-white/10">
-          {pillars.map((p, idx) => (
-            <div key={idx} className="space-y-2">
-              <span className="text-[#f29727] text-xs font-bold uppercase tracking-widest block">
-                0{idx + 1}.
-              </span>
-              <h4 className="text-base font-serif font-bold text-white">
-                {p.title}
-              </h4>
-              <p className="text-xs text-gray-400 leading-relaxed">
-                {p.desc}
-              </p>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

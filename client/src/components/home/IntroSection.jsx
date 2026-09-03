@@ -1,90 +1,80 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { CheckCircle2, Award, HeartHandshake, ShieldCheck } from 'lucide-react';
-import { useSettings } from '../../context/SiteSettingsContext';
 
 export default function IntroSection() {
-  const { openEnquiryModal } = useSettings();
-
   return (
-    <section id="intro-section" className="py-24 bg-[#fbfaf8] relative overflow-hidden">
-      {/* Subtle pine background accent */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Text Content */}
-          <div className="lg:col-span-6 space-y-6">
-            <div className="inline-block border-b-2 border-[#f29727] pb-1">
-              <span className="text-xs uppercase tracking-widest text-[#10221b] font-bold">
-                About Blackforest Holidays
-              </span>
-            </div>
+    <section className="relative py-20 overflow-hidden bg-white z-10">
+      {/* Decorative Mountain Background Silhouette */}
+      <div className="absolute top-10 left-0 w-full h-[120%] opacity-20 pointer-events-none z-0 hidden md:block">
+        <svg
+          viewBox="0 0 1200 800"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+          className="w-full h-full"
+        >
+          <path
+            fill="#6b8e23"
+            d="M0,800 L0,400 Q150,250 300,450 T700,300 T1000,500 L1200,350 L1200,800 Z"
+          />
+          <path
+            fill="#8fbc8f"
+            d="M0,800 L0,550 Q200,400 450,550 T850,400 T1200,600 L1200,800 Z"
+          />
+        </svg>
+      </div>
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#10221b] leading-tight">
-              Let us plan your journey, <br />
-              <span className="italic text-[#f29727] font-normal">You create the memories.</span>
-            </h2>
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Cursive Quote */}
+        <div className="text-center mb-16 relative z-10">
+          <h2 
+            className="text-3xl md:text-[32px]"
+            style={{
+              fontFamily: "var(--font-cursive)",
+              color: "#27B8B1"
+            }}
+          >
+            Travel is the only thing you buy that makes you richer
+          </h2>
+        </div>
 
-            <p className="text-gray-700 text-base leading-relaxed">
-              Welcome to <strong>BLACKFOREST HOLIDAYS</strong>, your trusted partner in creating unforgettable travel experiences. We believe that every journey should be more than just a trip—it should be a collection of wonderful memories, new discoveries, and meaningful experiences.
-            </p>
-
-            <p className="text-gray-600 text-sm leading-relaxed">
-              With our expertise in bespoke travel planning, we help individuals, families, couples, and groups plan their perfect getaway. From flights and handpicked boutique hotels to customized holiday packages, private sightseeing, seamless transportation, and 24/7 dedicated travel assistance, we take care of every detail so you can enjoy your journey with complete confidence.
-            </p>
-
-            {/* Value Checkpoints */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-              <div className="flex items-center gap-2.5 text-xs font-semibold text-[#10221b]">
-                <CheckCircle2 className="w-4 h-4 text-[#f29727]" />
-                <span>Tailored Private Itineraries</span>
-              </div>
-              <div className="flex items-center gap-2.5 text-xs font-semibold text-[#10221b]">
-                <Award className="w-4 h-4 text-[#f29727]" />
-                <span>Certified Global Specialists</span>
-              </div>
-              <div className="flex items-center gap-2.5 text-xs font-semibold text-[#10221b]">
-                <HeartHandshake className="w-4 h-4 text-[#f29727]" />
-                <span>24/7 Concierge Support</span>
-              </div>
-              <div className="flex items-center gap-2.5 text-xs font-semibold text-[#10221b]">
-                <ShieldCheck className="w-4 h-4 text-[#f29727]" />
-                <span>Transparent & Fair Pricing</span>
-              </div>
-            </div>
-
-            <div className="pt-4 flex items-center gap-4">
-              <button
-                onClick={() => openEnquiryModal({ source: 'Homepage Intro Section' })}
-                className="px-7 py-3.5 bg-[#10221b] hover:bg-[#1c382e] text-[#f29727] text-xs uppercase font-bold tracking-widest rounded-full shadow-lg transition-all"
-              >
-                Start Planning
-              </button>
-              <Link
-                to="/about"
-                className="text-xs font-bold uppercase tracking-wider text-[#10221b] hover:text-[#f29727] underline transition-colors"
-              >
-                Read Our Story →
-              </Link>
-            </div>
+        <div className="relative">
+          {/* Decorative Mask Background */}
+          <div className="absolute top-[-40px] left-[-80px] w-full max-w-2xl opacity-10 pointer-events-none z-0 hidden lg:block">
+            <img 
+              src="https://blackforestholidays.com/wp-content/uploads/2021/07/mask-pine.jpg.webp" 
+              alt="Background Silhouette" 
+              className="w-full h-auto object-contain"
+            />
           </div>
 
-          {/* Overlapping Editorial Imagery */}
-          <div className="lg:col-span-6 relative">
-            <div className="relative mx-auto max-w-md lg:max-w-none">
-              {/* Primary Image */}
-              <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
-                <img
-                  src="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=1000&q=80"
-                  alt="Alpine Scenic Luxury Holiday"
-                  className="w-full h-[460px] object-cover hover:scale-105 transition-transform duration-700"
-                />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center relative z-10">
+            {/* Left Content Area */}
+            <div className="bg-white p-8 lg:p-12 shadow-sm lg:max-w-md mx-auto lg:mr-auto">
+              <div className="mb-6">
+                <h3 className="text-[26px] sm:text-[32px] font-bold text-[#5e963b] leading-tight font-serif tracking-wide">
+                  Let us plan your journey,<br />
+                  You create the memories.
+                </h3>
+                <div className="w-12 h-[1px] bg-black mt-6 mb-2"></div>
               </div>
 
-              {/* Floating Sub-Card */}
-              <div className="absolute -bottom-8 -left-6 sm:-left-8 bg-[#10221b] text-white p-6 rounded-2xl shadow-2xl border border-white/10 max-w-xs">
-                <span className="text-[#f29727] text-3xl font-serif font-bold block mb-1">15+</span>
-                <h4 className="text-sm font-semibold tracking-wide text-white">Years of Travel Craftsmanship</h4>
-                <p className="text-xs text-gray-300 mt-1">Creating transformative private journeys across 40+ countries.</p>
+              <div className="space-y-4 text-[#333333] text-[13px] leading-[1.8] font-sans font-light tracking-wide">
+                <p>
+                  Welcome to BLACKFOREST HOLIDAYS, your trusted partner in creating unforgettable travel experiences. We believe that every journey should be more than just a trip—it should be a collection of wonderful memories, new discoveries, and meaningful experiences.
+                </p>
+                <p>
+                  With our expertise in travel planning, we help individuals, families, couples, and groups plan their perfect getaway. From flights and hotels to customized holiday packages, sightseeing, transportation, and travel assistance, we take care of the details so you can enjoy your journey with confidence.
+                </p>
+              </div>
+            </div>
+
+            {/* Right Image Area */}
+            <div className="relative z-20 w-full max-w-[500px] mx-auto lg:ml-auto">
+              <div className="bg-white shadow-xl">
+                <img
+                  src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=800&q=80"
+                  alt="World map travel planning"
+                  className="w-full h-auto object-cover block"
+                />
               </div>
             </div>
           </div>

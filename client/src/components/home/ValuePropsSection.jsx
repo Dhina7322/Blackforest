@@ -1,91 +1,87 @@
-import React, { useState, useEffect } from 'react';
-import {
-  Compass,
-  MapPin,
-  Calendar,
-  Sparkles,
-  HeartHandshake,
-  ShieldCheck,
-  ArrowUpRight
+import React from 'react';
+import { 
+  Map, 
+  MapPin, 
+  Wrench, 
+  Caravan, 
+  CalendarCheck, 
+  Headphones 
 } from 'lucide-react';
-import { serviceService } from '../../services/allServices';
-import { useSettings } from '../../context/SiteSettingsContext';
-
-const iconMap = {
-  Compass,
-  MapPin,
-  Calendar,
-  Sparkles,
-  HeartHandshake,
-  ShieldCheck
-};
 
 export default function ValuePropsSection() {
-  const [services, setServices] = useState([]);
-  const { openEnquiryModal } = useSettings();
-
-  useEffect(() => {
-    const fetchServices = async () => {
-      try {
-        const res = await serviceService.getAll({ status: 'published' });
-        if (res.success && res.data) {
-          setServices(res.data);
-        }
-      } catch (err) {
-        console.error('Error loading services:', err);
-      }
-    };
-    fetchServices();
-  }, []);
+  const services = [
+    {
+      id: 1,
+      icon: <Map className="w-10 h-10 stroke-[1.2] transition-colors duration-300 group-hover:text-[#f29727]" />,
+      title: "Tailor-Made Journeys",
+      desc: "Travel experiences thoughtfully designed around your interests, style, and dreams.",
+    },
+    {
+      id: 2,
+      icon: <MapPin className="w-10 h-10 stroke-[1.2] transition-colors duration-300 group-hover:text-[#f29727]" />,
+      title: "Exceptional Experiences",
+      desc: "Discover extraordinary places and unforgettable moments, curated just for you.",
+    },
+    {
+      id: 3,
+      icon: <Wrench className="w-10 h-10 stroke-[1.2] transition-colors duration-300 group-hover:text-[#f29727]" />,
+      title: "Expert Travel Design",
+      desc: "Our experienced travel specialists bring knowledge, care, and attention to every journey.",
+    },
+    {
+      id: 4,
+      icon: <Caravan className="w-10 h-10 stroke-[1.2] transition-colors duration-300 group-hover:text-[#f29727]" />,
+      title: "Journeys For Every Story",
+      desc: "From romantic escapes to family adventures, we create travel experiences that feel truly personal.",
+    },
+    {
+      id: 5,
+      icon: <CalendarCheck className="w-10 h-10 stroke-[1.2] transition-colors duration-300 group-hover:text-[#f29727]" />,
+      title: "Personalised Itineraries",
+      desc: "Detailed day-by-day plans crafted specifically to maximize your time and enjoyment.",
+    },
+    {
+      id: 6,
+      icon: <Headphones className="w-10 h-10 stroke-[1.2] transition-colors duration-300 group-hover:text-[#f29727]" />,
+      title: "Seamless Travel Support",
+      desc: "From your first enquiry to your return home, we ensure every detail is handled flawlessly.",
+    }
+  ];
 
   return (
-    <section className="py-24 bg-[#fbfaf8] relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-xs uppercase tracking-widest text-[#f29727] font-bold block mb-2">
-            Value before business
-          </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#10221b] leading-tight">
-            We Offer the best
-          </h2>
-          <p className="text-gray-600 text-sm mt-3">
-            Our unwavering commitment to high-touch hospitality, rigorous safety standards, and bespoke destination expertise.
-          </p>
-        </div>
+    <section className="relative py-24 bg-[#fbfaf8] overflow-hidden">
+      {/* Light mountain/clouds background graphic */}
+      <div className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none">
+        <img 
+          src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1920&q=80" 
+          alt="Mountains Background" 
+          className="w-full h-full object-cover"
+        />
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((srv) => {
-            const IconComponent = iconMap[srv.icon] || Compass;
-            return (
-              <div
-                key={srv.id}
-                className="p-8 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-xl hover:border-[#f29727]/40 transition-all duration-300 group flex flex-col justify-between"
-              >
-                <div>
-                  <div className="w-14 h-14 rounded-2xl bg-[#10221b] text-[#f29727] flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#f29727] group-hover:text-[#10221b] transition-all duration-300 shadow-md">
-                    <IconComponent className="w-7 h-7" />
-                  </div>
-                  <h3 className="text-xl font-serif font-bold text-[#10221b] group-hover:text-[#f29727] transition-colors mb-3">
-                    {srv.title}
-                  </h3>
-                  <p className="text-gray-600 text-xs leading-relaxed">
-                    {srv.description}
-                  </p>
-                </div>
-
-                <div className="pt-6 mt-6 border-t border-gray-100">
-                  <button
-                    onClick={() => openEnquiryModal({ title: srv.title })}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#10221b] group-hover:text-[#f29727] transition-colors"
-                  >
-                    <span>Inquire Service</span>
-                    <ArrowUpRight className="w-3.5 h-3.5" />
-                  </button>
-                </div>
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Section Header (Optional/Hidden if they just want the grid directly, but I will keep it matching the previous style, just aligning with the image) */}
+        
+        {/* 6-Item Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
+          {services.map((srv) => (
+            <div key={srv.id} className="flex gap-5 group items-start border-b border-gray-100 pb-8 last:border-0 md:[&:nth-last-child(-n+2)]:border-0 cursor-pointer">
+              <div className="text-gray-800 transition-transform duration-300 mt-1">
+                {srv.icon}
               </div>
-            );
-          })}
+              <div>
+                <h3 className="text-[22px] font-bold text-gray-900 group-hover:text-[#f29727] transition-colors duration-300 font-serif mb-2 tracking-wide">
+                  {srv.title}
+                </h3>
+                <p className="text-[15px] text-gray-500 font-light leading-relaxed">
+                  {srv.desc}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
+
       </div>
     </section>
   );

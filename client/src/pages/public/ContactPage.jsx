@@ -1,273 +1,231 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, MessageCircle, Send, CheckCircle2, Clock, ShieldCheck } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
 import { useSettings } from '../../context/SiteSettingsContext';
-import { useToast } from '../../context/ToastContext';
-import { enquiryService } from '../../services/allServices';
 
 export default function ContactPage() {
   const { settings } = useSettings();
-  const { showToast } = useToast();
-
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     destination: '',
+    travelers: '',
     message: ''
   });
-  const [submitting, setSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.phone || !formData.message) {
-      showToast('Please fill out all required fields', 'error');
-      return;
-    }
+    console.log('Form submitted:', formData);
+    // Submit logic goes here
+  };
 
-    setSubmitting(true);
-    try {
-      const res = await enquiryService.create({
-        ...formData,
-        source: 'Contact Us Page'
-      });
-      if (res.success) {
-        setSubmitted(true);
-        showToast('Thank you. Our travel specialist will contact you shortly.', 'success');
-        setFormData({ name: '', email: '', phone: '', destination: '', message: '' });
-      }
-    } catch (err) {
-      showToast(err.response?.data?.message || 'Error submitting message', 'error');
-    } finally {
-      setSubmitting(false);
-    }
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   return (
-    <div className="pt-24 pb-20 bg-[#fbfaf8] animate-fadeIn">
-      {/* Header */}
-      <div className="bg-[#10221b] text-white py-16 px-4 sm:px-6 lg:px-8 mb-12">
-        <div className="max-w-7xl mx-auto text-center">
-          <span className="text-xs uppercase font-bold tracking-widest text-[#f29727] block mb-2">
-            Get In Touch
-          </span>
-          <h1 className="text-4xl sm:text-5xl font-serif font-bold text-white mb-4">
-            Contact Our Travel Specialists
+    <div className="pt-24 pb-20 bg-white animate-fadeIn">
+      {/* Hero Header */}
+      <div className="relative bg-[#10221b] text-white py-24 px-4 sm:px-6 lg:px-8 mb-16 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1516738901171-8eb4fc13bd20?auto=format&fit=crop&w=1920&q=80" 
+            alt="Contact Blackforest Holidays" 
+            className="w-full h-full object-cover opacity-30"
+          />
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
+          <h1 className="text-4xl sm:text-6xl font-serif font-bold text-white mb-6 uppercase tracking-widest drop-shadow-md">
+            Contact
           </h1>
-          <p className="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto">
-            Whether inquiring about a customized itinerary, private airfare, or seasonal group departures, our concierge team is at your service.
-          </p>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          {/* Left Column: Office details & Direct Channels */}
-          <div className="lg:col-span-5 space-y-8">
-            <div className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm space-y-6">
-              <h3 className="text-2xl font-serif font-bold text-[#10221b]">
-                Blackforest Holidays Lounge
-              </h3>
-              <p className="text-gray-600 text-xs leading-relaxed">
-                Connect directly with our dedicated travel planners via phone, email, or WhatsApp.
-              </p>
+        
+        <div className="text-center mb-16 space-y-3">
+          <h3 className="text-sm font-bold uppercase tracking-widest text-[#f29727]">Talk to us</h3>
+          <h2 className="text-4xl font-serif font-bold text-[#10221b]">Get in Touch</h2>
+        </div>
 
-              <div className="space-y-4 pt-2">
-                {settings.phone && (
-                  <div className="flex items-start gap-3">
-                    <div className="w-10 h-10 rounded-full bg-amber-50 text-[#f29727] flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-gray-400 block">Phone Concierge</span>
-                      <a href={`tel:${settings.phone.replace(/\s+/g, '')}`} className="text-sm font-semibold text-[#10221b] hover:text-[#f29727]">
-                        {settings.phone}
-                      </a>
-                    </div>
-                  </div>
-                )}
-
-                {settings.whatsapp && (
-                  <div className="flex items-start gap-3">
-                    <div className="w-10 h-10 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center flex-shrink-0">
-                      <MessageCircle className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-gray-400 block">WhatsApp Desk</span>
-                      <a
-                        href={`https://wa.me/${settings.whatsapp.replace(/[^0-9]/g, '')}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm font-semibold text-[#10221b] hover:text-[#25D366]"
-                      >
-                        {settings.whatsapp}
-                      </a>
-                    </div>
-                  </div>
-                )}
-
-                {settings.email && (
-                  <div className="flex items-start gap-3">
-                    <div className="w-10 h-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center flex-shrink-0">
-                      <Mail className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-gray-400 block">Direct Inquiries</span>
-                      <a href={`mailto:${settings.email}`} className="text-sm font-semibold text-[#10221b] hover:text-[#f29727]">
-                        {settings.email}
-                      </a>
-                    </div>
-                  </div>
-                )}
-
-                {settings.address && (
-                  <div className="flex items-start gap-3">
-                    <div className="w-10 h-10 rounded-full bg-stone-100 text-[#10221b] flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-gray-400 block">Office Address</span>
-                      <p className="text-sm text-gray-700 leading-relaxed">
-                        {settings.address}
-                      </p>
-                    </div>
-                  </div>
-                )}
-
-                <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 rounded-full bg-purple-50 text-purple-600 flex items-center justify-center flex-shrink-0">
-                    <Clock className="w-4 h-4" />
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+          
+          {/* Left Column: Form */}
+          <div className="lg:col-span-7">
+            <form onSubmit={handleSubmit} className="space-y-12 bg-[#fbfaf8] p-8 md:p-12 rounded-2xl border border-gray-100 shadow-sm">
+              
+              <div className="space-y-6">
+                <h3 className="text-xl font-serif font-bold text-[#10221b] border-b pb-4">YOUR DETAILS</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Name *</label>
+                    <input
+                      type="text"
+                      name="name"
+                      required
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="w-full bg-white border border-gray-200 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f29727] transition-all"
+                    />
                   </div>
                   <div>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-gray-400 block">Concierge Hours</span>
-                    <p className="text-sm text-gray-700">
-                      Mon – Sat: 9:00 AM – 7:30 PM IST <br />
-                      <span className="text-xs text-[#f29727] font-semibold">24/7 Emergency Support for Travelers on Tour</span>
-                    </p>
+                    <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Email *</label>
+                    <input
+                      type="email"
+                      name="email"
+                      required
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="w-full bg-white border border-gray-200 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f29727] transition-all"
+                    />
+                  </div>
+                  <div className="md:col-span-2">
+                    <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Phone</label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-full bg-white border border-gray-200 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f29727] transition-all"
+                    />
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
 
-          {/* Right Column: Contact Message Form */}
-          <div className="lg:col-span-7">
-            <div className="bg-white p-8 sm:p-10 rounded-3xl border border-gray-100 shadow-sm">
-              <h3 className="text-2xl font-serif font-bold text-[#10221b] mb-2">
-                Send Us a Message
-              </h3>
-              <p className="text-xs text-gray-500 mb-8">
-                Fill out the form below, and our travel specialists will respond within 4 business hours.
-              </p>
-
-              {submitted ? (
-                <div className="p-8 text-center bg-emerald-50 border border-emerald-200 rounded-2xl">
-                  <CheckCircle2 className="w-12 h-12 text-emerald-600 mx-auto mb-3" />
-                  <h4 className="text-xl font-serif font-bold text-emerald-900 mb-2">Message Sent!</h4>
-                  <p className="text-xs text-emerald-800 mb-6">
-                    Thank you. Our travel specialist will contact you shortly.
-                  </p>
-                  <button
-                    onClick={() => setSubmitted(false)}
-                    className="px-6 py-2.5 bg-[#10221b] text-[#f29727] text-xs font-semibold uppercase tracking-wider rounded-full"
-                  >
-                    Send Another Message
-                  </button>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-1">
-                        Full Name *
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        placeholder="John Doe"
-                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#f29727]/30 focus:border-[#f29727]"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-1">
-                        Email Address *
-                      </label>
-                      <input
-                        type="email"
-                        required
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        placeholder="john@example.com"
-                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#f29727]/30 focus:border-[#f29727]"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-1">
-                        Phone / WhatsApp *
-                      </label>
-                      <input
-                        type="tel"
-                        required
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="+91 94470 12345"
-                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#f29727]/30 focus:border-[#f29727]"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-1">
-                        Destination of Interest
-                      </label>
-                      <input
-                        type="text"
-                        value={formData.destination}
-                        onChange={(e) => setFormData({ ...formData, destination: e.target.value })}
-                        placeholder="e.g. Switzerland, Kerala, Maldives"
-                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#f29727]/30 focus:border-[#f29727]"
-                      />
-                    </div>
-                  </div>
-
+              <div className="space-y-6">
+                <h3 className="text-xl font-serif font-bold text-[#10221b] border-b pb-4">YOUR TRIP</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-1">
-                      Your Message / Travel Request *
-                    </label>
-                    <textarea
-                      rows={4}
-                      required
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Please share travel dates, number of guests, and any specific preferences..."
-                      className="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#f29727]/30 focus:border-[#f29727]"
+                    <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Destination</label>
+                    <input
+                      type="text"
+                      name="destination"
+                      value={formData.destination}
+                      onChange={handleChange}
+                      className="w-full bg-white border border-gray-200 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f29727] transition-all"
                     />
                   </div>
+                  <div>
+                    <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">No. of Travelers</label>
+                    <input
+                      type="number"
+                      name="travelers"
+                      value={formData.travelers}
+                      onChange={handleChange}
+                      className="w-full bg-white border border-gray-200 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f29727] transition-all"
+                    />
+                  </div>
+                  <div className="md:col-span-2">
+                    <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Message</label>
+                    <textarea
+                      name="message"
+                      rows="4"
+                      value={formData.message}
+                      onChange={handleChange}
+                      className="w-full bg-white border border-gray-200 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f29727] transition-all resize-none"
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
 
-                  <button
-                    type="submit"
-                    disabled={submitting}
-                    className="w-full py-4 bg-[#10221b] hover:bg-[#1c382e] text-[#f29727] text-xs font-bold uppercase tracking-widest rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 disabled:opacity-50"
-                  >
-                    {submitting ? (
-                      <span>Sending Message...</span>
-                    ) : (
-                      <>
-                        <Send className="w-4 h-4" />
-                        <span>Submit Travel Message</span>
-                      </>
-                    )}
-                  </button>
-                </form>
-              )}
+              <button
+                type="submit"
+                className="w-full bg-[#f29727] hover:bg-[#db841a] text-white font-bold uppercase tracking-widest py-4 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2"
+              >
+                <span>Send Message</span>
+                <Send className="w-4 h-4" />
+              </button>
+            </form>
+          </div>
+
+          {/* Right Column: Info & Offices */}
+          <div className="lg:col-span-5 space-y-12">
+            
+            <div className="space-y-6">
+              <h4 className="text-2xl font-serif font-bold text-[#10221b]">Contact Info</h4>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-4">
+                  <Phone className="w-5 h-5 text-[#f29727] mt-1 shrink-0" />
+                  <div>
+                    <p className="text-sm font-bold text-gray-900">Call Us</p>
+                    <a href={`tel:${(settings.phone || '+91 94470 12345').replace(/\s+/g, '')}`} className="text-gray-600 hover:text-[#f29727]">
+                      {settings.phone || '+91 94470 12345'}
+                    </a>
+                  </div>
+                </li>
+                <li className="flex items-start gap-4">
+                  <Mail className="w-5 h-5 text-[#f29727] mt-1 shrink-0" />
+                  <div>
+                    <p className="text-sm font-bold text-gray-900">Email Us</p>
+                    <a href={`mailto:${settings.email || 'info@blackforestholidays.com'}`} className="text-gray-600 hover:text-[#f29727]">
+                      {settings.email || 'info@blackforestholidays.com'}
+                    </a>
+                  </div>
+                </li>
+              </ul>
             </div>
+
+            <div className="space-y-6">
+              <h4 className="text-2xl font-serif font-bold text-[#10221b]">Business hours:</h4>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-4">
+                  <Clock className="w-5 h-5 text-[#f29727] mt-1 shrink-0" />
+                  <div>
+                    <p className="text-gray-600 text-sm">Monday to Saturday: 10:00 AM - 6:30 PM</p>
+                    <p className="text-gray-600 text-sm">Sunday: Closed</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div className="space-y-8 pt-8 border-t border-gray-100">
+              <div className="space-y-3">
+                <h2 className="text-xl font-serif font-bold text-[#10221b]">Bangalore Office:</h2>
+                <div className="flex items-start gap-3 text-gray-600 text-sm">
+                  <MapPin className="w-5 h-5 text-[#f29727] shrink-0" />
+                  <p>1st Floor, No 20, 1st Main Rd, near Wipro Park, 1st Block Koramangala, Bengaluru, Karnataka 560034</p>
+                </div>
+              </div>
+
+              <div className="space-y-3">
+                <h2 className="text-xl font-serif font-bold text-[#10221b]">Coimbatore Office:</h2>
+                <div className="flex items-start gap-3 text-gray-600 text-sm">
+                  <MapPin className="w-5 h-5 text-[#f29727] shrink-0" />
+                  <p>No 11, 1st Floor, 1st Cross, Bharathi Park Road, Saibaba Colony, Coimbatore, Tamil Nadu 641043</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-4 pt-8 border-t border-gray-100">
+              <h4 className="text-lg font-serif font-bold text-[#10221b]">#ventura</h4>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-gray-600 hover:text-[#f29727] transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                <span className="text-sm font-bold tracking-wider">Follow us on Instagram</span>
+              </a>
+            </div>
+
           </div>
         </div>
+
+        {/* Knowledge Base */}
+        <div className="mt-24 text-center space-y-12">
+          <h2 className="text-3xl font-serif font-bold text-[#10221b]">Knowledge Behind Every Journey</h2>
+          <div className="flex flex-wrap justify-center gap-6">
+            <a href="https://www.peru.travel/" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-white border border-gray-200 rounded-full shadow-sm hover:border-[#f29727] transition-all font-bold text-[#10221b]">Peru</a>
+            <a href="https://english.visitkorea.or.kr/" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-white border border-gray-200 rounded-full shadow-sm hover:border-[#f29727] transition-all font-bold text-[#10221b]">Korea</a>
+            <a href="https://www.visitgreece.gr/" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-white border border-gray-200 rounded-full shadow-sm hover:border-[#f29727] transition-all font-bold text-[#10221b]">Greece</a>
+            <a href="https://www.japan.travel/" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-white border border-gray-200 rounded-full shadow-sm hover:border-[#f29727] transition-all font-bold text-[#10221b]">Japan</a>
+            <a href="https://www.iata.org/" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-white border border-gray-200 rounded-full shadow-sm hover:border-[#f29727] transition-all font-bold text-[#10221b]">IATA</a>
+            <a href="https://www.visitportugal.com/" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-white border border-gray-200 rounded-full shadow-sm hover:border-[#f29727] transition-all font-bold text-[#10221b]">Portugal</a>
+            <a href="https://www.visitalgarve.pt/" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-white border border-gray-200 rounded-full shadow-sm hover:border-[#f29727] transition-all font-bold text-[#10221b]">Algarve</a>
+            <a href="https://www.spain.info/" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-white border border-gray-200 rounded-full shadow-sm hover:border-[#f29727] transition-all font-bold text-[#10221b]">Spain</a>
+          </div>
+        </div>
+
       </div>
     </div>
   );

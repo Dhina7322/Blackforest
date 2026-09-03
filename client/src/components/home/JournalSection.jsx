@@ -1,104 +1,78 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { Calendar, ArrowRight } from 'lucide-react';
-import { articleService } from '../../services/allServices';
 
 export default function JournalSection() {
-  const [articles, setArticles] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchArticles = async () => {
-      try {
-        const res = await articleService.getAll({ status: 'published', limit: 3 });
-        if (res.success && res.data) {
-          setArticles(res.data.articles || []);
-        }
-      } catch (err) {
-        console.error('Error loading articles:', err);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchArticles();
-  }, []);
+  const articles = [
+    {
+      id: 1,
+      tag: "Trekking",
+      title: "Top 10 must-see spots for nature lovers",
+      image: "https://images.unsplash.com/photo-1522069169874-c58e57ce8fb7?auto=format&fit=crop&w=600&q=80",
+      slug: "top-10-must-see-spots"
+    },
+    {
+      id: 2,
+      tag: "Culture",
+      title: "Unforgettable cultural experiences in Kyoto",
+      image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80",
+      slug: "kyoto-culture"
+    },
+    {
+      id: 3,
+      tag: "Camping",
+      title: "How to safely pack for a backcountry camping trip",
+      image: "https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=600&q=80",
+      slug: "camping-guide"
+    }
+  ];
 
   return (
-    <section className="py-24 bg-[#fbfaf8] relative overflow-hidden">
+    <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
-          <div>
-            <span className="text-xs uppercase tracking-widest text-[#f29727] font-bold block mb-2">
-              Recent news feed
-            </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#10221b] leading-tight">
-              Curated Stories for Curious Travelers
-            </h2>
-            <p className="text-gray-600 text-sm mt-2 max-w-xl">
-              Practical guides, trail safety advice, and insider travel chronicles from our destination specialists.
-            </p>
-          </div>
+        
+        {/* Title */}
+        <div className="text-center mb-12">
+          <span className="text-[#27B8B1] font-semibold text-sm uppercase tracking-wider block mb-2">
+            Travel blog & guide
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#5e963b]">
+            Curated Stories For Curious Travelers
+          </h2>
+        </div>
 
-          <Link
-            to="/journal"
-            className="text-xs font-bold uppercase tracking-widest text-[#10221b] hover:text-[#f29727] transition-colors flex items-center gap-1.5"
+        {/* 3 Blog Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {articles.map((article) => (
+            <div key={article.id} className="bg-white rounded-lg overflow-hidden group">
+              <div className="relative h-64 overflow-hidden rounded-lg mb-4">
+                <img 
+                  src={article.image} 
+                  alt={article.title} 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="px-2">
+                <span className="text-[#f29727] text-xs font-bold uppercase tracking-widest mb-2 block">
+                  • {article.tag}
+                </span>
+                <h3 className="text-gray-900 font-bold text-lg leading-snug mb-3 hover:text-[#27B8B1] transition-colors cursor-pointer">
+                  {article.title}
+                </h3>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* View All Button */}
+        <div className="text-center mt-12">
+          <Link 
+            to="/journal" 
+            className="inline-block px-8 py-3 bg-[#f29727] hover:bg-[#db841a] text-white font-bold text-sm uppercase tracking-wider rounded transition-colors shadow-sm"
           >
-            <span>Visit Travel Journal</span>
-            <ArrowRight className="w-4 h-4" />
+            View All
           </Link>
         </div>
 
-        {loading ? (
-          <div className="flex items-center justify-center py-16 text-gray-400 gap-2">
-            <span className="w-6 h-6 border-2 border-[#f29727] border-t-transparent rounded-full animate-spin"></span>
-            Loading articles...
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {articles.map((art) => (
-              <article
-                key={art.id}
-                className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl hover:border-[#f29727]/40 transition-all duration-300 group flex flex-col justify-between"
-              >
-                <div className="relative h-56 overflow-hidden">
-                  <img
-                    src={art.coverImage || 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80'}
-                    alt={art.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute top-3 left-3 px-3 py-1 bg-[#10221b]/80 backdrop-blur-md text-[#f29727] text-[11px] font-bold uppercase tracking-wider rounded-full">
-                    {art.category}
-                  </div>
-                </div>
-
-                <div className="p-6 flex-1 flex flex-col justify-between">
-                  <div>
-                    <div className="flex items-center gap-2 text-[11px] text-gray-400 mb-2">
-                      <Calendar className="w-3.5 h-3.5" />
-                      <span>{new Date(art.publishedAt || art.createdAt).toLocaleDateString()}</span>
-                    </div>
-
-                    <h3 className="text-xl font-serif font-bold text-[#10221b] group-hover:text-[#f29727] transition-colors line-clamp-2 mb-3">
-                      {art.title}
-                    </h3>
-
-                    <p className="text-xs text-gray-600 line-clamp-3 leading-relaxed mb-6">
-                      {art.excerpt}
-                    </p>
-                  </div>
-
-                  <Link
-                    to={`/journal/${art.slug}`}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#10221b] group-hover:text-[#f29727] transition-colors pt-4 border-t border-gray-100"
-                  >
-                    <span>Read Full Guide</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </article>
-            ))}
-          </div>
-        )}
       </div>
     </section>
   );

@@ -77,10 +77,8 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        isScrolled || !isHomePage
-          ? 'bg-[#10221b] text-white shadow-xl py-3 border-b border-white/10'
-          : 'bg-gradient-to-b from-black/80 via-black/40 to-transparent text-white py-5'
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-[#10221b] text-white py-4 ${
+        isScrolled ? 'shadow-xl' : ''
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -95,7 +93,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden xl:flex items-center space-x-1 lg:space-x-3 text-xs tracking-widest font-semibold uppercase">
+          <nav className="hidden xl:flex items-center space-x-2 lg:space-x-5 text-[15px] font-medium tracking-wide">
             {/* Destinations Mega Dropdown */}
             <div
               className="relative group py-2"
@@ -214,10 +212,6 @@ export default function Header() {
               Coach Tour
             </Link>
 
-            <Link to="/journal" className="hover:text-[#f29727] transition-colors py-1">
-              Journal
-            </Link>
-
             <Link to="/about" className="hover:text-[#f29727] transition-colors py-1">
               About
             </Link>
@@ -227,36 +221,7 @@ export default function Header() {
             </Link>
           </nav>
 
-          {/* Right Header Actions */}
-          <div className="hidden lg:flex items-center gap-3">
-            {/* Search Button */}
-            <button
-              onClick={openSearchModal}
-              aria-label="Search"
-              className="p-2 rounded-full hover:bg-white/10 text-white/90 hover:text-[#f29727] transition-colors"
-            >
-              <Search className="w-5 h-5" />
-            </button>
-
-            {/* Direct Phone CTA */}
-            {settings.phone && (
-              <a
-                href={`tel:${settings.phone.replace(/\s+/g, '')}`}
-                className="hidden 2xl:flex items-center gap-1.5 text-xs text-gray-200 hover:text-[#f29727] font-semibold tracking-wider transition-colors"
-              >
-                <Phone className="w-3.5 h-3.5 text-[#f29727]" />
-                <span>{settings.phone}</span>
-              </a>
-            )}
-
-            {/* Plan Journey Modal Trigger */}
-            <button
-              onClick={() => openEnquiryModal({ source: 'Header Nav CTA' })}
-              className="px-5 py-2.5 bg-[#f29727] hover:bg-[#db841a] text-[#10221b] text-xs uppercase font-bold tracking-widest rounded-full shadow-lg transition-all transform hover:scale-105"
-            >
-              Plan Your Trip
-            </button>
-          </div>
+         
 
           {/* Mobile Hamburger Button */}
           <div className="flex items-center gap-2 xl:hidden">

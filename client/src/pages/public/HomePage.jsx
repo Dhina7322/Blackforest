@@ -1,10 +1,9 @@
 import React from 'react';
 import HeroSection from '../../components/home/HeroSection';
 import IntroSection from '../../components/home/IntroSection';
-import AdventureSection from '../../components/home/AdventureSection';
 import InternationalToursSection from '../../components/home/InternationalToursSection';
 import ValuePropsSection from '../../components/home/ValuePropsSection';
-import IslandSection from '../../components/home/IslandSection';
+import StatsSection from '../../components/home/StatsSection';
 import IndiaToursSection from '../../components/home/IndiaToursSection';
 import TestimonialSlider from '../../components/home/TestimonialSlider';
 import JournalSection from '../../components/home/JournalSection';
@@ -12,35 +11,32 @@ import ExpertiseSection from '../../components/home/ExpertiseSection';
 
 export default function HomePage() {
   return (
-    <div className="animate-fadeIn">
+    <div className="animate-fadeIn bg-[#f7f9f8]">
       {/* 1. Hero */}
       <HeroSection />
 
       {/* 2. Introduction */}
       <IntroSection />
 
-      {/* 3. Adventure Essentials */}
-      <AdventureSection />
-
-      {/* 4. International Tour Packages */}
+      {/* 3. International Tour Packages */}
       <InternationalToursSection />
 
-      {/* 5. Services / Value Proposition */}
+      {/* 4. Services / Value Proposition */}
       <ValuePropsSection />
+      
+      {/* 5. Statistics Circles */}
+      <StatsSection />
 
-      {/* 6. Luxury / Island section */}
-      <IslandSection />
-
-      {/* 7. Indian Tour Packages */}
+      {/* 6. Indian Tour Packages */}
       <IndiaToursSection />
 
-      {/* 8. Testimonials */}
+      {/* 7. Testimonials */}
       <TestimonialSlider />
 
-      {/* 9. Travel Journal */}
+      {/* 8. Travel Journal */}
       <JournalSection />
 
-      {/* 10. Expertise */}
+      {/* 9. Expertise */}
       <ExpertiseSection />
     </div>
   );

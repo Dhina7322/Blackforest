@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --font-serif: 'Cormorant Garamond', Georgia, serif;
-  --font-sans: 'Jost', 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Palanquin Dark', serif;
+  --font-sans: 'Jost', sans-serif;
+  --font-cursive: 'Mansalva', cursive;
 
   --color-forest: #10221b;
   --color-forest-dark: #0a1712;
@@ -14,9 +15,11 @@
   --color-amber-light: #fef5e9;
 
   --color-champagne: #f3efe8;
-  --color-stone-bg: #fbfaf8;
+  --color-stone-bg: #f7f9f8;
   --color-stone-dark: #24221e;
   --color-sage: #e6eee5;
+  --color-cyan: #27B8B1;
+  --color-cyan-light: #1dc5ce;
 }
 
 @layer base {
@@ -26,8 +29,8 @@
   }
 
   body {
-    background-color: #fbfaf8;
-    color: #1a231f;
+    background-color: var(--color-stone-bg);
+    color: #483E3E;
     overflow-x: hidden;
   }
 
