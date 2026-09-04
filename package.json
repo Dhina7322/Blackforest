@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Blackforest Holidays - Full Stack Travel Platform & CMS Admin Panel",
   "private": true,
+  "main": "server/src/server.js",
   "scripts": {
     "postinstall": "npm --prefix server install && npm --prefix client install",
     "install:all": "npm --prefix server install && npm --prefix client install",
