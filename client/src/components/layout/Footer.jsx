@@ -1,147 +1,193 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, Clock, MapPin } from 'lucide-react';
-import { useSettings } from '../../context/SiteSettingsContext';
+import { MapPin, Mail, Phone, Globe, ChevronUp } from 'lucide-react';
 
 export default function Footer() {
-  const { settings } = useSettings();
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
-    <footer className="bg-[#192b23] text-white">
-      
-      {/* Top Banner section (overlapping with light background from previous section) */}
-      <div className="bg-[#f7f9f8] pt-4 pb-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-[#10221b] rounded-xl p-8 border border-[#234033] shadow-xl">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full border border-[#c7a456] text-[#c7a456] flex items-center justify-center flex-shrink-0">
-                  <Phone className="w-5 h-5" />
-                </div>
-                <div>
-                  <span className="text-gray-400 text-xs block mb-1">Call us</span>
-                  <a href="tel:02089403388" className="text-sm font-semibold hover:text-[#c7a456]">
-                    {settings.phone || '020 8940 3388'}
-                  </a>
-                </div>
-              </div>
+    <footer className="bg-[#0c1c16] text-white pt-16 pb-8 relative border-t border-[#1a382b]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Brand Header Logo */}
+        <div className="mb-12">
+          <Link to="/" className="inline-block group">
+            <img
+              src="/white_logo.png"
+              alt="Blackforest Holidays - We are the artist of Travel"
+              className="h-12 sm:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = 'https://blackforestholidays.com/wp-content/uploads/2021/07/white_logo.png';
+              }}
+            />
+          </Link>
+        </div>
 
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full border border-[#c7a456] text-[#c7a456] flex items-center justify-center flex-shrink-0">
-                  <Mail className="w-5 h-5" />
-                </div>
-                <div>
-                  <span className="text-gray-400 text-xs block mb-1">Email address</span>
-                  <a href="mailto:info@blackforest.com" className="text-sm font-semibold hover:text-[#c7a456]">
-                    {settings.email || 'info@blackforest.com'}
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full border border-[#c7a456] text-[#c7a456] flex items-center justify-center flex-shrink-0">
-                  <Clock className="w-5 h-5" />
-                </div>
-                <div>
-                  <span className="text-gray-400 text-xs block mb-1">Office hours</span>
-                  <span className="text-sm font-semibold">Mon-Fri 09:00 - 18:00</span>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full border border-[#c7a456] text-[#c7a456] flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-5 h-5" />
-                </div>
-                <div>
-                  <span className="text-gray-400 text-xs block mb-1">Location</span>
-                  <span className="text-sm font-semibold">{settings.address || 'London, UK'}</span>
-                </div>
-              </div>
-
-            </div>
-          </div>
+        {/* 3 Columns Layout (Exact match to Image 1) */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-12 pb-16">
           
-          <div className="text-center mt-6">
-            <p className="text-[#10221b] text-xs italic">
-              "A guide for your travel and adventure, creating memories for a lifetime."
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Footer Links */}
-      <div className="pt-16 pb-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          {/* Column 1: Reach Us (5 cols) */}
+          <div className="md:col-span-5 space-y-5">
+            <h3 className="text-2xl font-bold text-white font-sans tracking-wide">
+              Reach Us
+            </h3>
             
-            {/* Col 1: Contact Us */}
-            <div>
-              <Link to="/">
-                <img 
-                  src={settings.logo || 'https://blackforestholidays.com/wp-content/uploads/2021/07/white_logo.png'} 
-                  alt="Blackforest Holidays" 
-                  className="h-10 w-auto mb-6 opacity-90"
-                />
-              </Link>
-              <h4 className="text-lg font-serif font-bold mb-4">Contact Us</h4>
-              <ul className="space-y-3 text-sm text-gray-300">
-                <li className="flex gap-2">
-                  <span className="font-semibold text-white min-w-[60px]">Address:</span>
-                  <span>{settings.address || 'London, United Kingdom'}</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="font-semibold text-white min-w-[60px]">Phone:</span>
-                  <span>{settings.phone || '020 8940 3388'}</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="font-semibold text-white min-w-[60px]">Email:</span>
-                  <span>{settings.email || 'info@blackforest.com'}</span>
-                </li>
-              </ul>
+            {/* Address */}
+            <div className="flex items-start gap-3.5 text-sm sm:text-[15px] text-gray-300 leading-relaxed max-w-md">
+              <MapPin className="w-5 h-5 text-white shrink-0 mt-1" />
+              <span>
+                737, 3rd Floor, Kheny Plaza CMH Main Road, 2nd Cross Rd, Binnamangala, Indiranagar, Bengaluru, Karnataka 560038
+              </span>
             </div>
 
-            {/* Col 2: Head Office */}
-            <div>
-              <h4 className="text-lg font-serif font-bold mb-4">Head Office</h4>
-              <p className="text-sm text-gray-300 leading-relaxed mb-4">
-                We invite you to our central office to discuss your bespoke travel plans in person.
-              </p>
-              <div className="flex items-start gap-2 text-sm text-gray-300">
-                <MapPin className="w-4 h-4 mt-1 text-[#f29727]" />
-                <span>
-                  {settings.address || '123 Travel Street, London, UK, SW1A 1AA'}
-                </span>
-              </div>
+            {/* Email */}
+            <div className="flex items-center gap-3.5 text-sm sm:text-[15px] text-gray-300">
+              <Mail className="w-4 h-4 text-white shrink-0" />
+              <a 
+                href="mailto:info@blackforestholidays.com" 
+                className="hover:text-[#f29727] transition-colors"
+              >
+                info@blackforestholidays.com
+              </a>
             </div>
 
-            {/* Col 3: Useful Links */}
-            <div>
-              <h4 className="text-lg font-serif font-bold mb-4">Useful Links</h4>
-              <ul className="space-y-2 text-sm text-gray-300">
-                <li><Link to="/about" className="hover:text-[#f29727] transition-colors">About Us</Link></li>
-                <li><Link to="/destinations" className="hover:text-[#f29727] transition-colors">Destinations</Link></li>
-                <li><Link to="/experiences" className="hover:text-[#f29727] transition-colors">Experiences</Link></li>
-                <li><Link to="/corporate-travel" className="hover:text-[#f29727] transition-colors">Corporate Travel</Link></li>
-                <li><Link to="/contact" className="hover:text-[#f29727] transition-colors">Contact Us</Link></li>
-                <li><Link to="/journal" className="hover:text-[#f29727] transition-colors">Travel Journal</Link></li>
-              </ul>
+            {/* Phone */}
+            <div className="flex items-center gap-3.5 text-sm sm:text-[15px] text-gray-300">
+              <Phone className="w-4 h-4 text-white shrink-0" />
+              <a 
+                href="tel:+919742877700" 
+                className="hover:text-[#f29727] transition-colors"
+              >
+                +91 9742877700 / 9742977700
+              </a>
             </div>
 
+            {/* 4 Social Icon Buttons in White Rounded Squares */}
+            <div className="flex items-center gap-3 pt-3">
+              {/* Facebook */}
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="w-9 h-9 rounded-md bg-white text-[#0c1c16] flex items-center justify-center font-bold text-base hover:bg-[#f29727] hover:text-white transition-all shadow-md font-sans"
+              >
+                f
+              </a>
+
+              {/* Twitter / X */}
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Twitter"
+                className="w-9 h-9 rounded-md bg-white text-[#0c1c16] flex items-center justify-center hover:bg-[#f29727] hover:text-white transition-all shadow-md group"
+              >
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              </a>
+
+              {/* LinkedIn */}
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="w-9 h-9 rounded-md bg-white text-[#0c1c16] flex items-center justify-center hover:bg-[#f29727] hover:text-white transition-all shadow-md group"
+              >
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                </svg>
+              </a>
+
+              {/* Instagram */}
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="w-9 h-9 rounded-md bg-white text-[#0c1c16] flex items-center justify-center hover:bg-[#f29727] hover:text-white transition-all shadow-md group"
+              >
+                <svg className="w-4 h-4 fill-none stroke-current stroke-2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                </svg>
+              </a>
+            </div>
           </div>
-        </div>
-      </div>
 
-      {/* Copyright */}
-      <div className="border-t border-[#234033] py-6">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between text-xs text-gray-400">
-          <p>{settings.copyright || '© 2026 Black Forest Holidays. All Rights Reserved.'}</p>
-          <div className="flex gap-4 mt-4 md:mt-0">
-            <Link to="/admin/login" className="hover:text-white transition-colors">Admin Login</Link>
+          {/* Column 2: Head Office (4 cols) */}
+          <div className="md:col-span-4 space-y-5">
+            <h3 className="text-2xl font-bold text-white font-sans tracking-wide">
+              Head Office
+            </h3>
+            <div className="flex items-start gap-3.5 text-sm sm:text-[15px] text-gray-300 leading-relaxed max-w-sm">
+              <MapPin className="w-5 h-5 text-white shrink-0 mt-1" />
+              <span>
+                76, 1st floor, 8th Street, Crosscut Road, Gandhipuram, Coimbatore – 641012
+              </span>
+            </div>
           </div>
-        </div>
-      </div>
 
+          {/* Column 3: Useful Links (3 cols) */}
+          <div className="md:col-span-3 space-y-4">
+            <h3 className="text-2xl font-bold text-white font-sans tracking-wide">
+              Useful Links
+            </h3>
+            <ul className="space-y-2.5 text-sm sm:text-[15px] text-gray-300">
+              <li>
+                <Link to="/about" className="hover:text-[#f29727] transition-colors">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog" className="hover:text-[#f29727] transition-colors">
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="hover:text-[#f29727] transition-colors">
+                  Work With Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/privacy-policy" className="hover:text-[#f29727] transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link to="/refund-policy" className="hover:text-[#f29727] transition-colors">
+                  Cancellation & Refund Policy
+                </Link>
+              </li>
+              <li>
+                <Link to="/terms" className="hover:text-[#f29727] transition-colors">
+                  Terms & Conditions
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="hover:text-[#f29727] transition-colors">
+                  Contact Us
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        {/* Bottom Dotted Rule and Centered Copyright */}
+        <div className="border-t border-dotted border-gray-600/70 pt-6 text-center text-xs sm:text-sm text-gray-400">
+          <p>
+            &copy; 2026 Blackforest Holidays. Designed by Trioticz
+          </p>
+        </div>
+
+      </div>
     </footer>
   );
 }

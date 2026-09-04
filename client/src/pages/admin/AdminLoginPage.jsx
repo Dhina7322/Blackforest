@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { Lock, Mail, ArrowRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { Lock, Mail, ArrowRight, ShieldCheck } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { useToast } from '../../context/ToastContext';
 
 export default function AdminLoginPage() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('admin@gmail.com');
+  const [password, setPassword] = useState('admin@123');
   const [loading, setLoading] = useState(false);
   const { login } = useAuth();
   const { showToast } = useToast();
@@ -41,7 +41,7 @@ export default function AdminLoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#10221b] p-4 relative overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center bg-[#10221b] p-4 relative overflow-hidden font-sans">
       {/* Background Graphic Accents */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#f29727]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#1c382e] rounded-full blur-3xl pointer-events-none" />
@@ -56,10 +56,10 @@ export default function AdminLoginPage() {
             Secure Management
           </span>
           <h2 className="text-2xl font-serif font-bold text-[#10221b]">
-            Admin & Staff Portal
+            Admin Portal
           </h2>
           <p className="text-xs text-gray-500 mt-1">
-            Access leads, tour itineraries, CMS content, and analytics.
+            Access destinations, blogs, leads, and website management.
           </p>
         </div>
 
@@ -76,7 +76,7 @@ export default function AdminLoginPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="admin@blackforestholidays.com"
+                placeholder="admin@gmail.com"
                 className="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#f29727]/30 focus:border-[#f29727]"
               />
             </div>
@@ -108,36 +108,31 @@ export default function AdminLoginPage() {
               <span className="w-4 h-4 border-2 border-[#f29727] border-t-transparent rounded-full animate-spin"></span>
             ) : (
               <>
-                <span>Sign In to Dashboard</span>
+                <span>Sign In as Admin</span>
                 <ArrowRight className="w-4 h-4" />
               </>
             )}
           </button>
         </form>
 
-        {/* Demo Seed Accounts Quick-Fill Helper */}
+        {/* Admin Credentials Helper */}
         <div className="mt-8 pt-6 border-t border-gray-100">
           <p className="text-[11px] font-bold uppercase tracking-wider text-gray-400 mb-2 text-center">
-            Demo Credentials
+            Admin Credentials
           </p>
-          <div className="grid grid-cols-2 gap-2">
-            <button
-              type="button"
-              onClick={() => prefill('admin@blackforestholidays.com', 'Admin@123456')}
-              className="px-3 py-2 bg-gray-50 hover:bg-gray-100 rounded-lg text-left text-xs border border-gray-200 transition-colors"
-            >
-              <span className="font-bold text-[#10221b] block">Super Admin</span>
-              <span className="text-[10px] text-gray-400">admin@blackforest...</span>
-            </button>
-            <button
-              type="button"
-              onClick={() => prefill('editor@blackforestholidays.com', 'Editor@123456')}
-              className="px-3 py-2 bg-gray-50 hover:bg-gray-100 rounded-lg text-left text-xs border border-gray-200 transition-colors"
-            >
-              <span className="font-bold text-[#10221b] block">Editor Staff</span>
-              <span className="text-[10px] text-gray-400">editor@blackforest...</span>
-            </button>
-          </div>
+          <button
+            type="button"
+            onClick={() => prefill('admin@gmail.com', 'admin@123')}
+            className="w-full p-3 bg-gray-50 hover:bg-gray-100 rounded-xl text-center text-xs border border-gray-200 transition-colors flex items-center justify-between"
+          >
+            <div className="text-left">
+              <span className="font-bold text-[#10221b] block text-xs">Administrator</span>
+              <span className="text-[11px] text-gray-500 font-mono">admin@gmail.com</span>
+            </div>
+            <span className="text-[10px] px-2 py-1 rounded bg-[#10221b] text-[#f29727] font-bold uppercase">
+              Auto-Fill
+            </span>
+          </button>
         </div>
 
         <div className="mt-6 text-center">

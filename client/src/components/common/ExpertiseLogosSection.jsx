@@ -1,17 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Star, ShieldCheck, Trophy, Heart } from 'lucide-react';
+import { getPublishedExpertiseCards, EXPERTISE_EVENT } from '../../utils/expertiseManager';
 
 export default function ExpertiseLogosSection() {
-  const logos = [
-    { name: 'Peru', subtitle: 'Travel Specialist', image: 'https://upload.wikimedia.org/wikipedia/commons/3/30/Marca_Per%C3%BA_logo.svg' },
-    { name: 'Korea', subtitle: 'Travel Specialist', image: 'https://upload.wikimedia.org/wikipedia/commons/e/ee/Imagine_your_Korea_logo.svg' },
-    { name: 'Greece', subtitle: 'Tourism Specialist', image: 'https://upload.wikimedia.org/wikipedia/commons/9/91/Visit_Greece_logo.svg' },
-    { name: 'Japan', subtitle: 'Travel Specialist', image: 'https://upload.wikimedia.org/wikipedia/commons/1/15/Japan_National_Tourism_Organization_logo.svg' },
-    { name: 'IATA', subtitle: 'TIDS Certified', image: 'https://upload.wikimedia.org/wikipedia/commons/4/4c/IATA_logo.svg' },
-    { name: 'Portugal', subtitle: 'Tourism Partner', image: 'https://upload.wikimedia.org/wikipedia/commons/7/7b/Visit_Portugal_logo.svg' },
-    { name: 'Algarve', subtitle: 'Sustainable Experiences', image: 'https://upload.wikimedia.org/wikipedia/commons/a/ae/Visit_Algarve_logo.svg' },
-    { name: 'Spain', subtitle: 'Destination Specialist', image: 'https://upload.wikimedia.org/wikipedia/commons/4/4e/Spain_tourism_logo.svg' },
-  ];
+  const [partnerCards, setPartnerCards] = useState(() => getPublishedExpertiseCards());
+
+  useEffect(() => {
+    const handleUpdate = () => {
+      setPartnerCards(getPublishedExpertiseCards());
+    };
+    window.addEventListener(EXPERTISE_EVENT, handleUpdate);
+    window.addEventListener('storage', handleUpdate);
+    return () => {
+      window.removeEventListener(EXPERTISE_EVENT, handleUpdate);
+      window.removeEventListener('storage', handleUpdate);
+    };
+  }, []);
 
   const benefits = [
     { title: 'EXPERT KNOWLEDGE', desc: 'Destination training and global insights.', icon: Star },
@@ -26,34 +30,73 @@ export default function ExpertiseLogosSection() {
         
         {/* Title Area */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="flex items-center justify-center gap-2 text-[#f29727] font-bold tracking-widest text-xs uppercase mb-2">
-            <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" className="rotate-45"><rect width="24" height="24"/></svg>
+          <div className="flex items-center justify-center gap-2 text-[#c59b27] font-bold tracking-widest text-xs uppercase mb-2">
+            <span className="w-1.5 h-1.5 bg-[#c59b27] rotate-45 transform"></span>
             OUR EXPERTISE
-            <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" className="rotate-45"><rect width="24" height="24"/></svg>
+            <span className="w-1.5 h-1.5 bg-[#c59b27] rotate-45 transform"></span>
           </div>
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#10221b]">
             Knowledge Behind Every Journey
           </h2>
-          <p className="text-gray-600 text-sm leading-relaxed max-w-2xl mx-auto pt-2">
+          <p className="text-gray-600 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto pt-2">
             We are well-traveled consultants continually expanding through tourism board programmes, industry training, and global partnerships to design journeys you can trust.
           </p>
+
+          {/* Golden Center Flourish */}
+          <div className="flex justify-center mt-4">
+            <svg width="40" height="20" viewBox="0 0 40 20" fill="none" stroke="#c59b27" strokeWidth="1.5">
+              <path d="M20 10 C 14 2, 4 2, 4 10 C 4 18, 14 18, 20 10 Z" fill="none"/>
+              <path d="M20 10 C 26 2, 36 2, 36 10 C 36 18, 26 18, 20 10 Z" fill="none"/>
+              <circle cx="20" cy="10" r="2" fill="#c59b27" />
+            </svg>
+          </div>
         </div>
 
-        {/* Logos Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-16">
-          {logos.map((logo, idx) => (
-            <div key={idx} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex flex-col items-center justify-center text-center hover:shadow-md transition-shadow">
-              <div className="w-24 h-16 mb-4 flex items-center justify-center">
-                <img src={logo.image} alt={logo.name} className="w-full h-full object-contain" />
+        {/* 10 Expertise Partner Cards Grid (5x2) */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-5 lg:gap-6 mb-16">
+          {partnerCards.map((partner) => (
+            <a
+              key={partner.id}
+              href={partner.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white rounded-2xl border border-[#ece8df] p-5 sm:p-6 flex flex-col items-center justify-between text-center transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-[#c59b27] group min-h-[220px]"
+            >
+              {/* Logo container */}
+              <div className="w-full h-24 flex items-center justify-center p-1 mb-2">
+                <img 
+                  src={partner.image} 
+                  alt={partner.name} 
+                  className="max-h-20 max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = 'https://via.placeholder.com/120x60?text=' + partner.name;
+                  }}
+                />
               </div>
-              <h4 className="font-bold text-[#10221b] text-sm uppercase tracking-wide">{logo.name}</h4>
-              <p className="text-gray-500 text-[10px] mt-1 uppercase">{logo.subtitle}</p>
-            </div>
+
+              {/* Decorative Divider with Diamond */}
+              <div className="w-full flex items-center justify-center my-3">
+                <div className="flex-1 h-[1px] bg-[#e4ddd0] group-hover:bg-[#c59b27]/40 transition-colors"></div>
+                <span className="mx-2.5 w-1.5 h-1.5 bg-[#c59b27] rotate-45 transform"></span>
+                <div className="flex-1 h-[1px] bg-[#e4ddd0] group-hover:bg-[#c59b27]/40 transition-colors"></div>
+              </div>
+
+              {/* Text Info */}
+              <div className="w-full pt-1">
+                <h4 className="font-bold text-[#10221b] text-sm sm:text-[15px] uppercase tracking-wider font-sans group-hover:text-[#c59b27] transition-colors">
+                  {partner.name}
+                </h4>
+                <p className="text-gray-500 text-xs mt-1 font-normal leading-tight">
+                  {partner.subtitle}
+                </p>
+              </div>
+            </a>
           ))}
         </div>
 
         {/* Dark Green Banner */}
-        <div className="bg-[#10221b] rounded-2xl p-8 lg:p-12 text-white">
+        <div className="bg-[#10221b] rounded-2xl p-8 lg:p-12 text-white shadow-xl">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((b, idx) => {
               const Icon = b.icon;

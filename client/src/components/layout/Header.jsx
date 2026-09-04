@@ -14,6 +14,7 @@ import {
   Plane
 } from 'lucide-react';
 import { useSettings } from '../../context/SiteSettingsContext';
+import { getPublishedDestinations, DESTINATIONS_EVENT } from '../../utils/destinationsManager';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -24,9 +25,23 @@ export default function Header() {
     experiences: false,
     concierge: false
   });
+  const [destinationsList, setDestinationsList] = useState(() => getPublishedDestinations());
 
   const { settings, openEnquiryModal, openSearchModal } = useSettings();
   const location = useLocation();
+
+  // Listen for destination publish/unpublish changes
+  useEffect(() => {
+    const updateList = () => {
+      setDestinationsList(getPublishedDestinations());
+    };
+    window.addEventListener(DESTINATIONS_EVENT, updateList);
+    window.addEventListener('storage', updateList);
+    return () => {
+      window.removeEventListener(DESTINATIONS_EVENT, updateList);
+      window.removeEventListener('storage', updateList);
+    };
+  }, []);
 
   // Handle sticky header on scroll
   useEffect(() => {
@@ -47,33 +62,26 @@ export default function Header() {
     setMobileAccordions((prev) => ({ ...prev, [key]: !prev[key] }));
   };
 
-  const destinationsList = [
-    { name: 'Europe & Alps', slug: 'europe', desc: 'Switzerland, France, Italy, Greece' },
-    { name: 'Africa Safari', slug: 'africa', desc: 'Kenya, Serengeti, South Africa' },
-    { name: 'America Explorer', slug: 'america', desc: 'USA West Coast, California, Rockies' },
-    { name: 'Asian Countries', slug: 'asian-countries', desc: 'Japan, Thailand, Vietnam, Bali' },
-    { name: 'Australia & NZ', slug: 'australia', desc: 'Sydney, Melbourne, Great Barrier Reef' },
-    { name: 'Indian Ocean', slug: 'indian-ocean', desc: 'Maldives, Mauritius, Seychelles' },
-    { name: 'Middle East', slug: 'middle-east', desc: 'Dubai, Abu Dhabi, Oman Deserts' },
-    { name: 'South Asia', slug: 'south-asia', desc: 'Sri Lanka, Bhutan, Himalayas' },
-    { name: 'India Tours', slug: 'kerala', desc: 'Kerala, Andaman, Nilgiris, Kashmir' }
-  ];
-
   const experiencesList = [
-    { name: 'Adventure & Nature', slug: 'adventure-nature', desc: 'Alpine treks, wildlife tracking, expeditions' },
-    { name: 'Island Holidays', slug: 'island-holidays', desc: 'Overwater villas, coral lagoons, private atolls' },
-    { name: 'Family Holidays', slug: 'family-holidays', desc: 'Carefully paced multi-generational escapes' },
-    { name: 'Honeymoon Escapes', slug: 'honeymoon-escapes', desc: 'Romantic secluded retreats & candlelit beaches' },
-    { name: 'Luxury Escapes', slug: 'luxury-escapes', desc: '5-star heritage palaces & private chauffeurs' }
+    { name: 'Adventure & Nature', slug: 'adventure-nature' },
+    { name: 'Island Holidays', slug: 'island-holidays' },
+    { name: 'Family Holidays', slug: 'family-holidays' },
+    { name: 'Honeymoon Escapes', slug: 'honeymoon-escapes' },
+    { name: 'Luxury Escapes', slug: 'luxury-escapes' }
   ];
 
   const conciergeList = [
-    { name: 'Flight Booking', slug: 'flight-booking', desc: 'First & Business class itinerary optimization' },
-    { name: 'Visa Assistance', slug: 'visa-assistance', desc: 'End-to-end documentation and embassy appointments' },
-    { name: 'Luxury Cruises', slug: 'cruises', desc: 'Mediterranean, Caribbean & Alaskan sea voyages' }
+    { name: 'Flight Booking', slug: 'flight-booking' },
+    { name: 'Visa Assistance', slug: 'visa-assistance' },
+    { name: 'Cruises', slug: 'cruises' }
   ];
 
   const isHomePage = location.pathname === '/';
+  const isDestinationsActive =
+    location.pathname.startsWith('/destinations') ||
+    destinationsList.some((d) => location.pathname === `/${d.slug}`);
+  const isExperiencesActive = location.pathname.startsWith('/experiences');
+  const isConciergeActive = location.pathname.startsWith('/concierge');
 
   return (
     <header
@@ -93,46 +101,46 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden xl:flex items-center space-x-2 lg:space-x-5 text-[15px] font-medium tracking-wide">
-            {/* Destinations Mega Dropdown */}
+          <nav className="hidden xl:flex items-center space-x-2 lg:space-x-6 text-[15px] font-medium tracking-wide">
+            {/* Destinations Dropdown */}
             <div
               className="relative group py-2"
               onMouseEnter={() => setActiveDropdown('destinations')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button className="flex items-center gap-1 hover:text-[#f29727] transition-colors py-1">
+              <Link
+                to="/destinations"
+                className={`flex items-center gap-1 transition-colors py-1 ${
+                  isDestinationsActive
+                    ? 'text-[#f29727] border-b-2 border-[#f29727]'
+                    : 'text-white hover:text-[#f29727]'
+                }`}
+              >
                 Destinations
-                <ChevronDown className="w-3.5 h-3.5 opacity-70 group-hover:rotate-180 transition-transform" />
-              </button>
+                <ChevronDown className="w-3.5 h-3.5 opacity-80 group-hover:rotate-180 transition-transform" />
+              </Link>
 
               {activeDropdown === 'destinations' && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 w-[720px] bg-[#10221b] border border-[#f29727]/30 rounded-2xl shadow-2xl p-6 text-white animate-fadeIn backdrop-blur-md">
-                  <div className="flex items-center justify-between pb-3 mb-4 border-b border-white/10">
-                    <span className="text-xs uppercase font-bold text-[#f29727] tracking-wider">
-                      Global & Indian Destinations
-                    </span>
-                    <Link
-                      to="/destinations"
-                      className="text-[11px] text-gray-300 hover:text-[#f29727] underline tracking-normal"
-                    >
-                      View All Destinations →
-                    </Link>
-                  </div>
-                  <div className="grid grid-cols-3 gap-3">
-                    {destinationsList.map((d) => (
-                      <Link
-                        key={d.slug}
-                        to={`/destinations/${d.slug}`}
-                        className="p-2.5 rounded-xl hover:bg-white/10 transition-colors group/item block"
-                      >
-                        <span className="block font-medium text-sm text-white group-hover/item:text-[#f29727] normal-case tracking-normal">
+                <div className="absolute top-full left-0 w-[210px] pt-1.5 z-50 animate-fadeIn">
+                  <div className="flex flex-col space-y-1.5">
+                    {destinationsList.map((d) => {
+                      const isActive =
+                        location.pathname === `/${d.slug}` ||
+                        location.pathname === `/destinations/${d.slug}`;
+                      return (
+                        <Link
+                          key={d.slug}
+                          to={`/destinations/${d.slug}`}
+                          className={`block px-5 py-3 text-[14px] transition-all duration-200 shadow-md ${
+                            isActive
+                              ? 'bg-[#10221b] text-white font-medium border-l-4 border-[#f29727]'
+                              : 'bg-white text-[#10221b] hover:bg-[#10221b] hover:text-white'
+                          }`}
+                        >
                           {d.name}
-                        </span>
-                        <span className="block text-[11px] text-gray-400 normal-case tracking-normal line-clamp-1 mt-0.5">
-                          {d.desc}
-                        </span>
-                      </Link>
-                    ))}
+                        </Link>
+                      );
+                    })}
                   </div>
                 </div>
               )}
@@ -144,28 +152,37 @@ export default function Header() {
               onMouseEnter={() => setActiveDropdown('experiences')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button className="flex items-center gap-1 hover:text-[#f29727] transition-colors py-1">
+              <Link
+                to="/experiences"
+                className={`flex items-center gap-1 transition-colors py-1 ${
+                  isExperiencesActive
+                    ? 'text-[#f29727] border-b-2 border-[#f29727]'
+                    : 'text-white hover:text-[#f29727]'
+                }`}
+              >
                 Experiences
-                <ChevronDown className="w-3.5 h-3.5 opacity-70 group-hover:rotate-180 transition-transform" />
-              </button>
+                <ChevronDown className="w-3.5 h-3.5 opacity-80 group-hover:rotate-180 transition-transform" />
+              </Link>
 
               {activeDropdown === 'experiences' && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 w-[400px] bg-[#10221b] border border-[#f29727]/30 rounded-2xl shadow-2xl p-5 text-white animate-fadeIn">
-                  <div className="space-y-2">
-                    {experiencesList.map((exp) => (
-                      <Link
-                        key={exp.slug}
-                        to={`/experiences/${exp.slug}`}
-                        className="p-3 rounded-xl hover:bg-white/10 transition-colors block group/exp"
-                      >
-                        <span className="block font-medium text-sm text-white group-hover/exp:text-[#f29727] normal-case tracking-normal">
+                <div className="absolute top-full left-0 w-[230px] pt-1.5 z-50 animate-fadeIn">
+                  <div className="flex flex-col space-y-1.5">
+                    {experiencesList.map((exp) => {
+                      const isActive = location.pathname.includes(exp.slug);
+                      return (
+                        <Link
+                          key={exp.slug}
+                          to={`/experiences/${exp.slug}`}
+                          className={`block px-5 py-3 text-[14px] transition-all duration-200 shadow-md ${
+                            isActive
+                              ? 'bg-[#10221b] text-white font-medium border-l-4 border-[#f29727]'
+                              : 'bg-white text-[#10221b] hover:bg-[#10221b] hover:text-white'
+                          }`}
+                        >
                           {exp.name}
-                        </span>
-                        <span className="block text-[11px] text-gray-400 normal-case tracking-normal mt-0.5">
-                          {exp.desc}
-                        </span>
-                      </Link>
-                    ))}
+                        </Link>
+                      );
+                    })}
                   </div>
                 </div>
               )}
@@ -177,28 +194,37 @@ export default function Header() {
               onMouseEnter={() => setActiveDropdown('concierge')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button className="flex items-center gap-1 hover:text-[#f29727] transition-colors py-1">
+              <Link
+                to="/concierge"
+                className={`flex items-center gap-1 transition-colors py-1 ${
+                  isConciergeActive
+                    ? 'text-[#f29727] border-b-2 border-[#f29727]'
+                    : 'text-white hover:text-[#f29727]'
+                }`}
+              >
                 Concierge
-                <ChevronDown className="w-3.5 h-3.5 opacity-70 group-hover:rotate-180 transition-transform" />
-              </button>
+                <ChevronDown className="w-3.5 h-3.5 opacity-80 group-hover:rotate-180 transition-transform" />
+              </Link>
 
               {activeDropdown === 'concierge' && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 w-[340px] bg-[#10221b] border border-[#f29727]/30 rounded-2xl shadow-2xl p-4 text-white animate-fadeIn">
-                  <div className="space-y-2">
-                    {conciergeList.map((c) => (
-                      <Link
-                        key={c.slug}
-                        to={`/concierge/${c.slug}`}
-                        className="p-2.5 rounded-xl hover:bg-white/10 transition-colors block group/c"
-                      >
-                        <span className="block font-medium text-sm text-white group-hover/c:text-[#f29727] normal-case tracking-normal">
+                <div className="absolute top-full left-0 w-[210px] pt-1.5 z-50 animate-fadeIn">
+                  <div className="flex flex-col space-y-1.5">
+                    {conciergeList.map((c) => {
+                      const isActive = location.pathname.includes(c.slug);
+                      return (
+                        <Link
+                          key={c.slug}
+                          to={`/concierge/${c.slug}`}
+                          className={`block px-5 py-3 text-[14px] transition-all duration-200 shadow-md ${
+                            isActive
+                              ? 'bg-[#10221b] text-white font-medium border-l-4 border-[#f29727]'
+                              : 'bg-white text-[#10221b] hover:bg-[#10221b] hover:text-white'
+                          }`}
+                        >
                           {c.name}
-                        </span>
-                        <span className="block text-[11px] text-gray-400 normal-case tracking-normal mt-0.5">
-                          {c.desc}
-                        </span>
-                      </Link>
-                    ))}
+                        </Link>
+                      );
+                    })}
                   </div>
                 </div>
               )}

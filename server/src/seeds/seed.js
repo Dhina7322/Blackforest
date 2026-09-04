@@ -25,20 +25,11 @@ const seedDatabase = async () => {
     // 1. Seed Users
     console.log('👤 Seeding Users...');
     const superAdmin = await User.create({
-      name: 'Blackforest Super Admin',
-      email: 'admin',
+      name: 'Admin',
+      email: 'admin@gmail.com',
       password: 'admin@123',
       role: 'superadmin',
       avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80',
-      status: 'active'
-    });
-
-    const editor = await User.create({
-      name: 'Editorial Specialist',
-      email: 'editor@blackforestholidays.com',
-      password: 'Editor@123456',
-      role: 'editor',
-      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80',
       status: 'active'
     });
 

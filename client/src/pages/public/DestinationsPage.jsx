@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { MapPin, ArrowRight, Compass, Search } from 'lucide-react';
 import { destinationService } from '../../services/allServices';
 import { useSettings } from '../../context/SiteSettingsContext';
+import { isDestinationPublished, DESTINATIONS_EVENT } from '../../utils/destinationsManager';
 
 export default function DestinationsPage() {
   const { region: routeRegion } = useParams();
@@ -31,29 +32,43 @@ export default function DestinationsPage() {
     }
   }, [routeRegion]);
 
-  useEffect(() => {
-    const fetchDestinations = async () => {
-      setLoading(true);
-      try {
-        const params = { status: 'published' };
-        if (selectedRegion !== 'all') {
-          params.region = selectedRegion;
-        }
-        if (search.trim()) {
-          params.search = search.trim();
-        }
-        const res = await destinationService.getAll(params);
-        if (res.success && res.data) {
-          setDestinations(res.data.destinations || []);
-        }
-      } catch (err) {
-        console.error('Error fetching destinations:', err);
-      } finally {
-        setLoading(false);
+  const fetchDestinations = async () => {
+    setLoading(true);
+    try {
+      const params = { status: 'published' };
+      if (selectedRegion !== 'all') {
+        params.region = selectedRegion;
       }
-    };
+      if (search.trim()) {
+        params.search = search.trim();
+      }
+      const res = await destinationService.getAll(params);
+      if (res.success && res.data) {
+        const list = res.data.destinations || [];
+        // Only show destinations that are published in admin controls
+        setDestinations(list.filter(d => isDestinationPublished(d.slug)));
+      }
+    } catch (err) {
+      console.error('Error fetching destinations:', err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
+  useEffect(() => {
     fetchDestinations();
+  }, [selectedRegion, search]);
+
+  useEffect(() => {
+    const handleUpdate = () => {
+      fetchDestinations();
+    };
+    window.addEventListener(DESTINATIONS_EVENT, handleUpdate);
+    window.addEventListener('storage', handleUpdate);
+    return () => {
+      window.removeEventListener(DESTINATIONS_EVENT, handleUpdate);
+      window.removeEventListener('storage', handleUpdate);
+    };
   }, [selectedRegion, search]);
 
   return (

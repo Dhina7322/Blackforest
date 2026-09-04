@@ -1,344 +1,288 @@
 import React, { useState, useEffect } from 'react';
-import { MapPin, PlusCircle, Edit, Trash2, Search, ExternalLink, X, Save } from 'lucide-react';
-import { destinationService } from '../../services/allServices';
+import { Search, Edit2, ExternalLink, Globe2, Eye, EyeOff, Check, X, MapPin } from 'lucide-react';
+import {
+  getStoredDestinations,
+  toggleDestinationPublish,
+  updateDestinationDetails,
+  DESTINATIONS_EVENT
+} from '../../utils/destinationsManager';
 import { useToast } from '../../context/ToastContext';
 
 export default function AdminDestinationsPage() {
-  const [destinations, setDestinations] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [destinations, setDestinations] = useState(getStoredDestinations());
   const [search, setSearch] = useState('');
-  const [modalOpen, setModalOpen] = useState(false);
-  const [editingId, setEditingId] = useState(null);
-  const [saving, setSaving] = useState(false);
+  const [editingItem, setEditingItem] = useState(null);
+  const [formData, setFormData] = useState({
+    name: '',
+    tagline: '',
+    heroImage: '',
+    isPublished: true
+  });
   const { showToast } = useToast();
 
-  const initialForm = {
-    name: '',
-    slug: '',
-    region: 'europe',
-    country: '',
-    shortDescription: '',
-    description: '',
-    thumbnail: 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=600&q=80',
-    heroImage: 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1600&q=80',
-    isFeatured: false,
-    status: 'published'
-  };
-
-  const [formData, setFormData] = useState(initialForm);
-
-  const fetchDestinations = async () => {
-    setLoading(true);
-    try {
-      const res = await destinationService.getAll({ search: search.trim() });
-      if (res.success && res.data) {
-        setDestinations(res.data.destinations || []);
-      }
-    } catch (err) {
-      console.error('Error fetching destinations:', err);
-    } finally {
-      setLoading(false);
-    }
+  const reloadData = () => {
+    setDestinations(getStoredDestinations());
   };
 
   useEffect(() => {
-    fetchDestinations();
-  }, [search]);
+    reloadData();
+    const handleUpdate = () => reloadData();
+    window.addEventListener(DESTINATIONS_EVENT, handleUpdate);
+    window.addEventListener('storage', handleUpdate);
+    return () => {
+      window.removeEventListener(DESTINATIONS_EVENT, handleUpdate);
+      window.removeEventListener('storage', handleUpdate);
+    };
+  }, []);
 
-  const openCreateModal = () => {
-    setEditingId(null);
-    setFormData(initialForm);
-    setModalOpen(true);
+  const handleToggle = (slug, currentStatus, name) => {
+    const updated = toggleDestinationPublish(slug);
+    reloadData();
+    if (updated?.isPublished) {
+      showToast(`${name} is published and visible on the website`, 'success');
+    } else {
+      showToast(`${name} is unpublished and hidden from the website`, 'info');
+    }
   };
 
-  const openEditModal = (dest) => {
-    setEditingId(dest.id);
+  const handleEditClick = (dest) => {
+    setEditingItem(dest);
     setFormData({
-      name: dest.name || '',
-      slug: dest.slug || '',
-      region: dest.region || 'europe',
-      country: dest.country || '',
-      shortDescription: dest.shortDescription || '',
-      description: dest.description || '',
-      thumbnail: dest.thumbnail || '',
+      name: dest.name,
+      tagline: dest.tagline || '',
       heroImage: dest.heroImage || '',
-      isFeatured: Boolean(dest.isFeatured),
-      status: dest.status || 'published'
+      isPublished: dest.isPublished !== false
     });
-    setModalOpen(true);
   };
 
-  const handleSubmit = async (e) => {
+  const handleSaveEdit = (e) => {
     e.preventDefault();
-    if (!formData.name.trim()) {
-      showToast('Destination name is required', 'error');
-      return;
-    }
+    if (!editingItem) return;
 
-    setSaving(true);
-    try {
-      if (editingId) {
-        const res = await destinationService.update(editingId, formData);
-        if (res.success) {
-          showToast('Destination updated!', 'success');
-          setModalOpen(false);
-          fetchDestinations();
-        }
-      } else {
-        const res = await destinationService.create(formData);
-        if (res.success) {
-          showToast('New destination added!', 'success');
-          setModalOpen(false);
-          fetchDestinations();
-        }
-      }
-    } catch (err) {
-      showToast(err.response?.data?.message || 'Error saving destination', 'error');
-    } finally {
-      setSaving(false);
-    }
+    updateDestinationDetails(editingItem.slug, {
+      name: formData.name,
+      tagline: formData.tagline,
+      heroImage: formData.heroImage,
+      isPublished: formData.isPublished
+    });
+
+    reloadData();
+    setEditingItem(null);
+    showToast(`Updated "${formData.name}" successfully`, 'success');
   };
 
-  const handleDelete = async (id) => {
-    if (!window.confirm('Delete this destination? Associated packages may need reassignment.')) return;
-    try {
-      const res = await destinationService.delete(id);
-      if (res.success) {
-        showToast('Destination removed', 'info');
-        setDestinations((prev) => prev.filter((d) => d.id !== id));
-      }
-    } catch (err) {
-      showToast('Error deleting destination', 'error');
-    }
-  };
+  const filtered = destinations.filter(
+    (d) =>
+      d.name.toLowerCase().includes(search.toLowerCase()) ||
+      d.slug.toLowerCase().includes(search.toLowerCase()) ||
+      (d.tagline && d.tagline.toLowerCase().includes(search.toLowerCase()))
+  );
+
+  const publishedCount = destinations.filter((d) => d.isPublished !== false).length;
 
   return (
-    <div className="space-y-6 animate-fadeIn">
-      {/* Header */}
-      <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <div className="space-y-6 animate-fadeIn pb-12">
+      {/* Top Header */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h2 className="text-xl font-bold text-gray-900">Destination Portfolio</h2>
-          <p className="text-xs text-gray-500">Configure regions, countries, signature itineraries, and imagery.</p>
+          <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-zinc-900 font-serif">
+            Destination Portfolio
+          </h2>
+          <p className="text-xs sm:text-sm text-zinc-500 mt-0.5">
+            Manage the 8 official destination regions. Toggle switches instantly show or hide them from headers, menus, and detail routes.
+          </p>
         </div>
 
-        <div className="flex items-center gap-3">
-          <div className="relative">
-            <Search className="w-3.5 h-3.5 text-gray-400 absolute left-3 top-3" />
-            <input
-              type="text"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search destinations..."
-              className="pl-9 pr-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-[#f29727] w-52"
-            />
-          </div>
-
-          <button
-            onClick={openCreateModal}
-            className="px-4 py-2 bg-[#10221b] text-[#f29727] hover:bg-[#1c382e] text-xs font-bold uppercase tracking-wider rounded-xl transition-all flex items-center gap-1.5 shadow"
-          >
-            <PlusCircle className="w-4 h-4" />
-            <span>Add Destination</span>
-          </button>
+        {/* Search */}
+        <div className="relative w-full sm:w-64">
+          <Search className="w-3.5 h-3.5 text-zinc-400 absolute left-3 top-3" />
+          <input
+            type="text"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder="Search destination..."
+            className="w-full pl-9 pr-3 py-2 bg-white border border-zinc-200 rounded-lg text-xs text-zinc-800 placeholder:text-zinc-400 focus:outline-none focus:ring-1 focus:ring-zinc-800 transition-colors shadow-xs"
+          />
         </div>
       </div>
 
-      {/* Grid */}
-      {loading ? (
-        <div className="flex items-center justify-center py-20 text-gray-400 gap-2">
-          <span className="w-6 h-6 border-2 border-[#f29727] border-t-transparent rounded-full animate-spin"></span>
-          <span>Loading destinations...</span>
-        </div>
-      ) : destinations.length === 0 ? (
-        <div className="p-12 text-center bg-white rounded-2xl border border-gray-200 text-gray-400">
-          No destinations recorded.
-        </div>
-      ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {destinations.map((d) => (
+      {/* Grid of 8 Destinations */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {filtered.map((dest) => {
+          const isPublished = dest.isPublished !== false;
+
+          return (
             <div
-              key={d.id}
-              className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden flex flex-col justify-between"
+              key={dest.slug}
+              className={`bg-white rounded-xl border transition-all duration-200 overflow-hidden flex flex-col justify-between shadow-xs hover:shadow-sm ${
+                isPublished ? 'border-zinc-200/90' : 'border-zinc-200 bg-zinc-50/50 opacity-80'
+              }`}
             >
-              <div className="relative h-44 overflow-hidden bg-gray-100">
-                <img
-                  src={d.thumbnail || d.heroImage}
-                  alt={d.name}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute top-3 left-3 px-2.5 py-1 bg-black/60 text-[#f29727] text-[10px] font-bold uppercase rounded-full">
-                  {d.region.replace('-', ' ')}
-                </div>
-                {d.isFeatured && (
-                  <div className="absolute top-3 right-3 px-2 py-0.5 bg-[#f29727] text-[#10221b] text-[10px] font-bold uppercase rounded-full">
-                    Featured
+              <div>
+                {/* Photo Header */}
+                <div className="relative h-40 overflow-hidden bg-zinc-100 group">
+                  <img
+                    src={dest.heroImage}
+                    alt={dest.name}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+
+                  <span
+                    className={`absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] font-semibold tracking-wide uppercase shadow-xs ${
+                      isPublished
+                        ? 'bg-emerald-600 text-white'
+                        : 'bg-zinc-700 text-zinc-300'
+                    }`}
+                  >
+                    {isPublished ? 'Published' : 'Hidden'}
+                  </span>
+
+                  <div className="absolute bottom-2.5 left-3 text-white">
+                    <h3 className="font-serif font-bold text-base text-white leading-tight drop-shadow-xs">
+                      {dest.name}
+                    </h3>
                   </div>
-                )}
+                </div>
+
+                <div className="p-4 space-y-1">
+                  <p className="text-xs text-zinc-500 line-clamp-1 italic font-serif">
+                    {dest.tagline || 'Bespoke Curated Journeys'}
+                  </p>
+                  <p className="text-[11px] font-mono text-zinc-400 truncate">
+                    /{dest.slug}
+                  </p>
+                </div>
               </div>
 
-              <div className="p-5 flex-1 flex flex-col justify-between">
-                <div>
-                  <h3 className="font-serif font-bold text-base text-[#10221b] mb-1">{d.name}</h3>
-                  <p className="text-xs text-gray-500 line-clamp-2 mb-3">{d.shortDescription}</p>
+              {/* Action Bar with Clean Toggle Switch */}
+              <div className="p-4 pt-3 border-t border-zinc-100 flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => handleToggle(dest.slug, isPublished, dest.name)}
+                    className={`relative inline-flex h-5 w-9 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${
+                      isPublished ? 'bg-emerald-600' : 'bg-zinc-300'
+                    }`}
+                    title={isPublished ? 'Click to unpublish' : 'Click to publish'}
+                  >
+                    <span
+                      className={`pointer-events-none inline-block h-4 w-4 transform rounded-full bg-white shadow-sm ring-0 transition duration-200 ease-in-out ${
+                        isPublished ? 'translate-x-4' : 'translate-x-0'
+                      }`}
+                    />
+                  </button>
+                  <span className="text-[11px] font-medium text-zinc-600">
+                    {isPublished ? 'Live' : 'Hidden'}
+                  </span>
                 </div>
 
-                <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
-                  <span className="text-[11px] text-gray-400 capitalize">{d.country || d.region}</span>
-                  <div className="flex items-center gap-1">
-                    <button
-                      onClick={() => openEditModal(d)}
-                      className="p-1.5 text-gray-400 hover:text-[#10221b] rounded-lg hover:bg-gray-100"
-                    >
-                      <Edit className="w-4 h-4" />
-                    </button>
-                    <button
-                      onClick={() => handleDelete(d.id)}
-                      className="p-1.5 text-gray-400 hover:text-red-600 rounded-lg hover:bg-gray-100"
-                    >
-                      <Trash2 className="w-4 h-4" />
-                    </button>
-                  </div>
+                <div className="flex items-center gap-1">
+                  <button
+                    onClick={() => handleEditClick(dest)}
+                    className="p-1.5 text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100 rounded-lg transition-colors cursor-pointer"
+                    title="Edit Destination"
+                  >
+                    <Edit2 className="w-3.5 h-3.5" />
+                  </button>
+                  <a
+                    href={`/destinations/${dest.slug}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-1.5 text-zinc-500 hover:text-[#f29727] hover:bg-zinc-100 rounded-lg transition-colors"
+                    title="Preview Live Destination"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
                 </div>
               </div>
             </div>
-          ))}
-        </div>
-      )}
+          );
+        })}
+      </div>
 
-      {/* Destination Create / Edit Modal */}
-      {modalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fadeIn">
-          <div className="relative w-full max-w-xl bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200">
-            <div className="bg-[#10221b] text-white p-5 flex items-center justify-between">
-              <h3 className="text-lg font-serif font-bold text-white">
-                {editingId ? 'Edit Destination' : 'Add New Destination'}
-              </h3>
-              <button onClick={() => setModalOpen(false)} className="p-1.5 text-gray-400 hover:text-white">
-                <X className="w-5 h-5" />
+      {/* Edit Modal */}
+      {editingItem && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs animate-fadeIn">
+          <div className="relative w-full max-w-lg bg-white rounded-2xl shadow-2xl overflow-hidden border border-zinc-200">
+            <div className="px-6 py-4 border-b border-zinc-100 flex items-center justify-between">
+              <div>
+                <span className="text-[10px] text-[#f29727] font-bold uppercase tracking-wider block">
+                  Configuration
+                </span>
+                <h3 className="text-base font-serif font-bold text-zinc-900">
+                  Edit {editingItem.name}
+                </h3>
+              </div>
+              <button
+                onClick={() => setEditingItem(null)}
+                className="p-1.5 text-zinc-400 hover:text-zinc-900 rounded-lg hover:bg-zinc-100 cursor-pointer"
+              >
+                <X className="w-4 h-4" />
               </button>
             </div>
 
-            <form onSubmit={handleSubmit} className="p-6 space-y-4 max-h-[80vh] overflow-y-auto text-xs">
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="block font-bold text-gray-700 uppercase mb-1">Name *</label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm"
-                  />
-                </div>
-                <div>
-                  <label className="block font-bold text-gray-700 uppercase mb-1">Slug</label>
-                  <input
-                    type="text"
-                    value={formData.slug}
-                    onChange={(e) => setFormData({ ...formData, slug: e.target.value })}
-                    placeholder="auto-generated"
-                    className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="block font-bold text-gray-700 uppercase mb-1">Region *</label>
-                  <select
-                    value={formData.region}
-                    onChange={(e) => setFormData({ ...formData, region: e.target.value })}
-                    className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm"
-                  >
-                    <option value="europe">Europe</option>
-                    <option value="africa">Africa</option>
-                    <option value="america">America</option>
-                    <option value="asian-countries">Asian Countries</option>
-                    <option value="australia">Australia</option>
-                    <option value="indian-ocean">Indian Ocean</option>
-                    <option value="middle-east">Middle East</option>
-                    <option value="south-asia">South Asia</option>
-                    <option value="india">India</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block font-bold text-gray-700 uppercase mb-1">Country</label>
-                  <input
-                    type="text"
-                    value={formData.country}
-                    onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-                    placeholder="e.g. Switzerland"
-                    className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm"
-                  />
-                </div>
-              </div>
-
+            <form onSubmit={handleSaveEdit} className="p-6 space-y-4 text-xs">
               <div>
-                <label className="block font-bold text-gray-700 uppercase mb-1">Thumbnail Photo URL</label>
+                <label className="block font-semibold text-zinc-700 uppercase mb-1">Destination Name</label>
                 <input
                   type="text"
-                  value={formData.thumbnail}
-                  onChange={(e) => setFormData({ ...formData, thumbnail: e.target.value })}
-                  className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm"
+                  required
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  className="w-full px-3 py-2 bg-zinc-50 border border-zinc-200 rounded-lg text-sm text-zinc-900 focus:bg-white focus:outline-none"
                 />
               </div>
 
               <div>
-                <label className="block font-bold text-gray-700 uppercase mb-1">Hero Image URL</label>
+                <label className="block font-semibold text-zinc-700 uppercase mb-1">Cursive Tagline</label>
                 <input
                   type="text"
+                  value={formData.tagline}
+                  onChange={(e) => setFormData({ ...formData, tagline: e.target.value })}
+                  placeholder="e.g. Heritage to Himalayas"
+                  className="w-full px-3 py-2 bg-zinc-50 border border-zinc-200 rounded-lg text-xs text-zinc-900 focus:bg-white focus:outline-none"
+                />
+              </div>
+
+              <div>
+                <label className="block font-semibold text-zinc-700 uppercase mb-1">Hero Image URL</label>
+                <input
+                  type="text"
+                  required
                   value={formData.heroImage}
                   onChange={(e) => setFormData({ ...formData, heroImage: e.target.value })}
-                  className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm"
+                  className="w-full px-3 py-2 bg-zinc-50 border border-zinc-200 rounded-lg text-xs text-zinc-900 focus:bg-white focus:outline-none"
                 />
               </div>
 
-              <div>
-                <label className="block font-bold text-gray-700 uppercase mb-1">Short Description</label>
-                <textarea
-                  rows={2}
-                  value={formData.shortDescription}
-                  onChange={(e) => setFormData({ ...formData, shortDescription: e.target.value })}
-                  className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg text-sm"
-                />
-              </div>
-
-              <div>
-                <label className="block font-bold text-gray-700 uppercase mb-1">Full Editorial Narrative</label>
-                <textarea
-                  rows={4}
-                  value={formData.description}
-                  onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                  className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg text-sm"
-                />
-              </div>
-
-              <div className="flex items-center gap-4 pt-2">
-                <label className="flex items-center gap-2 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={formData.isFeatured}
-                    onChange={(e) => setFormData({ ...formData, isFeatured: e.target.checked })}
-                    className="rounded text-[#f29727] focus:ring-[#f29727]"
-                  />
-                  <span className="font-semibold text-gray-700">Feature on Homepage</span>
-                </label>
-              </div>
-
-              <div className="pt-4 border-t border-gray-200 flex justify-end gap-2">
+              <div className="flex items-center justify-between pt-2">
+                <span className="font-semibold text-zinc-700">Visibility Status</span>
                 <button
                   type="button"
-                  onClick={() => setModalOpen(false)}
-                  className="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg font-semibold"
+                  onClick={() => setFormData({ ...formData, isPublished: !formData.isPublished })}
+                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold cursor-pointer transition-colors ${
+                    formData.isPublished
+                      ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
+                      : 'bg-zinc-100 text-zinc-600 border border-zinc-200'
+                  }`}
+                >
+                  {formData.isPublished ? 'Published (Visible)' : 'Unpublished (Hidden)'}
+                </button>
+              </div>
+
+              <div className="pt-4 border-t border-zinc-100 flex items-center justify-end gap-2">
+                <button
+                  type="button"
+                  onClick={() => setEditingItem(null)}
+                  className="px-4 py-2 bg-zinc-100 hover:bg-zinc-200 text-zinc-700 rounded-lg font-medium cursor-pointer"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  disabled={saving}
-                  className="px-6 py-2 bg-[#10221b] text-[#f29727] rounded-lg font-semibold hover:bg-[#1c382e]"
+                  className="px-5 py-2 bg-zinc-900 hover:bg-black text-white rounded-lg font-semibold shadow-xs cursor-pointer"
                 >
-                  {saving ? 'Saving...' : 'Save Destination'}
+                  Save Changes
                 </button>
               </div>
             </form>

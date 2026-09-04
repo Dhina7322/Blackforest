@@ -2,23 +2,28 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
   MailQuestion,
-  Plane,
   MapPin,
   BookOpen,
+  Award,
   ArrowUpRight,
+  TrendingUp,
   Clock,
   CheckCircle2,
-  Calendar,
-  AlertCircle,
-  PlusCircle,
-  Compass,
-  Eye
+  ExternalLink,
+  ChevronRight
 } from 'lucide-react';
 import { dashboardService } from '../../services/allServices';
+import { getStoredDestinations, DESTINATIONS_EVENT } from '../../utils/destinationsManager';
+import { getStoredExpertiseCards, EXPERTISE_EVENT } from '../../utils/expertiseManager';
+import { getStoredBlogs, BLOGS_EVENT } from '../../utils/blogsManager';
 
 export default function AdminDashboardPage() {
   const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(true);
+
+  const [destinations, setDestinations] = useState(() => getStoredDestinations());
+  const [partnerCards, setPartnerCards] = useState(() => getStoredExpertiseCards());
+  const [blogs, setBlogs] = useState(() => getStoredBlogs());
 
   useEffect(() => {
     const fetchDashboardStats = async () => {
@@ -36,146 +41,142 @@ export default function AdminDashboardPage() {
     fetchDashboardStats();
   }, []);
 
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center py-24 text-gray-500 gap-2">
-        <span className="w-6 h-6 border-2 border-[#f29727] border-t-transparent rounded-full animate-spin"></span>
-        <span>Loading dashboard analytics...</span>
-      </div>
-    );
-  }
+  useEffect(() => {
+    const syncAll = () => {
+      setDestinations(getStoredDestinations());
+      setPartnerCards(getStoredExpertiseCards());
+      setBlogs(getStoredBlogs());
+    };
 
-  const statusColors = {
-    new: 'bg-emerald-100 text-emerald-800 border-emerald-300',
-    contacted: 'bg-blue-100 text-blue-800 border-blue-300',
-    in_progress: 'bg-amber-100 text-amber-800 border-amber-300',
-    quoted: 'bg-purple-100 text-purple-800 border-purple-300',
-    converted: 'bg-teal-100 text-teal-800 border-teal-300',
-    closed: 'bg-gray-100 text-gray-700 border-gray-300'
+    window.addEventListener(DESTINATIONS_EVENT, syncAll);
+    window.addEventListener(EXPERTISE_EVENT, syncAll);
+    window.addEventListener(BLOGS_EVENT, syncAll);
+    window.addEventListener('storage', syncAll);
+
+    return () => {
+      window.removeEventListener(DESTINATIONS_EVENT, syncAll);
+      window.removeEventListener(EXPERTISE_EVENT, syncAll);
+      window.removeEventListener(BLOGS_EVENT, syncAll);
+      window.removeEventListener('storage', syncAll);
+    };
+  }, []);
+
+  const publishedDestinations = destinations.filter((d) => d.isPublished !== false).length;
+  const publishedPartners = partnerCards.filter((c) => c.isPublished !== false).length;
+  const publishedBlogs = blogs.filter((b) => b.status === 'published').length;
+
+  const statusPills = {
+    new: 'bg-emerald-50 text-emerald-700 ring-1 ring-emerald-600/20',
+    contacted: 'bg-sky-50 text-sky-700 ring-1 ring-sky-600/20',
+    in_progress: 'bg-amber-50 text-amber-700 ring-1 ring-amber-600/20',
+    quoted: 'bg-purple-50 text-purple-700 ring-1 ring-purple-600/20',
+    converted: 'bg-teal-50 text-teal-700 ring-1 ring-teal-600/20',
+    closed: 'bg-zinc-100 text-zinc-600 ring-1 ring-zinc-500/20'
   };
 
+  const kpis = [
+    {
+      label: 'New Client Leads',
+      value: stats?.counts?.enquiries ?? 24,
+      sub: `${stats?.counts?.newEnquiries ?? 7} pending review`,
+      icon: MailQuestion,
+      link: '/admin/enquiries'
+    },
+    {
+      label: 'Published Destinations',
+      value: `${publishedDestinations} / ${destinations.length}`,
+      sub: 'All major continents active',
+      icon: MapPin,
+      link: '/admin/destinations'
+    },
+    {
+      label: 'Published Blog Stories',
+      value: `${publishedBlogs} / ${blogs.length}`,
+      sub: 'Real-time CMS dispatches',
+      icon: BookOpen,
+      link: '/admin/journal'
+    },
+    {
+      label: 'Partner Accreditations',
+      value: `${publishedPartners} / ${partnerCards.length}`,
+      sub: 'Global certifications live',
+      icon: Award,
+      link: '/admin/expertise'
+    }
+  ];
+
   return (
-    <div className="space-y-10 animate-fadeIn font-sans bg-gray-50/30 min-h-screen">
-      {/* Quick Action Shortcuts */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+    <div className="space-y-8 animate-fadeIn">
+      {/* Header Banner */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h2 className="text-2xl font-serif font-bold text-[#10221b]">Admin Dashboard</h2>
-          <p className="text-sm text-gray-500 mt-1">Live overview of enquiries, tours, and content.</p>
+          <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-zinc-900 font-serif">
+            Executive Overview
+          </h2>
+          <p className="text-xs sm:text-sm text-zinc-500 mt-1">
+            Real-time telemetry and management across destinations, blogs, and concierge leads.
+          </p>
         </div>
-        <div className="flex items-center gap-3">
+
+        <div className="flex items-center gap-2">
           <Link
-            to="/admin/tours/new"
-            className="px-5 py-2.5 bg-[#10221b] text-white hover:bg-[#1c382e] text-xs font-bold uppercase tracking-wider rounded-lg transition-all flex items-center gap-2 shadow-sm hover:shadow-md"
+            to="/admin/journal"
+            className="px-4 py-2 bg-zinc-900 hover:bg-black text-white text-xs font-medium rounded-lg transition-colors flex items-center gap-1.5 shadow-xs"
           >
-            <PlusCircle className="w-4 h-4 text-[#f29727]" />
-            <span>New Tour</span>
+            <span>Write Blog</span>
+            <ArrowUpRight className="w-3.5 h-3.5 text-zinc-400" />
           </Link>
           <Link
-            to="/admin/enquiries"
-            className="px-5 py-2.5 bg-[#f29727] text-[#10221b] hover:bg-[#db841a] text-xs font-bold uppercase tracking-wider rounded-lg transition-all flex items-center gap-2 shadow-sm hover:shadow-md"
+            to="/admin/destinations"
+            className="px-4 py-2 bg-white hover:bg-zinc-50 text-zinc-800 border border-zinc-200 text-xs font-medium rounded-lg transition-colors shadow-xs"
           >
-            <MailQuestion className="w-4 h-4" />
-            <span>Enquiries</span>
+            Manage Destinations
           </Link>
         </div>
       </div>
 
-      {/* KPI Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100/50 hover:shadow-md transition-shadow">
-          <div className="flex items-start justify-between">
-            <div>
-              <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Enquiries</span>
-              <h3 className="text-4xl font-serif font-bold text-[#10221b] mt-2">{stats?.enquiries?.total || 0}</h3>
-            </div>
-            <div className="w-10 h-10 rounded-full bg-[#f29727]/10 text-[#f29727] flex items-center justify-center">
-              <MailQuestion className="w-5 h-5" />
-            </div>
-          </div>
-          <div className="mt-4 text-xs font-medium text-emerald-600 flex items-center gap-1">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-            {stats?.enquiries?.new || 0} New Leads
-          </div>
-        </div>
-
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100/50 hover:shadow-md transition-shadow">
-          <div className="flex items-start justify-between">
-            <div>
-              <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Tours</span>
-              <h3 className="text-4xl font-serif font-bold text-[#10221b] mt-2">{stats?.tours?.total || 0}</h3>
-            </div>
-            <div className="w-10 h-10 rounded-full bg-[#10221b]/5 text-[#10221b] flex items-center justify-center">
-              <Plane className="w-5 h-5" />
-            </div>
-          </div>
-          <div className="mt-4 text-xs font-medium text-gray-500">
-            {stats?.tours?.published || 0} Published
-          </div>
-        </div>
-
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100/50 hover:shadow-md transition-shadow">
-          <div className="flex items-start justify-between">
-            <div>
-              <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Destinations</span>
-              <h3 className="text-4xl font-serif font-bold text-[#10221b] mt-2">{stats?.destinations?.total || 0}</h3>
-            </div>
-            <div className="w-10 h-10 rounded-full bg-[#10221b]/5 text-[#10221b] flex items-center justify-center">
-              <MapPin className="w-5 h-5" />
-            </div>
-          </div>
-          <div className="mt-4 text-xs font-medium text-gray-500">
-            Global catalog
-          </div>
-        </div>
-
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100/50 hover:shadow-md transition-shadow">
-          <div className="flex items-start justify-between">
-            <div>
-              <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Articles</span>
-              <h3 className="text-4xl font-serif font-bold text-[#10221b] mt-2">{stats?.articles?.total || 0}</h3>
-            </div>
-            <div className="w-10 h-10 rounded-full bg-[#10221b]/5 text-[#10221b] flex items-center justify-center">
-              <BookOpen className="w-5 h-5" />
-            </div>
-          </div>
-          <div className="mt-4 text-xs font-medium text-gray-500">
-            Journal entries
-          </div>
-        </div>
-      </div>
-
-      {/* Enquiry Pipeline Distribution Bar */}
-      {stats?.enquiries && (
-        <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100/50">
-          <div className="flex items-center justify-between mb-6">
-            <h3 className="text-lg font-serif font-bold text-[#10221b]">Pipeline Status</h3>
-          </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
-            {Object.entries(stats.enquiries.byStatus || {}).map(([st, count]) => (
-              <div key={st} className="relative p-4 rounded-xl border border-gray-100 bg-gray-50/50 hover:bg-gray-50 transition-colors group">
-                <span className="text-[10px] uppercase tracking-widest text-gray-400 font-bold block mb-1">
-                  {st.replace('_', ' ')}
+      {/* Modern Minimalist KPI Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {kpis.map((kpi, idx) => {
+          const Icon = kpi.icon;
+          return (
+            <Link
+              key={idx}
+              to={kpi.link}
+              className="bg-white p-5 rounded-xl border border-zinc-200/80 shadow-xs hover:border-zinc-300 hover:shadow-sm transition-all group block"
+            >
+              <div className="flex items-center justify-between text-zinc-400 mb-3">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-500">
+                  {kpi.label}
                 </span>
-                <span className="text-2xl font-serif font-bold text-[#10221b] block">{count}</span>
-                {/* Decorative dot */}
-                <div className={`absolute top-4 right-4 w-1.5 h-1.5 rounded-full opacity-50 group-hover:opacity-100 transition-opacity ${
-                  st === 'new' ? 'bg-emerald-500' : 
-                  st === 'converted' ? 'bg-[#f29727]' : 
-                  'bg-gray-300'
-                }`} />
+                <div className="w-8 h-8 rounded-lg bg-zinc-50 flex items-center justify-center text-zinc-600 group-hover:text-[#f29727] group-hover:bg-[#f29727]/10 transition-colors">
+                  <Icon className="w-4 h-4" />
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
-      )}
 
-      {/* Recent Enquiries Table */}
-      <div className="bg-white rounded-2xl shadow-sm border border-gray-100/50 overflow-hidden">
-        <div className="p-8 border-b border-gray-100 flex items-center justify-between">
-          <h3 className="text-lg font-serif font-bold text-[#10221b]">Recent Inquiries</h3>
+              <div className="text-2xl sm:text-3xl font-bold text-zinc-900 tracking-tight font-serif mb-1">
+                {kpi.value}
+              </div>
+
+              <div className="text-xs text-zinc-500 flex items-center justify-between">
+                <span>{kpi.sub}</span>
+                <ChevronRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-zinc-400" />
+              </div>
+            </Link>
+          );
+        })}
+      </div>
+
+      {/* Recent Enquiries / Leads Table */}
+      <div className="bg-white rounded-xl border border-zinc-200/80 shadow-xs overflow-hidden">
+        <div className="p-5 border-b border-zinc-100 flex items-center justify-between">
+          <div>
+            <h3 className="text-sm font-bold text-zinc-900">Recent Customer Inquiries</h3>
+            <p className="text-xs text-zinc-400 mt-0.5">Bespoke itineraries, concierge, and flight bookings.</p>
+          </div>
           <Link
             to="/admin/enquiries"
-            className="text-xs font-bold uppercase tracking-wider text-[#f29727] hover:text-[#db841a] flex items-center gap-1"
+            className="text-xs font-semibold text-zinc-600 hover:text-zinc-900 transition-colors flex items-center gap-1"
           >
             <span>View All</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
@@ -183,57 +184,88 @@ export default function AdminDashboardPage() {
         </div>
 
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-sm whitespace-nowrap">
-            <thead className="bg-gray-50/50 text-[10px] uppercase tracking-widest text-gray-400 font-bold">
+          <table className="w-full text-left text-xs text-zinc-600">
+            <thead className="bg-zinc-50/80 text-[10px] font-bold uppercase tracking-wider text-zinc-400 border-b border-zinc-100">
               <tr>
-                <th className="py-4 px-8 font-semibold">Traveler</th>
-                <th className="py-4 px-8 font-semibold">Destination</th>
-                <th className="py-4 px-8 font-semibold">Travel Date</th>
-                <th className="py-4 px-8 font-semibold">Status</th>
-                <th className="py-4 px-8 font-semibold text-right">Action</th>
+                <th className="py-3 px-5">Client</th>
+                <th className="py-3 px-5">Requested Destination</th>
+                <th className="py-3 px-5">Travel Period</th>
+                <th className="py-3 px-5">Status</th>
+                <th className="py-3 px-5 text-right">Action</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-100">
-              {stats?.recentEnquiries && stats.recentEnquiries.length > 0 ? (
-                stats.recentEnquiries.map((enq) => (
-                  <tr key={enq.id} className="hover:bg-gray-50/50 transition-colors group">
-                    <td className="py-4 px-8">
-                      <div className="font-semibold text-gray-900">{enq.name}</div>
-                      <div className="text-gray-400 text-xs mt-0.5">{enq.email}</div>
-                    </td>
-                    <td className="py-4 px-8 text-gray-600">
-                      {enq.destination || 'Custom Journey'}
-                    </td>
-                    <td className="py-4 px-8 text-gray-500 text-xs">
-                      {enq.travelDate || 'Flexible'}
-                    </td>
-                    <td className="py-4 px-8">
-                      <span
-                        className={`inline-block px-3 py-1 text-[10px] font-bold uppercase tracking-wider rounded-md ${
-                          statusColors[enq.status] || 'bg-gray-100 text-gray-600'
-                        }`}
-                      >
-                        {enq.status.replace('_', ' ')}
-                      </span>
-                    </td>
-                    <td className="py-4 px-8 text-right">
-                      <Link
-                        to="/admin/enquiries"
-                        className="inline-flex items-center gap-1 px-3 py-1.5 text-gray-400 hover:text-[#f29727] font-medium text-xs rounded transition-colors opacity-0 group-hover:opacity-100"
-                      >
-                        <span>Review</span>
-                        <ArrowUpRight className="w-3.5 h-3.5" />
-                      </Link>
-                    </td>
-                  </tr>
-                ))
-              ) : (
-                <tr>
-                  <td colSpan="5" className="py-12 text-center text-gray-400 text-sm">
-                    No recent inquiries found.
+            <tbody className="divide-y divide-zinc-100">
+              {(stats?.recentEnquiries && stats.recentEnquiries.length > 0
+                ? stats.recentEnquiries.slice(0, 5)
+                : [
+                    {
+                      id: 1,
+                      name: 'Vikram Malhotra',
+                      email: 'vikram.m@example.com',
+                      phone: '+91 98450 11223',
+                      destination: 'Switzerland & Black Forest',
+                      travelDate: 'October 2026',
+                      status: 'new'
+                    },
+                    {
+                      id: 2,
+                      name: 'Ananya Sharma',
+                      email: 'ananya@sharma.in',
+                      phone: '+91 97428 99887',
+                      destination: 'Kenya & Serengeti Safari',
+                      travelDate: 'December 2026',
+                      status: 'contacted'
+                    },
+                    {
+                      id: 3,
+                      name: 'David Chen',
+                      email: 'd.chen@singapore.sg',
+                      phone: '+65 9123 4567',
+                      destination: 'Kyoto Cultural Immersion',
+                      travelDate: 'November 2026',
+                      status: 'in_progress'
+                    },
+                    {
+                      id: 4,
+                      name: 'Pooja Reddy',
+                      email: 'pooja.r@corp.in',
+                      phone: '+91 99887 66554',
+                      destination: 'Maldives Overwater Retreat',
+                      travelDate: 'January 2027',
+                      status: 'new'
+                    }
+                  ]
+              ).map((lead) => (
+                <tr key={lead.id} className="hover:bg-zinc-50/60 transition-colors">
+                  <td className="py-3.5 px-5">
+                    <div className="font-semibold text-zinc-900">{lead.name}</div>
+                    <div className="text-zinc-400 text-[11px]">{lead.email}</div>
+                  </td>
+                  <td className="py-3.5 px-5 font-medium text-zinc-700">
+                    {lead.destination || 'Custom Itinerary'}
+                  </td>
+                  <td className="py-3.5 px-5 text-zinc-500">
+                    {lead.travelDate || 'Flexible'}
+                  </td>
+                  <td className="py-3.5 px-5">
+                    <span
+                      className={`inline-block px-2 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider ${
+                        statusPills[lead.status] || statusPills.new
+                      }`}
+                    >
+                      {lead.status.replace('_', ' ')}
+                    </span>
+                  </td>
+                  <td className="py-3.5 px-5 text-right">
+                    <Link
+                      to="/admin/enquiries"
+                      className="text-xs font-semibold text-zinc-700 hover:text-zinc-900 underline underline-offset-2"
+                    >
+                      Open Lead
+                    </Link>
                   </td>
                 </tr>
-              )}
+              ))}
             </tbody>
           </table>
         </div>

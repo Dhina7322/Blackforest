@@ -31,20 +31,11 @@ import NotFoundPage from './pages/public/NotFoundPage';
 import AdminLoginPage from './pages/admin/AdminLoginPage';
 import AdminDashboardPage from './pages/admin/AdminDashboardPage';
 import AdminEnquiriesPage from './pages/admin/AdminEnquiriesPage';
-import AdminToursPage from './pages/admin/AdminToursPage';
-import AdminTourFormPage from './pages/admin/AdminTourFormPage';
 import AdminDestinationsPage from './pages/admin/AdminDestinationsPage';
-import AdminExperiencesPage from './pages/admin/AdminExperiencesPage';
-import AdminServicesPage from './pages/admin/AdminServicesPage';
-import AdminTestimonialsPage from './pages/admin/AdminTestimonialsPage';
 import AdminJournalPage from './pages/admin/AdminJournalPage';
 import AdminExpertisePage from './pages/admin/AdminExpertisePage';
-import AdminMediaPage from './pages/admin/AdminMediaPage';
-import AdminNavigationPage from './pages/admin/AdminNavigationPage';
-import AdminSettingsPage from './pages/admin/AdminSettingsPage';
 import AdminSEOPage from './pages/admin/AdminSEOPage';
 import AdminUsersPage from './pages/admin/AdminUsersPage';
-import AdminAuditLogsPage from './pages/admin/AdminAuditLogsPage';
 
 export default function App() {
   return (
@@ -61,6 +52,14 @@ export default function App() {
                 {/* Destinations */}
                 <Route path="/destinations" element={<DestinationsPage />} />
                 <Route path="/destinations/:slug" element={<DestinationDetailPage />} />
+                <Route path="/africa" element={<DestinationDetailPage />} />
+                <Route path="/america" element={<DestinationDetailPage />} />
+                <Route path="/asian-countries" element={<DestinationDetailPage />} />
+                <Route path="/australia" element={<DestinationDetailPage />} />
+                <Route path="/europe" element={<DestinationDetailPage />} />
+                <Route path="/indian-ocean" element={<DestinationDetailPage />} />
+                <Route path="/middle-east" element={<DestinationDetailPage />} />
+                <Route path="/south-asia" element={<DestinationDetailPage />} />
 
                 {/* Tours */}
                 <Route path="/international-tours" element={<ToursPage defaultCategory="international" />} />
@@ -81,9 +80,13 @@ export default function App() {
                 <Route path="/corporate-travel" element={<CorporateTravelPage />} />
                 <Route path="/coach-tour" element={<CoachTourPage />} />
 
-                {/* Journal / Blog */}
-                <Route path="/journal" element={<JournalPage />} />
+                {/* Blog Pages (Direct display matching reference design) */}
+                <Route path="/blog" element={<ArticleDetailPage forcedSlug="safety-measures-for-safe-trekking-in-waterfalls" />} />
+                <Route path="/blogs" element={<ArticleDetailPage forcedSlug="safety-measures-for-safe-trekking-in-waterfalls" />} />
+                <Route path="/journal" element={<ArticleDetailPage forcedSlug="safety-measures-for-safe-trekking-in-waterfalls" />} />
                 <Route path="/journal/:slug" element={<ArticleDetailPage />} />
+                <Route path="/blog/:slug" element={<ArticleDetailPage />} />
+                <Route path="/safety-measures-for-safe-trekking-in-waterfalls" element={<ArticleDetailPage forcedSlug="safety-measures-for-safe-trekking-in-waterfalls" />} />
 
                 {/* Company Pages */}
                 <Route path="/about" element={<AboutPage />} />
@@ -101,21 +104,21 @@ export default function App() {
                 <Route index element={<Navigate to="/admin/dashboard" replace />} />
                 <Route path="dashboard" element={<AdminDashboardPage />} />
                 <Route path="enquiries" element={<AdminEnquiriesPage />} />
-                <Route path="tours" element={<AdminToursPage />} />
-                <Route path="tours/new" element={<AdminTourFormPage />} />
-                <Route path="tours/:id/edit" element={<AdminTourFormPage />} />
                 <Route path="destinations" element={<AdminDestinationsPage />} />
-                <Route path="experiences" element={<AdminExperiencesPage />} />
-                <Route path="services" element={<AdminServicesPage />} />
-                <Route path="testimonials" element={<AdminTestimonialsPage />} />
                 <Route path="journal" element={<AdminJournalPage />} />
                 <Route path="expertise" element={<AdminExpertisePage />} />
-                <Route path="media" element={<AdminMediaPage />} />
-                <Route path="navigation" element={<AdminNavigationPage />} />
-                <Route path="settings" element={<AdminSettingsPage />} />
                 <Route path="seo" element={<AdminSEOPage />} />
                 <Route path="users" element={<AdminUsersPage />} />
-                <Route path="audit-logs" element={<AdminAuditLogsPage />} />
+
+                {/* Removed Admin Modules redirected */}
+                <Route path="tours*" element={<Navigate to="/admin/dashboard" replace />} />
+                <Route path="experiences*" element={<Navigate to="/admin/dashboard" replace />} />
+                <Route path="services*" element={<Navigate to="/admin/dashboard" replace />} />
+                <Route path="testimonials*" element={<Navigate to="/admin/dashboard" replace />} />
+                <Route path="media*" element={<Navigate to="/admin/dashboard" replace />} />
+                <Route path="navigation*" element={<Navigate to="/admin/dashboard" replace />} />
+                <Route path="settings*" element={<Navigate to="/admin/dashboard" replace />} />
+                <Route path="audit-logs*" element={<Navigate to="/admin/dashboard" replace />} />
               </Route>
             </Routes>
           </ToastProvider>
