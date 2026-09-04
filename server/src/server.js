@@ -66,15 +66,29 @@ app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 // Mount API Routes
 app.use('/api', apiRoutes);
 
-// Root Welcome Route
-app.get('/', (req, res) => {
-  res.json({
-    name: 'Blackforest Holidays API Server',
-    status: 'Running',
-    version: '1.0.0',
-    documentation: '/api/health'
+// Serve client build in production if available
+const clientDist = path.join(__dirname, '../../client/dist');
+const fs = require('fs');
+
+if (fs.existsSync(clientDist)) {
+  app.use(express.static(clientDist));
+  app.get('*', (req, res, next) => {
+    if (req.path.startsWith('/api') || req.path.startsWith('/uploads')) {
+      return next();
+    }
+    res.sendFile(path.join(clientDist, 'index.html'));
   });
-});
+} else {
+  // Root Welcome Route fallback
+  app.get('/', (req, res) => {
+    res.json({
+      name: 'Blackforest Holidays API Server',
+      status: 'Running',
+      version: '1.0.0',
+      documentation: '/api/health'
+    });
+  });
+}
 
 // 404 and Error Middleware
 app.use(notFound);
