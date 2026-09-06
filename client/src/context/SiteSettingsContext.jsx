@@ -6,8 +6,8 @@ const SiteSettingsContext = createContext(null);
 export const SiteSettingsProvider = ({ children }) => {
   const [settings, setSettings] = useState({
     siteName: 'Black Forest Holidays',
-    logo: 'https://blackforestholidays.com/wp-content/uploads/2021/07/white_logo.png',
-    darkLogo: 'https://blackforestholidays.com/wp-content/uploads/2021/07/white_logo.png',
+    logo: '/images/pages/white_logo.png.webp',
+    darkLogo: '/images/pages/white_logo.png.webp',
     phone: '+91 94470 12345',
     email: 'info@blackforestholidays.com',
     whatsapp: '+919447012345',

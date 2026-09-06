@@ -116,7 +116,7 @@ export default function ToursPage({ defaultCategory = 'international' }) {
                 {/* Card Cover */}
                 <div className="relative h-64 overflow-hidden">
                   <img
-                    src={tour.coverImage || 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=600&q=80'}
+                    src={tour.coverImage || '/images/destinations/hector-ramon-perez-e7D8evFSyww-unsplash-scaled.jpg.webp'}
                     alt={tour.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />

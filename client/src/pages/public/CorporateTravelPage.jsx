@@ -11,7 +11,7 @@ export default function CorporateTravelPage() {
       <section className="relative h-[60vh] min-h-[500px] flex flex-col justify-end">
         <div className="absolute inset-0 z-0 bg-[#0a1712]">
           <img
-            src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1920&q=80"
+            src="/images/destinations/destinations-158997948122.webp"
             alt="Corporate Travel"
             className="w-full h-full object-cover opacity-70"
           />
@@ -70,10 +70,10 @@ export default function CorporateTravelPage() {
             {/* Right Content - Images */}
             <div className="relative w-full aspect-square md:aspect-[4/3] lg:aspect-auto lg:h-[800px]">
               <div className="absolute top-0 right-0 w-[90%] h-[55%] rounded-xl overflow-hidden shadow-lg z-10 border-[10px] border-[#27B8B1]">
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80" alt="Team planning" className="w-full h-full object-cover" />
+                <img src="/images/destinations/destinations-159642284654.webp" alt="Team planning" className="w-full h-full object-cover" />
               </div>
               <div className="absolute bottom-0 left-0 w-[70%] h-[50%] rounded-xl overflow-hidden shadow-2xl z-20">
-                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80" alt="Corporate discussion" className="w-full h-full object-cover" />
+                <img src="/images/destinations/destinations-160058515434.webp" alt="Corporate discussion" className="w-full h-full object-cover" />
               </div>
             </div>
 
@@ -91,13 +91,13 @@ export default function CorporateTravelPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-[85%]">
             <div className="aspect-[4/5] overflow-hidden shadow-sm">
-              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80" alt="Boardroom meeting" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              <img src="/images/destinations/destinations-160221605609.webp" alt="Boardroom meeting" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
             </div>
             <div className="aspect-[4/5] overflow-hidden shadow-sm">
-              <img src="https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&w=800&q=80" alt="Airport waiting" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              <img src="/images/destinations/doing-business-morocco.jpg.webp" alt="Airport waiting" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
             </div>
             <div className="aspect-[4/5] overflow-hidden shadow-sm">
-              <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80" alt="Writing in planner" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              <img src="/images/destinations/dotzero-B_F3hj-Z_Sc-unsplash-scaled.jpg.webp" alt="Writing in planner" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
             </div>
           </div>
 
@@ -181,15 +181,15 @@ export default function CorporateTravelPage() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4 mt-12">
                   <div className="aspect-[4/5] rounded overflow-hidden shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=600&q=80" alt="Airport terminal" className="w-full h-full object-cover" />
+                    <img src="/images/destinations/drone-photo-kuwait-city-kuwait-tower-from-sky-scaled.jpg.webp" alt="Airport terminal" className="w-full h-full object-cover" />
                   </div>
                   <div className="aspect-[4/5] rounded overflow-hidden shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=600&q=80" alt="Business travel" className="w-full h-full object-cover" />
+                    <img src="/images/destinations/fabien-bellanger-pdjx5z2fpr0-unsplash-scaled.jpg.webp" alt="Business travel" className="w-full h-full object-cover" />
                   </div>
                 </div>
                 <div className="space-y-4">
                   <div className="aspect-[3/4] rounded overflow-hidden shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&w=600&q=80" alt="Airport lounge" className="w-full h-full object-cover" />
+                    <img src="/images/destinations/famous-eiffel-tower-paris-with-gorgeous-colors-scaled.jpg.webp" alt="Airport lounge" className="w-full h-full object-cover" />
                   </div>
                   <div className="pt-8 pl-4">
                     <h3 className="text-2xl md:text-3xl font-bold text-[#7cb342] leading-tight">

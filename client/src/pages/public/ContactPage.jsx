@@ -71,7 +71,7 @@ export default function ContactPage() {
       <section className="relative h-[65vh] min-h-[500px] flex flex-col justify-end">
         <div className="absolute inset-0 z-0 bg-[#0a1712]">
           <img
-            src="https://images.unsplash.com/photo-1502307100811-6bdc0981a85b?auto=format&fit=crop&w=1920&q=80"
+            src="/images/destinations/destinations-158990920280.webp"
             alt="Contact Us"
             className="w-full h-full object-cover opacity-80"
           />

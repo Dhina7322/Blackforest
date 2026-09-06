@@ -10,7 +10,7 @@ export const initialEightDestinations = [
     slug: 'africa',
     name: 'Africa',
     tagline: 'Untamed Wilderness & Safaris',
-    heroImage: allDestinationsData['africa']?.heroImage || 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1920&q=80',
+    heroImage: allDestinationsData['africa']?.heroImage || '/images/destinations/matthias-mullie-RvDc461s1EI-unsplash-scaled.jpg.webp',
     countriesCount: allDestinationsData['africa']?.countries?.length || 11,
     isPublished: true
   },
@@ -19,7 +19,7 @@ export const initialEightDestinations = [
     slug: 'america',
     name: 'America',
     tagline: 'From Coast to Coast',
-    heroImage: allDestinationsData['america']?.heroImage || 'https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1920&q=80',
+    heroImage: allDestinationsData['america']?.heroImage || '/images/destinations/nepal-scaled.jpg.webp',
     countriesCount: allDestinationsData['america']?.countries?.length || 10,
     isPublished: true
   },
@@ -28,7 +28,7 @@ export const initialEightDestinations = [
     slug: 'asian-countries',
     name: 'Asian Countries',
     tagline: 'Heritage to Himalayas',
-    heroImage: allDestinationsData['asian-countries']?.heroImage || 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1920&q=80',
+    heroImage: allDestinationsData['asian-countries']?.heroImage || '/images/destinations/olga-stalska-QaWRyEdlffY-unsplash-scaled.jpg.webp',
     countriesCount: allDestinationsData['asian-countries']?.countries?.length || 10,
     isPublished: true
   },
@@ -37,7 +37,7 @@ export const initialEightDestinations = [
     slug: 'australia',
     name: 'Australia',
     tagline: 'Wonders Down Under',
-    heroImage: allDestinationsData['australia']?.heroImage || 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1920&q=80',
+    heroImage: allDestinationsData['australia']?.heroImage || '/images/destinations/ondrej-bocek-wOlMEpBzwHs-unsplash-scaled.jpg.webp',
     countriesCount: allDestinationsData['australia']?.countries?.length || 6,
     isPublished: true
   },
@@ -46,7 +46,7 @@ export const initialEightDestinations = [
     slug: 'europe',
     name: 'Europe',
     tagline: 'Timeless Charm & Grandeur',
-    heroImage: allDestinationsData['europe']?.heroImage || 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1920&q=80',
+    heroImage: allDestinationsData['europe']?.heroImage || '/images/destinations/pexels-parth-patel-2161339175-37930273-scaled.jpg.webp',
     countriesCount: allDestinationsData['europe']?.countries?.length || 8,
     isPublished: true
   },
@@ -55,7 +55,7 @@ export const initialEightDestinations = [
     slug: 'indian-ocean',
     name: 'Indian Ocean',
     tagline: 'Your Island Story Begins Here',
-    heroImage: allDestinationsData['indian-ocean']?.heroImage || 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=1920&q=80',
+    heroImage: allDestinationsData['indian-ocean']?.heroImage || '/images/destinations/pexels-rayhan-ahmed-2156107199-38311757-scaled.jpg.webp',
     countriesCount: allDestinationsData['indian-ocean']?.countries?.length || 4,
     isPublished: true
   },
@@ -64,7 +64,7 @@ export const initialEightDestinations = [
     slug: 'middle-east',
     name: 'Middle East',
     tagline: 'Desert Dunes & Gilded Skylines',
-    heroImage: allDestinationsData['middle-east']?.heroImage || 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1920&q=80',
+    heroImage: allDestinationsData['middle-east']?.heroImage || '/images/destinations/pexels-sarimphotos-16703837-scaled.jpg.webp',
     countriesCount: allDestinationsData['middle-east']?.countries?.length || 5,
     isPublished: true
   },
@@ -73,7 +73,7 @@ export const initialEightDestinations = [
     slug: 'south-asia',
     name: 'South Asia',
     tagline: 'Heritage to Himalayas',
-    heroImage: allDestinationsData['south-asia']?.heroImage || 'https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&w=1920&q=80',
+    heroImage: allDestinationsData['south-asia']?.heroImage || '/images/destinations/pexels-timon-cornelissen-241844481-33231615-scaled.jpg.webp',
     countriesCount: allDestinationsData['south-asia']?.countries?.length || 6,
     isPublished: true
   }

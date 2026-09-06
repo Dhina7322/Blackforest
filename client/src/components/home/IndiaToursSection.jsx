@@ -19,7 +19,7 @@ export default function IndiaToursSection() {
         duration: '6 DAYS',
         rating: 'Rated 4.89 / 5 by past travellers',
         description: 'Private houseboats drifting on palm-fringed lagoons, fragrant spice plantations, and Ayurvedic retreats.',
-        coverImage: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=600&q=80'
+        coverImage: '/images/destinations/asael-pena-uwIqm8Pe2to-unsplash-scaled.jpg.webp'
       },
       {
         id: 102,
@@ -30,7 +30,7 @@ export default function IndiaToursSection() {
         duration: '7 DAYS',
         rating: 'Rated 4.93 / 5 by past travellers',
         description: 'Gilded palace courtyards in Udaipur, amber fortress sunsets in Jaipur, and Thar desert campfires.',
-        coverImage: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=600&q=80'
+        coverImage: '/images/destinations/ashim-d-silva-S2Q5mdOrrVc-unsplash-scaled.jpg.webp'
       },
       {
         id: 103,
@@ -41,7 +41,7 @@ export default function IndiaToursSection() {
         duration: '5 DAYS',
         rating: 'Rated 4.85 / 5 by past travellers',
         description: 'Private catamaran sunset charters, Portuguese colonial architecture, and barefoot beach fine dining.',
-        coverImage: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=600&q=80'
+        coverImage: '/images/destinations/atanas-malamov-4jgWVpKHO_4-unsplash-scaled.jpg.webp'
       },
       {
         id: 104,
@@ -52,7 +52,7 @@ export default function IndiaToursSection() {
         duration: '8 DAYS',
         rating: 'Rated 4.91 / 5 by past travellers',
         description: 'Majestic snow peaks, peaceful high-altitude monasteries, serene pine valleys, and mountain passes.',
-        coverImage: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=600&q=80'
+        coverImage: '/images/destinations/aurora-borealis-northern-lights-view-house-hamnoy-village-lofoten-islands-norway-landscape-winter-time-mountains-water-scaled.jpg.webp'
       }
     ];
     // Duplicate for seamless infinite scrolling loop
@@ -97,7 +97,7 @@ export default function IndiaToursSection() {
       {/* Background image without overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1920&q=80"
+          src="/images/destinations/beautiful-architecture-building-scaled.jpg.webp"
           alt="India Palace Background"
           className="w-full h-full object-cover"
         />

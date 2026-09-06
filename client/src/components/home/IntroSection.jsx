@@ -40,7 +40,7 @@ export default function IntroSection() {
           {/* Decorative Mask Background */}
           <div className="absolute top-[-40px] left-[-80px] w-full max-w-2xl opacity-10 pointer-events-none z-0 hidden lg:block">
             <img 
-              src="https://blackforestholidays.com/wp-content/uploads/2021/07/mask-pine.jpg.webp" 
+              src="/images/pages/mask-pine.jpg.webp" 
               alt="Background Silhouette" 
               className="w-full h-auto object-contain"
             />
@@ -71,7 +71,7 @@ export default function IntroSection() {
             <div className="relative z-20 w-full max-w-[500px] mx-auto lg:ml-auto">
               <div className="bg-white shadow-xl">
                 <img
-                  src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=800&q=80"
+                  src="/images/destinations/destinations-148372955844.webp"
                   alt="World map travel planning"
                   className="w-full h-auto object-cover block"
                 />

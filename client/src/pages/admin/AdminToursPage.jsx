@@ -149,7 +149,7 @@ export default function AdminToursPage() {
               {/* Tour Card Header Image */}
               <div className="relative h-48 overflow-hidden bg-gray-100">
                 <img
-                  src={tour.coverImage || 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=600&q=80'}
+                  src={tour.coverImage || '/images/destinations/destinations-151245397979.webp'}
                   alt={tour.title}
                   className="w-full h-full object-cover"
                 />

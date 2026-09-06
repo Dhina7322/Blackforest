@@ -49,7 +49,7 @@ export default function JournalPage() {
           className="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-luminosity"
           style={{
             backgroundImage:
-              'url("/pine-forest.webp"), url("https://blackforestholidays.com/wp-content/uploads/2026/07/3.png")'
+              'url("/pine-forest.webp"), url("/images/pages/3.png.webp")'
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#10221b]/95 via-[#10221b]/90 to-[#10221b]" />
@@ -112,7 +112,7 @@ export default function JournalPage() {
               >
                 <div className="relative h-60 overflow-hidden bg-gray-100">
                   <img
-                    src={art.coverImage || 'https://blackforestholidays.com/wp-content/uploads/2020/06/blog-010.jpg'}
+                    src={art.coverImage || '/images/pages/blog-010.jpg.webp'}
                     alt={art.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />

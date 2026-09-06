@@ -97,7 +97,7 @@ export default function TourDetailPage() {
       <div className="relative h-[65vh] min-h-[500px] bg-[#10221b] text-white flex items-end">
         <div className="absolute inset-0 z-0">
           <img
-            src={tour.coverImage || 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1600&q=80'}
+            src={tour.coverImage || '/images/destinations/hagia-sophia-famous-landmark-istanbul-turkey-scaled.jpg.webp'}
             alt={tour.title}
             className="w-full h-full object-cover"
           />

@@ -158,7 +158,7 @@ export default function ArticleDetailPage({ forcedSlug }) {
       slug: '10-tips-for-best-winter-hiking-experience',
       category: 'Black & white, Cabinet, Interiors',
       tag: 'Multipurpose',
-      coverImage: 'https://blackforestholidays.com/wp-content/uploads/2020/06/blog-007.jpg',
+      coverImage: '/images/pages/blog-007.jpg.webp',
       excerpt: 'Est culpa architecto cum perferendis quasi in nihil aliquam ut temporibus porro. In repellendus similique sit ipsum recusandae At velit doloribus et temporibus dolorem....'
     },
     {
@@ -167,7 +167,7 @@ export default function ArticleDetailPage({ forcedSlug }) {
       slug: 'how-to-select-perfect-quality-camping-tent',
       category: 'Black & white, Cabinet, Interiors',
       tag: 'Multipurpose',
-      coverImage: 'https://blackforestholidays.com/wp-content/uploads/2020/06/blog-006.jpg',
+      coverImage: '/images/pages/blog-006.jpg.webp',
       excerpt: 'Est culpa architecto cum perferendis quasi in nihil aliquam ut temporibus porro. In repellendus similique sit ipsum recusandae At velit doloribus et temporibus dolorem....'
     },
     {
@@ -176,7 +176,7 @@ export default function ArticleDetailPage({ forcedSlug }) {
       slug: 'great-outdoor-adventure-photography',
       category: 'Black & white, Cabinet, Interiors',
       tag: 'Multipurpose',
-      coverImage: 'https://blackforestholidays.com/wp-content/uploads/2020/06/blog-005.jpg',
+      coverImage: '/images/pages/blog-005.jpg.webp',
       excerpt: 'Est culpa architecto cum perferendis quasi in nihil aliquam ut temporibus porro. In repellendus similique sit ipsum recusandae At velit doloribus et temporibus dolorem....'
     }
   ];
@@ -302,7 +302,7 @@ export default function ArticleDetailPage({ forcedSlug }) {
         {/* Centered Large Featured Image (Man Facing Waterfall Spray) */}
         <div className="relative rounded-2xl overflow-hidden shadow-xl mb-8 bg-gray-100">
           <img
-            src={article.coverImage || 'https://blackforestholidays.com/wp-content/uploads/2020/06/blog-010.jpg'}
+            src={article.coverImage || '/images/pages/blog-010.jpg.webp'}
             alt={article.title}
             className="w-full h-auto max-h-[700px] object-cover"
           />
@@ -399,11 +399,11 @@ export default function ArticleDetailPage({ forcedSlug }) {
             <div
               className="relative group cursor-pointer overflow-hidden rounded-xl shadow-md bg-gray-100 h-80 sm:h-96"
               onClick={() =>
-                setLightboxImg('https://blackforestholidays.com/wp-content/uploads/2021/07/blog-detail-001.jpg')
+                setLightboxImg('/images/pages/blog-detail-001.jpg.webp')
               }
             >
               <img
-                src="https://blackforestholidays.com/wp-content/uploads/2021/07/blog-detail-001.jpg"
+                src="/images/pages/blog-detail-001.jpg.webp"
                 alt="Trekking Detail 1"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
@@ -417,11 +417,11 @@ export default function ArticleDetailPage({ forcedSlug }) {
             <div
               className="relative group cursor-pointer overflow-hidden rounded-xl shadow-md bg-gray-100 h-80 sm:h-96"
               onClick={() =>
-                setLightboxImg('https://blackforestholidays.com/wp-content/uploads/2021/07/blog-detail-002.jpg')
+                setLightboxImg('/images/pages/blog-detail-002.jpg.webp')
               }
             >
               <img
-                src="https://blackforestholidays.com/wp-content/uploads/2021/07/blog-detail-002.jpg"
+                src="/images/pages/blog-detail-002.jpg.webp"
                 alt="Trekking Detail 2"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
@@ -462,7 +462,7 @@ export default function ArticleDetailPage({ forcedSlug }) {
             className="group relative overflow-hidden rounded-xl p-5 bg-[#10221b] text-white flex items-center gap-4 hover:shadow-lg transition-all"
           >
             <img
-              src="https://blackforestholidays.com/wp-content/uploads/2020/06/blog-007.jpg"
+              src="/images/pages/blog-007.jpg.webp"
               alt="Previous Story"
               className="w-16 h-16 rounded-lg object-cover shrink-0"
             />

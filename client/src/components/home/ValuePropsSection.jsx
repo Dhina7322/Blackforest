@@ -53,7 +53,7 @@ export default function ValuePropsSection() {
       {/* Light mountain/clouds background graphic */}
       <div className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none">
         <img 
-          src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1920&q=80" 
+          src="/images/destinations/destinations-150389903608.webp" 
           alt="Mountains Background" 
           className="w-full h-full object-cover"
         />

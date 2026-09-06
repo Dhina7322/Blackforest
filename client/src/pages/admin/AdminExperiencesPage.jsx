@@ -16,8 +16,8 @@ export default function AdminExperiencesPage() {
     category: 'adventure',
     description: '',
     content: '',
-    thumbnail: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80',
-    heroImage: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80',
+    thumbnail: '/images/destinations/destinations-150614633238.webp',
+    heroImage: '/images/destinations/destinations-150666553119.webp',
     status: 'published'
   });
 
@@ -47,8 +47,8 @@ export default function AdminExperiencesPage() {
       category: 'adventure',
       description: '',
       content: '',
-      thumbnail: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80',
-      heroImage: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80',
+      thumbnail: '/images/destinations/destinations-150697084524.webp',
+      heroImage: '/images/destinations/destinations-150697303587.webp',
       status: 'published'
     });
     setModalOpen(true);

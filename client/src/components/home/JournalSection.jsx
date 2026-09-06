@@ -48,7 +48,7 @@ export default function JournalSection() {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   onError={(e) => {
                     e.target.onerror = null;
-                    e.target.src = 'https://images.unsplash.com/photo-1426604966848-d7adac402bff?auto=format&fit=crop&w=800&q=80';
+                    e.target.src = '/images/destinations/destinations-1503614472-8.webp';
                   }}
                 />
               </div>

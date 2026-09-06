@@ -231,11 +231,11 @@ export default function ExperiencesPage() {
               
               <div className="grid grid-cols-2 gap-4 relative z-10">
                 <div className="space-y-4 pt-12">
-                  <img src={data.bottomSection?.collageImages?.[0] || 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=600&q=80'} alt="Collage 1" className="w-full h-48 object-cover" />
-                  <img src={data.bottomSection?.collageImages?.[1] || 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80'} alt="Collage 2" className="w-full h-56 object-cover" />
+                  <img src={data.bottomSection?.collageImages?.[0] || '/images/destinations/golden-temple-scaled.jpg.webp'} alt="Collage 1" className="w-full h-48 object-cover" />
+                  <img src={data.bottomSection?.collageImages?.[1] || '/images/destinations/graphic-node-yPSbirjJWzs-unsplash-scaled.jpg.webp'} alt="Collage 2" className="w-full h-56 object-cover" />
                 </div>
                 <div>
-                  <img src={data.bottomSection?.collageImages?.[2] || 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80'} alt="Collage 3" className="w-full h-[400px] object-cover" />
+                  <img src={data.bottomSection?.collageImages?.[2] || '/images/destinations/gyeongbukgung-maple-tree-autumn-korea-scaled.jpg.webp'} alt="Collage 3" className="w-full h-[400px] object-cover" />
                   <div className="mt-8">
                     <h4 className="text-[#5e963b] text-2xl font-bold leading-tight pr-4">
                       {data.bottomSection?.quote || "A Vision Created For The Activities To Make Sure You Enjoy & Get Thrilled."}

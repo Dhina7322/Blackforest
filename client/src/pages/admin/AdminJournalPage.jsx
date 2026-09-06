@@ -52,9 +52,9 @@ export default function AdminJournalPage() {
     slug: '',
     category: 'Trekking & Safety',
     author: 'Blackforest',
-    coverImage: 'https://blackforestholidays.com/wp-content/uploads/2020/06/blog-010.jpg',
-    detailImage1: 'https://blackforestholidays.com/wp-content/uploads/2021/07/blog-detail-001.jpg',
-    detailImage2: 'https://blackforestholidays.com/wp-content/uploads/2021/07/blog-detail-002.jpg',
+    coverImage: '/images/pages/blog-010.jpg.webp',
+    detailImage1: '/images/pages/blog-detail-001.jpg.webp',
+    detailImage2: '/images/pages/blog-detail-002.jpg.webp',
     excerpt: '',
     content: '',
     quote: 'Vel saepe possimus sit corporis ipsa et quia fugit vel magnam iure rem voluptate voluptas ut earum tempora.',
@@ -237,7 +237,7 @@ export default function AdminJournalPage() {
                     onError={(e) => {
                       e.target.onerror = null;
                       e.target.src =
-                        'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80';
+                        '/images/destinations/destinations-150769962210.webp';
                     }}
                   />
                   <span className="absolute top-3 left-3 px-2 py-0.5 bg-black/75 backdrop-blur-xs text-[#f29727] text-[10px] font-semibold uppercase tracking-wider rounded">

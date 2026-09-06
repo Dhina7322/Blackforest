@@ -11,7 +11,7 @@ export default function AboutPage() {
       <section className="relative h-[60vh] min-h-[500px] flex flex-col justify-end">
         <div className="absolute inset-0 z-0 bg-[#0a1712]">
           <img
-            src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=1920&q=80"
+            src="/images/destinations/destinations-151363526997.webp"
             alt="About Blackforest Holidays"
             className="w-full h-full object-cover opacity-70"
           />
@@ -72,15 +72,15 @@ export default function AboutPage() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4 mt-20">
                   <div className="aspect-[4/5] rounded overflow-hidden shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600&q=80" alt="Bali temple" className="w-full h-full object-cover" />
+                    <img src="/images/destinations/destinations-151428240104.webp" alt="Bali temple" className="w-full h-full object-cover" />
                   </div>
                   <div className="aspect-[16/9] rounded overflow-hidden shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=600&q=80" alt="Safari jeep" className="w-full h-full object-cover" />
+                    <img src="/images/destinations/destinations-151439546272.webp" alt="Safari jeep" className="w-full h-full object-cover" />
                   </div>
                 </div>
                 <div className="space-y-4">
                   <div className="aspect-square rounded overflow-hidden shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=600&q=80" alt="Mountain peak" className="w-full h-full object-cover" />
+                    <img src="/images/destinations/destinations-151642612207.webp" alt="Mountain peak" className="w-full h-full object-cover" />
                   </div>
                   <div className="pt-8 pl-4">
                     <h3 className="text-2xl md:text-[28px] font-bold text-[#7cb342] leading-tight">
@@ -120,7 +120,7 @@ export default function AboutPage() {
                 <p className="text-gray-600 text-[13px] leading-relaxed">an urban escape rich in culture, world-class entertainment, fine dining and unparalleled experiences.</p>
               </div>
               <div className="w-full aspect-[4/3] overflow-hidden shadow-md">
-                <img src="https://images.unsplash.com/photo-1534008897995-27a23e859048?auto=format&fit=crop&w=800&q=80" alt="Macau travel" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                <img src="/images/destinations/destinations-151648363826.webp" alt="Macau travel" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
               </div>
               <h3 className="font-bold text-[#10221b] text-2xl max-w-xs leading-tight">Exclusive Escapes For Discerning Travelers</h3>
             </div>
@@ -132,7 +132,7 @@ export default function AboutPage() {
                 <p className="text-gray-600 text-[13px] leading-relaxed">where stunning coastlines meet vibrant culture, offering unforgettable island adventures and luxurious getaways.</p>
               </div>
               <div className="w-full aspect-[4/3] overflow-hidden shadow-md">
-                <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=800&q=80" alt="Phuket travel" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                <img src="/images/destinations/destinations-151655089392.webp" alt="Phuket travel" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
               </div>
               <h3 className="font-bold text-[#10221b] text-2xl max-w-xs leading-tight">Curated Journeys For The Elite Traveler</h3>
             </div>
@@ -144,7 +144,7 @@ export default function AboutPage() {
       {/* 5. Testimonial Section */}
       <section className="py-24 bg-[#fbfaf8] relative overflow-hidden">
         {/* Faint Mountain Background */}
-        <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80")', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+        <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: 'url("/images/destinations/destinations-151850956290.webp")', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16 space-y-4">

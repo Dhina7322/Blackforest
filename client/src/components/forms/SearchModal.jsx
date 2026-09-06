@@ -134,7 +134,7 @@ export default function SearchModal() {
                         className="flex items-center gap-3 p-2.5 rounded-xl border border-gray-100 hover:border-[#f29727]/50 hover:bg-amber-50/20 cursor-pointer transition-all"
                       >
                         <img
-                          src={t.coverImage || 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=150&q=80'}
+                          src={t.coverImage || '/images/destinations/aerial-shot-snow-capped-mountains-with-calm-lake-daytime-scaled.jpg.webp'}
                           alt={t.title}
                           className="w-16 h-16 object-cover rounded-lg flex-shrink-0"
                         />
@@ -165,7 +165,7 @@ export default function SearchModal() {
                         className="flex items-center gap-3 p-2 rounded-xl border border-gray-100 hover:border-[#f29727]/50 cursor-pointer transition-all"
                       >
                         <img
-                          src={d.thumbnail || d.heroImage || 'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=100&q=80'}
+                          src={d.thumbnail || d.heroImage || '/images/destinations/alex-vasey-5_Bu25SV6X8-unsplash-1-scaled.jpg.webp'}
                           alt={d.name}
                           className="w-12 h-12 object-cover rounded-lg flex-shrink-0"
                         />

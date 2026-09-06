@@ -94,7 +94,7 @@ export default function Header() {
           {/* Brand Logo */}
           <Link to="/" className="flex items-center gap-3 group">
             <img
-              src={settings.logo || 'https://blackforestholidays.com/wp-content/uploads/2021/07/white_logo.png'}
+              src={settings.logo || '/images/pages/white_logo.png.webp'}
               alt={settings.siteName || 'Blackforest Holidays'}
               className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
@@ -284,7 +284,7 @@ export default function Header() {
               {/* Drawer Top */}
               <div className="flex items-center justify-between pb-6 border-b border-white/10 mb-6">
                 <img
-                  src={settings.logo || 'https://blackforestholidays.com/wp-content/uploads/2021/07/white_logo.png'}
+                  src={settings.logo || '/images/pages/white_logo.png.webp'}
                   alt={settings.siteName}
                   className="h-9 w-auto"
                 />

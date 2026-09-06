@@ -139,7 +139,7 @@ export default function DestinationsPage() {
               >
                 <div className="relative h-64 overflow-hidden">
                   <img
-                    src={d.thumbnail || d.heroImage || 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=800&q=80'}
+                    src={d.thumbnail || d.heroImage || '/images/destinations/georgy-trofimov-jZ_TCbVxqEM-unsplash-scaled.jpg.webp'}
                     alt={d.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />

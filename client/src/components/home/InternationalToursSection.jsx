@@ -20,7 +20,7 @@ export default function InternationalToursSection() {
         duration: '7 DAYS',
         rating: 'Rated 4.81 / 5 by past travellers',
         description: 'Desert safaris, futuristic architectural marvels, historic souks, and Arabian luxury getaways.',
-        coverImage: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80'
+        coverImage: '/images/destinations/bhutan-scaled.jpg.webp'
       },
       {
         id: 2,
@@ -31,7 +31,7 @@ export default function InternationalToursSection() {
         duration: '7 DAYS',
         rating: 'Rated 4.92 / 5 by past travellers',
         description: 'First-class Swiss alpine vistas, fairytale French châteaux, luxury boutiques, and Michelin dining.',
-        coverImage: 'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=600&q=80'
+        coverImage: '/images/destinations/catherine-malofei-fm0l_Cggp94-unsplash-scaled.jpg.webp'
       },
       {
         id: 3,
@@ -42,7 +42,7 @@ export default function InternationalToursSection() {
         duration: '6 DAYS',
         rating: 'Rated 4.96 / 5 by past travellers',
         description: 'Turquoise lagoons, private overwater bungalows, coral atoll seaplanes, and candlelit sandbank dining.',
-        coverImage: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=600&q=80'
+        coverImage: '/images/destinations/cherry-blossoms-castle-himeji-japan-scaled.jpg.webp'
       },
       {
         id: 4,
@@ -53,7 +53,7 @@ export default function InternationalToursSection() {
         duration: '8 DAYS',
         rating: 'Rated 4.88 / 5 by past travellers',
         description: 'Kyoto shrines, futuristic neon skylines, bustling night markets, and tranquil tropical beaches.',
-        coverImage: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80'
+        coverImage: '/images/destinations/darcey-beau-KTivTunp_lw-unsplash-scaled.jpg.webp'
       },
       {
         id: 5,
@@ -64,7 +64,7 @@ export default function InternationalToursSection() {
         duration: '9 DAYS',
         rating: 'Rated 4.94 / 5 by past travellers',
         description: 'Maasai Mara Big Five game drives, Serengeti migrations, Cape Town coastlines, and luxury lodges.',
-        coverImage: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=600&q=80'
+        coverImage: '/images/destinations/day-city-view-1-scaled.jpg.webp'
       },
       {
         id: 6,
@@ -75,7 +75,7 @@ export default function InternationalToursSection() {
         duration: '10 DAYS',
         rating: 'Rated 4.87 / 5 by past travellers',
         description: 'Iconic Manhattan towers, Canadian Rocky Mountain glaciers, Rio beaches, and Incan monuments.',
-        coverImage: 'https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=600&q=80'
+        coverImage: '/images/destinations/destinations-146726920459.webp'
       }
     ];
 
@@ -136,7 +136,7 @@ export default function InternationalToursSection() {
       {/* Background image without overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1920&q=80"
+          src="/images/destinations/destinations-147000491421.webp"
           alt="Dubai Background"
           className="w-full h-full object-cover"
         />

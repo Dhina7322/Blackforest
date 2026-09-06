@@ -19,12 +19,12 @@ export default function ConciergePage() {
   const details = {
     overview: {
       title: 'VIP Travel Concierge',
-      heroImage: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1920&q=80',
+      heroImage: '/images/destinations/destinations-151968139378.webp',
       intro: {
         title: 'Effortless Luxury Across Every Journey Milestone',
         text1: 'Our white-glove concierge department handles complex flight routing, expedited visa processing, private aviation, and luxury cruise charters with military precision.',
         text2: 'From the moment you start planning to the day you return home, our dedicated specialists are on call to ensure seamless transitions and unparalleled comfort.',
-        image: 'https://images.unsplash.com/photo-1540339832862-474599807836?auto=format&fit=crop&w=800&q=80',
+        image: '/images/destinations/destinations-152348258067.webp',
       },
       list: {
         title: 'Our Concierge Services Include:',
@@ -34,9 +34,9 @@ export default function ConciergePage() {
           { title: 'Luxury Cruises', desc: 'Yacht charters and premium ocean liners.' }
         ],
         images: [
-          'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=600&q=80',
-          'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80',
-          'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80',
+          '/images/destinations/destinations-152449241293.webp',
+          '/images/destinations/destinations-152562529338.webp',
+          '/images/destinations/destinations-152639206063.webp',
         ]
       },
       whyChooseUs: {
@@ -53,20 +53,20 @@ export default function ConciergePage() {
         desc: 'Experience travel the way it was meant to be—effortless, luxurious, and perfectly tailored to you.',
         quote: 'A Vision Created For The Activities To Make Sure You Enjoy & Get Thrilled.',
         collageImages: [
-          'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=600&q=80',
-          'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80',
-          'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80'
+          '/images/destinations/destinations-152766875296.webp',
+          '/images/destinations/destinations-152812726932.webp',
+          '/images/destinations/destinations-153012203726.webp'
         ]
       }
     },
     flights: {
       title: 'Flight Booking',
-      heroImage: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1920&q=80',
+      heroImage: '/images/destinations/destinations-153240884095.webp',
       intro: {
         title: 'Everything You Need For a Seamless Journey',
         text1: 'Take advantage of our preferred airline partnerships, mileage upgrades, complimentary lounge access, and proactive schedule monitoring for international travel.',
         text2: 'Whether it is a family vacation, a corporate retreat, or a solo adventure, we guarantee competitive fares and unmatched convenience from takeoff to landing.',
-        image: 'https://images.unsplash.com/photo-1540339832862-474599807836?auto=format&fit=crop&w=800&q=80',
+        image: '/images/destinations/destinations-153310507978.webp',
       },
       list: {
         title: 'Our Flight Booking Services:',
@@ -77,9 +77,9 @@ export default function ConciergePage() {
           { title: 'Meal Preferences', desc: 'Pre-arranged dietary meals for long-haul flights.' }
         ],
         images: [
-          'https://images.unsplash.com/photo-1517400508447-f8dd518b86db?auto=format&fit=crop&w=600&q=80', // passengers
-          'https://images.unsplash.com/photo-1556388158-158ea5ccacbd?auto=format&fit=crop&w=600&q=80', // air canada
-          'https://images.unsplash.com/photo-1455587734955-081b22074882?auto=format&fit=crop&w=600&q=80', // passports
+          '/images/destinations/destinations-153456715357.webp', // passengers
+          '/images/destinations/destinations-153799619447.webp', // air canada
+          '/images/destinations/destinations-153848539908.webp', // passports
         ]
       },
       whyChooseUs: {
@@ -96,20 +96,20 @@ export default function ConciergePage() {
         desc: 'Explore the world with peace of mind. Our flight booking experts handle all the heavy lifting so you can focus on the journey.',
         quote: 'Travel With Confidence. Travel With Protection.',
         collageImages: [
-          'https://images.unsplash.com/photo-1455587734955-081b22074882?auto=format&fit=crop&w=600&q=80', // passport map
-          'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=600&q=80', // plane wing
-          'https://images.unsplash.com/photo-1540339832862-474599807836?auto=format&fit=crop&w=600&q=80' // passports
+          '/images/destinations/destinations-153868852519.webp', // passport map
+          '/images/destinations/destinations-153902014015.webp', // plane wing
+          '/images/destinations/destinations-1543783207-e.webp' // passports
         ]
       }
     },
     visas: {
       title: 'Visa Assistance',
-      heroImage: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1920&q=80',
+      heroImage: '/images/destinations/destinations-1544644181-1.webp',
       intro: {
         title: 'Visa Assistance Made Simple',
         text1: 'Navigating embassy requirements, biometrics appointments, official invitation letters, and multi-entry tourist visas can be overwhelming. We make it easy.',
         text2: 'From Schengen visas for Europe to documentation for the USA, UK, Australia, and Asia, our experts ensure your paperwork is flawless and submitted on time.',
-        image: 'https://images.unsplash.com/photo-1569974559288-469b61d33100?auto=format&fit=crop&w=800&q=80',
+        image: '/images/destinations/destinations-151642612207.webp',
       },
       list: {
         title: 'Your Journey Starts With The Right Documentation:',
@@ -120,9 +120,9 @@ export default function ConciergePage() {
           { title: 'Visa Renewals', desc: 'Assistance with extending or renewing existing travel permits.' }
         ],
         images: [
-          'https://images.unsplash.com/photo-1569974559288-469b61d33100?auto=format&fit=crop&w=600&q=80',
-          'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80',
-          'https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=600&q=80',
+          '/images/destinations/destinations-1544735716-3.webp',
+          '/images/destinations/destinations-1546708973-b.webp',
+          '/images/destinations/destinations-1547471080-7.webp',
         ]
       },
       whyChooseUs: {
@@ -139,20 +139,20 @@ export default function ConciergePage() {
         desc: 'Don\'t let complicated paperwork stand between you and your next destination. Let our specialists handle the bureaucracy while you plan your itinerary.',
         quote: 'A Vision Created For The Activities To Make Sure You Enjoy & Get Thrilled.',
         collageImages: [
-          'https://images.unsplash.com/photo-1569974559288-469b61d33100?auto=format&fit=crop&w=600&q=80',
-          'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=600&q=80',
-          'https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=600&q=80'
+          '/images/destinations/destinations-1548574505-5.webp',
+          '/images/destinations/destinations-1552832230-c.webp',
+          '/images/destinations/destinations-156555762326.webp'
         ]
       }
     },
     cruises: {
       title: 'Luxury Cruises',
-      heroImage: 'https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=1920&q=80',
+      heroImage: '/images/destinations/destinations-156683794570.webp',
       intro: {
         title: 'Sailing the World’s Most Majestic Waterways',
         text1: 'Charter private yachts, reserve balcony suites on Silversea, Regent Seven Seas, and Royal Caribbean, or glide down European rivers like the Rhine and Danube.',
         text2: 'A cruise offers the ultimate unpack-once luxury. We curate bespoke shore excursions, onboard dining reservations, and premium cabin selections.',
-        image: 'https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=800&q=80',
+        image: '/images/destinations/destinations-157384398126.webp',
       },
       list: {
         title: 'Our Cruise Specialties:',
@@ -163,9 +163,9 @@ export default function ConciergePage() {
           { title: 'Pre & Post Cruise Tours', desc: 'Seamless land packages complementing your sailing.' }
         ],
         images: [
-          'https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=600&q=80',
-          'https://images.unsplash.com/photo-1599640842225-85d111c60e6b?auto=format&fit=crop&w=600&q=80',
-          'https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=600&q=80',
+          '/images/destinations/destinations-157555095910.webp',
+          '/images/destinations/destinations-157889510140.webp',
+          '/images/destinations/destinations-158061867259.webp',
         ]
       },
       whyChooseUs: {
@@ -182,9 +182,9 @@ export default function ConciergePage() {
         desc: 'Discover hidden coves, iconic ports, and unparalleled onboard service. The ocean is calling, and we are here to ensure you answer in style.',
         quote: 'A Vision Created For The Activities To Make Sure You Enjoy & Get Thrilled.',
         collageImages: [
-          'https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=600&q=80',
-          'https://images.unsplash.com/photo-1599640842225-85d111c60e6b?auto=format&fit=crop&w=600&q=80',
-          'https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=600&q=80'
+          '/images/destinations/destinations-158455124667.webp',
+          '/images/destinations/destinations-158686163516.webp',
+          '/images/destinations/destinations-158939481580.webp'
         ]
       }
     }

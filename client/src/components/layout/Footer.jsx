@@ -20,7 +20,7 @@ export default function Footer() {
               className="h-12 sm:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               onError={(e) => {
                 e.target.onerror = null;
-                e.target.src = 'https://blackforestholidays.com/wp-content/uploads/2021/07/white_logo.png';
+                e.target.src = '/images/pages/white_logo.png.webp';
               }}
             />
           </Link>

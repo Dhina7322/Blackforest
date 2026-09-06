@@ -8,9 +8,9 @@ export default function CoachTourPage() {
   const { openEnquiryModal } = useSettings();
 
   const packages = [
-    { title: "France and Swiss Alps", duration: "10 nights / 11 days", image: "https://images.unsplash.com/photo-1502602898657-3e907600e120?auto=format&fit=crop&w=600&q=80" },
-    { title: "France and Switzerland with Enchanted Alsace", duration: "6 nights / 7 days", image: "https://images.unsplash.com/photo-1529154036614-a60975f5c760?auto=format&fit=crop&w=600&q=80" },
-    { title: "Swiss and Italian Spotlight and Venice", duration: "8 nights / 9 days", image: "https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?auto=format&fit=crop&w=600&q=80" },
+    { title: "France and Swiss Alps", duration: "10 nights / 11 days", image: "/images/destinations/destinations-151642612207.webp" },
+    { title: "France and Switzerland with Enchanted Alsace", duration: "6 nights / 7 days", image: "/images/destinations/destinations-151863815034.webp" },
+    { title: "Swiss and Italian Spotlight and Venice", duration: "8 nights / 9 days", image: "/images/destinations/destinations-1518684079-3.webp" },
   ];
 
   return (
@@ -21,7 +21,7 @@ export default function CoachTourPage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1920&q=80"
+            src="/images/destinations/destinations-151870926880.webp"
             alt="Coach Tour"
             className="w-full h-full object-cover"
           />
