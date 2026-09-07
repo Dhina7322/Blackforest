@@ -11,7 +11,7 @@ export default function IslandSection() {
       {/* Background Graphic Accents */}
       <div className="absolute inset-0 z-0 opacity-20">
         <img
-          src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=2000&q=80"
+          src="/images/destinations/destinations-149397604037.webp"
           alt="Maldives Island Luxury"
           className="w-full h-full object-cover"
         />
@@ -70,24 +70,24 @@ export default function IslandSection() {
           <div className="lg:col-span-6 grid grid-cols-2 gap-4">
             <div className="space-y-4">
               <img
-                src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=600&q=80"
+                src="/images/destinations/destinations-149644222666.webp"
                 alt="Maldives Overwater Villas"
                 className="rounded-2xl shadow-xl w-full h-64 object-cover hover:scale-105 transition-transform duration-500"
               />
               <img
-                src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=600&q=80"
+                src="/images/destinations/destinations-150159490735.webp"
                 alt="Tropical Lagoon Sunset"
                 className="rounded-2xl shadow-xl w-full h-44 object-cover hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div className="space-y-4 pt-8">
               <img
-                src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80"
+                src="/images/destinations/destinations-150260289865.webp"
                 alt="Pristine Island Beach"
                 className="rounded-2xl shadow-xl w-full h-44 object-cover hover:scale-105 transition-transform duration-500"
               />
               <img
-                src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=600&q=80"
+                src="/images/destinations/destinations-150317711927.webp"
                 alt="Island Dining"
                 className="rounded-2xl shadow-xl w-full h-64 object-cover hover:scale-105 transition-transform duration-500"
               />

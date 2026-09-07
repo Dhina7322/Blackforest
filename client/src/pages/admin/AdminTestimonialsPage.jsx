@@ -16,7 +16,7 @@ export default function AdminTestimonialsPage() {
     location: 'London, UK',
     rating: 5,
     message: '',
-    photo: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
+    photo: '/images/destinations/destinations-150880418587.webp',
     status: 'published'
   });
 
@@ -46,7 +46,7 @@ export default function AdminTestimonialsPage() {
       location: 'Dubai, UAE',
       rating: 5,
       message: '',
-      photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
+      photo: '/images/destinations/destinations-150931697585.webp',
       status: 'published'
     });
     setModalOpen(true);
