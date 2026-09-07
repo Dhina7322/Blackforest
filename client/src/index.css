@@ -1,9 +1,11 @@
 @import "tailwindcss";
 
+/* ── Adorn Condensed Sans loaded via cdnfonts.com CDN (see index.html) ── */
+
 @theme {
-  --font-serif: 'Palanquin Dark', serif;
-  --font-sans: 'Jost', sans-serif;
-  --font-cursive: 'Mansalva', cursive;
+  --font-serif: 'The Seasons', 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'The Seasons', 'Cormorant Garamond', Georgia, serif;
+  --font-cursive: 'Adorn Condensed Sans', 'Caveat', cursive;
 
   --color-forest: #10221b;
   --color-forest-dark: #0a1712;
@@ -23,19 +25,34 @@
 }
 
 @layer base {
+  :root {
+    --font-primary: 'The Seasons', 'Cormorant Garamond', Georgia, serif;
+    --font-accent: 'Adorn Condensed Sans', 'Caveat', cursive;
+  }
+
   html {
     scroll-behavior: smooth;
-    font-family: var(--font-sans);
+    font-family: var(--font-primary);
   }
 
   body {
     background-color: var(--color-stone-bg);
     color: #483E3E;
     overflow-x: hidden;
+    font-family: var(--font-primary);
   }
 
-  h1, h2, h3, .font-serif {
-    font-family: var(--font-serif);
+  h1, h2, h3, h4, h5, h6, .font-serif {
+    font-family: var(--font-primary);
+    letter-spacing: 0.02em;
+  }
+
+  .font-cursive, .font-accent {
+    font-family: var(--font-accent);
+  }
+
+  p, span, a, li, button, input, textarea, select, label {
+    font-family: var(--font-primary);
   }
 }
 
