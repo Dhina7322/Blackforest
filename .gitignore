@@ -35,3 +35,7 @@ yarn-error.log*
 
 # WordPress raw uploads folder (2GB reference material)
 client/src/assets/uploads/
+
+# Vercel
+.vercel
+client/.vercel

@@ -1,0 +1,5 @@
+src/assets/uploads
+node_modules
+dist
+.git
+.cache_ggshield

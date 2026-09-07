@@ -1,0 +1,8 @@
+client/src/assets/uploads
+client/src/assets/uploads/**
+node_modules
+server
+client/node_modules
+client/dist
+.git
+.cache_ggshield
