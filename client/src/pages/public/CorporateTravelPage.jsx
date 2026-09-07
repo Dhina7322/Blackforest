@@ -1,18 +1,122 @@
-import React from 'react';
+import React, { useState } from 'react';
 import HeroWave from '../../components/common/HeroWave';
 import ExpertiseSection from '../../components/home/ExpertiseSection';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { useSettings } from '../../context/SiteSettingsContext';
 import { Link } from 'react-router-dom';
 
+function HandDrawnLeftArrow({ className = "w-12 h-6" }) {
+  return (
+    <svg 
+      viewBox="0 0 54 22" 
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      {/* Hand-drawn shaft */}
+      <path 
+        d="M50 11C35 10.5 20 11.2 3 11" 
+        stroke="currentColor" 
+        strokeWidth="2.2" 
+        strokeLinecap="round" 
+      />
+      {/* Top angled barb stroke */}
+      <path 
+        d="M17 3.5C12 6.5 7 9 2.5 11" 
+        stroke="currentColor" 
+        strokeWidth="2.2" 
+        strokeLinecap="round" 
+      />
+      {/* Bottom angled barb stroke */}
+      <path 
+        d="M17 18.5C12 15.5 7 13 2.5 11" 
+        stroke="currentColor" 
+        strokeWidth="2.2" 
+        strokeLinecap="round" 
+      />
+      {/* Subtle sketchy double stroke */}
+      <path 
+        d="M46 12C32 11.6 18 12.1 6 11.8" 
+        stroke="currentColor" 
+        strokeWidth="1.2" 
+        strokeLinecap="round" 
+        opacity="0.5" 
+      />
+    </svg>
+  );
+}
+
+function HandDrawnRightArrow({ className = "w-12 h-6" }) {
+  return (
+    <svg 
+      viewBox="0 0 54 22" 
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      {/* Hand-drawn shaft */}
+      <path 
+        d="M4 11C19 10.5 34 11.2 51 11" 
+        stroke="currentColor" 
+        strokeWidth="2.2" 
+        strokeLinecap="round" 
+      />
+      {/* Top angled barb stroke */}
+      <path 
+        d="M37 3.5C42 6.5 47 9 51.5 11" 
+        stroke="currentColor" 
+        strokeWidth="2.2" 
+        strokeLinecap="round" 
+      />
+      {/* Bottom angled barb stroke */}
+      <path 
+        d="M37 18.5C42 15.5 47 13 51.5 11" 
+        stroke="currentColor" 
+        strokeWidth="2.2" 
+        strokeLinecap="round" 
+      />
+      {/* Subtle sketchy double stroke */}
+      <path 
+        d="M8 12C22 11.6 36 12.1 48 11.8" 
+        stroke="currentColor" 
+        strokeWidth="1.2" 
+        strokeLinecap="round" 
+        opacity="0.5" 
+      />
+    </svg>
+  );
+}
+
 export default function CorporateTravelPage() {
-  const { settings, openEnquiryModal } = useSettings();
-  const siteName = settings?.siteName || 'Blackforest Holidays';
+  const { settings } = useSettings();
+
+  const carouselImages = [
+    { src: '/assets/images/Untitled-design-26.png', alt: 'Corporate business traveler at terminal' },
+    { src: '/assets/images/Untitled-design-23.png', alt: 'Visa application on laptop with documentation' },
+    { src: '/assets/images/Untitled-design-24.png', alt: 'Corporate luxury retreat and hotel resort' },
+    { src: '/assets/images/Untitled-design-25.png', alt: 'Executive board meeting' }
+  ];
+
+  const [startIndex, setStartIndex] = useState(0);
+
+  const prevSlide = () => {
+    setStartIndex((prev) => (prev === 0 ? carouselImages.length - 1 : prev - 1));
+  };
+
+  const nextSlide = () => {
+    setStartIndex((prev) => (prev + 1) % carouselImages.length);
+  };
+
+  const visibleImages = [
+    carouselImages[startIndex],
+    carouselImages[(startIndex + 1) % carouselImages.length],
+    carouselImages[(startIndex + 2) % carouselImages.length]
+  ];
+
   return (
     <div className="bg-white font-sans text-gray-800 animate-fadeIn overflow-x-hidden">
       
       {/* 1. Hero Section */}
-      <section className="relative h-[60vh] min-h-[500px] flex flex-col justify-end">
+      <section className="relative h-[55vh] min-h-[460px] flex flex-col justify-end">
         <div className="absolute inset-0 z-0 bg-[#0a1712]">
           <img
             src='/assets/images/how-corporate-travel-can-sail-through-uncertain-times-1920x1274-1.jpg'
@@ -21,12 +125,12 @@ export default function CorporateTravelPage() {
           />
         </div>
         
-        <div className="relative z-10 text-white mt-16 flex flex-col items-center pb-32">
-          <h1 className="text-4xl md:text-5xl lg:text-[60px] font-bold tracking-wider mb-4 drop-shadow-xl text-center">
+        <div className="relative z-10 text-white mt-16 flex flex-col items-center pb-28">
+          <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold tracking-wider mb-4 drop-shadow-xl text-center">
             Corporate Travel
           </h1>
           <div className="flex items-center justify-center gap-2 text-sm md:text-base font-light drop-shadow-md tracking-wider">
-            <a href="/" className="hover:text-gray-200 transition-colors">Home</a>
+            <Link to="/" className="hover:text-gray-200 transition-colors">Home</Link>
             <span className="text-gray-300">&gt;</span>
             <span>Corporate Travel</span>
           </div>
@@ -34,80 +138,143 @@ export default function CorporateTravelPage() {
         <HeroWave />
       </section>
 
-      {/* 2. Main Split Content Section */}
-      <section className="py-20 md:py-28 relative z-20">
+      {/* 2. Main Content Section - Two columns: Left 60%, Right 40% with overlapping framed images */}
+      <section className="py-16 sm:py-24 bg-white relative z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+          
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
             
-            {/* Left Content */}
-            <div className="space-y-6">
-              <span className="text-[#10221b] font-bold text-sm tracking-widest block uppercase">Corporate Travel</span>
-              <h2 className="text-4xl md:text-[42px] font-bold text-[#7cb342] leading-tight pb-4">
+            {/* Left Column (60%) - Typography and Services List */}
+            <div className="w-full lg:w-[60%] space-y-6">
+              <span className="text-[#111827] font-bold text-[18px] sm:text-[19px] tracking-wide block uppercase">
+                Corporate Travel
+              </span>
+              
+              <h2 className="text-[36px] sm:text-[44px] md:text-[50px] font-bold text-[#5e963b] leading-[1.15] font-sans">
                 Business Travel,
                 <br />
                 Thoughtfully Managed
-                <div className="h-1 w-24 bg-[#a5d6a7] mt-4"></div>
               </h2>
+
+              {/* Light green accent bar matching Image 3 */}
+              <div className="h-[3px] w-24 bg-[#a5d6a7] mt-3 mb-8"></div>
               
-              <div className="text-gray-600 text-sm font-light leading-relaxed space-y-4">
-                <p>At Blackforest Holidays, we tailor every aspect of your itinerary. From our initial consultation through to welcoming you home, we are committed to making sure that every detail of your journey is exactly as you imagined.</p>
-                <p>Our commitment is to offer you exceptional travel planning services combined with our 24/7 client care.</p>
-                <p className="font-bold text-[#10221b]">Here's What You Can Expect:</p>
-                <ul className="space-y-2">
-                  <li><strong>1. Dedicated Travel Management</strong> – A personal travel manager who handles all the details of your trip.</li>
-                  <li><strong>2. Cost-Conscious Solutions</strong> – Strategic partnerships allowing for negotiated rates and cost savings.</li>
-                  <li><strong>3. Personalized Service</strong> – From flexible booking policies to tailored loyalty programs, we put your needs first.</li>
-                  <li><strong>4. Seamless Coordination</strong> – Flawless execution from airport transfers to ground transport and event planning.</li>
-                  <li><strong>5. 24/7 Global Support</strong> – A dedicated contact person handling your itinerary, available for you around the clock.</li>
-                  <li><strong>6. Expert Planners</strong> – Reliable and experienced planners handling your corporate events and travel itineraries.</li>
-                  <li><strong>7. Meetings & Conferences</strong> – End-to-end event planning for small team offsites to large-scale conferences.</li>
-                  <li><strong>8. Corporate Group Travel</strong> – Hassle-free management of incentive trips and group travel for large groups of employees.</li>
-                  <li><strong>9. Executive Travel</strong> – VIP arrangements for C-level executives ensuring priority and privacy.</li>
-                  <li><strong>10. Travel Policy Enforcement</strong> – Automated expense tracking and compliance with your corporate travel policies.</li>
-                  <li><strong>11. Risk Management</strong> – Real-time updates and emergency support to ensure employee safety and peace of mind.</li>
-                </ul>
-                <p className="font-bold text-[#10221b] pt-4">Corporate Travel Across The Planet</p>
-                <p>Whether you're travelling for an important meeting, attending a conference, or organizing a team retreat, we ensure a seamless and productive travel experience.</p>
+              <div className="text-[#374151] text-[16.5px] sm:text-[18px] font-light leading-[1.9] space-y-6 font-sans">
+                <p>
+                  At BlackForest Holidays, we understand that corporate travel is more than simply booking flights and hotels. Our corporate tour packages are designed to keep your people moving efficiently, comfortably, and confidently while giving your organisation complete control over every journey.
+                </p>
+                <p>
+                  From business trips and executive travel to corporate meetings, conferences, incentives, and group movements, our dedicated travel solutions are designed to make every business journey seamless.
+                </p>
+                
+                <div className="pt-4">
+                  <h3 className="font-bold text-[#111827] text-[20px] sm:text-[22px] mb-2 font-sans">
+                    Your Business. Our Expertise.
+                  </h3>
+                  <p>
+                    We combine personalised service, travel expertise, and efficient coordination to create corporate travel programmes that work around your organisation's requirements.
+                  </p>
+                </div>
+
+                <div className="pt-4">
+                  <h3 className="font-bold text-[#111827] text-[20px] sm:text-[22px] mb-5 font-sans">
+                    Our Corporate Travel Services
+                  </h3>
+                  <ol className="space-y-3.5 text-[#374151] text-[16px] sm:text-[17.5px] leading-[1.85]">
+                    <li><strong>1. Business Travel Management</strong> – Efficient flight, hotel, and transportation arrangements for business travellers.</li>
+                    <li><strong>2. Executive Travel</strong> – Premium travel solutions designed for senior executives and VIP travellers.</li>
+                    <li><strong>3. Corporate Hotel Bookings</strong> – Carefully selected business hotels and premium accommodation worldwide.</li>
+                    <li><strong>4. Flight Reservations</strong> – Domestic and international flight bookings with flexible options to suit business schedules.</li>
+                    <li><strong>5. Visa Assistance</strong> – Professional visa guidance and documentation support for international business travel.</li>
+                    <li><strong>6. Airport Transfers</strong> – Reliable airport transfers and ground transportation for stress-free journeys.</li>
+                    <li><strong>7. Meetings & Conferences</strong> – End-to-end travel coordination for meetings, conferences, exhibitions, and corporate events.</li>
+                    <li><strong>8. Corporate Group Travel</strong> – Seamless travel arrangements for teams, delegations, and large corporate groups.</li>
+                    <li><strong>9. Incentive Travel</strong> – Inspiring incentive trips designed to reward, motivate, and bring teams together.</li>
+                    <li><strong>10. Travel Policy Support</strong> – Travel solutions aligned with your company's policies, budgets, and approval processes.</li>
+                    <li><strong>11. 24/7 Travel Assistance</strong> – Dedicated support to help manage changes, disruptions, and urgent travel requirements.</li>
+                  </ol>
+                </div>
               </div>
             </div>
 
-            {/* Right Content - Images */}
-            <div className="relative w-full aspect-square md:aspect-[4/3] lg:aspect-auto lg:h-[800px]">
-              <div className="absolute top-0 right-0 w-[90%] h-[55%] rounded-xl overflow-hidden shadow-lg z-10 border-[10px] border-[#27B8B1]">
-                <img src="/assets/images/corporate-travel.jpg" alt="Team planning" className="w-full h-full object-cover" />
-              </div>
-              <div className="absolute bottom-0 left-0 w-[70%] h-[50%] rounded-xl overflow-hidden shadow-2xl z-20">
-                <img src="/assets/images/Untitled-design-23.png" alt="Corporate discussion" className="w-full h-full object-cover" />
+            {/* Right Column (40%) - Overlapping Images matching Image 1 */}
+            <div className="w-full lg:w-[40%] lg:sticky lg:top-28 pt-4 pb-8">
+              <div className="relative w-full max-w-[480px] mx-auto lg:ml-auto">
+                {/* Back image - Two business women with luggage and teal border */}
+                <div className="w-[88%] ml-auto aspect-[4/3] rounded-2xl overflow-hidden shadow-xl border-[8px] sm:border-[10px] border-[#27B8B1] relative z-10">
+                  <img 
+                    src="/assets/images/corporate-travel.jpg" 
+                    alt="Corporate business travel executives walking in airport" 
+                    className="w-full h-full object-cover" 
+                  />
+                </div>
+
+                {/* Front overlapping image - Laptop visa application form */}
+                <div className="w-[74%] -mt-24 sm:-mt-28 lg:-mt-32 relative z-20 rounded-xl overflow-hidden shadow-2xl border-4 border-white">
+                  <img 
+                    src="/assets/images/Untitled-design-23.png" 
+                    alt="Visa application form on laptop" 
+                    className="w-full h-auto object-cover block" 
+                  />
+                </div>
               </div>
             </div>
 
           </div>
+
         </div>
       </section>
 
-      {/* 3. Image Carousel Section */}
-      <section className="py-10 pb-20 w-full overflow-hidden relative">
-        <div className="max-w-[1400px] mx-auto px-4 relative flex items-center justify-center">
+      {/* 3. Corporate Travel Across The World Carousel Section with Hand-Drawn Arrows - matching Image 5 */}
+      <section className="py-16 sm:py-24 bg-[#faf9f6] border-t border-gray-100 overflow-hidden">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <button className="absolute left-2 md:left-8 z-10 p-2 text-gray-500 hover:text-black transition-colors">
-            <ArrowLeft className="w-6 h-6" />
-          </button>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-[85%]">
-            <div className="aspect-[4/5] overflow-hidden shadow-sm">
-              <img src="/assets/images/Untitled-design-24.png" alt="Boardroom meeting" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
-            </div>
-            <div className="aspect-[4/5] overflow-hidden shadow-sm">
-              <img src="/assets/images/Untitled-design-25.png" alt="Airport waiting" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
-            </div>
-            <div className="aspect-[4/5] overflow-hidden shadow-sm">
-              <img src="/assets/images/Untitled-design-26.png" alt="Writing in planner" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
-            </div>
+          <div className="mb-10 sm:mb-14">
+            <h3 className="text-2xl sm:text-[30px] font-bold text-[#111827] mb-3 font-sans">
+              Corporate Travel Across The World
+            </h3>
+            <p className="text-[16.5px] sm:text-[18px] text-[#4b5563] leading-[1.8] max-w-4xl font-light font-sans">
+              Whether your team is travelling within India or across international business hubs in Asia, Europe, the Middle East, Africa, Australia, and the Americas, we coordinate every element of the journey with precision.
+            </p>
           </div>
 
-          <button className="absolute right-2 md:right-8 z-10 p-2 text-gray-500 hover:text-black transition-colors">
-            <ArrowRight className="w-6 h-6" />
-          </button>
+          {/* Carousel Slider with Hand-Drawn Arrows */}
+          <div className="relative flex items-center justify-between gap-3 sm:gap-6 lg:gap-8">
+            {/* Left Hand-Drawn Arrow */}
+            <button 
+              onClick={prevSlide}
+              aria-label="Previous image"
+              className="text-[#182c20] hover:text-[#5e963b] transition-transform hover:scale-110 p-1 sm:p-2 cursor-pointer focus:outline-none flex-shrink-0"
+            >
+              <HandDrawnLeftArrow className="w-10 sm:w-14 h-5 sm:h-7" />
+            </button>
+
+            {/* 3 Images Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 w-full">
+              {visibleImages.map((img, idx) => (
+                <div 
+                  key={idx} 
+                  className="aspect-[4/5] overflow-hidden rounded-sm shadow-md bg-white group transition-all duration-300"
+                >
+                  <img 
+                    src={img.src} 
+                    alt={img.alt} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 block" 
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
+
+            {/* Right Hand-Drawn Arrow */}
+            <button 
+              onClick={nextSlide}
+              aria-label="Next image"
+              className="text-[#182c20] hover:text-[#5e963b] transition-transform hover:scale-110 p-1 sm:p-2 cursor-pointer focus:outline-none flex-shrink-0"
+            >
+              <HandDrawnRightArrow className="w-10 sm:w-14 h-5 sm:h-7" />
+            </button>
+          </div>
 
         </div>
       </section>
@@ -116,32 +283,32 @@ export default function CorporateTravelPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="mb-16 max-w-2xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#7cb342] mb-4">
+          <div className="mb-14 max-w-3xl">
+            <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-[#5e963b] mb-4 font-sans">
               Why Choose BlackForest Holidays?
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14">
             
-            <div className="space-y-4">
-              <h3 className="font-bold text-[#10221b] text-lg">Dedicated Travel Management</h3>
-              <p className="text-gray-600 text-sm font-light leading-relaxed">Our focused strategy provides you the best routing and the most efficient fares.</p>
+            <div className="space-y-3">
+              <h3 className="font-bold text-[#10221b] text-[22px] sm:text-[24px] leading-snug font-sans">Dedicated Travel Management</h3>
+              <p className="text-gray-600 text-[16.5px] sm:text-[18px] font-light leading-[1.8] font-sans">Our focused strategy provides you the best routing and the most efficient fares.</p>
             </div>
             
-            <div className="space-y-4">
-              <h3 className="font-bold text-[#10221b] text-lg">Cost-Conscious Solutions</h3>
-              <p className="text-gray-600 text-sm font-light leading-relaxed">We leverage extensive supplier relationships and technology to optimize costs without compromising quality.</p>
+            <div className="space-y-3">
+              <h3 className="font-bold text-[#10221b] text-[22px] sm:text-[24px] leading-snug font-sans">Cost-Conscious Solutions</h3>
+              <p className="text-gray-600 text-[16.5px] sm:text-[18px] font-light leading-[1.8] font-sans">We leverage extensive supplier relationships and technology to optimize costs without compromising quality.</p>
             </div>
             
-            <div className="space-y-4">
-              <h3 className="font-bold text-[#10221b] text-lg">Seamless Coordination</h3>
-              <p className="text-gray-600 text-sm font-light leading-relaxed">Flight bookings, ground transfers, hotel stays and meetings—we coordinate everything seamlessly from start to finish.</p>
+            <div className="space-y-3">
+              <h3 className="font-bold text-[#10221b] text-[22px] sm:text-[24px] leading-snug font-sans">Seamless Coordination</h3>
+              <p className="text-gray-600 text-[16.5px] sm:text-[18px] font-light leading-[1.8] font-sans">Flight bookings, ground transfers, hotel stays and meetings—we coordinate everything seamlessly from start to finish.</p>
             </div>
             
-            <div className="space-y-4">
-              <h3 className="font-bold text-[#10221b] text-lg">24/7 Global Support</h3>
-              <p className="text-gray-600 text-sm font-light leading-relaxed">Our dedicated consultants are available around the clock to support you with changes, cancellations, or emergencies wherever you are.</p>
+            <div className="space-y-3">
+              <h3 className="font-bold text-[#10221b] text-[22px] sm:text-[24px] leading-snug font-sans">24/7 Global Support</h3>
+              <p className="text-gray-600 text-[16.5px] sm:text-[18px] font-light leading-[1.8] font-sans">Our dedicated consultants are available around the clock to support you with changes, cancellations, or emergencies wherever you are.</p>
             </div>
             
           </div>
@@ -155,14 +322,14 @@ export default function CorporateTravelPage() {
             
             {/* Left Content */}
             <div className="space-y-8">
-              <h2 className="text-4xl md:text-[46px] font-bold text-[#7cb342] leading-tight">
+              <h2 className="text-4xl md:text-[46px] font-bold text-[#5e963b] leading-tight font-sans">
                 Travel Smarter.
                 <br />
                 Move Further.
                 <div className="h-1 w-24 bg-[#a5d6a7] mt-6"></div>
               </h2>
               
-              <div className="text-gray-600 text-[15px] font-light leading-[1.8]">
+              <div className="text-gray-700 text-[18px] sm:text-[20px] lg:text-[21px] font-light leading-[1.85] font-sans">
                 <p>Let Blackforest Holidays elevate your business travel experience. To partner with us and leverage our strategic travel management solutions to achieve better control over your travel expenditures, enhance traveler satisfaction, and drive overall business success.</p>
               </div>
 

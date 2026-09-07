@@ -101,8 +101,8 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden xl:flex items-center space-x-2 lg:space-x-7 text-[15px] font-medium tracking-wide">
-            {/* Holidays Dropdown */}
+          <nav className="hidden xl:flex items-center space-x-4 lg:space-x-8 xl:space-x-10 text-[15px] font-medium tracking-wide font-sans">
+            {/* Destinations Dropdown */}
             <div
               className="relative group py-2"
               onMouseEnter={() => setActiveDropdown('destinations')}
@@ -116,7 +116,7 @@ export default function Header() {
                     : 'text-white hover:text-[#f29727]'
                 }`}
               >
-                Holidays
+                Destinations
                 <ChevronDown className="w-3.5 h-3.5 opacity-80 group-hover:rotate-180 transition-transform" />
               </Link>
 
@@ -146,11 +146,49 @@ export default function Header() {
               )}
             </div>
 
-            <Link to="/corporate-travel" className="hover:text-[#f29727] transition-colors py-1">
-              Corporate
-            </Link>
+            {/* Experiences Dropdown */}
+            <div
+              className="relative group py-2"
+              onMouseEnter={() => setActiveDropdown('experiences')}
+              onMouseLeave={() => setActiveDropdown(null)}
+            >
+              <Link
+                to="/experiences"
+                className={`flex items-center gap-1 transition-colors py-1 ${
+                  isExperiencesActive
+                    ? 'text-[#f29727] border-b-2 border-[#f29727]'
+                    : 'text-white hover:text-[#f29727]'
+                }`}
+              >
+                Experiences
+                <ChevronDown className="w-3.5 h-3.5 opacity-80 group-hover:rotate-180 transition-transform" />
+              </Link>
 
-            {/* Services Dropdown */}
+              {activeDropdown === 'experiences' && (
+                <div className="absolute top-full left-0 w-[210px] pt-1.5 z-50 animate-fadeIn">
+                  <div className="flex flex-col space-y-1.5">
+                    {experiencesList.map((exp) => {
+                      const isActive = location.pathname.includes(exp.slug);
+                      return (
+                        <Link
+                          key={exp.slug}
+                          to={`/experiences/${exp.slug}`}
+                          className={`block px-5 py-3 text-[14px] transition-all duration-200 shadow-md ${
+                            isActive
+                              ? 'bg-[#10221b] text-white font-medium border-l-4 border-[#f29727]'
+                              : 'bg-white text-[#10221b] hover:bg-[#10221b] hover:text-white'
+                          }`}
+                        >
+                          {exp.name}
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Concierge Dropdown */}
             <div
               className="relative group py-2"
               onMouseEnter={() => setActiveDropdown('concierge')}
@@ -164,7 +202,7 @@ export default function Header() {
                     : 'text-white hover:text-[#f29727]'
                 }`}
               >
-                Services
+                Concierge
                 <ChevronDown className="w-3.5 h-3.5 opacity-80 group-hover:rotate-180 transition-transform" />
               </Link>
 
@@ -187,23 +225,17 @@ export default function Header() {
                         </Link>
                       );
                     })}
-                    <Link
-                      to="/coach-tour"
-                      className="block px-5 py-3 text-[14px] transition-all duration-200 shadow-md bg-white text-[#10221b] hover:bg-[#10221b] hover:text-white"
-                    >
-                      Coach Tour
-                    </Link>
                   </div>
                 </div>
               )}
             </div>
 
-            <a href="#testimonials" className="hover:text-[#f29727] transition-colors py-1">
-              Testimonials
-            </a>
+            <Link to="/corporate-travel" className="hover:text-[#f29727] transition-colors py-1">
+              Corporate Travel
+            </Link>
 
-            <Link to="/journal" className="hover:text-[#f29727] transition-colors py-1">
-              Blogs
+            <Link to="/coach-tour" className="hover:text-[#f29727] transition-colors py-1">
+              Coach Tour
             </Link>
 
             <Link to="/about" className="hover:text-[#f29727] transition-colors py-1">

@@ -1,100 +1,106 @@
 import React from 'react';
 
 export default function ValuePropsSection() {
-  const features = [
+  const colLeft = [
     {
       id: 1,
-      icon: '/assets/images/adven-home-new-icon-01.png',
-      title: 'Free cancellation',
-      desc: 'Stay flexible with easy and hassle-free cancellation options.'
+      icon: '/assets/images/icon-img-1.png',
+      title: 'Tailor-Made Journeys',
+      desc: 'Travel experiences thoughtfully designed around your interests, style, and dreams.'
     },
     {
       id: 2,
-      icon: '/assets/images/adven-home-new-icon-02.png',
-      title: 'Comprehensive Insurance',
-      desc: "Travel with peace of mind knowing you're fully covered."
+      icon: '/assets/images/icon-img-3.png',
+      title: 'Expert Travel Design',
+      desc: 'Our experienced travel specialists bring knowledge, care, and attention to every journey.'
     },
     {
       id: 3,
-      icon: '/assets/images/adven-home-new-icon-03.png',
-      title: 'Special Promotions',
-      desc: 'Unlock exclusive deals, discounts, and seasonal offers.'
-    },
+      icon: '/assets/images/icon-img-5.png',
+      title: 'Personalised Itineraries',
+      desc: 'Every detail is thoughtfully planned around the way you want to explore the world.'
+    }
+  ];
+
+  const colRight = [
     {
       id: 4,
-      icon: '/assets/images/adven-home-new-icon-04.png',
-      title: 'Guidance for Every Step',
-      desc: 'Expert advice and local insights to help you travel smarter.'
+      icon: '/assets/images/icon-img-2.png',
+      title: 'Exceptional Experiences',
+      desc: 'Discover extraordinary places and unforgettable moments, curated just for you.'
     },
     {
       id: 5,
-      icon: '/assets/images/adven-home-new-icon-05.png',
-      title: 'Personalized Assistance',
-      desc: 'Dedicated support tailored to your unique travel needs.'
+      icon: '/assets/images/icon-img-4.png',
+      title: 'Journeys For Every Story',
+      desc: 'From romantic escapes to family adventures, we create travel experiences that feel truly personal.'
     },
     {
       id: 6,
-      icon: '/assets/images/adven-home-new-icon-06.png',
+      icon: '/assets/images/icon-img-6.png',
       title: 'Seamless Travel Support',
-      desc: "From planning to return, we're with you every step of the way."
+      desc: "From your first enquiry to your return home, we're here to make your journey effortless."
     }
   ];
 
   return (
-    <section className="relative py-16 sm:py-20 lg:py-24 bg-[#fbfaf8] overflow-hidden">
-      {/* Mountain Backpacker Background on the left from uploaded assets */}
+    <section 
+      className="relative py-16 sm:py-20 lg:py-24 bg-[#fbfaf8] overflow-hidden bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage: "url('/assets/images/value-props-bg.jpg')"
+      }}
+    >
+      {/* Subtle soft warm radial highlight for perfect text contrast without washing out the landscape */}
       <div 
-        className="absolute inset-y-0 left-0 w-full lg:w-1/2 z-0 bg-cover bg-center opacity-85 pointer-events-none hidden sm:block"
-        style={{ 
-          backgroundImage: "url('/assets/images/liam-pozz-HZvGtncWvyQ-unsplash-scaled.jpg')",
-          backgroundPosition: "left bottom"
+        className="absolute inset-0 pointer-events-none z-0"
+        style={{
+          background: "radial-gradient(ellipse at 55% 45%, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.45) 45%, rgba(255, 255, 255, 0.1) 75%)"
         }}
       />
-      {/* Soft gradient fade for text legibility */}
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#fbfaf8]/80 to-[#fbfaf8] lg:from-transparent lg:via-[#fbfaf8]/40 lg:to-[#fbfaf8] z-0 pointer-events-none" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-transparent p-4 sm:p-6 rounded-2xl">
           
-          {/* Left spacer for desktop to allow backpacker photo to show prominently */}
-          <div className="hidden lg:block lg:col-span-5 h-[420px]" />
+          {/* Eyebrow & Title */}
+          <div className="mb-12 sm:mb-16 text-center">
+            <span 
+              className="text-2xl sm:text-[30px] block mb-1"
+              style={{
+                fontFamily: "var(--font-cursive, 'Caveat', cursive, serif)",
+                color: "#2cbcd6"
+              }}
+            >
+              Value before business
+            </span>
+            <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-bold text-[#5e963b] tracking-wide font-sans">
+              We Offer the best
+            </h2>
+          </div>
 
-          {/* Right Column: Title + 6 Features matching reference layout */}
-          <div className="lg:col-span-7 bg-[#fbfaf8]/95 lg:bg-transparent p-6 sm:p-8 rounded-2xl backdrop-blur-sm lg:backdrop-blur-none border border-gray-100 lg:border-none shadow-sm lg:shadow-none">
-            
-            {/* Eyebrow & Title */}
-            <div className="mb-8 sm:mb-10 text-left">
-              <span 
-                className="text-2xl sm:text-[28px] block mb-1"
-                style={{
-                  fontFamily: "var(--font-cursive, 'Caveat', cursive, serif)",
-                  color: "#27B8B1"
-                }}
-              >
-                Why choose our travel agency
-              </span>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#5e963b] tracking-wide font-sans">
-                We Offer the best
-              </h2>
-            </div>
-
-            {/* 6 Features Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-7 sm:gap-y-8">
-              {features.map((item) => (
-                <div key={item.id} className="flex items-start gap-4 group">
-                  <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-white rounded-full shadow-xs border border-gray-100 p-2">
+          {/* 6 Features in 2 Columns with Row Dividers */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-0 text-left">
+            {/* Left Column with dividing lines */}
+            <div className="divide-y divide-gray-200/60">
+              {colLeft.map((item, idx) => (
+                <div 
+                  key={item.id} 
+                  className={`flex items-start gap-4 sm:gap-5 group ${
+                    idx === 0 ? 'pb-7 sm:pb-8' : idx === colLeft.length - 1 ? 'pt-7 sm:pt-8' : 'py-7 sm:py-8'
+                  }`}
+                >
+                  <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-transparent border-none p-0 mt-0.5">
                     <img 
                       src={item.icon} 
                       alt={item.title} 
-                      className="w-8 h-8 object-contain transition-transform duration-300 group-hover:scale-110"
+                      className="w-10 h-10 object-contain transition-transform duration-300 group-hover:scale-110"
                       loading="lazy"
                     />
                   </div>
                   <div>
-                    <h3 className="text-[15px] sm:text-[16px] font-bold text-[#222222] font-sans mb-1 group-hover:text-[#5e963b] transition-colors">
+                    <h3 className="text-[16.5px] sm:text-[17.5px] font-bold text-[#1f2937] font-sans mb-1.5 group-hover:text-[#5e963b] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-[13px] text-[#666666] leading-relaxed font-light">
+                    <p className="text-[13.5px] sm:text-[14px] text-[#555555] leading-[1.65] font-light">
                       {item.desc}
                     </p>
                   </div>
@@ -102,6 +108,34 @@ export default function ValuePropsSection() {
               ))}
             </div>
 
+            {/* Right Column with dividing lines */}
+            <div className="divide-y divide-gray-200/60">
+              {colRight.map((item, idx) => (
+                <div 
+                  key={item.id} 
+                  className={`flex items-start gap-4 sm:gap-5 group ${
+                    idx === 0 ? 'pb-7 sm:pb-8' : idx === colRight.length - 1 ? 'pt-7 sm:pt-8' : 'py-7 sm:py-8'
+                  }`}
+                >
+                  <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-transparent border-none p-0 mt-0.5">
+                    <img 
+                      src={item.icon} 
+                      alt={item.title} 
+                      className="w-10 h-10 object-contain transition-transform duration-300 group-hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="text-[16.5px] sm:text-[17.5px] font-bold text-[#1f2937] font-sans mb-1.5 group-hover:text-[#5e963b] transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-[13.5px] sm:text-[14px] text-[#555555] leading-[1.65] font-light">
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
         </div>
