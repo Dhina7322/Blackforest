@@ -139,9 +139,13 @@ export default function DestinationsPage() {
               >
                 <div className="relative h-64 overflow-hidden">
                   <img
-                    src={d.thumbnail || d.heroImage || 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=800&q=80'}
+                    src={d.thumbnail || d.heroImage || '/assets/images/sean-robertson-5ftxFgXLtkI-unsplash-scaled.jpg'}
                     alt={d.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = '/assets/images/corporate-travel.jpg';
+                    }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 

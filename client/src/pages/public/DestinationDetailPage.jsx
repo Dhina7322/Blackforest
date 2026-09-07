@@ -684,7 +684,7 @@ export default function DestinationDetailPage({ forcedSlug }) {
                     className="max-h-20 max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
                     onError={(e) => {
                       e.target.onerror = null;
-                      e.target.src = 'https://via.placeholder.com/120x60?text=' + partner.name;
+                      e.target.src = '/assets/images/white_logo.png';
                     }}
                   />
                 </div>

@@ -6,7 +6,7 @@ export const initialTenPartners = [
     id: 1,
     name: 'PERU',
     subtitle: 'Travel Specialist',
-    image: '/11.webp',
+    image: '/assets/images/WhatsApp-Image-2026-08-17-at-20.35.24.jpeg',
     url: 'https://www.peru.travel',
     isPublished: true
   },
@@ -14,7 +14,7 @@ export const initialTenPartners = [
     id: 2,
     name: 'KOREA',
     subtitle: 'Travel Specialist',
-    image: '/12.webp',
+    image: '/assets/images/WhatsApp-Image-2026-08-17-at-20.35.21-2.jpeg',
     url: 'https://english.visitkorea.or.kr',
     isPublished: true
   },
@@ -22,7 +22,7 @@ export const initialTenPartners = [
     id: 3,
     name: 'GREECE',
     subtitle: 'Tourism Specialist',
-    image: '/13.webp',
+    image: '/assets/images/WhatsApp-Image-2026-08-17-at-20.35.22-1.jpeg',
     url: 'https://www.visitgreece.gr',
     isPublished: true
   },
@@ -30,7 +30,7 @@ export const initialTenPartners = [
     id: 4,
     name: 'JAPAN',
     subtitle: 'Travel Specialist',
-    image: '/14.webp',
+    image: '/assets/images/WhatsApp-Image-2026-08-17-at-20.35.22.jpeg',
     url: 'https://www.japan.travel',
     isPublished: true
   },
@@ -38,7 +38,7 @@ export const initialTenPartners = [
     id: 5,
     name: 'IATA',
     subtitle: 'TIDS Certified',
-    image: '/15.webp',
+    image: '/assets/images/WhatsApp-Image-2026-08-17-at-20.35.23-1.jpeg',
     url: 'https://www.iata.org',
     isPublished: true
   },
@@ -46,7 +46,7 @@ export const initialTenPartners = [
     id: 6,
     name: 'PORTUGAL',
     subtitle: 'Tourism Partner',
-    image: '/16.webp',
+    image: '/assets/images/WhatsApp-Image-2026-08-17-at-20.35.24-1.jpeg',
     url: 'https://www.visitportugal.com',
     isPublished: true
   },
@@ -54,7 +54,7 @@ export const initialTenPartners = [
     id: 7,
     name: 'PERU',
     subtitle: 'Urban Explorer Specialist',
-    image: '/17.webp',
+    image: '/assets/images/WhatsApp-Image-2026-08-17-at-20.35.18.jpeg',
     url: 'https://www.peru.travel',
     isPublished: true
   },
@@ -62,7 +62,7 @@ export const initialTenPartners = [
     id: 8,
     name: 'ALGARVE',
     subtitle: 'Sustainable Experiences Specialist',
-    image: '/18.webp',
+    image: '/assets/images/WhatsApp-Image-2026-08-17-at-20.35.22-2.jpeg',
     url: 'https://www.visitalgarve.pt',
     isPublished: true
   },
@@ -70,7 +70,7 @@ export const initialTenPartners = [
     id: 9,
     name: 'SPAIN',
     subtitle: 'Destination Specialist',
-    image: '/19.webp',
+    image: '/assets/images/WhatsApp-Image-2026-07-24-at-09.32.10-removebg-preview.png',
     url: 'https://www.spain.info',
     isPublished: true
   },
@@ -78,7 +78,7 @@ export const initialTenPartners = [
     id: 10,
     name: 'TARGET MARKETS',
     subtitle: 'Specialist',
-    image: '/20.webp',
+    image: '/assets/images/WhatsApp-Image-2026-08-17-at-20.35.19-1.jpeg',
     url: 'https://www.peru.travel',
     isPublished: true
   }

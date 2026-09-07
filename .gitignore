@@ -29,3 +29,9 @@ yarn-error.log*
 *.ntvs*
 *.njsproj
 *.sln
+
+# Added by ggshield
+.cache_ggshield
+
+# WordPress raw uploads folder (2GB reference material)
+client/src/assets/uploads/

@@ -37,7 +37,7 @@ export default function ExpertiseSection() {
             Knowledge Behind Every Journey
           </h2>
           <p className="text-gray-500 text-sm sm:text-base max-w-2xl mx-auto font-normal leading-relaxed">
-            We are well-traveled consultants continually expanding through tourism board programmes, industry training, and global partnerships to design journeys you can trust.
+            Our destination specialists continually expand their knowledge through tourism-board programmes, industry training and global certifications to design journeys you can trust.
           </p>
 
           {/* Golden Center Flourish Ornament */}
@@ -68,7 +68,7 @@ export default function ExpertiseSection() {
                   className="max-h-20 max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
                   onError={(e) => {
                     e.target.onerror = null;
-                    e.target.src = 'https://via.placeholder.com/120x60?text=' + partner.name;
+                    e.target.src = '/assets/site/white_logo.png';
                   }}
                 />
               </div>
@@ -91,6 +91,57 @@ export default function ExpertiseSection() {
               </div>
             </a>
           ))}
+        </div>
+
+        {/* Dark Green Pill Bar with 4 Benefits matching screenshot */}
+        <div className="mt-14 bg-[#10221b] text-white rounded-2xl p-6 sm:p-8 shadow-xl max-w-5xl mx-auto border border-white/10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-full border border-[#c59b27] flex items-center justify-center text-xl text-[#c59b27] flex-shrink-0">
+                ♙
+              </div>
+              <div>
+                <h4 className="font-bold text-sm text-[#f3efe8]">Expert Knowledge</h4>
+                <p className="text-xs text-[#cfc9be]">Destination training & global insights</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-full border border-[#c59b27] flex items-center justify-center text-xl text-[#c59b27] flex-shrink-0">
+                ⌂
+              </div>
+              <div>
+                <h4 className="font-bold text-sm text-[#f3efe8]">Trusted Expertise</h4>
+                <p className="text-xs text-[#cfc9be]">Certified by leading tourism boards</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-full border border-[#c59b27] flex items-center justify-center text-xl text-[#c59b27] flex-shrink-0">
+                ◎
+              </div>
+              <div>
+                <h4 className="font-bold text-sm text-[#f3efe8]">Better Journeys</h4>
+                <p className="text-xs text-[#cfc9be]">Meaningful & enriching experiences</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-full border border-[#c59b27] flex items-center justify-center text-xl text-[#c59b27] flex-shrink-0">
+                ♡
+              </div>
+              <div>
+                <h4 className="font-bold text-sm text-[#f3efe8]">Committed to You</h4>
+                <p className="text-xs text-[#cfc9be]">Continuous learning for travellers</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Footer Commitment Note */}
+        <div className="mt-8 flex items-center justify-center gap-2 text-xs text-gray-500 max-w-2xl mx-auto italic font-serif">
+          <span className="text-[#c59b27]">♧</span>
+          <span>Our partnerships reflect our commitment to providing authentic experiences and exceptional journeys worldwide.</span>
         </div>
 
       </div>

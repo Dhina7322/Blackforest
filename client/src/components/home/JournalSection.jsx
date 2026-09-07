@@ -1,62 +1,74 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { getPublishedBlogs, BLOGS_EVENT } from '../../utils/blogsManager';
 
 export default function JournalSection() {
-  const [articles, setArticles] = useState(() => getPublishedBlogs().slice(0, 3));
-
-  useEffect(() => {
-    const handleUpdate = () => {
-      setArticles(getPublishedBlogs().slice(0, 3));
-    };
-    window.addEventListener(BLOGS_EVENT, handleUpdate);
-    window.addEventListener('storage', handleUpdate);
-    return () => {
-      window.removeEventListener(BLOGS_EVENT, handleUpdate);
-      window.removeEventListener('storage', handleUpdate);
-    };
-  }, []);
-
-  if (!articles || articles.length === 0) return null;
+  const articles = [
+    {
+      id: 1,
+      slug: 'safety-measures-for-safe-trekking-in-waterfalls',
+      title: 'Safety measures for safe trekking in waterfalls',
+      category: 'Travel tips',
+      date: 'July 10, 2021',
+      coverImage: '/assets/images/blog-010.jpg'
+    },
+    {
+      id: 2,
+      slug: '10-tips-for-best-winter-hiking-experience',
+      title: '10 Tips for best winter hiking experience',
+      category: 'Travel tips',
+      date: 'July 9, 2021',
+      coverImage: '/assets/images/blog-007.jpg'
+    },
+    {
+      id: 3,
+      slug: 'how-to-select-perfect-quality-camping-tent',
+      title: 'How to select perfect quality camping tent',
+      category: 'Travel tips',
+      date: 'July 8, 2021',
+      coverImage: '/assets/images/blog-006.jpg'
+    }
+  ];
 
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Title */}
-        <div className="text-center mb-12">
-          <span className="text-[#27B8B1] font-semibold text-xs sm:text-sm uppercase tracking-wider block mb-2 font-sans">
-            Travel blog & guide
+        {/* Title matching screenshot */}
+        <div className="text-center mb-14">
+          <span 
+            className="text-2xl sm:text-[26px] block mb-1"
+            style={{
+              fontFamily: "var(--font-cursive, 'Caveat', cursive, serif)",
+              color: "#27B8B1"
+            }}
+          >
+            Recent news feed
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#5e963b] font-serif tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#5e963b] font-sans tracking-wide">
             Curated Stories For Curious Travelers
           </h2>
         </div>
 
-        {/* 3 Blog Cards Grid */}
+        {/* 3 Blog Cards Grid matching screenshot */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {articles.map((article) => (
             <Link
               key={article.id}
               to={`/blog/${article.slug}`}
-              className="bg-white rounded-lg overflow-hidden group block transition-transform duration-300 hover:-translate-y-1"
+              className="bg-white rounded-lg overflow-hidden group block transition-all duration-300 hover:-translate-y-1"
             >
-              <div className="relative h-64 overflow-hidden rounded-lg mb-4 bg-gray-100">
+              <div className="relative h-60 sm:h-64 overflow-hidden rounded-md mb-4 bg-gray-100 shadow-sm border border-gray-100">
                 <img 
                   src={article.coverImage} 
                   alt={article.title} 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.src = 'https://images.unsplash.com/photo-1426604966848-d7adac402bff?auto=format&fit=crop&w=800&q=80';
-                  }}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
-              <div className="px-1">
-                <span className="text-[#f29727] text-xs font-bold uppercase tracking-widest mb-2 block font-sans">
+              <div>
+                <span className="text-[#f29727] text-xs font-bold uppercase tracking-wider mb-2 block font-sans">
                   • {article.category}
                 </span>
-                <h3 className="text-gray-900 font-bold text-lg sm:text-xl leading-snug mb-3 group-hover:text-[#27B8B1] transition-colors font-sans line-clamp-2">
+                <h3 className="text-gray-900 font-bold text-base sm:text-lg leading-snug mb-2 group-hover:text-[#5e963b] transition-colors font-sans line-clamp-2">
                   {article.title}
                 </h3>
               </div>
@@ -64,13 +76,13 @@ export default function JournalSection() {
           ))}
         </div>
 
-        {/* View All Button */}
+        {/* View More Button matching screenshot */}
         <div className="text-center mt-12">
           <Link 
-            to="/blog" 
-            className="inline-block px-8 py-3 bg-[#f29727] hover:bg-[#db841a] text-white font-bold text-xs sm:text-sm uppercase tracking-wider rounded transition-colors shadow-md"
+            to="/journal" 
+            className="inline-block px-8 py-3 bg-[#f29727] hover:bg-[#db841a] text-white font-bold text-xs uppercase tracking-widest rounded-sm transition-all shadow-md hover:shadow-lg"
           >
-            View All
+            View More
           </Link>
         </div>
 

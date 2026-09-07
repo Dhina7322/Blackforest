@@ -1,11 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Mail, Phone, Globe, ChevronUp } from 'lucide-react';
+import { useSettings } from '../../context/SiteSettingsContext';
 
 export default function Footer() {
+  const { settings } = useSettings();
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  const phone = settings?.phone || '+91 9742877700 / 9742977700';
+  const email = settings?.email || 'info@blackforestholidays.com';
+  const address = settings?.address || '737, 3rd Floor, Kheny Plaza CMH Main Road, 2nd Cross Rd, Binnamangala, Indiranagar, Bengaluru, Karnataka 560038';
+  const logo = settings?.logo || '/assets/images/white_logo.png';
+  const siteName = settings?.siteName || 'Blackforest Holidays';
+  const social = settings?.socialLinks || {};
 
   return (
     <footer className="bg-[#0c1c16] text-white pt-16 pb-8 relative border-t border-[#1a382b]">
@@ -15,13 +25,9 @@ export default function Footer() {
         <div className="mb-12">
           <Link to="/" className="inline-block group">
             <img
-              src="/white_logo.png"
-              alt="Blackforest Holidays - We are the artist of Travel"
+              src={logo}
+              alt={`${siteName} - We are the artist of Travel`}
               className="h-12 sm:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-              onError={(e) => {
-                e.target.onerror = null;
-                e.target.src = 'https://blackforestholidays.com/wp-content/uploads/2021/07/white_logo.png';
-              }}
             />
           </Link>
         </div>
@@ -39,7 +45,7 @@ export default function Footer() {
             <div className="flex items-start gap-3.5 text-sm sm:text-[15px] text-gray-300 leading-relaxed max-w-md">
               <MapPin className="w-5 h-5 text-white shrink-0 mt-1" />
               <span>
-                737, 3rd Floor, Kheny Plaza CMH Main Road, 2nd Cross Rd, Binnamangala, Indiranagar, Bengaluru, Karnataka 560038
+                {address}
               </span>
             </div>
 
@@ -47,10 +53,10 @@ export default function Footer() {
             <div className="flex items-center gap-3.5 text-sm sm:text-[15px] text-gray-300">
               <Mail className="w-4 h-4 text-white shrink-0" />
               <a 
-                href="mailto:info@blackforestholidays.com" 
+                href={`mailto:${email}`} 
                 className="hover:text-[#f29727] transition-colors"
               >
-                info@blackforestholidays.com
+                {email}
               </a>
             </div>
 
@@ -58,10 +64,10 @@ export default function Footer() {
             <div className="flex items-center gap-3.5 text-sm sm:text-[15px] text-gray-300">
               <Phone className="w-4 h-4 text-white shrink-0" />
               <a 
-                href="tel:+919742877700" 
+                href={`tel:${phone.split('/')[0].replace(/[^+\d]/g, '')}`} 
                 className="hover:text-[#f29727] transition-colors"
               >
-                +91 9742877700 / 9742977700
+                {phone}
               </a>
             </div>
 
@@ -183,7 +189,7 @@ export default function Footer() {
         {/* Bottom Dotted Rule and Centered Copyright */}
         <div className="border-t border-dotted border-gray-600/70 pt-6 text-center text-xs sm:text-sm text-gray-400">
           <p>
-            &copy; 2026 Blackforest Holidays. Designed by Trioticz
+            {settings?.copyright || '© 2026 Blackforest Holidays. All Rights Reserved.'}
           </p>
         </div>
 

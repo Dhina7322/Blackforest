@@ -29,7 +29,7 @@ const seedDatabase = async () => {
       email: 'admin@gmail.com',
       password: 'admin@123',
       role: 'superadmin',
-      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80',
+      avatar: '/assets/images/shop-09.jpg',
       status: 'active'
     });
 
@@ -37,9 +37,9 @@ const seedDatabase = async () => {
     console.log('⚙️ Seeding Website Settings...');
     await Settings.create({
       siteName: 'Black Forest Holidays',
-      logo: 'https://blackforestholidays.com/wp-content/uploads/2021/07/white_logo.png',
-      darkLogo: 'https://blackforestholidays.com/wp-content/uploads/2021/07/white_logo.png',
-      favicon: 'https://blackforestholidays.com/wp-content/uploads/2026/07/cropped-cropped-Logo-02-1-1-32x32.png',
+      logo: '/assets/images/white_logo.png',
+      darkLogo: '/assets/images/white_logo.png',
+      favicon: '/assets/images/cropped-cropped-Logo-02-1-1-32x32.png',
       phone: '+91 94470 12345',
       email: 'info@blackforestholidays.com',
       whatsapp: '+919447012345',
@@ -69,11 +69,11 @@ const seedDatabase = async () => {
         region: 'europe',
         shortDescription: 'Snow-capped peaks, azure lakes, scenic train rides, and enchanting Swiss mountain hamlets.',
         description: 'Experience the magic of the Swiss Alps, from the towering heights of Jungfraujoch to the pristine shores of Lake Lucerne and the tranquil meadows of Interlaken.',
-        heroImage: 'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=1600&q=80',
-        thumbnail: 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=800&q=80',
+        heroImage: '/assets/images/adventure-activity-detail-04.jpg',
+        thumbnail: '/assets/images/asset_ada9439396.jpg',
         gallery: [
-          'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=1000&q=80',
-          'https://images.unsplash.com/photo-1527668752968-14dc70a27c95?auto=format&fit=crop&w=1000&q=80'
+          '/assets/images/Untitled-design-25.png',
+          '/assets/images/Untitled-design-19.png'
         ],
         featured: true,
         orderIndex: 1
@@ -85,10 +85,10 @@ const seedDatabase = async () => {
         region: 'africa',
         shortDescription: 'Witness the Great Migration, majestic savannahs, and luxury tented safari camps under the African sky.',
         description: 'Immerse yourself in Maasai Mara, Amboseli National Park with Mount Kilimanjaro views, and exclusive game drives led by veteran safari naturalists.',
-        heroImage: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1600&q=80',
-        thumbnail: 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=800&q=80',
+        heroImage: '/assets/images/asset_c4664aba08.jpg',
+        thumbnail: '/assets/images/france-and-swiss-alps.webp',
         gallery: [
-          'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1000&q=80'
+          '/assets/images/asset_c4664aba08.jpg'
         ],
         featured: true,
         orderIndex: 2
@@ -100,8 +100,8 @@ const seedDatabase = async () => {
         region: 'america',
         shortDescription: 'From the Pacific Coast Highway to the breathtaking Grand Canyon and vibrant cosmopolitan skylines.',
         description: 'Explore the iconic sights of San Francisco, Los Angeles, Las Vegas, and Yosemite National Park on a meticulously curated American journey.',
-        heroImage: 'https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1600&q=80',
-        thumbnail: 'https://images.unsplash.com/photo-1449034446853-66c86144b0ad?auto=format&fit=crop&w=800&q=80',
+        heroImage: '/assets/images/activity-single-img-1.jpg',
+        thumbnail: '/assets/images/WhatsApp-Image-2026-07-30-at-12.52.36.jpeg',
         featured: true,
         orderIndex: 3
       },
@@ -112,8 +112,8 @@ const seedDatabase = async () => {
         region: 'asian-countries',
         shortDescription: 'Cherry blossoms, ancient Kyoto shrines, hyper-modern Tokyo, and exotic Thai island sanctuaries.',
         description: 'Experience the harmonious contrast between time-honored traditions, tranquil zen gardens, and world-class culinary excellence across Asia.',
-        heroImage: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1600&q=80',
-        thumbnail: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=800&q=80',
+        heroImage: '/assets/images/asset_c31e54fcbe.jpg',
+        thumbnail: '/assets/images/home-adventures-01.jpg',
         featured: true,
         orderIndex: 4
       },
@@ -124,8 +124,8 @@ const seedDatabase = async () => {
         region: 'australia',
         shortDescription: 'Sydney Harbour, Great Barrier Reef coral gardens, and New Zealand’s dramatic fjords.',
         description: 'A captivating expedition across Australia and New Zealand, combining metropolitan glamour with untouched wilderness and aboriginal heritage.',
-        heroImage: 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1600&q=80',
-        thumbnail: 'https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?auto=format&fit=crop&w=800&q=80',
+        heroImage: '/assets/images/asset_ada9439396.jpg',
+        thumbnail: '/assets/images/blog-detail-006.jpg',
         featured: true,
         orderIndex: 5
       },
@@ -136,8 +136,8 @@ const seedDatabase = async () => {
         region: 'indian-ocean',
         shortDescription: 'Turquoise overwater villas, crystal lagoons, coral reefs, and sublime tropical seclusion.',
         description: 'Indulge in private island luxury in the Maldives, Mauritius, and Seychelles with sunset catamaran cruises and world-renowned underwater dining.',
-        heroImage: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=1600&q=80',
-        thumbnail: 'https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=800&q=80',
+        heroImage: '/assets/images/asset_b0a606c90b.jpg',
+        thumbnail: '/assets/images/blog-detail-004.jpg',
         featured: true,
         orderIndex: 6
       },
@@ -148,8 +148,8 @@ const seedDatabase = async () => {
         region: 'middle-east',
         shortDescription: 'Futuristic architectural wonders, luxury desert retreats, and rich Arabian hospitality.',
         description: 'Discover the soaring Burj Khalifa, palm-fringed private beaches, thrilling red dune safaris, and historic spice souks of the Middle East.',
-        heroImage: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1600&q=80',
-        thumbnail: 'https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=800&q=80',
+        heroImage: '/assets/images/asset_1a06b03190.jpg',
+        thumbnail: '/assets/images/contact-breadcrumb.jpg',
         featured: true,
         orderIndex: 7
       },
@@ -160,8 +160,8 @@ const seedDatabase = async () => {
         region: 'south-asia',
         shortDescription: 'Emerald tea plantations, Sigiriya lion rock, golden beaches, and sacred Buddhist shrines.',
         description: 'Explore the tear-drop island of Sri Lanka and mystical Bhutan with scenic hill country train journeys and world-renowned heritage sanctuaries.',
-        heroImage: 'https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&w=1600&q=80',
-        thumbnail: 'https://images.unsplash.com/photo-1588258524675-c63589b27d42?auto=format&fit=crop&w=800&q=80',
+        heroImage: '/assets/images/blog-007-300x222.jpg',
+        thumbnail: '/assets/images/client-logo-3.png',
         featured: true,
         orderIndex: 8
       },
@@ -172,8 +172,8 @@ const seedDatabase = async () => {
         region: 'india',
         shortDescription: 'Tranquil backwaters, Munnar misty tea gardens, spice plantations, and Arabian Sea beaches.',
         description: 'Journey through Alleppey on a private luxury houseboat, rejuvenate with authentic Ayurvedic therapies, and explore Dutch heritage palaces in Fort Kochi.',
-        heroImage: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1600&q=80',
-        thumbnail: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=800&q=80',
+        heroImage: '/assets/images/asset_e9bf19bf84.jpg',
+        thumbnail: '/assets/images/asset_e9bf19bf84.jpg',
         featured: true,
         orderIndex: 9
       },
@@ -184,8 +184,8 @@ const seedDatabase = async () => {
         region: 'india',
         shortDescription: 'Radhanagar blue waters, coral diving at Elephant Beach, and historic Cellular Jail.',
         description: 'A tropical paradise offering some of the world’s finest secluded beaches, mangrove kayaking, and rich marine biodiversity.',
-        heroImage: 'https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&w=1600&q=80',
-        thumbnail: 'https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&w=800&q=80',
+        heroImage: '/assets/images/classical-spain.webp',
+        thumbnail: '/assets/images/asian-woman-wearing-chinese-traditional-dress-boat-ban-rak-thai-village-mae-hong-son-province-scaled.jpg',
         featured: true,
         orderIndex: 10
       }
@@ -217,11 +217,11 @@ const seedDatabase = async () => {
         rating: 4.9,
         reviewCount: 38,
         featured: true,
-        coverImage: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=80',
+        coverImage: '/assets/images/asset_fd072b807d.jpg',
         gallery: [
-          'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=1000&q=80',
-          'https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?auto=format&fit=crop&w=1000&q=80',
-          'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?auto=format&fit=crop&w=1000&q=80'
+          '/assets/images/Untitled-design-25.png',
+          '/assets/images/WhatsApp-Image-2026-08-17-at-20.35.20-2.jpeg',
+          '/assets/images/client-logo-1.png'
         ],
         highlights: [
           'Eiffel Tower 2nd Floor & Seine River Evening Cruise',
@@ -236,35 +236,35 @@ const seedDatabase = async () => {
             title: 'Arrival in Paris – City of Lights',
             description: 'Arrive at Charles de Gaulle Airport and meet your private chauffeur for transfer to your luxury hotel. Evening Seine River cruise with champagne.',
             activities: ['Airport VIP Meet & Greet', 'Seine River Cruise', 'Welcome Dinner'],
-            image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80'
+            image: '/assets/images/asset_fd072b807d.jpg'
           },
           {
             day: 2,
             title: 'Parisian Grandeur & Louvre Treasures',
             description: 'Guided tour of the Louvre Museum, Arc de Triomphe, and Eiffel Tower summit. Afternoon high tea at a historic Parisian salon.',
             activities: ['Louvre Guided Access', 'Eiffel Tower Access', 'Champs-Élysées Walk'],
-            image: 'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=800&q=80'
+            image: '/assets/images/Untitled-design-30.png'
           },
           {
             day: 3,
             title: 'TGV High-Speed Train to Swiss Lucerne',
             description: 'Board the scenic first-class TGV into Switzerland. Check into your lakefront hotel and enjoy an evening stroll across the historic Chapel Bridge.',
             activities: ['Scenic First Class Train', 'Lucerne Lake Promenade', 'Swiss Fondue Experience'],
-            image: 'https://images.unsplash.com/photo-1527668752968-14dc70a27c95?auto=format&fit=crop&w=800&q=80'
+            image: '/assets/images/Untitled-design-31.png'
           },
           {
             day: 4,
             title: 'Mt. Titlis Glacier & Rotair Cable Car',
             description: 'Ascend to 10,000 feet on the world’s first revolving cable car. Cross the Cliff Walk suspension bridge and explore the glacier cave.',
             activities: ['Titlis Rotair Cable Car', 'Glacier Cave Walk', 'Snow Tube Adventure'],
-            image: 'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=800&q=80'
+            image: '/assets/images/WhatsApp-Image-2026-08-17-at-20.35.20.jpeg'
           },
           {
             day: 5,
             title: 'Venetian Serenade & Canal Sunset',
             description: 'Cross the scenic Alps into northern Italy. Arrive in Venice via private water taxi to your grand canal palazzo.',
             activities: ['Water Taxi Transfer', 'St. Mark Square Tour', 'Gondola Ride'],
-            image: 'https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=800&q=80'
+            image: '/assets/images/WhatsApp-Image-2026-08-17-at-20.35.25-1.jpeg'
           }
         ],
         inclusions: [
@@ -313,10 +313,10 @@ const seedDatabase = async () => {
         rating: 5.0,
         reviewCount: 26,
         featured: true,
-        coverImage: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1200&q=80',
+        coverImage: '/assets/images/asset_c4664aba08.jpg',
         gallery: [
-          'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1000&q=80',
-          'https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=1000&q=80'
+          '/assets/images/slider-11.webp',
+          '/assets/images/ChatGPT-Image-Aug-8-2026-09_18_57-PM-768x526.png'
         ],
         highlights: [
           'Guaranteed Big Five game tracking in Maasai Mara',
@@ -330,14 +330,14 @@ const seedDatabase = async () => {
             title: 'Nairobi Welcome & Giraffe Manor Sanctuary',
             description: 'Arrive in Nairobi, meet our safari director and visit the endangered Rothschild Giraffe Center.',
             activities: ['Airport Welcome', 'Giraffe Centre Visit', 'Safari Briefing'],
-            image: 'https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=800&q=80'
+            image: '/assets/images/mask-pine-1000x668.jpg'
           },
           {
             day: 2,
             title: 'Fly into the Heart of Maasai Mara',
             description: 'Scenic bush flight into the Mara. Afternoon game drive tracking pride of lions and grazing zebra herds.',
             activities: ['Bush Flight', 'Afternoon 4x4 Game Drive', 'Campfire Bush Dinner'],
-            image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=800&q=80'
+            image: '/assets/images/asset_c4664aba08.jpg'
           }
         ],
         inclusions: [
@@ -365,9 +365,9 @@ const seedDatabase = async () => {
         rating: 5.0,
         reviewCount: 42,
         featured: true,
-        coverImage: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=1200&q=80',
+        coverImage: '/assets/images/asset_b0a606c90b.jpg',
         gallery: [
-          'https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=1000&q=80'
+          '/assets/images/pexels-asadphoto-9149367-scaled.jpg'
         ],
         highlights: [
           '5 Nights in Luxury Overwater Sunset Pool Villa',
@@ -381,7 +381,7 @@ const seedDatabase = async () => {
             title: 'Seaplane Arrival & Overwater Villa Check-in',
             description: 'Board your scenic seaplane flight over sparkling atolls and check into your secluded overwater retreat.',
             activities: ['Seaplane Transfer', 'Champagne Welcome', 'Sunset Villa Relaxation'],
-            image: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=800&q=80'
+            image: '/assets/images/asset_b0a606c90b.jpg'
           }
         ],
         inclusions: [
@@ -408,7 +408,7 @@ const seedDatabase = async () => {
         rating: 4.8,
         reviewCount: 29,
         featured: true,
-        coverImage: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=80',
+        coverImage: '/assets/images/asset_1a06b03190.jpg',
         highlights: [
           'Burj Khalifa 124th Floor Observation Deck VIP Access',
           'Desert Safari with 4x4 Dune Bashing, Camel Trekking & BBQ Dinner',
@@ -421,7 +421,7 @@ const seedDatabase = async () => {
             title: 'Arrival in Dubai & Marina Dhow Cruise',
             description: 'Chauffeur arrival transfer to hotel. Evening romantic marina dinner cruise with live Tanoura show.',
             activities: ['VIP Arrival', 'Marina Dhow Cruise Dinner'],
-            image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80'
+            image: '/assets/images/asset_1a06b03190.jpg'
           }
         ],
         inclusions: [
@@ -448,7 +448,7 @@ const seedDatabase = async () => {
         rating: 4.9,
         reviewCount: 31,
         featured: true,
-        coverImage: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80',
+        coverImage: '/assets/images/asset_c31e54fcbe.jpg',
         status: 'published'
       },
       {
@@ -467,7 +467,7 @@ const seedDatabase = async () => {
         rating: 4.8,
         reviewCount: 19,
         featured: true,
-        coverImage: 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1200&q=80',
+        coverImage: '/assets/images/asset_ada9439396.jpg',
         status: 'published'
       },
       {
@@ -486,7 +486,7 @@ const seedDatabase = async () => {
         rating: 4.9,
         reviewCount: 22,
         featured: true,
-        coverImage: 'https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1200&q=80',
+        coverImage: '/assets/images/tourists-take-boat-ban-rak-thai-village-mae-hong-son-province-thailand-scaled.jpg',
         status: 'published'
       },
       {
@@ -505,7 +505,7 @@ const seedDatabase = async () => {
         rating: 4.9,
         reviewCount: 27,
         featured: true,
-        coverImage: 'https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&w=1200&q=80',
+        coverImage: '/assets/images/ahmed-shabana-ADa9bb3tqR4-unsplash-scaled.jpg',
         status: 'published'
       },
 
@@ -526,10 +526,10 @@ const seedDatabase = async () => {
         rating: 5.0,
         reviewCount: 54,
         featured: true,
-        coverImage: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1200&q=80',
+        coverImage: '/assets/images/asset_e9bf19bf84.jpg',
         gallery: [
-          'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1000&q=80',
-          'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=1000&q=80'
+          '/assets/images/asset_e9bf19bf84.jpg',
+          '/assets/images/Things-to-do-in-Tanzania_Zanzibar.jpeg'
         ],
         highlights: [
           'Overnight stay in private luxury A/C Kerala Houseboat with private chef',
@@ -543,35 +543,35 @@ const seedDatabase = async () => {
             title: 'Arrival in Cochin – Heritage Fort Kochi Tour',
             description: 'Arrive at Cochin International Airport, meet our representative and transfer to your heritage hotel in Fort Kochi. Evening Kathakali dance performance.',
             activities: ['Airport Meet & Greet', 'Fort Kochi Heritage Walk', 'Kathakali Show'],
-            image: 'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=800&q=80'
+            image: '/assets/images/contact-pine-bg-1.jpg'
           },
           {
             day: 2,
             title: 'Scenic Drive to Munnar Hills & Waterfalls',
             description: 'Drive past Cheeyappara and Valara cascading waterfalls into Munnar’s lush rolling green tea hills. Check into your mountain resort.',
             activities: ['Waterfall Photo Stops', 'Tea Estate Check-in', 'Evening Mist Walk'],
-            image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=800&q=80'
+            image: '/assets/images/asset_e9bf19bf84.jpg'
           },
           {
             day: 3,
             title: 'Munnar Sightseeing & Eravikulam National Park',
             description: 'Visit the home of the endangered Nilgiri Tahr at Rajamalai, explore Mattupetty Dam, Echo Point, and the Tea Museum.',
             activities: ['Eravikulam Safari', 'Mattupetty Speedboating', 'Tea Tasting'],
-            image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80'
+            image: '/assets/images/blog-010-1000x741.jpg'
           },
           {
             day: 4,
             title: 'Thekkady Spice Plantations & Periyar Lake',
             description: 'Drive through cardamom and pepper plantations. Enjoy a boat ride on Periyar Lake observing wild elephants and sambar deer.',
             activities: ['Periyar Lake Cruise', 'Spice Garden Guided Walk', 'Martial Arts Show'],
-            image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=800&q=80'
+            image: '/assets/images/asset_c4664aba08.jpg'
           },
           {
             day: 5,
             title: 'Alleppey Backwaters Private Houseboat Cruise',
             description: 'Board your traditional thatched Kettuvallam houseboat. Cruise through narrow canals, enjoy fresh Karimeen fish prepared onboard, and anchor overnight.',
             activities: ['Backwater Cruising', 'Traditional Kerala Meals', 'Village Life Interaction'],
-            image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=800&q=80'
+            image: '/assets/images/asset_e9bf19bf84.jpg'
           }
         ],
         inclusions: [
@@ -600,7 +600,7 @@ const seedDatabase = async () => {
         rating: 4.8,
         reviewCount: 33,
         featured: true,
-        coverImage: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80',
+        coverImage: '/assets/images/adventure-activity-detail-3-04.jpg',
         status: 'published'
       },
       {
@@ -619,7 +619,7 @@ const seedDatabase = async () => {
         rating: 5.0,
         reviewCount: 46,
         featured: true,
-        coverImage: 'https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&w=1200&q=80',
+        coverImage: '/assets/images/activity-single-img-2.jpg',
         status: 'published'
       },
       {
@@ -638,7 +638,7 @@ const seedDatabase = async () => {
         rating: 4.7,
         reviewCount: 21,
         featured: true,
-        coverImage: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80',
+        coverImage: '/assets/images/contact-pine-bg-2.jpg',
         status: 'published'
       },
       {
@@ -657,7 +657,7 @@ const seedDatabase = async () => {
         rating: 4.9,
         reviewCount: 28,
         featured: true,
-        coverImage: 'https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80',
+        coverImage: '/assets/images/ChatGPT-Image-Jul-31-2026-04_21_01-PM.png',
         status: 'published'
       },
       {
@@ -676,7 +676,7 @@ const seedDatabase = async () => {
         rating: 4.9,
         reviewCount: 37,
         featured: true,
-        coverImage: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80',
+        coverImage: '/assets/images/asset_e33b83aa7a.jpg',
         status: 'published'
       }
     ];
@@ -694,8 +694,8 @@ const seedDatabase = async () => {
         category: 'adventure-nature',
         description: 'Thrilling treks through misty mountain ranges, wildlife tracking in national reserves, white water rafting, and outdoor camping.',
         content: 'For travelers seeking an adrenaline rush amidst raw wilderness. From hiking the rugged Western Ghats to African savannah expeditions, our nature specialists craft unforgettable expeditions.',
-        heroImage: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80',
-        thumbnail: 'https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=800&q=80',
+        heroImage: '/assets/images/asset_a4a423a58d.jpg',
+        thumbnail: '/assets/images/bhargava-marripati-7LDBKPWAHJ4-unsplash-scaled.jpg',
         featured: true,
         orderIndex: 1
       },
@@ -705,8 +705,8 @@ const seedDatabase = async () => {
         category: 'island-holidays',
         description: 'Sun-drenched atolls, crystal turquoise waters, private overwater villas, and barefoot tropical relaxation.',
         content: 'Escape to the world’s most pristine island retreats in the Maldives, Mauritius, Seychelles, and Andaman. Indulge in sunset yacht cruises and colorful coral reefs.',
-        heroImage: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=1600&q=80',
-        thumbnail: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
+        heroImage: '/assets/images/asset_b0a606c90b.jpg',
+        thumbnail: '/assets/images/asset_e33b83aa7a.jpg',
         featured: true,
         orderIndex: 2
       },
@@ -716,8 +716,8 @@ const seedDatabase = async () => {
         category: 'family-holidays',
         description: 'Curated multi-generational vacation itineraries with comfortable pacing, kid-friendly adventures, and interconnecting luxury suites.',
         content: 'Create lifelong shared memories. Our family specialists ensure seamless logistics, private transport, engaging cultural discoveries, and leisure time for everyone.',
-        heroImage: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1600&q=80',
-        thumbnail: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80',
+        heroImage: '/assets/images/mg-cthu-1h_NN3nqzI-unsplash-scaled.jpg',
+        thumbnail: '/assets/images/asset_fd072b807d.jpg',
         featured: true,
         orderIndex: 3
       },
@@ -727,8 +727,8 @@ const seedDatabase = async () => {
         category: 'honeymoon-escapes',
         description: 'Romantic secluded hideaways, private beach candlelight dinners, couple spa therapies, and bespoke anniversary journeys.',
         content: 'Celebrate your love in breathtaking destinations. From Swiss Alpine chalets with roaring fires to secluded Maldivian bungalows and tranquil Kerala houseboats.',
-        heroImage: 'https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1600&q=80',
-        thumbnail: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=800&q=80',
+        heroImage: '/assets/images/sean-robertson-5ftxFgXLtkI-unsplash-scaled.jpg',
+        thumbnail: '/assets/images/asset_b0a606c90b.jpg',
         featured: true,
         orderIndex: 4
       },
@@ -738,8 +738,8 @@ const seedDatabase = async () => {
         category: 'luxury-escapes',
         description: 'Five-star heritage palatial stays, private helicopter transfers, Michelin-starred gastronomy, and dedicated 24/7 personal concierge.',
         content: 'The ultimate standard in bespoke international travel. Enjoy privileged access, VIP lounge services, and private chauffeur-driven Mercedes touring.',
-        heroImage: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=80',
-        thumbnail: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80',
+        heroImage: '/assets/images/Untitled-design-33.png',
+        thumbnail: '/assets/images/sergi-ferrete-YXwt-vJ3szA-unsplash-scaled.jpg',
         featured: true,
         orderIndex: 5
       }
@@ -807,7 +807,7 @@ const seedDatabase = async () => {
         name: 'David & Sarah Jenkins',
         designation: 'Honeymoon Couple',
         location: 'London, United Kingdom',
-        photo: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
+        photo: '/assets/images/cropped-Logo-02-1.png',
         rating: 5.0,
         message: 'Our European honeymoon was nothing short of perfection! Blackforest Holidays planned every single transfer, mountain train, and hotel seamlessly. The overwater view in Lucerne and the private gondola serenade in Venice will stay in our hearts forever.',
         featured: true,
@@ -817,7 +817,7 @@ const seedDatabase = async () => {
         name: 'Rajesh & Meera Nair',
         designation: 'Family Vacationers',
         location: 'Bangalore, India',
-        photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
+        photo: '/assets/images/olivier_d-elephants-6254556-scaled.jpg',
         rating: 5.0,
         message: 'We took our parents and two children on the Kerala Backwaters & Munnar journey. The luxury houseboat was spotless, the chef cooked delicious authentic Karimeen, and our chauffeur was courteous and safe. Absolutely world-class service!',
         featured: true,
@@ -827,7 +827,7 @@ const seedDatabase = async () => {
         name: 'Elena Rostova',
         designation: 'Solo Nature Explorer',
         location: 'Zurich, Switzerland',
-        photo: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80',
+        photo: '/assets/images/Untitled-design-24.png',
         rating: 5.0,
         message: 'The Kenya wildlife safari exceeded all my wild dreams. Seeing a pride of lions up close in the Mara and witnessing the sunset against Kilimanjaro was unforgettable. Blackforest is truly the premier specialist in curated travel.',
         featured: true,
@@ -837,7 +837,7 @@ const seedDatabase = async () => {
         name: 'Marcus & Jessica Vance',
         designation: 'Anniversary Travelers',
         location: 'Sydney, Australia',
-        photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80',
+        photo: '/assets/images/Untitled-design-18.png',
         rating: 5.0,
         message: 'From the initial consultation to our return flight from the Maldives, everything felt effortless. The private dinner on the sandbank was pure magic. We will never book luxury holidays anywhere else.',
         featured: true,
@@ -866,7 +866,7 @@ const seedDatabase = async () => {
           <h3>3. Keep Electronics in Dry-Bags</h3>
           <p>Use IPX8 certified roll-top dry bags for passports, mobile phones, and medical supplies.</p>
         `,
-        coverImage: 'https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&q=80',
+        coverImage: '/assets/images/asset_652f40bc47.jpg',
         authorId: editor.id,
         category: 'Trekking & Safety',
         tags: ['Adventure', 'Trekking', 'Waterfalls', 'Safety Tips'],
@@ -887,7 +887,7 @@ const seedDatabase = async () => {
           <h3>3. Microspikes and Snowshoes</h3>
           <p>Carry microspikes for icy hard-pack trails to eliminate slip hazards.</p>
         `,
-        coverImage: 'https://images.unsplash.com/photo-1517824806704-9040b037703b?auto=format&fit=crop&w=1200&q=80',
+        coverImage: '/assets/images/adv-activity-detail-new-2-4.jpg',
         authorId: editor.id,
         category: 'Mountain Expeditions',
         tags: ['Winter', 'Hiking', 'Alps', 'Gear'],
@@ -906,7 +906,7 @@ const seedDatabase = async () => {
           <h3>2. Hydrostatic Head Rating</h3>
           <p>Look for flysheet fabric with a minimum of 3,000mm hydrostatic head rating to guarantee dry comfort through torrential downpours.</p>
         `,
-        coverImage: 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=1200&q=80',
+        coverImage: '/assets/images/ChatGPT-Image-Aug-8-2026-06_49_29-PM.png',
         authorId: editor.id,
         category: 'Gear & Equipment',
         tags: ['Camping', 'Equipment', 'Tents', 'Outdoor'],
@@ -924,56 +924,56 @@ const seedDatabase = async () => {
     const expertiseData = [
       {
         name: 'Peru Specialist',
-        logo: 'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=300&q=80',
+        logo: '/assets/images/placeholder-2.png',
         description: 'Certified Specialist in Inca Heritage & Machu Picchu Expeditions',
         link: 'https://www.peru.travel',
         orderIndex: 1
       },
       {
         name: 'Korea Tourism Board',
-        logo: 'https://images.unsplash.com/photo-1517154421773-0529f29ea451?auto=format&fit=crop&w=300&q=80',
+        logo: '/assets/images/louise-smith-_n3uNLUh6hU-unsplash-scaled.jpg',
         description: 'Accredited South Korea Culture & Destination Planner',
         link: 'https://english.visitkorea.or.kr',
         orderIndex: 2
       },
       {
         name: 'Greece Tourism Organisation',
-        logo: 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=300&q=80',
+        logo: '/assets/images/WhatsApp-Image-2026-07-24-at-09.58.14-removebg-preview.png',
         description: 'Official Hellenic Islands & Classical Greece Specialist',
         link: 'https://www.visitgreece.gr',
         orderIndex: 3
       },
       {
         name: 'Japan National Tourism Organization',
-        logo: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=300&q=80',
+        logo: '/assets/images/day-city-view-scaled.jpg',
         description: 'Certified Japan Travel Consultant',
         link: 'https://www.japan.travel',
         orderIndex: 4
       },
       {
         name: 'IATA Certified',
-        logo: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=300&q=80',
+        logo: '/assets/images/robin-noguier-sydwCr54rf0-unsplash-scaled.jpg',
         description: 'Accredited International Air Transport Association Partner',
         link: 'https://www.iata.org',
         orderIndex: 5
       },
       {
         name: 'Visit Portugal',
-        logo: 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=300&q=80',
+        logo: '/assets/images/ChatGPT-Image-Aug-8-2026-09_18_57-PM-1000x685.png',
         description: 'Certified Portuguese Wine & Heritage Planner',
         link: 'https://www.visitportugal.com',
         orderIndex: 6
       },
       {
         name: 'Algarve Tourism',
-        logo: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=300&q=80',
+        logo: '/assets/images/asset_e33b83aa7a.jpg',
         description: 'Southern Coastal Portugal Luxury Specialist',
         link: 'https://www.visitalgarve.pt',
         orderIndex: 7
       },
       {
         name: 'Turespaña – Spain Specialist',
-        logo: 'https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=300&q=80',
+        logo: '/assets/images/joss-woodhead-3wFRlwS91yk-unsplash-scaled.jpg',
         description: 'Official Spain Tourism Qualified Specialist',
         link: 'https://www.spain.info',
         orderIndex: 8

@@ -4,7 +4,7 @@ import { useToast } from '../../context/ToastContext';
 import { enquiryService } from '../../services/allServices';
 import { useSettings } from '../../context/SiteSettingsContext';
 import HeroWave from '../../components/common/HeroWave';
-import ExpertiseLogosSection from '../../components/common/ExpertiseLogosSection';
+import ExpertiseSection from '../../components/home/ExpertiseSection';
 
 export default function ContactPage() {
   const { settings } = useSettings();
@@ -71,9 +71,13 @@ export default function ContactPage() {
       <section className="relative h-[65vh] min-h-[500px] flex flex-col justify-end">
         <div className="absolute inset-0 z-0 bg-[#0a1712]">
           <img
-            src="https://images.unsplash.com/photo-1502307100811-6bdc0981a85b?auto=format&fit=crop&w=1920&q=80"
+            src="/assets/images/contact-breadcrumb.jpg"
             alt="Contact Us"
             className="w-full h-full object-cover opacity-80"
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = '/assets/images/corporate-travel.jpg';
+            }}
           />
         </div>
         
@@ -314,7 +318,7 @@ export default function ContactPage() {
       </section>
 
       {/* 3. Expertise Section */}
-      <ExpertiseLogosSection />
+      <ExpertiseSection />
       
     </div>
   );

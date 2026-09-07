@@ -94,15 +94,15 @@ export default function Header() {
           {/* Brand Logo */}
           <Link to="/" className="flex items-center gap-3 group">
             <img
-              src={settings.logo || 'https://blackforestholidays.com/wp-content/uploads/2021/07/white_logo.png'}
+              src="/assets/site/white_logo.png"
               alt={settings.siteName || 'Blackforest Holidays'}
               className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden xl:flex items-center space-x-2 lg:space-x-6 text-[15px] font-medium tracking-wide">
-            {/* Destinations Dropdown */}
+          <nav className="hidden xl:flex items-center space-x-2 lg:space-x-7 text-[15px] font-medium tracking-wide">
+            {/* Holidays Dropdown */}
             <div
               className="relative group py-2"
               onMouseEnter={() => setActiveDropdown('destinations')}
@@ -116,7 +116,7 @@ export default function Header() {
                     : 'text-white hover:text-[#f29727]'
                 }`}
               >
-                Destinations
+                Holidays
                 <ChevronDown className="w-3.5 h-3.5 opacity-80 group-hover:rotate-180 transition-transform" />
               </Link>
 
@@ -146,49 +146,11 @@ export default function Header() {
               )}
             </div>
 
-            {/* Experiences Dropdown */}
-            <div
-              className="relative group py-2"
-              onMouseEnter={() => setActiveDropdown('experiences')}
-              onMouseLeave={() => setActiveDropdown(null)}
-            >
-              <Link
-                to="/experiences"
-                className={`flex items-center gap-1 transition-colors py-1 ${
-                  isExperiencesActive
-                    ? 'text-[#f29727] border-b-2 border-[#f29727]'
-                    : 'text-white hover:text-[#f29727]'
-                }`}
-              >
-                Experiences
-                <ChevronDown className="w-3.5 h-3.5 opacity-80 group-hover:rotate-180 transition-transform" />
-              </Link>
+            <Link to="/corporate-travel" className="hover:text-[#f29727] transition-colors py-1">
+              Corporate
+            </Link>
 
-              {activeDropdown === 'experiences' && (
-                <div className="absolute top-full left-0 w-[230px] pt-1.5 z-50 animate-fadeIn">
-                  <div className="flex flex-col space-y-1.5">
-                    {experiencesList.map((exp) => {
-                      const isActive = location.pathname.includes(exp.slug);
-                      return (
-                        <Link
-                          key={exp.slug}
-                          to={`/experiences/${exp.slug}`}
-                          className={`block px-5 py-3 text-[14px] transition-all duration-200 shadow-md ${
-                            isActive
-                              ? 'bg-[#10221b] text-white font-medium border-l-4 border-[#f29727]'
-                              : 'bg-white text-[#10221b] hover:bg-[#10221b] hover:text-white'
-                          }`}
-                        >
-                          {exp.name}
-                        </Link>
-                      );
-                    })}
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Concierge Dropdown */}
+            {/* Services Dropdown */}
             <div
               className="relative group py-2"
               onMouseEnter={() => setActiveDropdown('concierge')}
@@ -202,7 +164,7 @@ export default function Header() {
                     : 'text-white hover:text-[#f29727]'
                 }`}
               >
-                Concierge
+                Services
                 <ChevronDown className="w-3.5 h-3.5 opacity-80 group-hover:rotate-180 transition-transform" />
               </Link>
 
@@ -225,17 +187,23 @@ export default function Header() {
                         </Link>
                       );
                     })}
+                    <Link
+                      to="/coach-tour"
+                      className="block px-5 py-3 text-[14px] transition-all duration-200 shadow-md bg-white text-[#10221b] hover:bg-[#10221b] hover:text-white"
+                    >
+                      Coach Tour
+                    </Link>
                   </div>
                 </div>
               )}
             </div>
 
-            <Link to="/corporate-travel" className="hover:text-[#f29727] transition-colors py-1">
-              Corporate Travel
-            </Link>
+            <a href="#testimonials" className="hover:text-[#f29727] transition-colors py-1">
+              Testimonials
+            </a>
 
-            <Link to="/coach-tour" className="hover:text-[#f29727] transition-colors py-1">
-              Coach Tour
+            <Link to="/journal" className="hover:text-[#f29727] transition-colors py-1">
+              Blogs
             </Link>
 
             <Link to="/about" className="hover:text-[#f29727] transition-colors py-1">
@@ -284,7 +252,7 @@ export default function Header() {
               {/* Drawer Top */}
               <div className="flex items-center justify-between pb-6 border-b border-white/10 mb-6">
                 <img
-                  src={settings.logo || 'https://blackforestholidays.com/wp-content/uploads/2021/07/white_logo.png'}
+                  src={settings.logo || '/assets/images/white_logo.png'}
                   alt={settings.siteName}
                   className="h-9 w-auto"
                 />
