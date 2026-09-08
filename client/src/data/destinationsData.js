@@ -5,7 +5,7 @@ export const allDestinationsData = {
   africa: {
     name: 'Africa',
     slug: 'africa',
-    heroImage: '/assets/images/sean-robertson-5ftxFgXLtkI-unsplash-scaled.jpg',
+    heroImage: 'https://blackforestholidays.com/wp-content/uploads/2026/08/ChatGPT-Image-Aug-8-2026-11_48_04-PM.png',
     tagline: 'Untamed Wilderness & Safaris',
     statsHeading: 'Escape to extraordinary wild frontiers',
     statsDesc: 'From untamed savannahs to secluded coastal lagoons, discover safari journeys designed around you.',
@@ -74,7 +74,7 @@ export const allDestinationsData = {
   america: {
     name: 'America',
     slug: 'america',
-    heroImage: '/assets/images/sidra-s-KHYCVWu-Tng-unsplash-scaled.jpg',
+    heroImage: 'https://blackforestholidays.com/wp-content/uploads/2026/08/bhargava-marripati-7LDBKPWAHJ4-unsplash-scaled.jpg',
     tagline: 'From Coast to Coast',
     statsHeading: 'Escape to extraordinary landscapes',
     statsDesc: 'From vibrant iconic skylines to snow-capped Rockies and Caribbean shores, discover journeys designed around you.',
@@ -139,7 +139,7 @@ export const allDestinationsData = {
   'asian-countries': {
     name: 'Asian Countries',
     slug: 'asian-countries',
-    heroImage: '/assets/images/xavier-coiffic-ByAHlRiTQjo-unsplash-scaled.jpg',
+    heroImage: 'https://blackforestholidays.com/wp-content/uploads/2026/08/ChatGPT-Image-Aug-1-2026-11_13_45-PM.png',
     tagline: 'Heritage to Himalayas',
     statsHeading: 'Escape to extraordinary heritage & horizons',
     statsDesc: 'From ancient Kyoto shrines to futuristic skylines, night markets, and tropical lagoons, discover journeys designed around you.',
@@ -209,7 +209,7 @@ export const allDestinationsData = {
   australia: {
     name: 'Australia',
     slug: 'australia',
-    heroImage: '/assets/images/leio-mclaren-ImhjEeh7pZg-unsplash.jpg',
+    heroImage: 'https://blackforestholidays.com/wp-content/uploads/2026/08/quentin-fahrner-TGF7gtpCJz0-unsplash-1-scaled.jpg',
     tagline: 'Your Island Story Begins Here',
     statsHeading: 'Escape to extraordinary ocean paradises',
     statsDesc: 'From the Great Barrier Reef to New Zealand fjords and private Pacific atolls, discover journeys designed around you.',
@@ -269,7 +269,7 @@ export const allDestinationsData = {
   europe: {
     name: 'Europe',
     slug: 'europe',
-    heroImage: '/assets/images/village-zermatt-with-matterhorn-mountain-background-sunset-switzerland-scaled.jpg',
+    heroImage: 'https://blackforestholidays.com/wp-content/uploads/2026/08/kristine-zale-macro-viewpoint-EZT6qusWOBQ-unsplash-scaled.jpg',
     tagline: 'Alpine Wonder & Royal Heritage',
     statsHeading: 'Escape to extraordinary European grandeur',
     statsDesc: 'From scenic Swiss alpine rails to sunlit Mediterranean coastlines and royal capitals, discover journeys designed around you.',
@@ -331,7 +331,7 @@ export const allDestinationsData = {
   'indian-ocean': {
     name: 'Indian Ocean',
     slug: 'indian-ocean',
-    heroImage: '/assets/images/quentin-fahrner-TGF7gtpCJz0-unsplash-scaled.jpg',
+    heroImage: 'https://blackforestholidays.com/wp-content/uploads/2026/08/pexels-asadphoto-9149367-scaled.jpg',
     tagline: 'Your Island Story Begins Here',
     statsHeading: 'Escape to extraordinary islands',
     statsDesc: 'From secluded beaches to unforgettable adventures, discover island journeys designed around you.',
@@ -388,7 +388,7 @@ export const allDestinationsData = {
   'middle-east': {
     name: 'Middle East',
     slug: 'middle-east',
-    heroImage: '/assets/images/matthias-mullie-RvDc461s1EI-unsplash-scaled.jpg',
+    heroImage: 'https://blackforestholidays.com/wp-content/uploads/2026/08/metro-railway-glass-skyscrapers-dubai-traffic-street-dubai-museum-future-dubai-cityscape-skyline-urban-background-scaled.jpg',
     tagline: 'Desert Dunes & Gilded Skylines',
     statsHeading: 'Escape to extraordinary Arabian wonders',
     statsDesc: 'From futuristic architectural icons to starlit desert camps and ancient rock citadels, discover journeys designed around you.',

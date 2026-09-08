@@ -8,13 +8,12 @@ import { Link } from 'react-router-dom';
 export default function CoachTourPage() {
   const { settings, openEnquiryModal } = useSettings();
   const siteName = settings?.siteName || 'Blackforest Holidays';
-
   const packages = [
     {
       id: 1,
       title: "France and Swiss Alps",
       duration: "10 nights / 11 days",
-      image: "/assets/images/village-zermatt-matterhorn-switzerland.jpg",
+      image: "/assets/images/yuxin-chen-598Ah85XPiY-unsplash-scaled.jpg",
       route: "Paris • Geneva • Interlaken • Zermatt • Zurich",
       tag: "Best Seller"
     },
@@ -22,7 +21,7 @@ export default function CoachTourPage() {
       id: 2,
       title: "France & Switzerland with Enchanted Alsace",
       duration: "6 nights / 7 days",
-      image: "/assets/images/snow-dusts-spires-famed-neuschwanstein-castle.jpg",
+      image: "/assets/images/xavier-coiffic-ByAHlRiTQjo-unsplash-scaled.jpg",
       route: "Strasbourg • Colmar • Lucerne • Rhine Falls",
       tag: "Scenic Route"
     },
@@ -30,7 +29,7 @@ export default function CoachTourPage() {
       id: 3,
       title: "Swiss and Italian Spotlight & Venice",
       duration: "8 nights / 9 days",
-      image: "/assets/images/aditya-siva-6rDbvXzIVpQ-unsplash-1-scaled.jpg",
+      image: "/assets/images/willian-justen-de-vasconcellos-4hMET7vYTAQ-unsplash-scaled.jpg",
       route: "Milan • Lake Como • Venice • Dolomites • Verona",
       tag: "Cultural Classic"
     },
@@ -38,9 +37,49 @@ export default function CoachTourPage() {
       id: 4,
       title: "Imperial Europe & Romantic Castles",
       duration: "9 nights / 10 days",
-      image: "/assets/images/bridge_bg.jpg",
+      image: "/assets/images/willdwind-william-martret-lRrklMtueBg-unsplash-scaled.jpg",
       route: "Vienna • Prague • Budapest • Salzburg • Munich",
       tag: "Heritage"
+    },
+    {
+      id: 5,
+      title: "Aegean Dream",
+      duration: "12 nights / 13 days",
+      image: "/assets/images/sergi-ferrete-YXwt-vJ3szA-unsplash-scaled.jpg",
+      route: "Athens • Mykonos • Santorini",
+      tag: "Island Hopping"
+    },
+    {
+      id: 6,
+      title: "Classical Spain",
+      duration: "7 nights / 8 days",
+      image: "/assets/images/sutirta-budiman-kjOBqwMUnWw-unsplash-scaled.jpg",
+      route: "Madrid • Seville • Granada • Barcelona",
+      tag: "Cultural Classic"
+    },
+    {
+      id: 7,
+      title: "Roaming the United Kingdom",
+      duration: "6 nights / 7 days",
+      image: "/assets/images/sean-robertson-5ftxFgXLtkI-unsplash-scaled.jpg",
+      route: "London • Edinburgh • Highlands",
+      tag: "Explorer"
+    },
+    {
+      id: 8,
+      title: "Majestic Scandinavia",
+      duration: "11 nights / 12 days",
+      image: "/assets/images/hendrik-cornelissen-qs4E9t0hJc0-unsplash-scaled.jpg",
+      route: "Copenhagen • Oslo • Stockholm • Fjords",
+      tag: "Nordic Wonders"
+    },
+    {
+      id: 9,
+      title: "Wonders of Italy",
+      duration: "8 nights / 9 days",
+      image: "/assets/images/ahmed-shabana-ADa9bb3tqR4-unsplash-scaled.jpg",
+      route: "Rome • Florence • Venice • Amalfi",
+      tag: "Best Seller"
     }
   ];
 
@@ -116,90 +155,63 @@ export default function CoachTourPage() {
               <p className="text-gray-600 text-sm font-light leading-relaxed pt-2">
                 Handcrafted escorted coach tours across Europe and iconic world destinations. Enjoy luxury air-conditioned coaches, expert local tour directors, and reserved hotel accommodations.
               </p>
-              
-              <div className="pt-4">
-                <button
-                  onClick={() => openEnquiryModal({ destination: 'Coach Tours' })}
-                  className="px-6 py-3 bg-[#10221b] hover:bg-[#5e963b] text-white text-xs font-bold uppercase tracking-widest rounded-sm transition-all shadow-md cursor-pointer"
-                >
-                  Custom Coach Enquiry
-                </button>
-              </div>
             </div>
 
             {/* Right Packages Grid / Carousel */}
             <div className="lg:col-span-3 relative">
-              {/* Carousel Controls */}
-              <div className="flex items-center justify-end gap-3 mb-6">
-                <button 
-                  onClick={prevPackage}
-                  aria-label="Previous package"
-                  className="w-10 h-10 bg-white rounded-full shadow-md border border-gray-100 flex items-center justify-center text-gray-700 hover:text-[#5e963b] hover:border-[#5e963b] transition-all cursor-pointer"
-                >
-                  <ChevronLeft className="w-5 h-5" />
-                </button>
-                <button 
-                  onClick={nextPackage}
-                  aria-label="Next package"
-                  className="w-10 h-10 bg-white rounded-full shadow-md border border-gray-100 flex items-center justify-center text-gray-700 hover:text-[#5e963b] hover:border-[#5e963b] transition-all cursor-pointer"
-                >
-                  <ChevronRight className="w-5 h-5" />
-                </button>
-              </div>
+              {/* Left Arrow */}
+              <button 
+                onClick={prevPackage}
+                aria-label="Previous package"
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-20 w-12 h-12 bg-white rounded-full shadow-lg border border-gray-100 flex items-center justify-center text-gray-700 hover:text-[#27B8B1] hover:border-[#27B8B1] transition-all cursor-pointer hidden sm:flex"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
 
               {/* Cards Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {packages.map((pkg) => (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
+                {packages.slice(activeIdx, activeIdx + 3).map((pkg) => (
                   <div 
                     key={pkg.id} 
                     onClick={() => openEnquiryModal({ destination: pkg.title })}
-                    className="relative rounded-2xl overflow-hidden shadow-md group cursor-pointer border border-gray-100 bg-white flex flex-col h-[460px] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-[#f29727]/40"
+                    className="relative rounded-3xl overflow-hidden shadow-lg group cursor-pointer bg-[#10221b] h-[400px] sm:h-[480px] transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border border-gray-100"
                   >
-                    {/* Image */}
-                    <div className="relative h-64 overflow-hidden bg-gray-100">
-                      <img 
-                        src={pkg.image} 
-                        alt={pkg.title} 
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-                      
-                      {/* Tag */}
-                      <div className="absolute top-3 left-3 bg-[#10221b]/80 backdrop-blur-md text-[#f29727] text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
-                        {pkg.tag}
-                      </div>
-
-                      {/* Duration */}
-                      <div className="absolute bottom-3 left-3 flex items-center gap-1.5 text-white text-xs font-medium">
-                        <Calendar className="w-3.5 h-3.5 text-[#f29727]" />
-                        <span>{pkg.duration}</span>
-                      </div>
-                    </div>
-
-                    {/* Details */}
-                    <div className="p-5 flex-1 flex flex-col justify-between">
-                      <div>
-                        <h3 className="font-bold text-[#10221b] text-lg group-hover:text-[#5e963b] transition-colors line-clamp-2 font-serif mb-2">
-                          {pkg.title}
-                        </h3>
-                        <p className="text-gray-500 text-xs flex items-start gap-1.5 font-light leading-relaxed">
-                          <MapPin className="w-3.5 h-3.5 text-[#f29727] shrink-0 mt-0.5" />
-                          <span>{pkg.route}</span>
-                        </p>
-                      </div>
-
-                      <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
-                        <span className="text-xs font-bold uppercase tracking-wider text-[#5e963b] group-hover:text-[#f29727] transition-colors">
-                          Enquire Now
-                        </span>
-                        <div className="w-7 h-7 rounded-full bg-gray-50 group-hover:bg-[#f29727] group-hover:text-white flex items-center justify-center transition-colors">
-                          <ChevronRight className="w-4 h-4" />
-                        </div>
-                      </div>
+                    {/* Full Card Image */}
+                    <img 
+                      src={pkg.image} 
+                      alt={pkg.title} 
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    
+                    {/* Bottom Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    
+                    {/* Centered Content at Bottom */}
+                    <div className="absolute inset-x-0 bottom-0 p-6 flex flex-col items-center text-center">
+                      <h3 className="font-bold text-white text-xl sm:text-2xl font-sans mb-1.5 drop-shadow-md group-hover:-translate-y-2 transition-transform duration-300">
+                        {pkg.title}
+                      </h3>
+                      <p className="text-gray-300 text-xs sm:text-sm font-light tracking-wider group-hover:-translate-y-2 transition-transform duration-300 delay-75 mb-3">
+                        {pkg.duration}
+                      </p>
+                      {/* Explore Tour Button (Visible on Hover) */}
+                      <button className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 px-5 py-2.5 rounded-full bg-[#10221b]/80 border border-[#27B8B1] text-white text-[10px] sm:text-xs font-bold uppercase tracking-widest flex items-center gap-2 backdrop-blur-md hover:bg-[#27B8B1]">
+                        <span>Explore Tour</span>
+                        <ChevronRight className="w-3.5 h-3.5" />
+                      </button>
                     </div>
                   </div>
                 ))}
               </div>
+
+              {/* Right Arrow */}
+              <button 
+                onClick={nextPackage}
+                aria-label="Next package"
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-20 w-12 h-12 bg-white rounded-full shadow-lg border border-gray-100 flex items-center justify-center text-gray-700 hover:text-[#27B8B1] hover:border-[#27B8B1] transition-all cursor-pointer hidden sm:flex"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
             </div>
 
           </div>

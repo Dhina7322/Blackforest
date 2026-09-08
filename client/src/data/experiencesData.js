@@ -1,232 +1,370 @@
+// Content for the 5 Experiences pages, pulled to match blackforestholidays.com exactly.
+// Key = the URL slug used in the route (/experiences/:slug)
+
 export const experiencesData = {
   'adventure-nature': {
     title: 'Adventure & Nature',
-    subtitle: 'Home > Experiences > Adventure & Nature',
-    heroImage: '/assets/images/ChatGPT-Image-Aug-8-2026-11_37_27-PM.png',
+    heroImage: 'https://blackforestholidays.com/wp-content/uploads/2026/08/ChatGPT-Image-Aug-8-2026-05_59_39-PM.png',
+
     intro: {
       title: 'Where the Journey Becomes the Adventure',
-      text1: 'Discover the thrill of exploring some of the world\'s most remote and breathtaking locations. Our adventure and nature holidays are designed for those who want to experience the thrill of the unknown, while ensuring luxury, comfort, and unforgettable memories.',
-      text2: 'From adrenaline-fuelled activities like mountain trekking and scuba diving to serene eco-tours and wildlife safaris, there is an adventure waiting for every kind of thrill-seeker.',
-      image: '/assets/images/ChatGPT-Image-Aug-8-2026-11_34_54-PM.png',
+      text1: `Step beyond the ordinary and experience the world at its most spectacular. At BlackForest Holidays, one of the best travel agencies for creating tailor-made adventure and nature journeys that bring you closer to breathtaking landscapes, extraordinary wildlife, vibrant cultures, and unforgettable experiences.`,
+      text2: `From mountain trails and tropical forests to thrilling outdoor adventures and remote wilderness escapes, every journey is designed for those who want to explore, discover, and experience something truly remarkable.`,
     },
+
+    section2: {
+      title: 'Discover the World Differently',
+      text: `Adventure doesn't always mean adrenaline. It can be waking up surrounded by mountains, exploring a hidden waterfall, walking through a rainforest, watching wildlife in its natural habitat, or discovering a destination far from the usual tourist trail.`,
+    },
+
     experiencesList: {
-      title: 'Our Adventure & Nature Experiences',
+      includesHeading: 'Our Adventure & Nature Experiences',
       items: [
-        { title: 'Adventure & Thrilling Expeditions', desc: 'Explore rugged terrains, ascend high peaks, and challenge your physical limits.' },
-        { title: 'Wildlife & Safari Adventures', desc: 'Get up close with nature\'s most majestic creatures in their natural habitats. From the African Savannah to the Amazon Rainforest.' },
-        { title: 'Nature & Eco-Tourism', desc: 'Experience sustainable travel that protects nature and empowers local communities.' },
-        { title: 'Active Holidays', desc: 'Combine your love for travel with sports like cycling, kayaking, and skiing across picturesque landscapes.' },
-        { title: 'Scuba Dive Tours', desc: 'Dive into the deep blue and discover vibrant coral reefs and marine life across the globe.' }
+        { title: 'Mountain & Trekking Adventures', desc: 'Explore spectacular mountain landscapes, scenic trails, and breathtaking viewpoints.' },
+        { title: 'Wildlife Encounters', desc: 'Get closer to nature through unforgettable wildlife experiences and guided excursions.' },
+        { title: 'Jungle & Rainforest Expeditions', desc: 'Discover incredible ecosystems, rare wildlife, and untouched natural beauty.' },
+        { title: 'Water Adventures', desc: 'Experience kayaking, rafting, diving, snorkelling, sailing, and other exciting water activities.' },
+        { title: 'Safari Adventures', desc: 'Venture into the wilderness with expertly planned safari experiences and exceptional wildlife encounters.' },
+        { title: 'Scenic Road Journeys', desc: 'Discover spectacular landscapes through carefully planned self-drive and private road trips.' },
+        { title: 'Outdoor Experiences', desc: 'From hiking and cycling to camping and nature walks, experience destinations beyond the usual.' },
+        { title: 'Nature & Wellness Escapes', desc: 'Combine adventure with relaxation through peaceful retreats surrounded by nature.' },
       ],
       images: [
-        '/assets/images/ChatGPT-Image-Aug-8-2026-11_29_04-PM.png',
-        '/assets/images/ChatGPT-Image-Aug-8-2026-11_43_58-PM.png',
-        '/assets/images/Untitled-design-20.png'
-      ]
-    },
-    whyChooseUs: {
-      title: 'Why Choose BlackForest Holidays?',
-      features: [
-        { title: 'Tailor-Made Adventures', desc: 'Every adventure is customized to match your thrill level and preferences.' },
-        { title: 'Comfort Meets Adventure', desc: 'After a long day of exploring, retreat to luxurious, comfortable accommodations.' },
-        { title: 'Authentic Experiences', desc: 'Go beyond the typical tourist trails and immerse yourself in raw nature.' },
-        { title: 'Expertly Planned Journeys', desc: 'We handle all logistics, ensuring your safety and a seamless travel experience.' }
-      ]
-    },
-    bottomSection: {
-      title: 'Your Next Adventure Awaits',
-      desc: 'Whether you\'re seeking a wildlife encounter in Africa, a mountain trek in the Himalayas, or a dive in the Great Barrier Reef, our adventure experts are here to craft your perfect journey.',
-      buttonText: 'Speak with our travel expert',
-      collageImages: [
-        '/assets/images/Untitled-design-19.png',
-        '/assets/images/Untitled-design-18.png',
-        '/assets/images/Untitled-design-21.png'
+        'https://blackforestholidays.com/wp-content/uploads/2026/08/Untitled-design-28.png',
+        'https://blackforestholidays.com/wp-content/uploads/2026/08/Untitled-design-29.png',
+        'https://blackforestholidays.com/wp-content/uploads/2026/08/Untitled-design-22.png',
+        'https://blackforestholidays.com/wp-content/uploads/2026/08/Untitled-design-20.png',
       ],
-      quote: 'A Vision Created For The Activities To Make Sure You Enjoy & Get Thrilled.'
-    }
+    },
+
+    destinations: {
+      heading: 'Explore Extraordinary Destinations',
+      text: `Discover the dramatic landscapes of Switzerland and Iceland, the wilderness of Africa, the rainforests of Southeast Asia, the mountains of Nepal and Bhutan, the natural wonders of Australia and New Zealand, and spectacular destinations across the world.`,
+    },
+
+    whyChooseUs: {
+      heading: 'Why Choose BlackForest Holidays?',
+      backgroundImage: 'https://blackforestholidays.com/wp-content/uploads/2026/08/contact-pine-bg-2.jpg',
+      features: [
+        { title: 'Tailor-Made Adventures', desc: 'Every journey is designed around your interests, comfort level, and sense of adventure.' },
+        { title: 'Authentic Experiences', desc: 'Go beyond the typical sightseeing itinerary and discover destinations through meaningful experiences.' },
+        { title: 'Expertly Planned Journeys', desc: 'We carefully coordinate accommodation, guides, activities, transportation, and experiences.' },
+        { title: 'Comfort Meets Adventure', desc: 'Enjoy exciting adventures without compromising on comfort, quality, or seamless travel.' },
+      ],
+    },
+
+    closing: {
+      heading: 'Your Next Adventure Awaits',
+      text: `Whether you're seeking the thrill of a mountain expedition, the serenity of a rainforest, the excitement of a safari, or simply a deeper connection with nature, BlackForest Holidays creates journeys that inspire you to explore further.`,
+    },
+
+    cta: {
+      heading: 'Go Further. Explore More. Live the Adventure.',
+      buttonText: 'Explore Adventure Holidays',
+      link: 'https://blackforestholidays.com/contact',
+    },
+
+    bottomSection: {
+      collageImages: [
+        'https://blackforestholidays.com/wp-content/uploads/2026/07/Untitled-design-1.png',
+        'https://blackforestholidays.com/wp-content/uploads/2026/08/adventure_travel3.jpg',
+        'https://blackforestholidays.com/wp-content/uploads/2026/07/WhatsApp-Image-2026-08-06-at-16.31.32.jpeg',
+      ],
+      decorativeImage: 'https://blackforestholidays.com/wp-content/uploads/2021/07/about-compass.jpg',
+      quote: 'A Vision created for the activities to make sure you enjoy & get thrilled.',
+    },
   },
+
   'island-holidays': {
     title: 'Island Holidays',
-    subtitle: 'Home > Island Holidays',
-    heroImage: '/assets/images/aesthetic-summer-holidays-scaled.jpg',
+    heroImage: 'https://blackforestholidays.com/wp-content/uploads/2026/08/pexels-asadphoto-9394652-scaled.jpg',
+
     intro: {
       title: 'Escape to Paradise, Discover Your Perfect Island',
-      text1: 'Leave the everyday behind and step onto the soft, white sands of the world\'s most beautiful islands. Our Island Holidays are carefully curated to offer you the ultimate tropical escape. Whether you\'re looking for a romantic retreat, a family adventure, or a solo getaway, we have the perfect island destination waiting for you.',
-      text2: 'From the crystal-clear waters of the Maldives to the vibrant culture of Bali and the untouched beauty of the Seychelles, our island holidays promise sun, sea, and serenity.',
-      image: '/assets/images/WhatsApp-Image-2026-07-29-at-23.46.36.jpeg',
+      text1: `Leave the everyday behind and discover some of the world's most beautiful islands with the best honeymoon resort experiences from BlackForest Holidays. We create tailor-made island journeys featuring pristine beaches, luxurious resorts, breathtaking landscapes, and unforgettable experiences.`,
+      text2: `From secluded tropical retreats and romantic escapes to family-friendly island adventures and private beachfront villas, we help you find an island that matches the way you want to travel.`,
     },
+
+    section2: {
+      title: 'Your Island. Your Escape. Your Way.',
+      text: `Whether you want complete relaxation, exciting water adventures, romantic moments, or a combination of everything, our island holidays are carefully designed around your preferences.`,
+    },
+
     experiencesList: {
-      title: 'Our Island Holiday Experiences',
+      includesHeading: 'Our Island Holiday Experiences',
       items: [
-        { title: 'Luxury Overwater Villas', desc: 'Wake up to the sound of the ocean and step directly into the water from your private villa.' },
-        { title: 'Snorkeling & Diving', desc: 'Explore vibrant coral reefs and swim alongside exotic marine life in world-renowned diving spots.' },
-        { title: 'Romantic Beach Dinners', desc: 'Enjoy private, candlelit dinners on secluded beaches under a canopy of stars.' },
-        { title: 'Island Hopping', desc: 'Discover multiple islands in one trip, each offering a unique vibe and landscape.' },
-        { title: 'Wellness & Spa Retreats', desc: 'Rejuvenate your mind and body with oceanfront spa treatments and wellness programs.' }
+        { title: 'Luxury Island Resorts', desc: 'Stay at handpicked resorts and private villas in spectacular island settings.' },
+        { title: 'Private Island Escapes', desc: 'Experience tranquillity, privacy, and exceptional service away from the crowds.' },
+        { title: 'Beach & Relaxation', desc: 'Spend your days enjoying pristine beaches, turquoise waters, and breathtaking sunsets.' },
+        { title: 'Romantic Island Getaways', desc: 'Create unforgettable moments with private dinners, sunset cruises, and secluded stays.' },
+        { title: 'Family Island Holidays', desc: 'Enjoy safe, comfortable, and exciting island experiences for the whole family.' },
+        { title: 'Island Adventures', desc: 'Discover snorkelling, diving, sailing, kayaking, water sports, and other unforgettable activities.' },
+        { title: 'Island Hopping', desc: 'Explore multiple islands and experience the unique character of each destination.' },
+        { title: 'Wellness & Spa Retreats', desc: 'Reconnect and rejuvenate with beautiful surroundings, luxury spas, and wellness experiences.' },
       ],
       images: [
-        '/assets/images/WhatsApp-Image-2026-07-30-at-00.36.49.jpeg',
-        '/assets/images/moosa-haleem-xbIEA8egHr4-unsplash-scaled.jpg',
-        '/assets/images/WhatsApp-Image-2026-07-29-at-23.46.36kj.jpeg'
-      ]
-    },
-    whyChooseUs: {
-      title: 'Why Choose BlackForest Holidays?',
-      features: [
-        { title: 'Exclusive Access', desc: 'Gain entry to private islands and secluded resorts away from the crowds.' },
-        { title: 'Seamless Transfers', desc: 'Enjoy hassle-free travel with coordinated seaplane, speedboat, or helicopter transfers.' },
-        { title: 'Personalized Service', desc: 'From private butlers to customized itineraries, experience unparalleled hospitality.' },
-        { title: 'Unforgettable Settings', desc: 'Stay in some of the most breathtaking and photogenic locations on earth.' }
-      ]
-    },
-    bottomSection: {
-      title: 'Your Private Paradise Awaits',
-      desc: 'Whether you desire the barefoot luxury of the Maldives, the dramatic landscapes of Bora Bora, or the cultural richness of Sri Lanka, we craft island holidays that exceed your wildest dreams.',
-      buttonText: 'Speak with our travel expert',
-      collageImages: [
-        '/assets/images/aditya-siva-6rDbvXzIVpQ-unsplash-1-scaled.jpg',
-        '/assets/images/rayyu-maldives-xPsFXsbXJRg-unsplash-scaled.jpg',
-        '/assets/images/ismail-mohamed-sovile-u7qgO97JAEo-unsplash-scaled.jpg'
+        'https://blackforestholidays.com/wp-content/uploads/2026/08/Untitled-design-33.png',
+        'https://blackforestholidays.com/wp-content/uploads/2026/08/Untitled-design-31.png',
+        'https://blackforestholidays.com/wp-content/uploads/2026/08/Untitled-design-30.png',
+        'https://blackforestholidays.com/wp-content/uploads/2026/08/Untitled-design-32.png',
       ],
-      quote: 'A Vision Created For The Activities To Make Sure You Enjoy & Get Thrilled.'
-    }
+    },
+
+    destinations: {
+      heading: 'Discover Islands Around the World',
+      text: `Explore the turquoise lagoons of the Maldives, the natural beauty of Seychelles and Mauritius, the tropical charm of Bali and Thailand, the spectacular islands of the Mediterranean, and the remote beauty of the Indian Ocean, South Pacific, and Caribbean. Whether you're searching for a romantic escape, family adventure, luxury retreat, or simply a place to switch off, we'll help you discover the perfect island destination.`,
+    },
+
+    whyChooseUs: {
+      heading: 'Why Choose BlackForest Holidays?',
+      backgroundImage: 'https://blackforestholidays.com/wp-content/uploads/2026/08/contact-pine-bg-2.jpg',
+      features: [
+        { title: 'Tailor-Made Island Journeys', desc: 'We design your holiday around your interests, travel style, and expectations.' },
+        { title: 'Handpicked Resorts & Villas', desc: 'Our recommendations focus on exceptional locations, comfort, privacy, and memorable experiences.' },
+        { title: 'Curated Island Experiences', desc: 'From diving and sailing to private dining and sunset cruises, we help you make the most of every destination.' },
+        { title: 'Seamless Travel Planning', desc: 'Flights, accommodation, transfers, activities, and destination services are coordinated for a smooth experience.' },
+      ],
+    },
+
+    closing: {
+      heading: 'Find Your Piece of Paradise',
+      text: `Whether you dream of a private villa over crystal-clear waters, a romantic sunset on a secluded beach, an adventurous island-hopping journey, or a relaxing family escape, BlackForest Holidays creates island holidays that turn dreams into unforgettable memories.`,
+    },
+
+    cta: {
+      heading: 'Paradise Is Closer Than You Think.',
+      buttonText: 'Explore Island Holidays',
+      link: 'https://blackforestholidays.com/contact',
+    },
+
+    bottomSection: {
+      collageImages: [
+        'https://blackforestholidays.com/wp-content/uploads/2026/08/n0n2mkbdu087ancdeh94veeyfzlk_shutterstock_2653002613.avif',
+        'https://blackforestholidays.com/wp-content/uploads/2026/08/island-getaway.avif',
+        'https://blackforestholidays.com/wp-content/uploads/2026/08/ChatGPT-Image-Aug-8-2026-07_07_31-PM.png',
+      ],
+      decorativeImage: 'https://blackforestholidays.com/wp-content/uploads/2021/07/about-compass.jpg',
+      quote: 'A Vision created for the activities to make sure you enjoy & get thrilled.',
+    },
   },
+
   'family-holidays': {
     title: 'Family Holidays',
-    subtitle: 'Home > Family Holidays',
-    heroImage: '/assets/images/ChatGPT-Image-Aug-8-2026-11_48_04-PM.png',
+    heroImage: 'https://blackforestholidays.com/wp-content/uploads/2026/08/family-holidays-nsw-main.jpg',
+
     intro: {
       title: 'Create Memories That Last a Lifetime',
-      text1: 'Family holidays are more than just taking a break; they are about the shared experience of discovering the world together and creating cherished memories that will be talked about for years to come.',
-      text2: 'From thrilling theme parks and interactive museums to relaxing beach resorts with kids\' clubs, we design family holidays that cater to the interests and energy levels of all ages. Ensuring parents can relax while children are entertained.',
-      image: '/assets/images/ChatGPT-Image-Aug-8-2026-10_13_09-PM.png',
+      text1: `Family holidays are about more than visiting new places, they are about sharing experiences, discovering the world together, and creating memories you'll cherish for years to come. At BlackForest Holidays, we design personalised family holiday packages from India that combine comfort, adventure, relaxation, and experiences for every generation.`,
+      text2: `From exciting city breaks and beach escapes to wildlife adventures and cultural discoveries, we make family travel seamless, enjoyable, and truly unforgettable.`,
     },
+
+    section2: {
+      title: 'Journeys Designed for Every Family',
+      text: `Every family travels differently. We carefully plan your family tour packages around your children's ages, interests, preferred pace, accommodation needs, and travel preferences, ensuring a comfortable, enjoyable, and memorable experience for every member of the family.`,
+    },
+
     experiencesList: {
-      title: 'Our Family Holiday Experiences',
+      includesHeading: 'Our Family Holiday Experiences',
       items: [
-        { title: 'Multi-Generational Travel', desc: 'Itineraries designed to please everyone from toddlers to grandparents, with accessible activities and diverse options.' },
-        { title: 'Theme Parks & Attractions', desc: 'VIP access and planned routes for the world\'s best theme parks, ensuring maximum fun and minimum stress.' },
-        { title: 'Educational & Cultural Tours', desc: 'Engaging, hands-on experiences that make learning about history and culture fun for children.' },
-        { title: 'Family Safaris', desc: 'Child-friendly lodges and expert guides who know how to make wildlife spotting exciting and safe for younger travelers.' },
-        { title: 'Relaxing Beach Resorts', desc: 'Resorts selected for their exceptional kids\' clubs, family pools, and spacious interconnected rooms.' }
+        { title: 'Family Beach Escapes', desc: 'Enjoy beautiful beaches, family-friendly resorts, exciting activities, and plenty of time to relax.' },
+        { title: 'Wildlife & Safari Adventures', desc: "Introduce your family to extraordinary wildlife and unforgettable encounters in some of the world's most remarkable destinations." },
+        { title: 'Adventure Holidays', desc: 'From thrilling outdoor activities to scenic explorations, discover experiences the whole family can enjoy.' },
+        { title: 'Cultural Journeys', desc: 'Explore fascinating cities, heritage sites, traditions, and local experiences together.' },
+        { title: 'Family-Friendly Resorts', desc: 'Stay at carefully selected properties offering comfort, activities, and facilities for families.' },
+        { title: 'Theme Parks & Attractions', desc: 'Create unforgettable moments with exciting attractions and entertainment for children and adults.' },
+        { title: 'Multi-Generational Holidays', desc: 'Thoughtfully planned journeys for families travelling with grandparents and multiple generations.' },
+        { title: 'Private Family Tours', desc: "Enjoy greater flexibility with private guides, personalised sightseeing, and itineraries designed around your family." },
       ],
       images: [
-        '/assets/images/ChatGPT-Image-Aug-8-2026-07_17_10-PM.png',
-        '/assets/images/ChatGPT-Image-Aug-8-2026-07_07_31-PM.png',
-        '/assets/images/Untitled-design-27.png'
-      ]
-    },
-    whyChooseUs: {
-      title: 'Why Choose BlackForest Holidays?',
-      features: [
-        { title: 'Family-focused Planning', desc: 'Every detail is planned with children in mind, from flight times to meal options.' },
-        { title: 'Handpicked Family Stays', desc: 'We only recommend resorts and hotels that genuinely welcome and cater to families.' },
-        { title: 'Flexible Itineraries', desc: 'Built-in downtime and flexible schedules to accommodate the unpredictable nature of traveling with kids.' },
-        { title: 'Seamless Travel Support', desc: '24/7 support so you can travel with peace of mind, knowing help is always a call away.' }
-      ]
-    },
-    bottomSection: {
-      title: 'Make Time for What Matters Most',
-      desc: 'Whether it\'s building sandcastles on a pristine beach, marveling at wild animals on safari, or exploring ancient ruins, we handle the logistics so you can focus on enjoying every precious moment with your family.',
-      buttonText: 'Speak with our travel expert',
-      collageImages: [
-        '/assets/images/Untitled-design-28.png',
-        '/assets/images/Untitled-design-29.png',
-        '/assets/images/Untitled-design-30.png'
+        'https://blackforestholidays.com/wp-content/uploads/2026/08/Untitled-design-34.png',
+        'https://blackforestholidays.com/wp-content/uploads/2026/08/Untitled-design-35.png',
+        'https://blackforestholidays.com/wp-content/uploads/2026/08/Untitled-design-36.png',
+        'https://blackforestholidays.com/wp-content/uploads/2026/08/Untitled-design-37.png',
       ],
-      quote: 'A Vision Created For The Activities To Make Sure You Enjoy & Get Thrilled.'
-    }
+    },
+
+    destinations: {
+      heading: 'Explore the World Together',
+      text: `From the beaches of Maldives, Mauritius, and Thailand to the wildlife of Africa, the attractions of Dubai and Singapore, the landscapes of Europe, and the cultural treasures of Asia, we help families discover destinations that everyone can enjoy.`,
+    },
+
+    whyChooseUs: {
+      heading: 'Why Choose BlackForest Holidays?',
+      backgroundImage: 'https://blackforestholidays.com/wp-content/uploads/2026/08/contact-pine-bg-2.jpg',
+      features: [
+        { title: 'Family-Focused Planning', desc: "Every itinerary is designed with your family's comfort, interests, and pace in mind." },
+        { title: 'Handpicked Family Stays', desc: 'We select hotels, resorts, villas, and accommodations that work well for families.' },
+        { title: 'Flexible Itineraries', desc: 'Enjoy a balance of sightseeing, activities, relaxation, and free time.' },
+        { title: 'Seamless Travel Support', desc: 'From flights and accommodation to transfers, tours, and activities, we coordinate every detail.' },
+      ],
+    },
+
+    closing: {
+      heading: 'Make Time for What Matters Most',
+      text: `Whether it's watching your children experience their first safari, exploring a new culture together, relaxing on a tropical beach, or simply spending quality time away from everyday life, BlackForest Holidays creates family journeys designed around meaningful experiences.`,
+    },
+
+    cta: {
+      heading: 'More Than a Holiday. Memories for a Lifetime.',
+      buttonText: 'Plan Your Family Holiday',
+      link: 'https://blackforestholidays.com/contact',
+    },
+
+    bottomSection: {
+      collageImages: [
+        'https://blackforestholidays.com/wp-content/uploads/2026/08/gi-1170508698-1920x1080-1.avif',
+        'https://blackforestholidays.com/wp-content/uploads/2026/08/shutterstock_2456271857.jpg',
+        'https://blackforestholidays.com/wp-content/uploads/2026/08/Untitled-design-60.png',
+      ],
+      decorativeImage: 'https://blackforestholidays.com/wp-content/uploads/2021/07/about-compass.jpg',
+      quote: 'A Vision created for the activities to make sure you enjoy & get thrilled.',
+    },
   },
+
   'honeymoon-escapes': {
     title: 'Honeymoon Escapes',
-    subtitle: 'Home > Honeymoon Escapes',
-    heroImage: '/assets/images/ChatGPT-Image-Aug-8-2026-06_54_05-PM.png',
+    heroImage: 'https://blackforestholidays.com/wp-content/uploads/2026/08/pexels-asadphoto-1024967.jpg',
+
     intro: {
       title: 'Begin Your Forever With an Unforgettable Journey',
-      text1: 'Your honeymoon is more than a holiday; it\'s the beginning of your beautiful new chapter together. It should be a time of pure romance, ultimate relaxation, and magical moments that you will cherish for a lifetime.',
-      text2: 'Whether you dream of a secluded overwater villa in the Maldives, a romantic escape through the vineyards of Italy, or a thrilling safari adventure, we design honeymoons that perfectly reflect your unique love story.',
-      image: '/assets/images/ChatGPT-Image-Aug-8-2026-06_30_11-PM.png',
+      text1: `Your honeymoon is more than a holiday, it is the beginning of a beautiful new chapter together. At BlackForest Holidays, we create romantic International Honeymoon Packages designed around your story, from secluded island retreats and private villas to extraordinary experiences and unforgettable moments.`,
+      text2: `Whether you dream of relaxing beside turquoise waters, exploring a new destination together, enjoying candlelit dinners, or discovering hidden romantic escapes, we take care of every detail to make your honeymoon seamless, intimate, and truly unforgettable.`,
     },
+
+    section2: {
+      title: 'Romance, Curated Around You',
+      text: `No two couples are the same. Your honeymoon should reflect your personalities, interests, and dreams. Our travel specialists create personalised itineraries that balance romance, relaxation, adventure, and discovery.`,
+    },
+
     experiencesList: {
-      title: 'Our Honeymoon Experiences',
+      includesHeading: 'Our Honeymoon Experiences',
       items: [
-        { title: 'Secluded Beach Retreats', desc: 'Escape to private islands and hidden beaches for uninterrupted romantic bliss.' },
-        { title: 'Romantic City Escapes', desc: 'Stroll hand-in-hand through the romantic streets of Paris, Venice, or Kyoto.' },
-        { title: 'Luxury Safari Honeymoons', desc: 'Experience the thrill of the wild combined with ultra-luxurious lodges and sunset bush dinners.' },
-        { title: 'Adventure & Romance', desc: 'For couples who bond over adrenaline, combining thrilling activities with romantic downtime.' },
-        { title: 'Wellness Retreats', desc: 'Start your marriage refreshed and rejuvenated with couples\' spa treatments and holistic wellness.' }
+        { title: 'Luxury Beach Escapes', desc: 'Relax in breathtaking destinations with pristine beaches, private villas, and spectacular sunsets.' },
+        { title: 'Private Island Retreats', desc: 'Escape to secluded islands and luxurious resorts designed for privacy and romance.' },
+        { title: 'Romantic Villas & Resorts', desc: 'Stay in handpicked properties offering exceptional service, intimate settings, and unforgettable views.' },
+        { title: 'Candlelight Dining', desc: 'Celebrate your love with private dinners, beachfront dining, and extraordinary culinary experiences.' },
+        { title: 'Couples Experiences', desc: 'Enjoy spa treatments, sunset cruises, private excursions, and experiences designed for two.' },
+        { title: 'Adventure for Two', desc: 'Discover new destinations through private tours, wildlife experiences, scenic journeys, and unforgettable adventures.' },
+        { title: 'Honeymoon Cruises', desc: 'Sail through spectacular destinations while enjoying the comfort and romance of a luxury cruise.' },
+        { title: 'Celebration Experiences', desc: 'Add special touches such as room decorations, romantic surprises, private celebrations, and memorable experiences.' },
       ],
       images: [
-        '/assets/images/WhatsApp-Image-2026-07-29-at-23.46.36.jpeg',
-        '/assets/images/ChatGPT-Image-Aug-8-2026-06_20_36-PM.png',
-        '/assets/images/Untitled-design-31.png'
-      ]
-    },
-    whyChooseUs: {
-      title: 'Why Choose BlackForest Holidays?',
-      features: [
-        { title: 'Romantic Touches', desc: 'We arrange special surprises, from champagne on arrival to private beachfront dinners.' },
-        { title: 'Stress-Free Planning', desc: 'After the stress of planning a wedding, leave the honeymoon logistics entirely to us.' },
-        { title: 'Exclusive Upgrades', desc: 'Enjoy our preferred partner benefits, including room upgrades, spa credits, and late check-outs when available.' },
-        { title: 'Ultimate Privacy', desc: 'We select accommodations and experiences that prioritize your privacy and intimacy.' }
-      ]
-    },
-    bottomSection: {
-      title: 'Crafting Your Perfect Love Story',
-      desc: 'Tell us your dreams, and we will weave them into an itinerary that balances adventure, relaxation, and unparalleled romance, creating the perfect start to your married life.',
-      buttonText: 'Speak with our travel expert',
-      collageImages: [
-        '/assets/images/Untitled-design-32.png',
-        '/assets/images/Untitled-design-33.png',
-        '/assets/images/Untitled-design-34.png'
+        'https://blackforestholidays.com/wp-content/uploads/2026/08/Untitled-design-41.png',
+        'https://blackforestholidays.com/wp-content/uploads/2026/08/Untitled-design-40.png',
+        'https://blackforestholidays.com/wp-content/uploads/2026/08/Untitled-design-39.png',
+        'https://blackforestholidays.com/wp-content/uploads/2026/08/Untitled-design-38.png',
       ],
-      quote: 'A Vision Created For The Activities To Make Sure You Enjoy & Get Thrilled.'
-    }
+    },
+
+    destinations: {
+      heading: 'Dream Honeymoon Destinations',
+      text: `From the Maldives, Seychelles, Mauritius, and Bali to the romantic landscapes of Europe, the cultural wonders of Asia, the beauty of Africa, and extraordinary destinations around the world, we help you discover the perfect setting for your first journey together.`,
+    },
+
+    whyChooseUs: {
+      heading: 'Why Choose BlackForest Holidays?',
+      backgroundImage: 'https://blackforestholidays.com/wp-content/uploads/2026/08/contact-pine-bg-2.jpg',
+      features: [
+        { title: 'Personalised Honeymoon Planning', desc: 'Your honeymoon is designed around your preferences, budget, travel style, and dreams.' },
+        { title: 'Handpicked Romantic Stays', desc: 'We recommend carefully selected hotels, resorts, villas, and private retreats.' },
+        { title: 'Beautifully Planned Experiences', desc: 'From sunset cruises to private dining, every experience can be tailored to make your journey special.' },
+        { title: 'Seamless Travel Support', desc: 'Flights, hotels, transfers, experiences, and destination assistance — everything coordinated for a smooth journey.' },
+      ],
+    },
+
+    closing: {
+      heading: 'Make Your First Journey Together Extraordinary',
+      text: `Whether you imagine waking up over the turquoise waters of the Maldives, enjoying a private sunset in Santorini, exploring the beauty of Switzerland, or escaping to a secluded tropical island, BlackForest Holidays creates honeymoon journeys filled with romance, discovery, and unforgettable memories.`,
+    },
+
+    cta: {
+      heading: 'Your Love Story. Your Destination. Your Perfect Honeymoon.',
+      buttonText: 'Plan Your Honeymoon',
+      link: 'https://blackforestholidays.com/contact',
+    },
+
+    bottomSection: {
+      collageImages: [
+        'https://blackforestholidays.com/wp-content/uploads/2026/08/darren-lawrence-EpeNGhitrlc-unsplash-scaled.jpg',
+        'https://blackforestholidays.com/wp-content/uploads/2026/08/AdobeStock_257003085.jpg',
+        'https://blackforestholidays.com/wp-content/uploads/2026/08/ismail-mohamed-sovile-u7qgO97JAEo-unsplash-scaled.jpg',
+      ],
+      decorativeImage: 'https://blackforestholidays.com/wp-content/uploads/2021/07/about-compass.jpg',
+      quote: 'A Vision created for the activities to make sure you enjoy & get thrilled.',
+    },
   },
+
   'luxury-escapes': {
     title: 'Luxury Escapes',
-    subtitle: 'Home > Luxury Escapes',
-    heroImage: '/assets/images/luxury-lens-bg.jpg',
+    heroImage: 'https://blackforestholidays.com/wp-content/uploads/2026/08/dino-reichmuth-A5rCN8626Ck-unsplash-scaled.jpg',
+
     intro: {
       title: 'Bespoke Journeys. Exceptional Places. Unforgettable Moments.',
-      text1: 'Experience travel without compromise with our Luxury Escapes. We believe that true luxury lies in the details—the seamless orchestration of your journey, the exclusivity of your experiences, and the unparalleled level of personalized service you receive.',
-      text2: 'Whether you seek the grandeur of a historic European palace, the secluded opulence of a private island, or a curated cultural immersion with VIP access, we craft journeys that redefine luxury travel.',
-      image: '/assets/images/ChatGPT-Image-Aug-8-2026-05_59_39-PM.png',
+      text1: `Discover a world of extraordinary travel with our Luxury Tour Packages, where every journey is thoughtfully designed around you. From private villas and iconic resorts to secluded islands, fine dining, curated experiences, and personalised itineraries, our luxury escapes bring together the finest destinations and experiences around the world.`,
+      text2: `Every detail is crafted to deliver comfort, exclusivity, and unforgettable moments. Whether you're seeking a romantic retreat, a private family getaway, an exclusive island escape, or an unforgettable celebration, BlackForest Holidays creates journeys that go beyond the ordinary.`,
     },
+
+    section2: {
+      title: 'Travel, Your Way',
+      text: `Every luxury journey is different. We take the time to understand your interests, preferences, pace, and expectations before crafting your itinerary.`,
+    },
+
     experiencesList: {
-      title: 'Our Luxury Experiences',
+      includesHeading: 'Our Luxury Escapes Include:',
       items: [
-        { title: 'Private Villas & Estates', desc: 'Exclusive use of spectacular properties complete with private chefs and dedicated staff.' },
-        { title: 'VIP Access & Private Tours', desc: 'Skip the lines and enjoy private viewings of iconic landmarks and museums, often after hours.' },
-        { title: 'Helicopter & Private Jet Transfers', desc: 'Travel seamlessly and luxuriously, maximizing your time experiencing the destination.' },
-        { title: 'Michelin-Starred Dining', desc: 'Guaranteed reservations at the world\'s most sought-after restaurants and private culinary experiences.' },
-        { title: 'Curated Cultural Immersions', desc: 'Private encounters with local artisans, historians, and tastemakers for a deeper connection to the destination.' }
+        { title: 'Exclusive Resorts & Villas', desc: 'Stay in exceptional properties selected for their location, service, privacy, and character.' },
+        { title: 'Private Experiences', desc: 'Discover destinations through carefully curated experiences created exclusively around your interests.' },
+        { title: 'Personalised Itineraries', desc: 'Every detail is planned around your preferred travel style, pace, and priorities.' },
+        { title: 'Island & Beach Escapes', desc: "Unwind in spectacular destinations from the Maldives and Seychelles to the world's most beautiful tropical islands." },
+        { title: 'Luxury Honeymoons', desc: 'Celebrate your journey together with romantic stays, private experiences, and unforgettable moments.' },
+        { title: 'Family Luxury Holidays', desc: 'Enjoy thoughtfully planned family journeys combining comfort, discovery, and experiences for every generation.' },
+        { title: 'Luxury Safaris & Wildlife', desc: 'Experience extraordinary wildlife encounters with premium lodges, private guides, and expertly designed itineraries.' },
+        { title: 'Luxury Cruises', desc: 'Explore remarkable destinations at sea with carefully selected cruise experiences.' },
+        { title: 'Private Transfers & Concierge Services', desc: 'Travel effortlessly with seamless transfers, personalised assistance, and dedicated support throughout your journey.' },
       ],
       images: [
-        '/assets/images/Horizon-Lounge-Dining-Venue-copy-scaled.avif',
-        '/assets/images/ChatGPT-Image-Aug-8-2026-06_49_29-PM.png',
-        '/assets/images/Untitled-design-35.png'
-      ]
-    },
-    whyChooseUs: {
-      title: 'Why Choose BlackForest Holidays?',
-      features: [
-        { title: 'Uncompromising Quality', desc: 'We partner only with the finest hotels, resorts, and service providers globally.' },
-        { title: 'Hyper-Personalization', desc: 'Every aspect of your trip is meticulously tailored to your exacting standards and preferences.' },
-        { title: 'Dedicated Concierge', desc: 'A dedicated expert available around the clock to handle any request, no matter how small.' },
-        { title: 'Insider Access', desc: 'Leverage our global network to open doors that are typically closed to the public.' }
-      ]
-    },
-    bottomSection: {
-      title: 'The Pinnacle of Travel Awaits',
-      desc: 'Allow us to elevate your travel experience to extraordinary heights. From the moment you depart to your return home, every detail is flawlessly executed for your utmost comfort and pleasure.',
-      buttonText: 'Speak with our travel expert',
-      collageImages: [
-        '/assets/images/Untitled-design-36.png',
-        '/assets/images/Untitled-design-37.png',
-        '/assets/images/Untitled-design-38.png'
+        'https://blackforestholidays.com/wp-content/uploads/2026/08/Untitled-design-43.png',
+        'https://blackforestholidays.com/wp-content/uploads/2026/08/Untitled-design-45.png',
+        'https://blackforestholidays.com/wp-content/uploads/2026/08/Untitled-design-44.png',
+        'https://blackforestholidays.com/wp-content/uploads/2026/08/Untitled-design-42.png',
       ],
-      quote: 'A Vision Created For The Activities To Make Sure You Enjoy & Get Thrilled.'
-    }
-  }
+    },
+
+    destinations: {
+      heading: 'Destinations Beyond Expectations',
+      text: `From the turquoise waters of the Maldives and Seychelles to the dramatic landscapes of Africa, the cultural treasures of Europe, the tropical beauty of Southeast Asia, and the remote wonders of the South Pacific, we curate exceptional journeys across the globe.`,
+    },
+
+    whyChooseUs: {
+      heading: 'Why Travel With BlackForest Holidays?',
+      backgroundImage: 'https://blackforestholidays.com/wp-content/uploads/2026/08/contact-pine-bg-2.jpg',
+      features: [
+        { title: 'Personalised Planning', desc: 'Your journey is designed around you, not selected from a standard package.' },
+        { title: 'Handpicked Experiences', desc: 'We carefully select hotels, experiences, guides, and destinations that meet our standards.' },
+        { title: 'Expert Travel Design', desc: 'Our travel specialists combine destination knowledge with attention to every detail.' },
+        { title: 'Seamless Travel Support', desc: "From the first conversation to your return home, we're here to make your journey effortless." },
+      ],
+    },
+
+    closing: {
+      heading: 'Your Journey. Your Style. Your World.',
+      text: `Whether you dream of waking up in a private overwater villa, exploring the African wilderness, sailing through spectacular coastlines, or discovering hidden European treasures, BlackForest Holidays turns your travel vision into a beautifully crafted journey.`,
+    },
+
+    cta: {
+      heading: 'Start Your Luxury Journey',
+      buttonText: 'Enquire Now',
+      link: 'https://blackforestholidays.com/contact',
+    },
+
+    bottomSection: {
+      collageImages: [
+        'https://blackforestholidays.com/wp-content/uploads/2026/08/stevebidmead-deckchairs-355596-scaled.jpg',
+        'https://blackforestholidays.com/wp-content/uploads/2026/08/tama66-boat-3480914-scaled.jpg',
+        'https://blackforestholidays.com/wp-content/uploads/2026/08/nikldn-t-6GW8T6Jsc-unsplash-scaled.jpg',
+      ],
+      decorativeImage: 'https://blackforestholidays.com/wp-content/uploads/2021/07/about-compass.jpg',
+      quote: 'A Vision created for the activities to make sure you enjoy & get thrilled.',
+    },
+  },
 };

@@ -129,11 +129,15 @@ export default function DestinationDetailPage({ forcedSlug }) {
     fetchDestination();
   }, [resolvedSlug]);
 
+  // Always use region name (e.g. "Africa") from static data for the hero title
+  const regionName = staticData.name;
   const name = destination?.name || staticData.name;
-  const heroImage = destination?.heroImage || staticData.heroImage;
   const intro = staticData.intro;
   const tabs = staticData.tabs;
   const countries = staticData.countries || [];
+
+  // Single static background image specific to this destination (prefer staticData to match live site perfectly)
+  const heroImage = staticData.heroImage || destination?.heroImage;
 
   // If unpublished by admin, do not show on website
   if (!isPublished) {
@@ -173,29 +177,29 @@ export default function DestinationDetailPage({ forcedSlug }) {
 
   return (
     <div className="bg-white animate-fadeIn w-full overflow-x-hidden min-h-screen">
-      {/* 1. Hero Banner with Pine Forest Trees (Image 1) & Proportional Heading Size */}
+      {/* 1. Hero Banner — single static image */}
       <section className="relative w-full h-[64vh] min-h-[480px] flex flex-col items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
             src={heroImage}
-            alt={name}
-            className="w-full h-full object-cover object-center transform scale-105 transition-transform duration-1000"
+            alt={regionName}
+            className="absolute inset-0 w-full h-full object-cover object-center transform scale-105"
           />
           {/* Dark vignette overlay */}
-          <div className="absolute inset-0 bg-black/25" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/35" />
+          <div className="absolute inset-0 bg-black/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30" />
         </div>
 
-        {/* Hero Content - Heading Size Reduced to Elegant Proportion */}
+        {/* Hero Content — show REGION name (Africa, Europe…) */}
         <div className="relative z-10 text-center px-4 mt-6 max-w-4xl mx-auto">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-3 drop-shadow-[0_4px_10px_rgba(0,0,0,0.6)] capitalize tracking-tight leading-tight">
-            {name}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-3 drop-shadow-[0_4px_12px_rgba(0,0,0,0.7)] capitalize tracking-tight leading-tight">
+            {regionName}
           </h1>
           <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-medium tracking-wide text-white/95 drop-shadow-md">
             <Link to="/" className="hover:text-[#f29727] transition-colors">Home</Link>
             <span className="text-[10px] opacity-80">▾</span>
-            <span className="text-white font-semibold">{name}</span>
+            <span className="text-white font-semibold">{regionName}</span>
           </div>
         </div>
 

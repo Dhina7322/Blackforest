@@ -73,8 +73,14 @@ export default function TestimonialSlider() {
         
         {/* Title matching screenshot */}
         <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#5e963b] font-sans tracking-wide">
+          <span 
+            className="text-2xl sm:text-3xl block mb-2 font-['Caveat',cursive,serif]"
+            style={{ color: "#27B8B1" }}
+          >
             Client Testimonial
+          </span>
+          <h2 className="text-3xl md:text-4xl lg:text-[42px] font-bold text-[#7cb342] leading-tight">
+            Savoring your Taste Buds
           </h2>
         </div>
 
