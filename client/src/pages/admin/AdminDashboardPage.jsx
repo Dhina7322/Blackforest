@@ -77,29 +77,29 @@ export default function AdminDashboardPage() {
   const kpis = [
     {
       label: 'New Client Leads',
-      value: stats?.counts?.enquiries ?? 24,
-      sub: `${stats?.counts?.newEnquiries ?? 7} pending review`,
+      value: stats?.counts?.enquiries ?? 0,
+      sub: stats?.counts?.newEnquiries ? `${stats.counts.newEnquiries} pending review` : '0 pending review',
       icon: MailQuestion,
       link: '/admin/enquiries'
     },
     {
       label: 'Published Destinations',
       value: `${publishedDestinations} / ${destinations.length}`,
-      sub: 'All major continents active',
+      sub: `${publishedDestinations} active destinations`,
       icon: MapPin,
       link: '/admin/destinations'
     },
     {
       label: 'Published Blog Stories',
       value: `${publishedBlogs} / ${blogs.length}`,
-      sub: 'Real-time CMS dispatches',
+      sub: `${publishedBlogs} live articles`,
       icon: BookOpen,
       link: '/admin/journal'
     },
     {
       label: 'Partner Accreditations',
       value: `${publishedPartners} / ${partnerCards.length}`,
-      sub: 'Global certifications live',
+      sub: `${publishedPartners} active partnerships`,
       icon: Award,
       link: '/admin/expertise'
     }
