@@ -39,3 +39,6 @@ client/src/assets/uploads/
 # Vercel
 .vercel
 client/.vercel
+
+# Local scratch directories
+Black/
