@@ -103,7 +103,7 @@ export default function AdminTestimonialsPage() {
         </div>
         <button
           onClick={openCreate}
-          className="px-4 py-2 bg-[#10221b] text-[#f29727] text-xs font-bold uppercase rounded-xl flex items-center gap-1.5"
+          className="px-4 py-2 bg-[#10221b] text-white text-xs font-bold uppercase rounded-xl flex items-center gap-1.5"
         >
           <PlusCircle className="w-4 h-4" />
           <span>Add Testimonial</span>
@@ -114,7 +114,7 @@ export default function AdminTestimonialsPage() {
         {testimonials.map((t) => (
           <div key={t.id} className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm space-y-4 flex flex-col justify-between">
             <div>
-              <div className="flex items-center gap-1 text-[#f29727] mb-3">
+              <div className="flex items-center gap-1 text-[#10221b] mb-3">
                 {[...Array(t.rating || 5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-current" />
                 ))}
@@ -177,7 +177,7 @@ export default function AdminTestimonialsPage() {
               </div>
               <div className="flex justify-end gap-2 pt-2 border-t">
                 <button type="button" onClick={() => setModalOpen(false)} className="px-4 py-2 bg-gray-100 rounded-lg">Cancel</button>
-                <button type="submit" className="px-5 py-2 bg-[#10221b] text-[#f29727] font-bold rounded-lg">Save</button>
+                <button type="submit" className="px-5 py-2 bg-[#10221b] text-white font-bold rounded-lg">Save</button>
               </div>
             </form>
           </div>

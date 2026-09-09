@@ -161,7 +161,7 @@ export default function AdminJournalPage() {
           onClick={openCreate}
           className="px-4 py-2 bg-zinc-900 hover:bg-black text-white text-xs font-semibold rounded-lg transition-colors flex items-center gap-1.5 shadow-xs cursor-pointer self-start sm:self-auto"
         >
-          <Plus className="w-4 h-4 text-[#f29727]" />
+          <Plus className="w-4 h-4 text-[#10221b]" />
           <span>New Article</span>
         </button>
       </div>
@@ -240,7 +240,7 @@ export default function AdminJournalPage() {
                         'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80';
                     }}
                   />
-                  <span className="absolute top-3 left-3 px-2 py-0.5 bg-black/75 backdrop-blur-xs text-[#f29727] text-[10px] font-semibold uppercase tracking-wider rounded">
+                  <span className="absolute top-3 left-3 px-2 py-0.5 bg-black/75 backdrop-blur-xs text-[#10221b] text-[10px] font-semibold uppercase tracking-wider rounded">
                     {art.category}
                   </span>
 
@@ -318,7 +318,7 @@ export default function AdminJournalPage() {
                     href={`/blog/${art.slug}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-1.5 text-zinc-500 hover:text-[#f29727] hover:bg-zinc-100 rounded-lg transition-colors"
+                    className="p-1.5 text-zinc-500 hover:text-[#10221b] hover:bg-zinc-100 rounded-lg transition-colors"
                     title="Preview Live on Website"
                   >
                     <ExternalLink className="w-3.5 h-3.5" />
@@ -337,7 +337,7 @@ export default function AdminJournalPage() {
             {/* Modal Header */}
             <div className="px-6 py-4 border-b border-zinc-100 flex items-center justify-between">
               <div>
-                <span className="text-[10px] text-[#f29727] font-bold uppercase tracking-wider block">
+                <span className="text-[10px] text-[#10221b] font-bold uppercase tracking-wider block">
                   Blog Management
                 </span>
                 <h3 className="text-base font-serif font-bold text-zinc-900">

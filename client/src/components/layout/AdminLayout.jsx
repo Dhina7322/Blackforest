@@ -61,7 +61,7 @@ export default function AdminLayout() {
   ];
 
   return (
-    <div className="min-h-screen flex bg-[#f8f9fa] text-zinc-800 font-sans antialiased selection:bg-[#f29727] selection:text-white">
+    <div className="min-h-screen flex bg-[#f8f9fa] text-zinc-800 font-sans antialiased selection:bg-[#10221b] selection:text-white">
       {/* Mobile Backdrop */}
       {mobileSidebarOpen && (
         <div
@@ -80,7 +80,7 @@ export default function AdminLayout() {
           {/* Header Brand */}
           <div className="h-16 px-6 border-b border-white/[0.08] flex items-center justify-between">
             <Link to="/admin/dashboard" className="flex items-center gap-2.5 group">
-              <div className="w-8 h-8 rounded-lg bg-[#f29727] flex items-center justify-center text-[#0d1210] font-bold text-sm shadow-sm transition-transform group-hover:scale-105">
+              <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center text-[#0d1210] font-bold text-sm shadow-sm transition-transform group-hover:scale-105">
                 BF
               </div>
               <div className="flex flex-col">
@@ -127,13 +127,13 @@ export default function AdminLayout() {
                       <div className="flex items-center gap-2.5">
                         <Icon
                           className={`w-4 h-4 ${
-                            isActive ? 'text-[#f29727]' : 'text-zinc-400'
+                            isActive ? 'text-white' : 'text-zinc-400'
                           }`}
                         />
                         <span>{item.label}</span>
                       </div>
                       {item.badge && (
-                        <span className="text-[9px] font-semibold px-1.5 py-0.5 rounded bg-[#f29727]/15 text-[#f29727]">
+                        <span className="text-[9px] font-semibold px-1.5 py-0.5 rounded bg-white/15 text-white">
                           {item.badge}
                         </span>
                       )}

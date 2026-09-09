@@ -149,7 +149,7 @@ export default function AdminDashboardPage() {
                 <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-500">
                   {kpi.label}
                 </span>
-                <div className="w-8 h-8 rounded-lg bg-zinc-50 flex items-center justify-center text-zinc-600 group-hover:text-[#f29727] group-hover:bg-[#f29727]/10 transition-colors">
+                <div className="w-8 h-8 rounded-lg bg-zinc-50 flex items-center justify-center text-zinc-600 group-hover:text-[#10221b] group-hover:bg-[#10221b]/10 transition-colors">
                   <Icon className="w-4 h-4" />
                 </div>
               </div>
@@ -195,77 +195,46 @@ export default function AdminDashboardPage() {
               </tr>
             </thead>
             <tbody className="divide-y divide-zinc-100">
-              {(stats?.recentEnquiries && stats.recentEnquiries.length > 0
-                ? stats.recentEnquiries.slice(0, 5)
-                : [
-                    {
-                      id: 1,
-                      name: 'Vikram Malhotra',
-                      email: 'vikram.m@example.com',
-                      phone: '+91 98450 11223',
-                      destination: 'Switzerland & Black Forest',
-                      travelDate: 'October 2026',
-                      status: 'new'
-                    },
-                    {
-                      id: 2,
-                      name: 'Ananya Sharma',
-                      email: 'ananya@sharma.in',
-                      phone: '+91 97428 99887',
-                      destination: 'Kenya & Serengeti Safari',
-                      travelDate: 'December 2026',
-                      status: 'contacted'
-                    },
-                    {
-                      id: 3,
-                      name: 'David Chen',
-                      email: 'd.chen@singapore.sg',
-                      phone: '+65 9123 4567',
-                      destination: 'Kyoto Cultural Immersion',
-                      travelDate: 'November 2026',
-                      status: 'in_progress'
-                    },
-                    {
-                      id: 4,
-                      name: 'Pooja Reddy',
-                      email: 'pooja.r@corp.in',
-                      phone: '+91 99887 66554',
-                      destination: 'Maldives Overwater Retreat',
-                      travelDate: 'January 2027',
-                      status: 'new'
-                    }
-                  ]
-              ).map((lead) => (
-                <tr key={lead.id} className="hover:bg-zinc-50/60 transition-colors">
-                  <td className="py-3.5 px-5">
-                    <div className="font-semibold text-zinc-900">{lead.name}</div>
-                    <div className="text-zinc-400 text-[11px]">{lead.email}</div>
-                  </td>
-                  <td className="py-3.5 px-5 font-medium text-zinc-700">
-                    {lead.destination || 'Custom Itinerary'}
-                  </td>
-                  <td className="py-3.5 px-5 text-zinc-500">
-                    {lead.travelDate || 'Flexible'}
-                  </td>
-                  <td className="py-3.5 px-5">
-                    <span
-                      className={`inline-block px-2 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider ${
-                        statusPills[lead.status] || statusPills.new
-                      }`}
-                    >
-                      {lead.status.replace('_', ' ')}
-                    </span>
-                  </td>
-                  <td className="py-3.5 px-5 text-right">
-                    <Link
-                      to="/admin/enquiries"
-                      className="text-xs font-semibold text-zinc-700 hover:text-zinc-900 underline underline-offset-2"
-                    >
-                      Open Lead
-                    </Link>
+              {stats?.recentEnquiries && stats.recentEnquiries.length > 0 ? (
+                stats.recentEnquiries.slice(0, 5).map((lead) => (
+                  <tr key={lead.id} className="hover:bg-zinc-50/60 transition-colors">
+                    <td className="py-3.5 px-5">
+                      <div className="font-semibold text-zinc-900">{lead.name}</div>
+                      <div className="text-zinc-400 text-[11px]">{lead.email}</div>
+                    </td>
+                    <td className="py-3.5 px-5 font-medium text-zinc-700">
+                      {lead.destination || 'Custom Itinerary'}
+                    </td>
+                    <td className="py-3.5 px-5 text-zinc-500">
+                      {lead.travelDate || 'Flexible'}
+                    </td>
+                    <td className="py-3.5 px-5">
+                      <span
+                        className={`inline-block px-2 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider ${
+                          statusPills[lead.status] || statusPills.new
+                        }`}
+                      >
+                        {lead.status.replace('_', ' ')}
+                      </span>
+                    </td>
+                    <td className="py-3.5 px-5 text-right">
+                      <Link
+                        to="/admin/enquiries"
+                        className="p-1 text-zinc-400 hover:text-zinc-900 inline-block"
+                        title="View Enquiry"
+                      >
+                        <ChevronRight className="w-4 h-4" />
+                      </Link>
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td colSpan="5" className="py-8 text-center text-zinc-400">
+                    No customer enquiries yet. Real submissions from the website will appear here.
                   </td>
                 </tr>
-              ))}
+              )}
             </tbody>
           </table>
         </div>

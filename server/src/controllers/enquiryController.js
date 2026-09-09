@@ -11,13 +11,13 @@ const createEnquiry = async (req, res, next) => {
   try {
     const { name, email, phone, country, destination, travelDate, returnDate, travellers, budget, message, source } = req.body;
 
-    if (!name || !email || !phone || !message) {
-      return sendError(res, 'Please provide name, email, phone number, and message.', 400);
+    if (!name || !email || !phone) {
+      return sendError(res, 'Please provide your name, email, and phone number.', 400);
     }
 
-    if (message.trim().length < 5) {
-      return sendError(res, 'Message should be at least 5 characters.', 400);
-    }
+    const formattedMessage = (message && message.trim().length > 0)
+      ? message.trim()
+      : `Travel enquiry for ${destination || 'Custom Itinerary'} (${travellers || 'Travelers not specified'})`;
 
     const enquiry = await Enquiry.create({
       name: name.trim(),
@@ -29,7 +29,7 @@ const createEnquiry = async (req, res, next) => {
       returnDate: returnDate || '',
       travellers: travellers || '2 Adults',
       budget: budget || '',
-      message: message.trim(),
+      message: formattedMessage,
       source: source || 'Website',
       status: 'new',
       notes: []

@@ -43,16 +43,16 @@ export default function AdminLoginPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#10221b] p-4 relative overflow-hidden font-sans">
       {/* Background Graphic Accents */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#f29727]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#10221b]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#1c382e] rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative z-10 w-full max-w-md bg-white rounded-3xl shadow-2xl p-8 sm:p-10 border border-gray-100">
         {/* Brand Header */}
         <div className="text-center mb-8">
-          <div className="w-14 h-14 bg-[#10221b] text-[#f29727] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+          <div className="w-14 h-14 bg-[#10221b] text-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
             <Lock className="w-7 h-7" />
           </div>
-          <span className="text-xs uppercase font-bold tracking-widest text-[#f29727] block mb-1">
+          <span className="text-xs uppercase font-bold tracking-widest text-[#10221b] block mb-1">
             Secure Management
           </span>
           <h2 className="text-2xl font-serif font-bold text-[#10221b]">
@@ -77,7 +77,7 @@ export default function AdminLoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="admin@gmail.com"
-                className="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#f29727]/30 focus:border-[#f29727]"
+                className="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#10221b]/30 focus:border-[#10221b]"
               />
             </div>
           </div>
@@ -94,7 +94,7 @@ export default function AdminLoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
-                className="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#f29727]/30 focus:border-[#f29727]"
+                className="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#10221b]/30 focus:border-[#10221b]"
               />
             </div>
           </div>
@@ -102,10 +102,10 @@ export default function AdminLoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3.5 bg-[#10221b] hover:bg-[#1c382e] text-[#f29727] text-xs font-bold uppercase tracking-widest rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 disabled:opacity-50 mt-6"
+            className="w-full py-3.5 bg-[#10221b] hover:bg-[#1c382e] text-white text-xs font-bold uppercase tracking-widest rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 disabled:opacity-50 mt-6"
           >
             {loading ? (
-              <span className="w-4 h-4 border-2 border-[#f29727] border-t-transparent rounded-full animate-spin"></span>
+              <span className="w-4 h-4 border-2 border-[#10221b] border-t-transparent rounded-full animate-spin"></span>
             ) : (
               <>
                 <span>Sign In as Admin</span>
@@ -129,7 +129,7 @@ export default function AdminLoginPage() {
               <span className="font-bold text-[#10221b] block text-xs">Administrator</span>
               <span className="text-[11px] text-gray-500 font-mono">admin@gmail.com</span>
             </div>
-            <span className="text-[10px] px-2 py-1 rounded bg-[#10221b] text-[#f29727] font-bold uppercase">
+            <span className="text-[10px] px-2 py-1 rounded bg-[#10221b] text-white font-bold uppercase">
               Auto-Fill
             </span>
           </button>

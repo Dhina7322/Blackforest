@@ -188,7 +188,7 @@ export default function AdminDestinationsPage() {
                     href={`/destinations/${dest.slug}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-1.5 text-zinc-500 hover:text-[#f29727] hover:bg-zinc-100 rounded-lg transition-colors"
+                    className="p-1.5 text-zinc-500 hover:text-[#10221b] hover:bg-zinc-100 rounded-lg transition-colors"
                     title="Preview Live Destination"
                   >
                     <ExternalLink className="w-3.5 h-3.5" />
@@ -206,7 +206,7 @@ export default function AdminDestinationsPage() {
           <div className="relative w-full max-w-lg bg-white rounded-2xl shadow-2xl overflow-hidden border border-zinc-200">
             <div className="px-6 py-4 border-b border-zinc-100 flex items-center justify-between">
               <div>
-                <span className="text-[10px] text-[#f29727] font-bold uppercase tracking-wider block">
+                <span className="text-[10px] text-[#10221b] font-bold uppercase tracking-wider block">
                   Configuration
                 </span>
                 <h3 className="text-base font-serif font-bold text-zinc-900">

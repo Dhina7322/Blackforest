@@ -74,7 +74,7 @@ export default function AdminMediaPage() {
           <p className="text-xs text-gray-500">Upload and manage banners, hotel photos, tour covers, and logos.</p>
         </div>
 
-        <label className="px-4 py-2 bg-[#10221b] text-[#f29727] hover:bg-[#1c382e] text-xs font-bold uppercase rounded-xl flex items-center gap-2 cursor-pointer shadow">
+        <label className="px-4 py-2 bg-[#10221b] text-white hover:bg-[#1c382e] text-xs font-bold uppercase rounded-xl flex items-center gap-2 cursor-pointer shadow">
           <Upload className="w-4 h-4" />
           <span>{uploading ? 'Uploading...' : 'Upload Media'}</span>
           <input type="file" accept="image/*" onChange={handleFileUpload} className="hidden" />
@@ -83,7 +83,7 @@ export default function AdminMediaPage() {
 
       {loading ? (
         <div className="flex items-center justify-center py-20 text-gray-400 gap-2">
-          <span className="w-6 h-6 border-2 border-[#f29727] border-t-transparent rounded-full animate-spin"></span>
+          <span className="w-6 h-6 border-2 border-[#10221b] border-t-transparent rounded-full animate-spin"></span>
           <span>Loading assets...</span>
         </div>
       ) : mediaList.length === 0 ? (

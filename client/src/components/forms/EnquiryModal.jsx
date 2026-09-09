@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, Send, CheckCircle2, Calendar, Users, MapPin, DollarSign, Mail, Phone, User } from 'lucide-react';
+import { X, Send, CheckCircle2, Calendar, Users, MapPin, Wallet, Mail, Phone, User } from 'lucide-react';
 import { useSettings } from '../../context/SiteSettingsContext';
 import { useToast } from '../../context/ToastContext';
 import { enquiryService } from '../../services/allServices';
@@ -238,12 +238,12 @@ export default function EnquiryModal() {
                 Approximate Budget per Person (Optional)
               </label>
               <div className="relative">
-                <DollarSign className="absolute left-3 top-3 w-4 h-4 text-gray-400" />
+                <Wallet className="absolute left-3 top-3 w-4 h-4 text-gray-400" />
                 <input
                   type="text"
                   value={formData.budget}
                   onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                  placeholder="e.g. $1,500 - $3,000 / person"
+                  placeholder="e.g. ₹1,00,000 - ₹2,50,000 / person"
                   className="w-full pl-10 pr-3 py-2.5 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#f29727]/30 focus:border-[#f29727]"
                 />
               </div>

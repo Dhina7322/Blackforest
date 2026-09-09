@@ -1,6 +1,7 @@
 import React from 'react';
 import HeroSection from '../../components/home/HeroSection';
 import IntroSection from '../../components/home/IntroSection';
+import AboutMemoriesSection from '../../components/home/AboutMemoriesSection';
 import InternationalToursSection from '../../components/home/InternationalToursSection';
 import ValuePropsSection from '../../components/home/ValuePropsSection';
 import StatsSection from '../../components/home/StatsSection';
@@ -14,10 +15,13 @@ export default function HomePage() {
       {/* 1. Hero */}
       <HeroSection />
 
-      {/* 2. Introduction */}
+      {/* 2. Introduction / 6-Card Slider */}
       <IntroSection />
 
-      {/* 3. International Tour Packages */}
+      {/* 3. About & Memories Section */}
+      <AboutMemoriesSection />
+
+      {/* 4. International Tour Packages */}
       <InternationalToursSection />
 
       {/* 4. Services / Value Proposition */}

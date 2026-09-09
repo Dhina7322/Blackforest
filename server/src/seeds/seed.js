@@ -1000,75 +1000,8 @@ const seedDatabase = async () => {
       await Navigation.create(n);
     }
 
-    // 11. Seed Sample Enquiries
-    console.log('📬 Seeding Sample Enquiries...');
-    const sampleEnquiries = [
-      {
-        name: 'Lord Arthur Sterling',
-        email: 'arthur.sterling@example.co.uk',
-        phone: '+44 7700 900123',
-        country: 'United Kingdom',
-        destination: 'Switzerland & Alpine Wonderland',
-        travelDate: '2026-10-15',
-        returnDate: '2026-10-25',
-        travellers: '2 Adults',
-        budget: '$8,000 - $12,000',
-        message: 'Looking for a private first-class rail journey through Switzerland with 5-star mountain chalet stays in Interlaken and Zermatt.',
-        source: 'Website Hero CTA',
-        status: 'new',
-        assignedToId: superAdmin.id,
-        notes: [
-          {
-            id: '1',
-            text: 'VIP lead from UK. Inquired about Glacier Express Excellence Class.',
-            author: 'Blackforest Super Admin',
-            date: new Date().toISOString()
-          }
-        ]
-      },
-      {
-        name: 'Dr. Ananya Sharma',
-        email: 'ananya.sharma@example.com',
-        phone: '+91 98201 54321',
-        country: 'India',
-        destination: 'Tropical Island Paradise – Maldives',
-        travelDate: '2026-12-20',
-        returnDate: '2026-12-26',
-        travellers: '2 Adults, 1 Child',
-        budget: '$6,000 - $9,000',
-        message: 'Planning family Christmas holiday in an overwater villa in the Maldives with seaplane transfers.',
-        source: 'Website Island Section',
-        status: 'in_progress',
-        assignedToId: superAdmin.id,
-        notes: [
-          {
-            id: '2',
-            text: 'Sent Maldives villa options for Anantara and Soneva Jani.',
-            author: 'Blackforest Super Admin',
-            date: new Date().toISOString()
-          }
-        ]
-      },
-      {
-        name: 'Christian Meyer',
-        email: 'cmeyer@example.de',
-        phone: '+49 151 23456789',
-        country: 'Germany',
-        destination: 'From Coastlines to Palaces: A Kerala Journey',
-        travelDate: '2026-11-05',
-        returnDate: '2026-11-15',
-        travellers: '2 Adults',
-        budget: '$3,500 - $5,000',
-        message: 'Interested in Kerala Ayurvedic wellness retreat combined with Alleppey luxury houseboat.',
-        source: 'Website Kerala Section',
-        status: 'contacted',
-        notes: []
-      }
-    ];
-
-    for (const enq of sampleEnquiries) {
-      await Enquiry.create(enq);
-    }
+    // 11. Enquiries - Clean state (no dummy records)
+    console.log('📬 Enquiries table ready for real submissions.');
 
     console.log('🎉 Database seeding completed successfully in MySQL!');
     console.log('----------------------------------------------------');

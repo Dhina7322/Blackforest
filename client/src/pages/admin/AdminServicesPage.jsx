@@ -93,7 +93,7 @@ export default function AdminServicesPage() {
         </div>
         <button
           onClick={openCreate}
-          className="px-4 py-2 bg-[#10221b] text-[#f29727] text-xs font-bold uppercase rounded-xl flex items-center gap-1.5"
+          className="px-4 py-2 bg-[#10221b] text-white text-xs font-bold uppercase rounded-xl flex items-center gap-1.5"
         >
           <PlusCircle className="w-4 h-4" />
           <span>New Service</span>
@@ -104,7 +104,7 @@ export default function AdminServicesPage() {
         {services.map((srv) => (
           <div key={srv.id} className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm space-y-3 flex flex-col justify-between">
             <div>
-              <div className="w-10 h-10 rounded-xl bg-[#10221b] text-[#f29727] flex items-center justify-center font-bold text-xs mb-3">
+              <div className="w-10 h-10 rounded-xl bg-[#10221b] text-white flex items-center justify-center font-bold text-xs mb-3">
                 {srv.icon?.charAt(0) || 'S'}
               </div>
               <h3 className="font-serif font-bold text-base text-[#10221b]">{srv.title}</h3>
@@ -150,7 +150,7 @@ export default function AdminServicesPage() {
               </div>
               <div className="flex justify-end gap-2 pt-2 border-t">
                 <button type="button" onClick={() => setModalOpen(false)} className="px-4 py-2 bg-gray-100 rounded-lg">Cancel</button>
-                <button type="submit" className="px-5 py-2 bg-[#10221b] text-[#f29727] font-bold rounded-lg">Save</button>
+                <button type="submit" className="px-5 py-2 bg-[#10221b] text-white font-bold rounded-lg">Save</button>
               </div>
             </form>
           </div>

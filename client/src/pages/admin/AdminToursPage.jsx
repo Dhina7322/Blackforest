@@ -99,7 +99,7 @@ export default function AdminToursPage() {
           <select
             value={categoryFilter}
             onChange={(e) => setCategoryFilter(e.target.value)}
-            className="px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-xs font-semibold text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#f29727]"
+            className="px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-xs font-semibold text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#10221b]"
           >
             <option value="all">All Categories</option>
             <option value="international">International</option>
@@ -113,13 +113,13 @@ export default function AdminToursPage() {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search tours..."
-              className="pl-9 pr-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-[#f29727] w-48"
+              className="pl-9 pr-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-[#10221b] w-48"
             />
           </div>
 
           <Link
             to="/admin/tours/new"
-            className="px-4 py-2 bg-[#10221b] text-[#f29727] hover:bg-[#1c382e] text-xs font-bold uppercase tracking-wider rounded-xl transition-all flex items-center gap-1.5 shadow"
+            className="px-4 py-2 bg-[#10221b] text-white hover:bg-[#1c382e] text-xs font-bold uppercase tracking-wider rounded-xl transition-all flex items-center gap-1.5 shadow"
           >
             <PlusCircle className="w-4 h-4" />
             <span>New Package</span>
@@ -130,7 +130,7 @@ export default function AdminToursPage() {
       {/* Tours Grid */}
       {loading ? (
         <div className="flex items-center justify-center py-20 text-gray-400 gap-2">
-          <span className="w-6 h-6 border-2 border-[#f29727] border-t-transparent rounded-full animate-spin"></span>
+          <span className="w-6 h-6 border-2 border-[#10221b] border-t-transparent rounded-full animate-spin"></span>
           <span>Loading tour packages...</span>
         </div>
       ) : tours.length === 0 ? (
@@ -144,7 +144,7 @@ export default function AdminToursPage() {
           {tours.map((tour) => (
             <div
               key={tour.id}
-              className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden flex flex-col justify-between hover:border-[#f29727]/50 transition-all"
+              className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden flex flex-col justify-between hover:border-[#10221b]/50 transition-all"
             >
               {/* Tour Card Header Image */}
               <div className="relative h-48 overflow-hidden bg-gray-100">
@@ -171,7 +171,7 @@ export default function AdminToursPage() {
                 </div>
 
                 <div className="absolute bottom-3 left-3 text-xs text-white font-medium flex items-center gap-1.5 drop-shadow">
-                  <Clock className="w-3.5 h-3.5 text-[#f29727]" />
+                  <Clock className="w-3.5 h-3.5 text-[#10221b]" />
                   <span>{tour.duration}</span>
                 </div>
               </div>
@@ -186,7 +186,7 @@ export default function AdminToursPage() {
                     {tour.shortDescription}
                   </p>
                   <div className="flex items-center justify-between text-xs text-gray-600">
-                    <span>Starting: <strong className="text-sm font-bold text-[#f29727]">${tour.price}</strong></span>
+                    <span>Starting: <strong className="text-sm font-bold text-[#10221b]">${tour.price}</strong></span>
                     <span className="text-[11px] text-gray-400">{tour.itinerary?.length || 0} Itinerary Days</span>
                   </div>
                 </div>
@@ -204,7 +204,7 @@ export default function AdminToursPage() {
                     </Link>
                     <button
                       onClick={() => handleDuplicate(tour.id)}
-                      className="p-1.5 text-gray-400 hover:text-[#f29727] rounded-lg hover:bg-gray-100"
+                      className="p-1.5 text-gray-400 hover:text-[#10221b] rounded-lg hover:bg-gray-100"
                       title="Duplicate package"
                     >
                       <Copy className="w-4 h-4" />
@@ -220,7 +220,7 @@ export default function AdminToursPage() {
 
                   <Link
                     to={`/admin/tours/${tour.id}/edit`}
-                    className="px-3 py-1.5 bg-[#10221b] hover:bg-[#1c382e] text-[#f29727] text-xs font-semibold uppercase tracking-wider rounded-lg flex items-center gap-1"
+                    className="px-3 py-1.5 bg-[#10221b] hover:bg-[#1c382e] text-white text-xs font-semibold uppercase tracking-wider rounded-lg flex items-center gap-1"
                   >
                     <Edit className="w-3.5 h-3.5" />
                     <span>Edit</span>

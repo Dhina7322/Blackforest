@@ -12,12 +12,12 @@ export default defineConfig({
     port: 5173,
     proxy: {
       '/api': {
-        target: process.env.VITE_BACKEND_URL || 'https://blackforest-sho9.onrender.com',
+        target: process.env.VITE_BACKEND_URL || 'http://localhost:5001',
         changeOrigin: true,
         secure: false
       },
       '/uploads': {
-        target: process.env.VITE_BACKEND_URL || 'https://blackforest-sho9.onrender.com',
+        target: process.env.VITE_BACKEND_URL || 'http://localhost:5001',
         changeOrigin: true,
         secure: false
       }

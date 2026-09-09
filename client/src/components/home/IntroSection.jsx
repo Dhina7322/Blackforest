@@ -1,90 +1,230 @@
-import React from 'react';
-import { useSettings } from '../../context/SiteSettingsContext';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
+import { Link } from 'react-router-dom';
+
+/**
+ * Card order matches the reference site exactly (from screenshots):
+ * Visible set 1: [Corporate] [Luxury★] [Honeymoon]
+ * Visible set 2: [Inbond]    [Cruise★] [Visa]
+ *
+ * ★ = highlighted centre card (golden/orange title)
+ *
+ * Images: user downloaded 2nd1‥2nd6 from the reference site.
+ * Mapping assumes reference-site DOM order = Luxury, Honeymoon, Inbond, Cruise, Visa, Corporate
+ * The CAROUSEL starts with Corporate on the left so the first centre is Luxury.
+ */
+const CARDS = [
+  {
+    id: 'visa',
+    title: 'Visa &\nAir Tickets',
+    description: 'Hassle-free visa processing and international flight bookings for a smooth, seamless journey.',
+    image: '/2nd1.webp',
+    titleColor: '#1c2b25',
+  },
+  {
+    id: 'corporate',
+    title: 'Corporate &\nGroup Packages',
+    description: 'Effortless journeys for corporate teams, MICE groups, and private gatherings.',
+    image: '/2nd2.webp',
+    titleColor: '#c8860b',
+  },
+  {
+    id: 'luxury',
+    title: 'Luxury\nHolidays',
+    description: 'Curated luxury experiences and bespoke escapes, personalised to every single detail.',
+    image: '/2nd3.webp',
+    titleColor: '#1c2b25',
+  },
+  {
+    id: 'honeymoon',
+    title: 'Honeymoon\nPackages',
+    description: 'Romantic journeys and intimate getaways designed around your most unforgettable moments.',
+    image: '/2nd4.webp',
+    titleColor: '#1c2b25',
+  },
+  {
+    id: 'inbound',
+    title: 'Inbound &\nOutbound Travels',
+    description: 'Curated international journeys from India and exceptional inbound travel experiences across India.',
+    image: '/2nd5.webp',
+    titleColor: '#c8860b',
+  },
+  {
+    id: 'cruise',
+    title: 'Cruise &\nGroup Trip',
+    description: "Explore the world's most beautiful oceans and destinations with luxury cruises and guided group trips.",
+    image: '/2nd6.webp',
+    titleColor: '#1c2b25',
+  },
+];
+
+const PER_VIEW      = 3;
+const MAX_INDEX     = CARDS.length - PER_VIEW;   // 3
+const AUTO_MS       = 3500;
+const DRAG_THRESH   = 60;
 
 export default function IntroSection() {
-  const { settings } = useSettings();
-  const brandName = settings?.siteName || 'Blackforest Holidays';
+  const [idx, setIdx]         = useState(0);
+  const [delta, setDelta]     = useState(0);
+  const [dragging, setDragging] = useState(false);
+  const startX  = useRef(0);
+  const isDown  = useRef(false);
+  const timer   = useRef(null);
+
+  /* ── auto-slide ── */
+  const startAuto = useCallback(() => {
+    clearInterval(timer.current);
+    timer.current = setInterval(() => {
+      setIdx(p => (p >= MAX_INDEX ? 0 : p + 1));
+    }, AUTO_MS);
+  }, []);
+
+  useEffect(() => { startAuto(); return () => clearInterval(timer.current); }, [startAuto]);
+
+  const goTo = (i) => {
+    setIdx(Math.max(0, Math.min(i, MAX_INDEX)));
+    startAuto();
+  };
+
+  /* ── drag ── */
+  const down  = (x) => { isDown.current = true; startX.current = x; setDelta(0); clearInterval(timer.current); };
+  const move  = (x) => { if (!isDown.current) return; const d = x - startX.current; if (Math.abs(d) > 6) setDragging(true); setDelta(d); };
+  const up    = (x) => {
+    if (!isDown.current) return;
+    isDown.current = false;
+    const d = x - startX.current;
+    setDelta(0);
+    setTimeout(() => setDragging(false), 0);
+    if (Math.abs(d) > DRAG_THRESH) goTo(d < 0 ? idx + 1 : idx - 1);
+    else startAuto();
+  };
+
+  const centreIdx = idx + 1; // which CARDS[] entry is currently in the centre slot
 
   return (
-    <section className="relative py-16 sm:py-20 lg:py-28 overflow-hidden bg-white z-10">
-      {/* Mountain silhouettes framing the section - matching reference image */}
-      {/* Left mountain silhouette with pine texture */}
-      <div 
-        className="absolute top-8 -left-12 sm:-left-6 w-[340px] sm:w-[480px] lg:w-[560px] h-[400px] sm:h-[500px] pointer-events-none z-0 opacity-25 hidden sm:block"
-        style={{
-          clipPath: "polygon(0% 100%, 0% 32%, 12% 28%, 22% 16%, 32% 12%, 46% 22%, 58% 24%, 72% 38%, 88% 44%, 100% 100%)"
-        }}
-      >
-        <img 
-          src="/assets/images/mask-pine.jpg" 
-          alt="Mountain Forest Silhouette Left" 
-          className="w-full h-full object-cover"
-        />
+    <section className="relative py-14 sm:py-18 lg:py-24 overflow-hidden z-10 bg-[#f5f5f5]">
+      {/* Left white strip */}
+      <div className="absolute inset-0 z-0 pointer-events-none flex">
+        <div className="w-[32%] bg-white h-full" />
+        <div className="flex-1 bg-[#f5f5f5] h-full" />
       </div>
 
-      {/* Right mountain silhouette with pine texture */}
-      <div 
-        className="absolute top-16 -right-12 sm:-right-8 w-[320px] sm:w-[450px] lg:w-[520px] h-[380px] sm:h-[460px] pointer-events-none z-0 opacity-20 hidden md:block"
-        style={{
-          clipPath: "polygon(0% 50%, 15% 42%, 28% 36%, 42% 24%, 56% 16%, 70% 20%, 85% 30%, 100% 34%, 100% 100%, 0% 100%)"
-        }}
-      >
-        <img 
-          src="/assets/images/mask-pine.jpg" 
-          alt="Mountain Forest Silhouette Right" 
-          className="w-full h-full object-cover transform scale-x-[-1]"
-        />
-      </div>
+      <div className="relative z-10 max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Cursive Quote */}
-        <div className="text-center mb-12 sm:mb-16 relative z-10">
-          <h2 
-            className="text-2xl sm:text-3xl md:text-[34px] leading-relaxed"
-            style={{
-              fontFamily: "var(--font-cursive, 'Caveat', cursive, serif)",
-              color: "#27B8B1"
-            }}
-          >
-            Travel is the only thing you buy that makes you richer
+        {/* Heading */}
+        <div className="text-center mb-10">
+          <span className="text-[#c8860b] text-xs sm:text-sm uppercase tracking-[0.2em] font-semibold block mb-2">
+            Tailored Experiences
+          </span>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1c2b25] tracking-tight">
+            Curated Travel Solutions
           </h2>
         </div>
 
-        <div className="relative">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10">
-            {/* Left Content Area */}
-            <div className="bg-white p-7 sm:p-9 lg:p-12 shadow-md rounded-md border-none max-w-xl mx-auto lg:mr-auto">
-              <div className="mb-6">
-                <h3 className="text-2xl sm:text-[30px] lg:text-[32px] font-bold text-[#5e963b] leading-[1.25] font-sans tracking-wide">
-                  Let us plan your journey,<br />
-                  You create the memories.
-                </h3>
-                {/* Gold/tan accent bar matching reference */}
-                <div className="w-14 h-[2.5px] bg-[#c89d59] mt-4 mb-4"></div>
-              </div>
+        {/* ── Slider ── */}
+        <div
+          className="overflow-hidden"
+          style={{ cursor: dragging ? 'grabbing' : 'grab', userSelect: 'none' }}
+          onMouseDown ={(e) => down(e.clientX)}
+          onMouseMove ={(e) => move(e.clientX)}
+          onMouseUp   ={(e) => up(e.clientX)}
+          onMouseLeave={(e) => { if (isDown.current) up(e.clientX); }}
+          onTouchStart={(e) => down(e.touches[0].clientX)}
+          onTouchMove ={(e) => { e.preventDefault(); move(e.touches[0].clientX); }}
+          onTouchEnd  ={(e) => up(e.changedTouches[0].clientX)}
+        >
+          <div
+            className="flex"
+            style={{
+              transform: `translateX(calc(${-(idx * (100 / PER_VIEW))}% + ${delta}px))`,
+              transition: dragging ? 'none' : 'transform 0.65s cubic-bezier(0.25,0.46,0.45,0.94)',
+              willChange: 'transform',
+            }}
+          >
+            {CARDS.map((card, i) => {
+              const isCentre = i === centreIdx;
+              return (
+                <div
+                  key={card.id}
+                  className="shrink-0 px-2.5"
+                  style={{ width: `${100 / PER_VIEW}%` }}
+                >
+                  <div
+                    className="bg-white flex flex-col items-center pt-8 pb-9 px-6 transition-all duration-500"
+                    style={{
+                      borderRadius   : '16px',
+                      border         : `1.5px solid ${isCentre ? '#d0d0d0' : '#e8e8e8'}`,
+                      boxShadow      : isCentre ? '0 10px 40px rgba(0,0,0,0.13)' : '0 2px 10px rgba(0,0,0,0.05)',
+                      transform      : isCentre ? 'scale(1.03)' : 'scale(0.97)',
+                      minHeight      : '500px',          // taller cards
+                      pointerEvents  : dragging ? 'none' : 'auto',
+                    }}
+                  >
+                    {/* Circular image */}
+                    <div
+                      className="rounded-full overflow-hidden mb-7 shrink-0"
+                      style={{
+                        width    : '195px',
+                        height   : '195px',
+                        minWidth : '195px',
+                        border   : '2.5px solid #eeeeee',
+                      }}
+                    >
+                      <img
+                        src={card.image}
+                        alt={card.title.replace('\n', ' ')}
+                        className="w-full h-full object-cover"
+                        draggable={false}
+                      />
+                    </div>
 
-              <div className="space-y-4 text-[#444444] text-[14px] sm:text-[14.5px] leading-[1.85] font-sans font-light tracking-wide">
-                <p>
-                  Welcome to {brandName.toUpperCase()}, your trusted partner in creating unforgettable travel experiences. We believe that every journey should be more than just a trip—it should be a collection of wonderful memories, new discoveries, and meaningful experiences.
-                </p>
-                <p>
-                  With our expertise in travel planning, we help individuals, families, couples, and groups plan their perfect getaway. From flights and hotels to customized holiday packages, sightseeing, transportation, and travel assistance, we take care of the details so you can enjoy your journey with confidence.
-                </p>
-              </div>
-            </div>
+                    {/* Text */}
+                    <div className="text-center flex flex-col items-center flex-grow w-full">
+                      <h3
+                        className="text-[19px] font-bold mb-4 whitespace-pre-line leading-snug"
+                        style={{ color: card.titleColor }}
+                      >
+                        {card.title}
+                      </h3>
+                      <p className="text-[13.5px] text-gray-500 leading-[1.7] mb-8 font-light max-w-[215px] mx-auto flex-grow">
+                        {card.description}
+                      </p>
 
-            {/* Right Image Area */}
-            <div className="relative z-20 w-full max-w-[520px] mx-auto lg:ml-auto">
-              <div className="bg-white shadow-xl overflow-hidden rounded-md border-none">
-                <img
-                  src="/assets/images/ChatGPT-Image-Aug-8-2026-09_18_57-PM.png"
-                  alt="World map travel planning with hat and plane"
-                  className="w-full h-auto object-cover block"
-                  loading="lazy"
-                />
-              </div>
-            </div>
+                      {/* Enquire → /contact */}
+                      <Link
+                        to="/contact"
+                        className="inline-block px-8 py-2.5 text-white text-[13px] font-medium transition-all duration-200 shadow hover:shadow-md hover:brightness-110"
+                        style={{ backgroundColor: '#142921', borderRadius: '3px' }}
+                        onClick={(e) => { if (dragging) e.preventDefault(); }}
+                      >
+                        Enquire
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
+        </div>
+
+        {/* ── Dots ── */}
+        <div className="flex justify-center items-center gap-[9px] mt-10">
+          {CARDS.map((_, i) => {
+            const active = i === centreIdx;
+            return (
+              <button
+                key={i}
+                onClick={() => goTo(Math.max(0, Math.min(i - 1, MAX_INDEX)))}
+                className="rounded-full transition-all duration-300 focus:outline-none"
+                style={{
+                  width           : active ? '11px' : '8px',
+                  height          : active ? '11px' : '8px',
+                  backgroundColor : active ? '#18b5c9' : '#5a5a5a',
+                  opacity         : active ? 1 : 0.6,
+                }}
+                aria-label={`Slide ${i + 1}`}
+              />
+            );
+          })}
         </div>
       </div>
     </section>

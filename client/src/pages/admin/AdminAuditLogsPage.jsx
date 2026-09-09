@@ -57,7 +57,7 @@ export default function AdminAuditLogsPage() {
                         {log.action}
                       </span>
                     </td>
-                    <td className="py-3.5 px-6 uppercase text-[11px] font-bold text-[#f29727]">
+                    <td className="py-3.5 px-6 uppercase text-[11px] font-bold text-[#10221b]">
                       {log.entity}
                     </td>
                     <td className="py-3.5 px-6 text-gray-600 font-mono text-[11px] max-w-xs truncate">

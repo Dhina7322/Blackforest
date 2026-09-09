@@ -199,7 +199,7 @@ export default function AdminTourFormPage() {
   if (loading) {
     return (
       <div className="flex items-center justify-center py-20 text-gray-400 gap-2">
-        <span className="w-6 h-6 border-2 border-[#f29727] border-t-transparent rounded-full animate-spin"></span>
+        <span className="w-6 h-6 border-2 border-[#10221b] border-t-transparent rounded-full animate-spin"></span>
         <span>Loading package editor...</span>
       </div>
     );
@@ -240,7 +240,7 @@ export default function AdminTourFormPage() {
           <button
             type="submit"
             disabled={saving}
-            className="px-6 py-2.5 bg-[#10221b] hover:bg-[#1c382e] text-[#f29727] text-xs font-bold uppercase tracking-wider rounded-xl shadow-lg transition-all flex items-center gap-1.5 disabled:opacity-50"
+            className="px-6 py-2.5 bg-[#10221b] hover:bg-[#1c382e] text-white text-xs font-bold uppercase tracking-wider rounded-xl shadow-lg transition-all flex items-center gap-1.5 disabled:opacity-50"
           >
             <Save className="w-4 h-4" />
             <span>{saving ? 'Saving...' : 'Save Tour Package'}</span>
@@ -263,7 +263,7 @@ export default function AdminTourFormPage() {
             onClick={() => setActiveTab(tab.id)}
             className={`py-4 px-4 text-xs font-bold uppercase tracking-wider border-b-2 transition-all whitespace-nowrap ${
               activeTab === tab.id
-                ? 'border-[#f29727] text-[#10221b]'
+                ? 'border-[#10221b] text-[#10221b]'
                 : 'border-transparent text-gray-400 hover:text-gray-700'
             }`}
           >
@@ -286,7 +286,7 @@ export default function AdminTourFormPage() {
                 value={formData.title}
                 onChange={(e) => setFormData({ ...formData, title: e.target.value })}
                 placeholder="e.g. Grand Swiss Alpine & Lakes Odyssey"
-                className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#f29727]"
+                className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#10221b]"
               />
             </div>
 
@@ -299,7 +299,7 @@ export default function AdminTourFormPage() {
                 value={formData.slug}
                 onChange={(e) => setFormData({ ...formData, slug: e.target.value })}
                 placeholder="grand-swiss-alpine-lakes-odyssey"
-                className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#f29727]"
+                className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#10221b]"
               />
             </div>
 
@@ -310,7 +310,7 @@ export default function AdminTourFormPage() {
               <select
                 value={formData.category}
                 onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#f29727]"
+                className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#10221b]"
               >
                 <option value="international">International Tours</option>
                 <option value="india">India Tour Packages</option>
@@ -324,7 +324,7 @@ export default function AdminTourFormPage() {
               <select
                 value={formData.destinationId || ''}
                 onChange={(e) => setFormData({ ...formData, destinationId: e.target.value ? Number(e.target.value) : null })}
-                className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#f29727]"
+                className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#10221b]"
               >
                 <option value="">-- No Specific Destination --</option>
                 {destinations.map((d) => (
@@ -345,7 +345,7 @@ export default function AdminTourFormPage() {
                 value={formData.duration}
                 onChange={(e) => setFormData({ ...formData, duration: e.target.value })}
                 placeholder="e.g. 7 Days / 6 Nights"
-                className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#f29727]"
+                className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#10221b]"
               />
             </div>
 
@@ -359,7 +359,7 @@ export default function AdminTourFormPage() {
                 value={formData.price}
                 onChange={(e) => setFormData({ ...formData, price: Number(e.target.value) })}
                 placeholder="1800"
-                className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#f29727]"
+                className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#10221b]"
               />
             </div>
 
@@ -372,7 +372,7 @@ export default function AdminTourFormPage() {
                 value={formData.discountPrice || ''}
                 onChange={(e) => setFormData({ ...formData, discountPrice: e.target.value ? Number(e.target.value) : null })}
                 placeholder="2100"
-                className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#f29727]"
+                className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#10221b]"
               />
             </div>
 
@@ -385,7 +385,7 @@ export default function AdminTourFormPage() {
                 value={formData.coverImage}
                 onChange={(e) => setFormData({ ...formData, coverImage: e.target.value })}
                 placeholder="https://images.unsplash.com/..."
-                className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#f29727]"
+                className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#10221b]"
               />
             </div>
           </div>
@@ -399,7 +399,7 @@ export default function AdminTourFormPage() {
               value={formData.shortDescription}
               onChange={(e) => setFormData({ ...formData, shortDescription: e.target.value })}
               placeholder="Brief summary displayed on package cards..."
-              className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#f29727]"
+              className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#10221b]"
             />
           </div>
 
@@ -412,7 +412,7 @@ export default function AdminTourFormPage() {
               value={formData.description}
               onChange={(e) => setFormData({ ...formData, description: e.target.value })}
               placeholder="Full journey narrative and background..."
-              className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#f29727]"
+              className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#10221b]"
             />
           </div>
         </div>
@@ -426,7 +426,7 @@ export default function AdminTourFormPage() {
             <button
               type="button"
               onClick={() => addListItem('highlights', 'New Highlight')}
-              className="px-3 py-1.5 bg-[#10221b] text-[#f29727] text-xs font-semibold rounded-lg flex items-center gap-1"
+              className="px-3 py-1.5 bg-[#10221b] text-white text-xs font-semibold rounded-lg flex items-center gap-1"
             >
               <Plus className="w-3.5 h-3.5" />
               <span>Add Highlight</span>
@@ -466,7 +466,7 @@ export default function AdminTourFormPage() {
             <button
               type="button"
               onClick={addDay}
-              className="px-4 py-2 bg-[#10221b] text-[#f29727] text-xs font-bold uppercase tracking-wider rounded-xl flex items-center gap-1.5 shadow"
+              className="px-4 py-2 bg-[#10221b] text-white text-xs font-bold uppercase tracking-wider rounded-xl flex items-center gap-1.5 shadow"
             >
               <Plus className="w-4 h-4" />
               <span>Add Day</span>
@@ -481,7 +481,7 @@ export default function AdminTourFormPage() {
               >
                 <div className="flex items-center justify-between border-b border-gray-200 pb-3">
                   <div className="flex items-center gap-2">
-                    <span className="w-7 h-7 rounded-full bg-[#10221b] text-[#f29727] font-bold text-xs flex items-center justify-center">
+                    <span className="w-7 h-7 rounded-full bg-[#10221b] text-white font-bold text-xs flex items-center justify-center">
                       {idx + 1}
                     </span>
                     <span className="font-bold text-xs uppercase tracking-wider text-gray-600">
@@ -554,7 +554,7 @@ export default function AdminTourFormPage() {
               <button
                 type="button"
                 onClick={() => addListItem('inclusions', 'New Inclusion')}
-                className="text-xs text-[#f29727] font-semibold hover:underline"
+                className="text-xs text-[#10221b] font-semibold hover:underline"
               >
                 + Add Item
               </button>
@@ -585,7 +585,7 @@ export default function AdminTourFormPage() {
               <button
                 type="button"
                 onClick={() => addListItem('exclusions', 'New Exclusion')}
-                className="text-xs text-[#f29727] font-semibold hover:underline"
+                className="text-xs text-[#10221b] font-semibold hover:underline"
               >
                 + Add Item
               </button>
@@ -624,7 +624,7 @@ export default function AdminTourFormPage() {
                   faq: [...prev.faq, { question: 'Question?', answer: 'Answer here.' }]
                 }))
               }
-              className="px-3 py-1.5 bg-[#10221b] text-[#f29727] text-xs font-semibold rounded-lg flex items-center gap-1"
+              className="px-3 py-1.5 bg-[#10221b] text-white text-xs font-semibold rounded-lg flex items-center gap-1"
             >
               <Plus className="w-3.5 h-3.5" />
               <span>Add FAQ</span>

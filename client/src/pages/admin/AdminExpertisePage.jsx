@@ -164,7 +164,7 @@ export default function AdminExpertisePage() {
                     href={card.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-1 text-zinc-400 hover:text-[#f29727] rounded transition-colors"
+                    className="p-1 text-zinc-400 hover:text-[#10221b] rounded transition-colors"
                     title="Visit Partner Site"
                   >
                     <ExternalLink className="w-3 h-3" />
@@ -182,7 +182,7 @@ export default function AdminExpertisePage() {
           <div className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden border border-zinc-200">
             <div className="px-6 py-4 border-b border-zinc-100 flex items-center justify-between">
               <div>
-                <span className="text-[10px] text-[#f29727] font-bold uppercase tracking-wider block">
+                <span className="text-[10px] text-[#10221b] font-bold uppercase tracking-wider block">
                   Accreditation
                 </span>
                 <h3 className="text-base font-serif font-bold text-zinc-900">

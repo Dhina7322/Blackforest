@@ -106,7 +106,7 @@ export default function AdminExperiencesPage() {
         </div>
         <button
           onClick={openCreate}
-          className="px-4 py-2 bg-[#10221b] text-[#f29727] text-xs font-bold uppercase rounded-xl flex items-center gap-1.5"
+          className="px-4 py-2 bg-[#10221b] text-white text-xs font-bold uppercase rounded-xl flex items-center gap-1.5"
         >
           <PlusCircle className="w-4 h-4" />
           <span>New Experience</span>
@@ -173,7 +173,7 @@ export default function AdminExperiencesPage() {
               </div>
               <div className="flex justify-end gap-2 pt-2 border-t">
                 <button type="button" onClick={() => setModalOpen(false)} className="px-4 py-2 bg-gray-100 rounded-lg">Cancel</button>
-                <button type="submit" className="px-5 py-2 bg-[#10221b] text-[#f29727] font-bold rounded-lg">Save</button>
+                <button type="submit" className="px-5 py-2 bg-[#10221b] text-white font-bold rounded-lg">Save</button>
               </div>
             </form>
           </div>
