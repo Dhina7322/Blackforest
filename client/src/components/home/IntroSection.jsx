@@ -111,12 +111,9 @@ export default function IntroSection() {
       <div className="relative z-10 max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Heading */}
-        <div className="text-center mb-10">
-          <span className="text-[#c8860b] text-xs sm:text-sm uppercase tracking-[0.2em] font-semibold block mb-2">
-            Tailored Experiences
-          </span>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1c2b25] tracking-tight">
-            Curated Travel Solutions
+        <div className="text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#62a146] leading-tight">
+            Travel is the only thing you buy that makes you richer
           </h2>
         </div>
 
