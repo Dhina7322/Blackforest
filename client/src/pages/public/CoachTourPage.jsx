@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useSettings } from '../../context/SiteSettingsContext';
 import HeroWave from '../../components/common/HeroWave';
-import ExpertiseSection from '../../components/home/ExpertiseSection';
 import { ChevronRight, ChevronLeft, MapPin, Calendar, Compass } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -219,9 +218,6 @@ export default function CoachTourPage() {
         </div>
       </section>
 
-      {/* 3. Expertise Section */}
-      <ExpertiseSection />
-      
     </div>
   );
 }

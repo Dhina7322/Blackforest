@@ -4,7 +4,6 @@ import { useToast } from '../../context/ToastContext';
 import { enquiryService } from '../../services/allServices';
 import { useSettings } from '../../context/SiteSettingsContext';
 import HeroWave from '../../components/common/HeroWave';
-import ExpertiseSection from '../../components/home/ExpertiseSection';
 
 export default function ContactPage() {
   const { settings } = useSettings();
@@ -332,9 +331,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* 3. Expertise Section */}
-      <ExpertiseSection />
-      
     </div>
   );
 }

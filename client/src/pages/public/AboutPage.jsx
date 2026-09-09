@@ -37,38 +37,6 @@ export default function AboutPage() {
       review: "I had a great experience with Black Forest Travels for my Singapore visa. The entire process was incredibly smooth and hassle-free. What truly stood out was that everything was handled remotely, efficiently, and with complete clarity. Highly recommend!"
     }
   ];
-
-  const certCards = [
-    {
-      id: 1,
-      name: "Turespaña",
-      subtitle: "Spain Specialist",
-      logo: "/assets/site/cert_spain.png",
-      link: "https://www.spain.info"
-    },
-    {
-      id: 2,
-      name: "IATA",
-      subtitle: "TIDS Certified",
-      logo: "/assets/site/cert_iata.jpg",
-      link: "https://www.iata.org"
-    },
-    {
-      id: 3,
-      name: "Love Portugal",
-      subtitle: "Tourism Partner",
-      logo: "/assets/site/cert_portugal.jpg",
-      link: "https://www.visitportugal.com"
-    },
-    {
-      id: 4,
-      name: "Japan",
-      subtitle: "Travel Specialist",
-      logo: "/assets/site/cert_japan.jpg",
-      link: "https://www.japan.travel"
-    }
-  ];
-
   return (
     <div className="bg-white font-sans text-gray-800 animate-fadeIn overflow-x-hidden">
       
@@ -385,80 +353,6 @@ export default function AboutPage() {
                   <span className="text-blue-500 font-medium">Verified</span>
                 </div>
               </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
-
-      {/* =========================================================================
-          5. KNOWLEDGE BEHIND EVERY JOURNEY (ACCREDITATION PARTNERS)
-          ========================================================================= */}
-      <section className="py-20 relative bg-white overflow-hidden">
-        {/* Bottom Misty Pine Background cascading into footer */}
-        <div 
-          className="absolute bottom-0 left-0 w-full h-[280px] opacity-15 pointer-events-none bg-cover bg-bottom"
-          style={{ backgroundImage: "url('/assets/site/home_intro_bg.jpg')" }}
-        />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          
-          {/* Flourish & Header */}
-          <div className="mb-14">
-            <div className="flex items-center justify-center gap-3 text-[#c59b27] mb-3">
-              <span className="w-12 h-[1px] bg-[#c59b27]"></span>
-              <span className="w-2 h-2 rotate-45 bg-[#c59b27]"></span>
-              <span className="w-12 h-[1px] bg-[#c59b27]"></span>
-            </div>
-
-            <h2 className="text-3xl sm:text-4xl md:text-[40px] font-serif font-bold text-[#10221b] mb-4">
-              Knowledge Behind Every Journey
-            </h2>
-            <p className="text-gray-500 text-sm sm:text-[15px] max-w-2xl mx-auto font-normal leading-relaxed">
-              Our destination specialists continually expand their knowledge through tourism-board programmes, industry training and global certifications to design journeys you can trust.
-            </p>
-          </div>
-
-          {/* 4 White Partner Accreditation Cards Matching Reference */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            {certCards.map((c) => (
-              <a
-                key={c.id}
-                href={c.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white rounded-2xl border border-gray-100 p-6 flex flex-col items-center justify-between text-center transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-[#c59b27] group min-h-[220px]"
-              >
-                {/* Logo */}
-                <div className="w-full h-24 flex items-center justify-center p-2 mb-2">
-                  <img 
-                    src={c.logo} 
-                    alt={c.name} 
-                    className="max-h-20 max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
-                    onError={(e) => {
-                      e.target.onerror = null;
-                      e.target.src = '/assets/images/white_logo.png';
-                    }}
-                  />
-                </div>
-
-                {/* Divider Line with Diamond */}
-                <div className="w-full flex items-center justify-center my-3">
-                  <div className="flex-1 h-[1px] bg-[#e4ddd0] group-hover:bg-[#c59b27]/40 transition-colors"></div>
-                  <span className="mx-2.5 w-1.5 h-1.5 bg-[#c59b27] rotate-45 transform"></span>
-                  <div className="flex-1 h-[1px] bg-[#e4ddd0] group-hover:bg-[#c59b27]/40 transition-colors"></div>
-                </div>
-
-                {/* Details */}
-                <div className="w-full pt-1">
-                  <h4 className="font-bold text-[#10221b] text-sm uppercase tracking-wider group-hover:text-[#c59b27] transition-colors">
-                    {c.name}
-                  </h4>
-                  <p className="text-gray-400 text-xs mt-1 font-light">
-                    {c.subtitle}
-                  </p>
-                </div>
-              </a>
             ))}
           </div>
 

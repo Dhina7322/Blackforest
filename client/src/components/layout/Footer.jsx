@@ -1,36 +1,44 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Mail, Phone, Globe, ChevronUp } from 'lucide-react';
+import { MapPin, Mail, Phone } from 'lucide-react';
 import { useSettings } from '../../context/SiteSettingsContext';
+import ExpertiseSection from '../home/ExpertiseSection';
 
 export default function Footer() {
   const { settings } = useSettings();
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
 
   const phone = settings?.phone || '+91 9742877700 / 9742977700';
   const email = settings?.email || 'info@blackforestholidays.com';
   const address = settings?.address || '737, 3rd Floor, Kheny Plaza CMH Main Road, 2nd Cross Rd, Binnamangala, Indiranagar, Bengaluru, Karnataka 560038';
   const logo = settings?.logo || '/assets/images/white_logo.png';
   const siteName = settings?.siteName || 'Blackforest Holidays';
-  const social = settings?.socialLinks || {};
 
   return (
-    <footer className="bg-[#0c1c16] text-white pt-16 pb-8 relative border-t border-[#1a382b]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Brand Header Logo */}
-        <div className="mb-12">
-          <Link to="/" className="inline-block group">
-            <img
-              src={logo}
-              alt={`${siteName} - We are the artist of Travel`}
-              className="h-12 sm:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-            />
-          </Link>
-        </div>
+    <>
+      {/* 1. Global Expertise Section (Knowledge Behind Every Journey) */}
+      <ExpertiseSection />
+
+      {/* 2. Dark Green Main Footer with Pine Forest Background */}
+      <footer 
+        className="bg-[#0c1c16] text-white pt-16 pb-8 relative border-t border-[#1a382b]/40 bg-cover bg-top"
+        style={{
+          backgroundImage: `linear-gradient(to bottom, rgba(12, 28, 22, 0.82) 0%, rgba(12, 28, 22, 0.96) 45%, #0c1c16 100%), url('/assets/images/footer-img.png')`,
+          backgroundPosition: 'top center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Brand Header Logo */}
+          <div className="mb-12">
+            <Link to="/" className="inline-block group">
+              <img
+                src={logo}
+                alt={`${siteName} - We are the artist of Travel`}
+                className="h-12 sm:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              />
+            </Link>
+          </div>
 
         {/* 3 Columns Layout (Exact match to Image 1) */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-12 pb-16">
@@ -189,11 +197,12 @@ export default function Footer() {
         {/* Bottom Dotted Rule and Centered Copyright */}
         <div className="border-t border-dotted border-gray-600/70 pt-6 text-center text-xs sm:text-sm text-gray-400">
           <p>
-            {settings?.copyright || '© 2026 Blackforest Holidays. All Rights Reserved.'}
+            {settings?.copyright || '© 2026 Blackforest Holidays. Designed by Trioticz'}
           </p>
         </div>
 
       </div>
     </footer>
+    </>
   );
 }

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import HeroWave from '../../components/common/HeroWave';
-import ExpertiseSection from '../../components/home/ExpertiseSection';
 import { useSettings } from '../../context/SiteSettingsContext';
 import { Link } from 'react-router-dom';
 
@@ -380,9 +379,6 @@ export default function CorporateTravelPage() {
         </div>
       </section>
 
-      {/* 6. Expertise Section */}
-      <ExpertiseSection />
-      
     </div>
   );
 }

@@ -7,7 +7,6 @@ import StatsSection from '../../components/home/StatsSection';
 import IndiaToursSection from '../../components/home/IndiaToursSection';
 import TestimonialSlider from '../../components/home/TestimonialSlider';
 import JournalSection from '../../components/home/JournalSection';
-import ExpertiseSection from '../../components/home/ExpertiseSection';
 
 export default function HomePage() {
   return (
@@ -35,9 +34,6 @@ export default function HomePage() {
 
       {/* 8. Travel Journal */}
       <JournalSection />
-
-      {/* 9. Expertise */}
-      <ExpertiseSection />
     </div>
   );
 }

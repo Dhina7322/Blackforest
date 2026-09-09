@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { experiencesData } from '../../data/experiencesData';
-import ExpertiseSection from '../../components/home/ExpertiseSection';
 import { useSettings } from '../../context/SiteSettingsContext';
 
 export default function ExperiencesPage() {
@@ -261,9 +260,6 @@ export default function ExperiencesPage() {
 
         </div>
       </section>
-
-      {/* 5. Expertise Section */}
-      <ExpertiseSection />
 
     </div>
   );
