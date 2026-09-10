@@ -57,17 +57,17 @@ export const allDestinationsData = {
       }
     },
     countries: [
-      { name: 'South Africa', image: '/assets/images/rafael-hoyos-weht-vM0tW-ruSSU-unsplash-scaled.jpg', desc: 'Cape Town & Kruger Safaris' },
-      { name: 'Kenya', image: '/assets/images/louise-smith-_n3uNLUh6hU-unsplash-scaled.jpg', desc: 'Maasai Mara & Great Migration' },
-      { name: 'Tanzania', image: '/assets/images/asset_c4664aba08.jpg', desc: 'Serengeti & Zanzibar Sands' },
-      { name: 'Egypt', image: '/assets/images/sean-robertson-5ftxFgXLtkI-unsplash-scaled.jpg', desc: 'Pyramids of Giza & Nile Cruises' },
-      { name: 'Morocco', image: '/assets/images/hendrik-cornelissen-qs4E9t0hJc0-unsplash-scaled.jpg', desc: 'Marrakech Souks & Sahara Dunes' },
-      { name: 'Mauritius', image: '/assets/images/ahmed-shabana-ADa9bb3tqR4-unsplash-scaled.jpg', desc: 'Tropical Luxury & Coral Reefs' },
-      { name: 'Seychelles', image: '/assets/images/sutirta-budiman-kjOBqwMUnWw-unsplash-scaled.jpg', desc: 'Turquoise Waters & Granite Atolls' },
-      { name: 'Namibia', image: '/assets/images/sergi-ferrete-YXwt-vJ3szA-unsplash-scaled.jpg', desc: 'Sossusvlei Dunes & Etosha' },
-      { name: 'Botswana', image: '/assets/images/redcharlie-xtvo0ffGKlI-unsplash-scaled.jpg', desc: 'Okavango Delta Wilderness' },
-      { name: 'Rwanda', image: '/assets/images/rafael-hoyos-weht-vM0tW-ruSSU-unsplash-scaled.jpg', desc: 'Mountain Gorilla Trekking' },
-      { name: 'Victoria Falls', image: '/assets/images/louise-smith-_n3uNLUh6hU-unsplash-scaled.jpg', desc: 'The Smoke That Thunders' }
+      { name: 'South Africa', image: '/assets/images/redcharlie-xtvo0ffGKlI-unsplash-scaled.jpg', desc: 'Cape Town, Kruger & Wildlife Safaris' },
+      { name: 'Kenya', image: '/assets/images/what-is-the-wettest-month-in-tanzania-1710961205.jpeg', desc: 'Maasai Mara & Great Migration' },
+      { name: 'Tanzania', image: '/assets/images/Things-to-do-in-Tanzania_Zanzibar.jpeg', desc: 'Serengeti & Zanzibar Sands' },
+      { name: 'Egypt', image: '/assets/images/ibulski-sphinx-2987112-scaled.jpg', desc: 'Pyramids of Giza & Nile Cruises' },
+      { name: 'Morocco', image: '/assets/images/doing-business-morocco.jpg.webp', desc: 'Marrakech Souks & Sahara Dunes' },
+      { name: 'Mauritius', image: '/assets/images/xavier-coiffic-ByAHlRiTQjo-unsplash-scaled.jpg', desc: 'Tropical Luxury & Coral Reefs' },
+      { name: 'Seychelles', image: '/assets/images/magazine-unique-ecosystems-seychelles-beautiful-beach-blue-water-granite-conscious-explorer-scaled.webp', desc: 'Turquoise Waters & Granite Atolls' },
+      { name: 'Namibia', image: '/assets/images/ashim-d-silva-S2Q5mdOrrVc-unsplash-scaled.jpg', desc: 'Sossusvlei Dunes & Etosha' },
+      { name: 'Botswana', image: '/assets/images/pexels-timon-cornelissen-241844481-33231615-scaled.jpg', desc: 'Okavango Delta Wilderness' },
+      { name: 'Rwanda', image: '/assets/images/rwanda.jpg', desc: 'Mountain Gorilla Trekking' },
+      { name: 'Victoria Falls', image: '/assets/images/sammy-wong-QHH3WH1ZBsk-unsplash-scaled.jpg', desc: 'The Smoke That Thunders' }
     ]
   },
 

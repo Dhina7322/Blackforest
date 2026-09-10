@@ -524,58 +524,49 @@ export default function DestinationDetailPage({ forcedSlug }) {
           </p>
         </div>
 
-        {/* Compact 3D Flip Card Grid (matching Image 5 with reduced height) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+        {/* 3D Flip Card Grid matching Image 2 (clean photo front, bold title on flip) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-7">
           {countries.map((c, i) => (
             <div
               key={i}
-              className="group perspective-1000 h-[180px] sm:h-[210px] cursor-pointer"
+              className="group perspective-1000 h-[210px] sm:h-[235px] lg:h-[260px] cursor-pointer select-none"
               onClick={() => openEnquiryModal({ destination: `${c.name} (${name})` })}
             >
-              <div className="flip-card-inner relative w-full h-full rounded-2xl shadow-md group-hover:shadow-xl transition-all duration-700">
-                {/* Front Side: Cover Photo + Centered Country Name */}
-                <div className="absolute inset-0 w-full h-full backface-hidden rounded-2xl overflow-hidden border border-gray-100/50">
+              <div className="flip-card-inner relative w-full h-full rounded-2xl shadow-sm group-hover:shadow-2xl transition-all duration-500">
+                {/* Front Side: Pure Destination Photograph with Rounded Corners */}
+                <div className="absolute inset-0 w-full h-full backface-hidden rounded-2xl overflow-hidden bg-gray-100 shadow-sm">
                   <img
                     src={c.image}
                     alt={c.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover object-center transform scale-100 group-hover:scale-105 transition-transform duration-500"
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = '/assets/images/redcharlie-xtvo0ffGKlI-unsplash-scaled.jpg';
+                    }}
                   />
-                  <div className="absolute inset-0 bg-black/25 group-hover:bg-black/40 transition-colors duration-500" />
-                  <div className="absolute inset-0 flex items-center justify-center p-4 text-center">
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,0.85)] font-sans">
-                      {c.name}
-                    </h3>
-                  </div>
                 </div>
 
-                {/* Back Side: Rich Details & Inquire CTA */}
-                <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 rounded-2xl overflow-hidden bg-[#10221b] text-white p-5 sm:p-6 flex flex-col justify-between border border-[#f29727]/30 shadow-2xl">
-                  <div>
-                    <span className="text-[10px] uppercase tracking-widest text-[#f29727] font-bold block mb-1">
-                      {name} Destination
-                    </span>
-                    <h3 className="text-xl sm:text-2xl font-serif font-bold text-white mb-2">
+                {/* Back Side: Same Photo with Dark Vignette Overlay & Centered Country Title */}
+                <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 rounded-2xl overflow-hidden shadow-2xl">
+                  {/* Background Photo */}
+                  <img
+                    src={c.image}
+                    alt={c.name}
+                    className="w-full h-full object-cover object-center transform scale-105"
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = '/assets/images/redcharlie-xtvo0ffGKlI-unsplash-scaled.jpg';
+                    }}
+                  />
+                  {/* Dark tint overlay */}
+                  <div className="absolute inset-0 bg-black/40" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-black/30" />
+
+                  {/* Centered White Country Name (Exact match to Card 1 in Image 2) */}
+                  <div className="absolute inset-0 flex items-center justify-center p-4 text-center z-10">
+                    <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.85)] font-sans">
                       {c.name}
                     </h3>
-                    <p className="text-[11px] sm:text-xs text-gray-300 leading-relaxed line-clamp-2 sm:line-clamp-3">
-                      {c.desc || `Discover bespoke luxury itineraries and curated excursions in ${c.name}.`}
-                    </p>
-                  </div>
-
-                  <div className="pt-2 border-t border-white/10 flex items-center justify-between">
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        openEnquiryModal({ destination: `${c.name} (${name})` });
-                      }}
-                      className="px-4 py-1.5 bg-[#f29727] hover:bg-[#db841a] text-[#10221b] rounded-full text-[11px] font-bold uppercase tracking-wider transition-all flex items-center gap-1 shadow-md"
-                    >
-                      <span>Inquire Now</span>
-                      <ArrowRight className="w-3 h-3" />
-                    </button>
-                    <span className="text-[10px] text-gray-400 font-medium">
-                      Bespoke Route
-                    </span>
                   </div>
                 </div>
               </div>
