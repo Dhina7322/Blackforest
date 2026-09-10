@@ -3,8 +3,8 @@ const fs = require('fs');
 const path = require('path');
 require('dotenv').config({ path: path.join(__dirname, '../../.env') });
 
-const socketPath = process.env.DB_SOCKET || '/tmp/mysql.sock';
-const socketExists = fs.existsSync(socketPath);
+const socketPath = process.env.DB_SOCKET;
+const socketExists = Boolean(socketPath && fs.existsSync(socketPath));
 
 const dialectOptions = {};
 if (socketExists) {
@@ -33,7 +33,7 @@ const sequelize = new Sequelize(
 const connectDB = async () => {
   try {
     await sequelize.authenticate();
-    console.log(`✅ MySQL connected successfully via ${socketExists ? 'Socket (' + socketPath + ')' : 'TCP'}`);
+    console.log(`✅ MySQL connected successfully via ${socketExists ? 'Socket (' + socketPath + ')' : 'TCP (' + (process.env.DB_HOST || '127.0.0.1') + ':' + (process.env.DB_PORT || '3306') + ')'}`);
     await sequelize.sync({ alter: false });
     console.log('✅ MySQL models synchronized');
   } catch (error) {

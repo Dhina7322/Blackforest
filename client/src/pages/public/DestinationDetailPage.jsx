@@ -275,37 +275,62 @@ export default function DestinationDetailPage({ forcedSlug }) {
         </div>
       </section>
 
-      {/* 3. Jet-Tabs Navigation Bar */}
-      <section className="w-full bg-[#e6eee5] border-y border-[#d5e0d4] sticky top-20 z-30 shadow-sm">
+      {/* 3. Jet-Tabs Navigation Bar (100% matching Image 2 with soft sage background, Palanquin Dark font, white dividers & bottom arrow indicator) */}
+      <section className="relative w-full bg-[#e6eee5] sticky top-20 z-30 shadow-[0_2px_8px_rgba(0,0,0,0.03)]">
+        {/* Soft Pine Trees Contour at top edge */}
+        <div
+          className="absolute -top-20 left-0 right-0 h-20 bg-repeat-x bg-bottom pointer-events-none opacity-40 select-none"
+          style={{
+            backgroundImage: "url('/assets/images/adventure-pine-bg.jpg')",
+            backgroundSize: 'auto 80px',
+          }}
+        />
+
         <div className="max-w-5xl mx-auto px-4">
-          <div className="flex items-center justify-center divide-x divide-[#c7d6c6]">
-            <button
-              onClick={() => setActiveTab(1)}
-              className={`flex-1 py-4 sm:py-5 px-3 text-center text-xs sm:text-sm font-semibold tracking-wider transition-all uppercase ${activeTab === 1
-                  ? 'bg-[#10221b] text-[#f29727] shadow-inner font-bold'
-                  : 'text-[#10221b] hover:bg-[#dce6db]'
-                }`}
-            >
-              Why Blackforest Holidays?
-            </button>
-            <button
-              onClick={() => setActiveTab(2)}
-              className={`flex-1 py-4 sm:py-5 px-3 text-center text-xs sm:text-sm font-semibold tracking-wider transition-all uppercase ${activeTab === 2
-                  ? 'bg-[#10221b] text-[#f29727] shadow-inner font-bold'
-                  : 'text-[#10221b] hover:bg-[#dce6db]'
-                }`}
-            >
-              Destinations
-            </button>
-            <button
-              onClick={() => setActiveTab(3)}
-              className={`flex-1 py-4 sm:py-5 px-3 text-center text-xs sm:text-sm font-semibold tracking-wider transition-all uppercase ${activeTab === 3
-                  ? 'bg-[#10221b] text-[#f29727] shadow-inner font-bold'
-                  : 'text-[#10221b] hover:bg-[#dce6db]'
-                }`}
-            >
-              Highlights
-            </button>
+          <div className="flex items-center justify-center">
+            {[
+              { id: 1, label: 'Why Blackforest Holidays?' },
+              { id: 2, label: 'Destinations' },
+              { id: 3, label: 'Highlights' },
+            ].map((tab, idx, arr) => {
+              const isActive = activeTab === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className="flex-1 relative py-6 sm:py-7 px-3 sm:px-6 text-center cursor-pointer transition-colors duration-200 group focus:outline-none"
+                >
+                  {/* Tab Title in Palanquin Dark, Title Case */}
+                  <span
+                    className={`block text-base sm:text-lg md:text-[20px] transition-colors leading-tight ${
+                      isActive
+                        ? 'text-[#10221b] font-bold drop-shadow-sm'
+                        : 'text-[#10221b]/90 hover:text-[#10221b] font-semibold'
+                    }`}
+                    style={{ fontFamily: "'Palanquin Dark', sans-serif" }}
+                  >
+                    {tab.label}
+                  </span>
+
+                  {/* Vertical Divider between tabs (matching Image 2) */}
+                  {idx < arr.length - 1 && (
+                    <span className="absolute right-0 top-1/2 -translate-y-1/2 h-8 sm:h-9 w-[2px] bg-white pointer-events-none" />
+                  )}
+
+                  {/* Active Tab Pointer: White Triangular Arrow pointing UP into the tab bar from the white content below */}
+                  {isActive && (
+                    <span
+                      className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0 pointer-events-none transition-all duration-300"
+                      style={{
+                        borderLeft: '14px solid transparent',
+                        borderRight: '14px solid transparent',
+                        borderBottom: '14px solid #ffffff',
+                      }}
+                    />
+                  )}
+                </button>
+              );
+            })}
           </div>
         </div>
       </section>
