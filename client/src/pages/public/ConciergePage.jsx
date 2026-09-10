@@ -40,15 +40,16 @@ export default function ConciergePage() {
 
       extraBlocks: [
         {
-          heading: 'Flight Booking Flights Made Simple',
-          icon: '✈️',
+          caption: 'Flight Booking',
+          icon: 'plane',
+          heading: 'Flights Made Simple',
           text: 'Find the right flight for your journey with personalised assistance for domestic and international travel. We help you compare suitable flight options, schedules, fares, and travel requirements based on your preferences.',
         },
       ],
 
       servicesList: {
         heading: 'Our Flight Booking Services',
-        type: 'numbered',
+        type: 'two-column',
         items: [
           'Domestic & International Flights',
           'One-Way & Return Tickets',
@@ -365,23 +366,41 @@ export default function ConciergePage() {
 
           {/* Extra bold sub-blocks */}
           {(data.extraBlocks || []).map((block, i) => (
-            <div key={i} className="max-w-3xl pt-10">
-              <h3 className="text-xl font-bold text-[#10221b] mb-3">{block.icon ? `${block.icon} ` : ''}{block.heading}</h3>
+            <div key={i} className="max-w-7xl pt-10">
+              {block.caption ? (
+                <div>
+                  <div className="flex items-center gap-2 text-[#10221b] font-bold text-[20px] mb-3">
+                    <IconFor icon={block.icon || 'plane'} />
+                    <span>{block.caption}</span>
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-[#5e963b] mb-4">{block.heading}</h2>
+                  <div className="w-16 h-[2px] bg-gray-300 mb-6" />
+                </div>
+              ) : (
+                <h3 className="text-xl font-bold text-[#10221b] mb-3">{block.icon ? `${block.icon} ` : ''}{block.heading}</h3>
+              )}
               <p className="text-gray-600 text-[20px] leading-[1.8] font-light">{block.text}</p>
             </div>
           ))}
 
-          {/* Services list — numbered / numbered-dash / dash */}
+          {/* Services list — two-column / numbered / numbered-dash / dash */}
           {data.servicesList && (
-            <div className="max-w-3xl pt-10">
-              <h3 className="text-xl font-bold text-[#10221b] mb-4">{data.servicesList.heading}</h3>
+            <div className="max-w-7xl pt-10">
+              <h3 className="text-[20px] font-bold text-[#10221b] mb-4">{data.servicesList.heading}</h3>
 
-              {data.servicesList.type === 'numbered' && (
-                <ul className="space-y-3">
-                  {data.servicesList.items.map((item, idx) => (
-                    <li key={idx} className="text-[20px] text-gray-900 font-bold">{idx + 1}. {item}</li>
-                  ))}
-                </ul>
+              {(data.servicesList.type === 'two-column' || data.servicesList.type === 'numbered') && (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-2">
+                  <ul className="space-y-2">
+                    {data.servicesList.items.slice(0, Math.ceil(data.servicesList.items.length / 2)).map((item, idx) => (
+                      <li key={idx} className="text-[20px] text-gray-600 font-light">• {item}</li>
+                    ))}
+                  </ul>
+                  <ul className="space-y-2">
+                    {data.servicesList.items.slice(Math.ceil(data.servicesList.items.length / 2)).map((item, idx) => (
+                      <li key={idx} className="text-[20px] text-gray-600 font-light">• {item}</li>
+                    ))}
+                  </ul>
+                </div>
               )}
 
               {data.servicesList.type === 'numbered-dash' && (
@@ -408,7 +427,7 @@ export default function ConciergePage() {
 
           {/* Popular Visa Destinations */}
           {data.popularDestinations && (
-            <div className="max-w-3xl pt-10">
+            <div className="max-w-7xl pt-10">
               <h3 className="text-xl font-bold text-[#10221b] mb-3">{data.popularDestinations.heading}</h3>
               <p className="text-gray-600 text-[20px] leading-[1.8] font-light mb-3">{data.popularDestinations.intro}</p>
               <p className="text-gray-900 text-[20px] font-bold mb-3">{data.popularDestinations.list.join(' | ')}</p>
@@ -418,7 +437,7 @@ export default function ConciergePage() {
 
           {/* Destinations paragraph block */}
           {data.destinations && (
-            <div className="max-w-3xl pt-10 pb-6">
+            <div className="max-w-7xl pt-10 pb-6">
               <h3 className="text-xl font-bold text-[#10221b] mb-3">{data.destinations.heading}</h3>
               <p className="text-gray-600 text-[20px] leading-[1.8] font-light">{data.destinations.text}</p>
             </div>
