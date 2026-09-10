@@ -644,34 +644,7 @@ export default function DestinationDetailPage({ forcedSlug }) {
       </section>
 
       {/* 8. Expertise / Knowledge Behind Every Journey Section (Matching Image 1) */}
-      <section className="bg-[#fbfaf8] py-20 border-t border-gray-100 text-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12">
-            <div className="flex items-center justify-center gap-2 text-[#c59b27] font-bold text-xs uppercase tracking-[0.25em] mb-2">
-              <span className="w-1.5 h-1.5 bg-[#c59b27] rotate-45 transform"></span>
-              OUR EXPERTISE
-              <span className="w-1.5 h-1.5 bg-[#c59b27] rotate-45 transform"></span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#10221b] mb-4">
-              Knowledge Behind Every Journey
-            </h2>
-            <p className="text-gray-500 text-sm sm:text-base max-w-2xl mx-auto font-normal leading-relaxed">
-              We are well-traveled consultants continually expanding through tourism board programmes, industry training, and global partnerships to design journeys you can trust.
-            </p>
-            {/* Golden Center Flourish Ornament */}
-            <div className="flex justify-center mt-5">
-              <svg width="40" height="20" viewBox="0 0 40 20" fill="none" stroke="#c59b27" strokeWidth="1.5">
-                <path d="M20 10 C 14 2, 4 2, 4 10 C 4 18, 14 18, 20 10 Z" fill="none" />
-                <path d="M20 10 C 26 2, 36 2, 36 10 C 36 18, 26 18, 20 10 Z" fill="none" />
-                <circle cx="20" cy="10" r="2" fill="#c59b27" />
-              </svg>
-            </div>
-          </div>
 
-          {/* 10 Expertise Partner Cards Grid (5x2) */}
-
-        </div>
-      </section>
     </div>
   );
 }
