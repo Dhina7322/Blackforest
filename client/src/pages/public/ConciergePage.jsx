@@ -540,7 +540,7 @@ export default function ConciergePage() {
       {/* 6. Secondary feature block with two-column list (Airport Transfers) */}
       {data.secondaryFeature && (
         <section className="py-16 bg-white relative z-10">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center gap-2 text-[#10221b] font-bold text-[20px] mb-3">
               <IconFor icon={data.secondaryFeature.icon} />
               <span>{data.secondaryFeature.caption}</span>
@@ -569,7 +569,7 @@ export default function ConciergePage() {
       {/* 7. Tertiary feature block, text only (Travel Insurance) */}
       {data.tertiaryFeature && (
         <section className="py-16 bg-white relative z-10">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center gap-2 text-[#10221b] font-bold text-[20px] mb-3">
               <IconFor icon={data.tertiaryFeature.icon} />
               <span>{data.tertiaryFeature.caption}</span>
