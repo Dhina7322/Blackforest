@@ -281,31 +281,28 @@ export default function DestinationDetailPage({ forcedSlug }) {
           <div className="flex items-center justify-center divide-x divide-[#c7d6c6]">
             <button
               onClick={() => setActiveTab(1)}
-              className={`flex-1 py-4 sm:py-5 px-3 text-center text-xs sm:text-sm font-semibold tracking-wider transition-all uppercase ${
-                activeTab === 1
+              className={`flex-1 py-4 sm:py-5 px-3 text-center text-xs sm:text-sm font-semibold tracking-wider transition-all uppercase ${activeTab === 1
                   ? 'bg-[#10221b] text-[#f29727] shadow-inner font-bold'
                   : 'text-[#10221b] hover:bg-[#dce6db]'
-              }`}
+                }`}
             >
               Why Blackforest Holidays?
             </button>
             <button
               onClick={() => setActiveTab(2)}
-              className={`flex-1 py-4 sm:py-5 px-3 text-center text-xs sm:text-sm font-semibold tracking-wider transition-all uppercase ${
-                activeTab === 2
+              className={`flex-1 py-4 sm:py-5 px-3 text-center text-xs sm:text-sm font-semibold tracking-wider transition-all uppercase ${activeTab === 2
                   ? 'bg-[#10221b] text-[#f29727] shadow-inner font-bold'
                   : 'text-[#10221b] hover:bg-[#dce6db]'
-              }`}
+                }`}
             >
               Destinations
             </button>
             <button
               onClick={() => setActiveTab(3)}
-              className={`flex-1 py-4 sm:py-5 px-3 text-center text-xs sm:text-sm font-semibold tracking-wider transition-all uppercase ${
-                activeTab === 3
+              className={`flex-1 py-4 sm:py-5 px-3 text-center text-xs sm:text-sm font-semibold tracking-wider transition-all uppercase ${activeTab === 3
                   ? 'bg-[#10221b] text-[#f29727] shadow-inner font-bold'
                   : 'text-[#10221b] hover:bg-[#dce6db]'
-              }`}
+                }`}
             >
               Highlights
             </button>
@@ -664,52 +661,15 @@ export default function DestinationDetailPage({ forcedSlug }) {
             {/* Golden Center Flourish Ornament */}
             <div className="flex justify-center mt-5">
               <svg width="40" height="20" viewBox="0 0 40 20" fill="none" stroke="#c59b27" strokeWidth="1.5">
-                <path d="M20 10 C 14 2, 4 2, 4 10 C 4 18, 14 18, 20 10 Z" fill="none"/>
-                <path d="M20 10 C 26 2, 36 2, 36 10 C 36 18, 26 18, 20 10 Z" fill="none"/>
+                <path d="M20 10 C 14 2, 4 2, 4 10 C 4 18, 14 18, 20 10 Z" fill="none" />
+                <path d="M20 10 C 26 2, 36 2, 36 10 C 36 18, 26 18, 20 10 Z" fill="none" />
                 <circle cx="20" cy="10" r="2" fill="#c59b27" />
               </svg>
             </div>
           </div>
 
           {/* 10 Expertise Partner Cards Grid (5x2) */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-5 lg:gap-6">
-            {partnerCards.map((partner) => (
-              <a
-                key={partner.id}
-                href={partner.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white rounded-2xl border border-[#ece8df] p-5 sm:p-6 flex flex-col items-center justify-between text-center transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-[#c59b27] group min-h-[220px]"
-              >
-                <div className="w-full h-24 flex items-center justify-center p-1 mb-2">
-                  <img 
-                    src={partner.image} 
-                    alt={partner.name} 
-                    className="max-h-20 max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
-                    onError={(e) => {
-                      e.target.onerror = null;
-                      e.target.src = '/assets/images/white_logo.png';
-                    }}
-                  />
-                </div>
 
-                <div className="w-full flex items-center justify-center my-3">
-                  <div className="flex-1 h-[1px] bg-[#e4ddd0] group-hover:bg-[#c59b27]/40 transition-colors"></div>
-                  <span className="mx-2.5 w-1.5 h-1.5 bg-[#c59b27] rotate-45 transform"></span>
-                  <div className="flex-1 h-[1px] bg-[#e4ddd0] group-hover:bg-[#c59b27]/40 transition-colors"></div>
-                </div>
-
-                <div className="w-full pt-1">
-                  <h4 className="font-bold text-[#10221b] text-sm sm:text-[15px] uppercase tracking-wider font-sans group-hover:text-[#c59b27] transition-colors">
-                    {partner.name}
-                  </h4>
-                  <p className="text-gray-500 text-xs mt-1 font-normal leading-tight">
-                    {partner.subtitle}
-                  </p>
-                </div>
-              </a>
-            ))}
-          </div>
         </div>
       </section>
     </div>
