@@ -111,14 +111,14 @@ export default function App() {
                 <Route path="users" element={<AdminUsersPage />} />
 
                 {/* Removed Admin Modules redirected */}
-                <Route path="tours*" element={<Navigate to="/admin/dashboard" replace />} />
-                <Route path="experiences*" element={<Navigate to="/admin/dashboard" replace />} />
-                <Route path="services*" element={<Navigate to="/admin/dashboard" replace />} />
-                <Route path="testimonials*" element={<Navigate to="/admin/dashboard" replace />} />
-                <Route path="media*" element={<Navigate to="/admin/dashboard" replace />} />
-                <Route path="navigation*" element={<Navigate to="/admin/dashboard" replace />} />
-                <Route path="settings*" element={<Navigate to="/admin/dashboard" replace />} />
-                <Route path="audit-logs*" element={<Navigate to="/admin/dashboard" replace />} />
+                <Route path="tours/*" element={<Navigate to="/admin/dashboard" replace />} />
+                <Route path="experiences/*" element={<Navigate to="/admin/dashboard" replace />} />
+                <Route path="services/*" element={<Navigate to="/admin/dashboard" replace />} />
+                <Route path="testimonials/*" element={<Navigate to="/admin/dashboard" replace />} />
+                <Route path="media/*" element={<Navigate to="/admin/dashboard" replace />} />
+                <Route path="navigation/*" element={<Navigate to="/admin/dashboard" replace />} />
+                <Route path="settings/*" element={<Navigate to="/admin/dashboard" replace />} />
+                <Route path="audit-logs/*" element={<Navigate to="/admin/dashboard" replace />} />
               </Route>
             </Routes>
           </ToastProvider>

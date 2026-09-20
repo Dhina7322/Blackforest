@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useSettings } from '../../context/SiteSettingsContext';
 
 // Custom hook for animated counting
 const useCounter = (end, duration = 2000) => {
@@ -43,78 +42,100 @@ const useCounter = (end, duration = 2000) => {
 };
 
 export default function StatsSection() {
-  const { count: countIsland, ref: refIsland } = useCounter(30);
-  const { count: countCountries, ref: refCountries } = useCounter(10);
-  const { count: countTailor, ref: refTailor } = useCounter(40);
-  const { settings } = useSettings();
-  const brandName = settings?.siteName || 'Blackforest Holidays';
+  const { count: countIsland, ref: refIsland } = useCounter(50);
+  const { count: countCountries, ref: refCountries } = useCounter(25);
+  const { count: countTailor, ref: refTailor } = useCounter(150);
 
   return (
-    <section className="relative py-16 sm:py-20 lg:py-24 bg-white overflow-hidden">
-      {/* Background Graphic with Silhouette Mountain from uploaded assets */}
+    <section className="relative py-16 sm:py-20 lg:py-24 bg-[#f4f7f4] text-[#10221b] overflow-hidden">
+      {/* Mountain silhouette background graphic at bottom */}
       <div 
-        className="absolute inset-0 z-0 opacity-25 pointer-events-none bg-bottom bg-cover"
+        className="absolute inset-0 z-0 opacity-20 pointer-events-none bg-bottom bg-cover"
         style={{ backgroundImage: "url('/assets/images/number-counter-bg.png')" }}
       />
 
-      {/* Decorative Flying Birds Silhouette */}
-      <div className="absolute top-6 sm:top-10 left-1/4 sm:left-1/3 z-0 pointer-events-none opacity-60">
-        <svg width="220" height="70" viewBox="0 0 220 70" fill="#2d4030" className="w-36 sm:w-56 h-auto">
-          <path d="M20,30 Q30,15 40,25 Q35,26 30,32 Q25,27 20,30 Z" />
-          <path d="M70,18 Q84,5 98,15 Q90,16 84,23 Q78,17 70,18 Z" />
-          <path d="M140,22 Q152,10 164,20 Q156,21 151,27 Q146,21 140,22 Z" />
-          <path d="M180,35 Q190,24 200,32 Q194,33 190,38 Q186,33 180,35 Z" />
+      {/* Flying Birds Silhouette (Exact match to Image 4 top center) */}
+      <div className="relative z-10 flex justify-center mb-6">
+        <svg width="240" height="45" viewBox="0 0 240 45" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-44 sm:w-60 h-auto opacity-75">
+          <path d="M20 22 Q 28 10, 36 22 Q 44 10, 52 22" stroke="#2b3b33" strokeWidth="2.2" strokeLinecap="round" fill="none"/>
+          <path d="M75 16 Q 84 5, 93 16 Q 102 5, 111 16" stroke="#2b3b33" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
+          <path d="M135 12 Q 143 3, 151 12 Q 159 3, 167 12" stroke="#2b3b33" strokeWidth="2.2" strokeLinecap="round" fill="none"/>
+          <path d="M188 20 Q 195 10, 202 20 Q 209 10, 216 20" stroke="#2b3b33" strokeWidth="2.2" strokeLinecap="round" fill="none"/>
         </svg>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           
-          {/* Left Content */}
-          <div className="lg:col-span-5 space-y-3 text-center lg:text-left">
-            <h2 
-              className="text-2xl sm:text-3xl md:text-[38px] leading-tight"
+          {/* Left Column (Exact match to Image 4 font size and layout) */}
+          <div className="lg:col-span-6 space-y-4 text-left">
+            {/* Cursive Subtitle */}
+            <span 
+              className="text-2xl sm:text-3xl lg:text-[32px] block font-medium tracking-wide"
               style={{
-                fontFamily: "var(--font-cursive, 'Caveat', cursive, serif)",
+                fontFamily: "var(--font-cursive, 'Caveat', 'Dancing Script', cursive, serif)",
                 color: "#27B8B1"
               }}
             >
-              Your Travel Start Right Here
+              Your Island Story Begins Here
+            </span>
+
+            {/* Main Heading */}
+            <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#10221b] leading-[1.15] font-sans">
+              Escape to extraordinary <br className="hidden sm:block" />
+              islands
             </h2>
-            <p className="text-[#555555] font-light text-[14px] sm:text-[15px] leading-relaxed max-w-md mx-auto lg:mx-0">
-              Experience the world in extraordinary style with our luxury tours and curated holidays.
+
+            {/* Description */}
+            <p className="text-[#555555] font-light text-sm sm:text-base leading-relaxed max-w-md pt-2">
+              From secluded beaches to unforgettable adventures, discover island journeys designed around you.
             </p>
           </div>
 
-          {/* Right Content - 3 Circular Badges */}
-          <div className="lg:col-span-7">
-            <div className="flex flex-wrap justify-center lg:justify-end gap-5 sm:gap-8">
+          {/* Right Column (Exact match to Image 4: Clean numbers without dark circle badges) */}
+          <div className="lg:col-span-6 space-y-6 pt-2">
+            <div className="grid grid-cols-3 gap-4 sm:gap-6 items-start">
               
-              <div ref={refIsland} className="w-[110px] h-[110px] sm:w-[135px] sm:h-[135px] md:w-[150px] md:h-[150px] rounded-full bg-[#10221b] border-2 border-white/20 flex flex-col items-center justify-center text-white shadow-2xl transition-transform hover:scale-105">
-                <span className="text-xl sm:text-2xl md:text-3xl font-extrabold mb-0.5">{countIsland}+</span>
-                <span className="text-[11px] sm:text-[12px] md:text-[13px] font-medium tracking-wider text-gray-300">Island</span>
+              {/* Stat 1: 50+ Island Destinations */}
+              <div ref={refIsland} className="text-left space-y-1">
+                <span className="text-3xl sm:text-4xl lg:text-[46px] font-extrabold text-[#10221b] leading-none block">
+                  {countIsland}+
+                </span>
+                <span className="text-sm sm:text-base font-bold text-[#10221b] leading-snug block">
+                  Island <br />
+                  Destinations
+                </span>
               </div>
 
-              <div ref={refCountries} className="w-[110px] h-[110px] sm:w-[135px] sm:h-[135px] md:w-[150px] md:h-[150px] rounded-full bg-[#10221b] border-2 border-white/20 flex flex-col items-center justify-center text-white shadow-2xl transition-transform hover:scale-105">
-                <span className="text-xl sm:text-2xl md:text-3xl font-extrabold mb-0.5">{countCountries}+</span>
-                <span className="text-[11px] sm:text-[12px] md:text-[13px] font-medium tracking-wider text-gray-300">Countries</span>
+              {/* Stat 2: 25 Countries */}
+              <div ref={refCountries} className="text-left space-y-1">
+                <span className="text-3xl sm:text-4xl lg:text-[46px] font-extrabold text-[#10221b] leading-none block">
+                  {countCountries}
+                </span>
+                <span className="text-sm sm:text-base font-bold text-[#10221b] leading-snug block">
+                  Countries
+                </span>
               </div>
 
-              <div ref={refTailor} className="w-[110px] h-[110px] sm:w-[135px] sm:h-[135px] md:w-[150px] md:h-[150px] rounded-full bg-[#10221b] border-2 border-white/20 flex flex-col items-center justify-center text-white shadow-2xl transition-transform hover:scale-105">
-                <span className="text-xl sm:text-2xl md:text-3xl font-extrabold mb-0.5">{countTailor}+</span>
-                <span className="text-[11px] sm:text-[12px] md:text-[13px] font-medium tracking-wider text-gray-300">Tailor-Made</span>
+              {/* Stat 3: 150+ Tailor-Made Journeys */}
+              <div ref={refTailor} className="text-left space-y-1">
+                <span className="text-3xl sm:text-4xl lg:text-[46px] font-extrabold text-[#10221b] leading-none block">
+                  {countTailor}+
+                </span>
+                <span className="text-sm sm:text-base font-bold text-[#10221b] leading-snug block">
+                  Tailor-Made <br />
+                  Journeys
+                </span>
               </div>
 
             </div>
+
+            {/* Sub-text Note (Exact match to Image 4 bottom right note) */}
+            <p className="text-xs sm:text-[13px] text-gray-500 font-light leading-relaxed pt-4 border-t border-gray-200/80 italic max-w-lg">
+              For Blackforest Holidays, I recommend "Curated Journeys" instead of "Tours" because it sounds more premium and luxurious.
+            </p>
           </div>
 
-        </div>
-
-        {/* Bottom Description */}
-        <div className="mt-12 sm:mt-14 pt-6 sm:pt-8 border-t border-gray-100 text-center">
-          <p className="text-[#555555] font-light text-[13.5px] sm:text-[14px] leading-relaxed max-w-2xl mx-auto px-4">
-            At {brandName}, we are passionate about curating unforgettable travel experiences tailored to your dreams and interests.
-          </p>
         </div>
       </div>
     </section>

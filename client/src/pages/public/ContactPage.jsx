@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle2, Sparkles, MessageSquare, ShieldCheck, Compass } from 'lucide-react';
+import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { useToast } from '../../context/ToastContext';
 import { enquiryService } from '../../services/allServices';
 import { useSettings } from '../../context/SiteSettingsContext';
@@ -69,7 +69,7 @@ export default function ContactPage() {
     <div className="bg-white font-sans text-gray-800 animate-fadeIn overflow-x-hidden">
       
       {/* 1. Hero Section */}
-      <section className="relative h-[55vh] min-h-[460px] flex flex-col items-center justify-center">
+      <section className="relative h-[50vh] min-h-[420px] flex flex-col items-center justify-center">
         <div className="absolute inset-0 z-0 bg-[#0a1712]">
           <img
             src="https://blackforestholidays.com/wp-content/uploads/2026/08/buddhist-prayer-flags-himalaya-mountains-annapurna-base-camp-area-nepal-scaled.jpg"
@@ -79,9 +79,9 @@ export default function ContactPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/30" />
         </div>
 
-        {/* Hero Content - Perfectly Centered */}
+        {/* Hero Content */}
         <div className="relative z-10 text-center px-4 max-w-3xl mx-auto text-white">
-          <div className="text-[#27B8B1] font-bold text-xl md:text-2xl mb-2" style={{ fontFamily: "'Mansalva', cursive, sans-serif" }}>
+          <div className="text-[#27B8B1] font-bold text-xl md:text-2xl mb-2" style={{ fontFamily: "var(--font-cursive, 'Caveat', cursive, sans-serif)" }}>
             Reach Out to Our Specialists
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-4">
@@ -99,43 +99,35 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* 2. Main Contact Section - Centered Layout */}
+      {/* 2. Main Contact Section (Matching User Image 2 Design & Layout) */}
       <section className="bg-[#fbfcfa] relative z-20 pt-16 sm:pt-20 pb-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          {/* Top Intro Section - Centered Heading & Subtitle */}
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span
-              className="text-[#27B8B1] font-bold text-2xl md:text-3xl block mb-2"
-              style={{ fontFamily: "'Mansalva', cursive, sans-serif" }}
-            >
-              Talk to us
-            </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#10221b] tracking-tight mb-6">
-              Get in Touch
-            </h2>
-            <p className="text-gray-600 text-sm sm:text-[15px] leading-relaxed font-normal">
-              Every unforgettable journey begins with a conversation. Whether you're exploring a new destination, celebrating a honeymoon, or planning corporate travel, our experienced travel consultants are ready to craft your bespoke itinerary.
-            </p>
-          </div>
-
-          {/* Centered 2-Column Luxury Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
             
             {/* Left Column: Form Card (7 Cols) */}
-            <div className="lg:col-span-7 bg-white p-8 sm:p-10 lg:p-12 rounded-2xl border border-gray-200/80 shadow-[0_8px_30px_rgba(0,0,0,0.05)]">
-              <form onSubmit={handleSubmit} className="space-y-10">
+            <div className="lg:col-span-7 bg-white p-8 sm:p-10 rounded-2xl border border-gray-200/80 shadow-[0_8px_30px_rgba(0,0,0,0.04)]">
+              <div className="mb-8">
+                <span className="text-[#27B8B1] font-medium text-lg block mb-1" style={{ fontFamily: "var(--font-cursive, 'Caveat', cursive, sans-serif)" }}>
+                  Talk to us
+                </span>
+                <h2 className="text-3xl sm:text-4xl font-extrabold text-[#10221b] tracking-tight">
+                  Get in Touch
+                </h2>
+              </div>
+
+              <form onSubmit={handleSubmit} className="space-y-8">
                 
                 {/* YOUR DETAILS */}
-                <div className="space-y-6">
-                  <div className="flex items-center gap-2 border-b border-gray-100 pb-3">
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#5e963b]" />
-                    <h3 className="text-lg font-bold text-[#10221b] uppercase tracking-wider">
+                <div className="space-y-5">
+                  <div className="flex items-center gap-2 border-b border-gray-100 pb-2.5">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#5ba14a]" />
+                    <h3 className="text-base font-bold text-[#10221b] uppercase tracking-wider">
                       Your Details
                     </h3>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                     <div className="space-y-1.5">
                       <label className="text-gray-600 text-xs font-semibold uppercase tracking-wider">First Name *</label>
                       <input
@@ -162,7 +154,7 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                     <div className="space-y-1.5">
                       <label className="text-gray-600 text-xs font-semibold uppercase tracking-wider">Email Address *</label>
                       <input
@@ -209,10 +201,10 @@ export default function ContactPage() {
                 </div>
 
                 {/* YOUR TRIP */}
-                <div className="space-y-6">
-                  <div className="flex items-center gap-2 border-b border-gray-100 pb-3">
+                <div className="space-y-5">
+                  <div className="flex items-center gap-2 border-b border-gray-100 pb-2.5">
                     <span className="w-2.5 h-2.5 rounded-full bg-[#27B8B1]" />
-                    <h3 className="text-lg font-bold text-[#10221b] uppercase tracking-wider">
+                    <h3 className="text-base font-bold text-[#10221b] uppercase tracking-wider">
                       Your Trip Preferences
                     </h3>
                   </div>
@@ -227,21 +219,21 @@ export default function ContactPage() {
                       className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#10221b] focus:bg-white transition-all text-gray-700 cursor-pointer"
                     >
                       <option value="">— Select Destination —</option>
-                      <option value="Switzerland & Alpine Wonderland">Switzerland & Alpine Wonderland</option>
-                      <option value="Maldives & Indian Ocean Atolls">Maldives & Indian Ocean Atolls</option>
-                      <option value="Japan & Southeast Asia Odyssey">Japan & Southeast Asia Odyssey</option>
-                      <option value="Dubai & Arabian Desert Highlights">Dubai & Arabian Desert Highlights</option>
-                      <option value="Kerala – God’s Own Country">Kerala – God’s Own Country</option>
-                      <option value="Kenya & Serengeti Wildlife Safari">Kenya & Serengeti Wildlife Safari</option>
-                      <option value="Australia & New Zealand Wonders">Australia & New Zealand Wonders</option>
-                      <option value="Andaman & Nicobar Islands">Andaman & Nicobar Islands</option>
-                      <option value="United States & California Coast">United States & California Coast</option>
-                      <option value="Sri Lanka & South Asian Heritage">Sri Lanka & South Asian Heritage</option>
+                      <option value="Switzerland & Alpine Highlights">Switzerland & Alpine Highlights</option>
+                      <option value="Maldives Tropical Island Paradise">Maldives Tropical Island Paradise</option>
+                      <option value="Exotic Asia & Far East">Exotic Asia & Far East</option>
+                      <option value="Wonders of Middle East (Dubai)">Wonders of Middle East (Dubai)</option>
+                      <option value="Kerala – Coastlines & Palaces">Kerala – Coastlines & Palaces</option>
+                      <option value="Majestic Africa Safari">Majestic Africa Safari</option>
+                      <option value="Magical Australia Tour">Magical Australia Tour</option>
+                      <option value="Romantic Andaman Tour Package">Romantic Andaman Tour Package</option>
+                      <option value="Grand America Explorer">Grand America Explorer</option>
+                      <option value="Enchanting South Asia">Enchanting South Asia</option>
                       <option value="Custom Location / Other">Custom Location / Other</option>
                     </select>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                     <div className="space-y-1.5">
                       <label className="text-gray-600 text-xs font-semibold uppercase tracking-wider">Travel Month</label>
                       <select
@@ -273,7 +265,7 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                     <div className="space-y-1.5">
                       <label className="text-gray-600 text-xs font-semibold uppercase tracking-wider">Duration of Trip</label>
                       <input
@@ -338,7 +330,7 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-4 bg-[#10221b] hover:bg-black text-white text-sm font-bold tracking-widest uppercase transition-all duration-200 rounded-xl shadow-md hover:shadow-lg disabled:opacity-50 cursor-pointer flex items-center justify-center gap-2"
+                  className="w-full py-4 bg-[#10221b] hover:bg-[#5ba14a] text-white text-sm font-bold tracking-widest uppercase transition-all duration-300 rounded-xl shadow-md hover:shadow-lg disabled:opacity-50 cursor-pointer flex items-center justify-center gap-2"
                 >
                   <Send className="w-4 h-4" />
                   <span>{loading ? 'Submitting Enquiry...' : 'Send Travel Enquiry'}</span>
@@ -346,97 +338,91 @@ export default function ContactPage() {
               </form>
             </div>
 
-            {/* Right Column: Contact Info & Support Box (5 Cols) */}
-            <div className="lg:col-span-5 space-y-6">
+            {/* Right Column: Contact Info & Business Hours (Exact match to User Image 2) */}
+            <div className="lg:col-span-5 space-y-10 pt-2 lg:pt-4 pl-0 lg:pl-4">
               
-              {/* Primary Contact Dark Card */}
-              <div className="bg-[#10221b] text-white p-8 sm:p-10 rounded-2xl shadow-xl relative overflow-hidden border border-[#1b352b]">
-                <div className="relative z-10 space-y-8">
+              {/* 1. Contact Info Section */}
+              <div className="space-y-6">
+                <h2 className="text-4xl sm:text-[42px] font-extrabold text-[#5ba14a] tracking-tight font-sans">
+                  Contact Info
+                </h2>
+
+                <div className="space-y-5 text-gray-700 text-sm sm:text-base leading-relaxed">
                   
-                  <div>
-                    <span className="text-[#27B8B1] text-xs font-bold uppercase tracking-widest block mb-1">
-                      Direct Concierge
-                    </span>
-                    <h3 className="text-2xl sm:text-3xl font-bold tracking-tight">
-                      Contact Information
-                    </h3>
+                  {/* Email */}
+                  <div className="flex items-start gap-3.5">
+                    <div className="w-6 h-6 rounded-full bg-[#1dc5ce] text-white flex items-center justify-center shrink-0 mt-0.5">
+                      <Mail className="w-3.5 h-3.5" />
+                    </div>
+                    <a
+                      href="mailto:info@blackforestholidays.com"
+                      className="hover:text-[#5ba14a] transition-colors font-normal text-gray-800"
+                    >
+                      info@blackforestholidays.com
+                    </a>
                   </div>
 
-                  <ul className="space-y-6 text-sm">
-                    <li className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0 text-[#27B8B1]">
-                        <Phone className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <span className="text-xs text-gray-400 block mb-0.5">Call or WhatsApp</span>
-                        <a
-                          href={`tel:${(settings.phone || '+91 94470 12345').replace(/\s+/g, '')}`}
-                          className="font-semibold text-white hover:text-[#27B8B1] transition-colors text-base"
-                        >
-                          {settings.phone || '+91 94470 12345'}
-                        </a>
-                      </div>
-                    </li>
-
-                    <li className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0 text-[#27B8B1]">
-                        <Mail className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <span className="text-xs text-gray-400 block mb-0.5">Email Inquiries</span>
-                        <a
-                          href={`mailto:${settings.email || 'info@blackforestholidays.com'}`}
-                          className="font-semibold text-white hover:text-[#27B8B1] transition-colors text-base break-all"
-                        >
-                          {settings.email || 'info@blackforestholidays.com'}
-                        </a>
-                      </div>
-                    </li>
-
-                    <li className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0 text-[#27B8B1]">
-                        <MapPin className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <span className="text-xs text-gray-400 block mb-0.5">Head Office</span>
-                        <span className="text-gray-300 leading-relaxed font-light block">
-                          1st Floor, No 20, 1st Main Rd, Koramangala, Bengaluru, Karnataka 560034
-                        </span>
-                      </div>
-                    </li>
-                  </ul>
-
-                  {/* Business Hours */}
-                  <div className="pt-6 border-t border-white/15 space-y-4">
-                    <div className="flex items-center gap-2 text-[#27B8B1]">
-                      <Clock className="w-4 h-4" />
-                      <h4 className="text-xs font-bold uppercase tracking-wider text-white">Working Hours</h4>
+                  {/* Phone Numbers */}
+                  <div className="flex items-start gap-3.5">
+                    <div className="w-6 h-6 rounded-full bg-[#1dc5ce] text-white flex items-center justify-center shrink-0 mt-0.5">
+                      <Phone className="w-3.5 h-3.5" />
                     </div>
-                    <div className="space-y-2.5 text-xs text-gray-300">
-                      <div className="flex justify-between border-b border-white/10 pb-2">
-                        <span>Monday – Friday</span>
-                        <span className="font-semibold text-white">9:00 AM – 6:00 PM</span>
-                      </div>
-                      <div className="flex justify-between border-b border-white/10 pb-2">
-                        <span>Saturday – Sunday</span>
-                        <span className="font-semibold text-white">10:00 AM – 4:00 PM</span>
-                      </div>
+                    <div className="font-normal text-gray-800">
+                      <a href="tel:+919742877700" className="hover:text-[#5ba14a] transition-colors">
+                        +91 9742877700
+                      </a>
+                      <span> / </span>
+                      <a href="tel:9742977700" className="hover:text-[#5ba14a] transition-colors">
+                        9742977700
+                      </a>
                     </div>
+                  </div>
+
+                  {/* Bengaluru Address */}
+                  <div className="flex items-start gap-3.5">
+                    <div className="w-6 h-6 rounded-full bg-[#1dc5ce] text-white flex items-center justify-center shrink-0 mt-0.5">
+                      <MapPin className="w-3.5 h-3.5" />
+                    </div>
+                    <span className="font-normal text-gray-800 leading-relaxed max-w-md">
+                      737, 3rd Floor, Kheny Plaza CMH Main Road, 2nd Cross Rd, Binnamangala, Indiranagar, Bengaluru, Karnataka 560038
+                    </span>
+                  </div>
+
+                  {/* Coimbatore Address */}
+                  <div className="flex items-start gap-3.5">
+                    <div className="w-6 h-6 rounded-full bg-[#1dc5ce] text-white flex items-center justify-center shrink-0 mt-0.5">
+                      <MapPin className="w-3.5 h-3.5" />
+                    </div>
+                    <span className="font-normal text-gray-800 leading-relaxed max-w-md">
+                      76, 1st floor, 8th Street, Crosscut Road, Gandhipuram, Coimbatore – 641012
+                    </span>
                   </div>
 
                 </div>
               </div>
 
-              {/* Service Assurance Card */}
-              <div className="bg-white p-6 sm:p-8 rounded-2xl border border-gray-200/80 shadow-xs space-y-3.5">
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0">
-                    <ShieldCheck className="w-5 h-5" />
+              {/* 2. Business Hours Section (Exact match to User Image 2) */}
+              <div className="space-y-6 pt-2">
+                <h2 className="text-4xl sm:text-[42px] font-extrabold text-[#5ba14a] tracking-tight font-sans">
+                  Business Hours:
+                </h2>
+
+                <div className="space-y-4 text-sm sm:text-base text-gray-800 font-medium max-w-md">
+                  <div className="flex justify-between items-center border-b border-gray-100 pb-3">
+                    <span>Monday — Friday</span>
+                    <span className="text-gray-600 font-normal">8am — 9pm</span>
                   </div>
-                  <h4 className="font-bold text-gray-900 text-sm">24-Hour Lead Turnaround</h4>
+                  <div className="flex justify-between items-center border-b border-gray-100 pb-3">
+                    <span>Saturday — Sunday</span>
+                    <span className="text-gray-600 font-normal">9am — 6pm</span>
+                  </div>
                 </div>
-                <p className="text-xs text-gray-500 leading-relaxed">
-                  Every inquiry receives personalized attention from our certified destination curators within 24 hours. For urgent holiday bookings, feel free to call our direct line.
+              </div>
+
+              {/* 3. Note Paragraph (Exact match to User Image 2) */}
+              <div className="pt-2">
+                <p className="text-xs sm:text-sm text-gray-600 font-light leading-relaxed max-w-lg">
+                  <span className="font-medium text-gray-800">Note:</span> Our travel advisors are committed to responding promptly to all inquiries. Whether it&apos;s a last-minute booking, visa support, or itinerary customization, we&apos;re here to help you travel with confidence.
                 </p>
               </div>
 
@@ -444,12 +430,12 @@ export default function ContactPage() {
 
           </div>
 
-          {/* 3. Centered Maps Section - Clean & Borderless */}
-          <div className="mt-14 pt-12 border-t border-gray-200/80">
+          {/* Office Maps Section */}
+          <div className="mt-16 pt-12 border-t border-gray-200/80">
             <div className="text-center max-w-xl mx-auto mb-8">
               <span
                 className="text-[#27B8B1] font-bold text-xl md:text-2xl block mb-1"
-                style={{ fontFamily: "'Mansalva', cursive, sans-serif" }}
+                style={{ fontFamily: "var(--font-cursive, 'Caveat', cursive, sans-serif)" }}
               >
                 Locate Us
               </span>
@@ -460,11 +446,11 @@ export default function ContactPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               
-              {/* Bangalore Office Map */}
+              {/* Bengaluru Office Map */}
               <div className="w-full h-80 sm:h-96 rounded-2xl overflow-hidden shadow-md">
                 <iframe 
-                  title="Bangalore Office Map"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.471671958611!2d77.6253457!3d12.9348873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae144e591ff18d%3A0xc3b8a1c97a216447!2sKoramangala%2C%20Bengaluru%2C%20Karnataka%20560034!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                  title="Bengaluru Office Map"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.026778432321!2d77.6401!3d12.9784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae16a75f1b1b1b%3A0x1b1b1b1b1b1b1b1b!2sIndiranagar%2C%20Bengaluru%2C%20Karnataka%20560038!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 

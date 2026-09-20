@@ -1,11 +1,8 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronRight, ChevronLeft } from 'lucide-react';
 
 export default function InternationalToursSection() {
-  const scrollRef = useRef(null);
-  const autoSlideInterval = useRef(null);
-
   const tours = [
     {
       id: 1,
@@ -97,41 +94,53 @@ export default function InternationalToursSection() {
     }
   ];
 
-  const startAutoSlide = () => {
-    stopAutoSlide();
-    autoSlideInterval.current = setInterval(() => {
-      if (scrollRef.current) {
-        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-        if (scrollLeft + clientWidth >= scrollWidth - 20) {
-          scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-          scrollRef.current.scrollBy({ left: 300, behavior: 'smooth' });
-        }
-      }
-    }, 3800);
-  };
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [itemsPerView, setItemsPerView] = useState(3);
+  const [isPaused, setIsPaused] = useState(false);
+  const timerRef = useRef(null);
 
-  const stopAutoSlide = () => {
-    if (autoSlideInterval.current) {
-      clearInterval(autoSlideInterval.current);
-    }
-  };
-
+  // Update visible items count according to viewport width
   useEffect(() => {
-    startAutoSlide();
-    return () => stopAutoSlide();
+    const handleResize = () => {
+      if (window.innerWidth < 640) {
+        setItemsPerView(1);
+      } else if (window.innerWidth < 1024) {
+        setItemsPerView(2);
+      } else {
+        setItemsPerView(3);
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const scrollTrack = (direction) => {
-    if (scrollRef.current) {
-      const scrollAmount = direction === 'left' ? -300 : 300;
-      scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    }
-  };
+  const maxIndex = Math.max(0, tours.length - itemsPerView);
+
+  const nextSlide = useCallback(() => {
+    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+  }, [maxIndex]);
+
+  const prevSlide = useCallback(() => {
+    setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
+  }, [maxIndex]);
+
+  // Auto slide effect
+  useEffect(() => {
+    if (isPaused) return;
+    timerRef.current = setInterval(() => {
+      nextSlide();
+    }, 3800);
+
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
+  }, [nextSlide, isPaused]);
 
   return (
     <section className="relative py-16 sm:py-20 lg:py-24 overflow-hidden bg-[#10221b]">
-      {/* Background from uploaded assets */}
+      {/* Background overlay */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center opacity-30 mix-blend-luminosity pointer-events-none"
         style={{ backgroundImage: "url('/assets/images/aditya-siva-6rDbvXzIVpQ-unsplash-1-scaled.jpg')" }}
@@ -139,11 +148,11 @@ export default function InternationalToursSection() {
       <div className="absolute inset-0 bg-gradient-to-r from-[#10221b]/95 via-[#10221b]/85 to-[#10221b]/65 z-0 pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           
           {/* Left Side: Title */}
           <div className="lg:col-span-4 text-white text-center lg:text-left">
-            <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-extrabold uppercase leading-[1.15] mb-3 sm:mb-4 tracking-wider font-sans">
+            <h2 className="text-2xl sm:text-3xl lg:text-[38px] font-extrabold uppercase leading-[1.15] mb-3 sm:mb-4 tracking-wider font-sans">
               EXPLORE <br className="hidden lg:block" />
               INTERNATIONAL <br className="hidden lg:block" />
               TOUR <br className="hidden lg:block" />
@@ -162,91 +171,114 @@ export default function InternationalToursSection() {
             </div>
           </div>
 
-          {/* Right Side: Slider */}
+          {/* Right Side: Slider (3 Full Cards, No Cut Off) */}
           <div 
             className="lg:col-span-8 relative"
-            onMouseEnter={stopAutoSlide}
-            onMouseLeave={startAutoSlide}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
           >
-            {/* Slider Controls (hidden on small mobile to allow easy touch swipe) */}
+            {/* Slider Navigation Buttons */}
             <button
-              onClick={() => scrollTrack('left')}
-              className="hidden sm:flex absolute left-[-14px] top-1/2 -translate-y-1/2 z-30 w-10 h-10 bg-black/75 hover:bg-[#10221b] text-white rounded-full items-center justify-center transition-all shadow-xl border border-white/20"
+              onClick={prevSlide}
+              className="absolute left-[-16px] top-1/2 -translate-y-1/2 z-30 w-11 h-11 bg-black/80 hover:bg-[#27B8B1] text-white rounded-full flex items-center justify-center transition-all shadow-xl border border-white/20"
               aria-label="Previous slide"
             >
-              <ChevronLeft className="w-5 h-5" />
+              <ChevronLeft className="w-6 h-6" />
             </button>
 
             <button
-              onClick={() => scrollTrack('right')}
-              className="hidden sm:flex absolute right-[-14px] top-1/2 -translate-y-1/2 z-30 w-10 h-10 bg-black/75 hover:bg-[#10221b] text-white rounded-full items-center justify-center transition-all shadow-xl border border-white/20"
+              onClick={nextSlide}
+              className="absolute right-[-16px] top-1/2 -translate-y-1/2 z-30 w-11 h-11 bg-black/80 hover:bg-[#27B8B1] text-white rounded-full flex items-center justify-center transition-all shadow-xl border border-white/20"
               aria-label="Next slide"
             >
-              <ChevronRight className="w-5 h-5" />
+              <ChevronRight className="w-6 h-6" />
             </button>
 
-            {/* Slider Track */}
-            <div
-              ref={scrollRef}
-              className="flex gap-4 sm:gap-5 overflow-x-auto no-scrollbar snap-x snap-mandatory py-4 px-1"
-              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
-            >
-              {tours.map((tour) => (
-                <div
-                  key={tour.id}
-                  className="w-[260px] sm:w-[285px] h-[420px] sm:h-[460px] flex-shrink-0 relative rounded-lg overflow-hidden snap-start group shadow-2xl border border-white/15 transition-all duration-300"
-                >
-                  {/* Background Cover Photo from uploaded assets */}
-                  <img
-                    src={tour.coverImage}
-                    alt={tour.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    loading="lazy"
-                  />
+            {/* Slider Container - Masking overflow */}
+            <div className="overflow-hidden py-4 px-1 rounded-lg">
+              <div
+                className="flex transition-transform duration-600 ease-out"
+                style={{
+                  transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)`,
+                }}
+              >
+                {tours.map((tour) => (
+                  <div
+                    key={tour.id}
+                    className="shrink-0 px-2 sm:px-2.5"
+                    style={{ width: `${100 / itemsPerView}%` }}
+                  >
+                    <div className="h-[420px] sm:h-[450px] relative rounded-lg overflow-hidden group shadow-2xl border border-white/15 transition-all duration-300">
+                      {/* Background Cover Photo */}
+                      <img
+                        src={tour.coverImage}
+                        alt={tour.title}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        loading="lazy"
+                      />
 
-                  {/* Top Right Duration Badge */}
-                  <div className="absolute top-4 right-4 bg-[#10221b]/80 backdrop-blur-sm border border-white/25 px-2.5 py-1 rounded text-white text-[11px] font-semibold uppercase tracking-wider shadow z-20">
-                    {tour.duration}
+                      {/* Top Right Duration Badge */}
+                      <div className="absolute top-4 right-4 bg-[#10221b]/80 backdrop-blur-sm border border-white/25 px-2.5 py-1 rounded text-white text-[11px] font-semibold uppercase tracking-wider shadow z-20">
+                        {tour.duration}
+                      </div>
+
+                      {/* Normal State */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent p-5 sm:p-6 flex flex-col justify-end transition-opacity duration-300 group-hover:opacity-0 pointer-events-none">
+                        <span className="text-[11px] uppercase font-bold tracking-[0.2em] text-[#27B8B1] mb-1 block">
+                          {tour.destinationName}
+                        </span>
+                        <h3 className="text-white font-bold text-base sm:text-lg uppercase tracking-wide leading-tight">
+                          {tour.title}
+                        </h3>
+                      </div>
+
+                      {/* Hover State */}
+                      <div className="absolute inset-0 bg-black/85 backdrop-blur-[2px] p-5 sm:p-6 flex flex-col justify-end text-left opacity-0 group-hover:opacity-100 transition-all duration-300 z-10">
+                        <span className="text-[11px] uppercase font-bold tracking-[0.2em] text-[#27B8B1] mb-1.5 block">
+                          {tour.destinationName}
+                        </span>
+
+                        <h3 className="text-lg sm:text-xl font-bold uppercase text-white leading-tight mb-2 tracking-wide">
+                          {tour.title}
+                        </h3>
+
+                        <p className="text-xs text-gray-200 leading-relaxed mb-3 line-clamp-3">
+                          {tour.description}
+                        </p>
+
+                        <span className="italic text-xs text-[#cfc9be] mb-4 block">
+                          {tour.rating}
+                        </span>
+
+                        <Link
+                          to={tour.destinationLink}
+                          className="w-full py-2.5 px-4 text-center uppercase tracking-[0.15em] font-semibold text-xs border border-white/80 text-white hover:bg-[#27B8B1] hover:border-[#27B8B1] hover:text-[#10221b] transition-all duration-300 shadow-md block rounded-sm"
+                        >
+                          EXPLORE {tour.destinationName}
+                        </Link>
+                      </div>
+                    </div>
                   </div>
+                ))}
+              </div>
+            </div>
 
-                  {/* Normal State */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent p-5 sm:p-6 flex flex-col justify-end transition-opacity duration-300 group-hover:opacity-0 pointer-events-none">
-                    <span className="text-[11px] uppercase font-bold tracking-[0.2em] text-[#27B8B1] mb-1 block">
-                      {tour.destinationName}
-                    </span>
-                    <h3 className="text-white font-bold text-base sm:text-lg uppercase tracking-wide leading-tight">
-                      {tour.title}
-                    </h3>
-                  </div>
-
-                  {/* Hover State */}
-                  <div className="absolute inset-0 bg-black/85 backdrop-blur-[2px] p-5 sm:p-6 flex flex-col justify-end text-left opacity-0 group-hover:opacity-100 transition-all duration-300 z-10">
-                    <span className="text-[11px] uppercase font-bold tracking-[0.2em] text-[#27B8B1] mb-1.5 block">
-                      {tour.destinationName}
-                    </span>
-
-                    <h3 className="text-lg sm:text-xl font-bold uppercase text-white leading-tight mb-2 tracking-wide">
-                      {tour.title}
-                    </h3>
-
-                    <p className="text-xs text-gray-200 leading-relaxed mb-3 line-clamp-3">
-                      {tour.description}
-                    </p>
-
-                    <span className="italic text-xs text-[#cfc9be] mb-4 block">
-                      {tour.rating}
-                    </span>
-
-                    <Link
-                      to={tour.destinationLink}
-                      className="w-full py-2.5 px-4 text-center uppercase tracking-[0.15em] font-semibold text-xs border border-white/80 text-white hover:bg-white hover:text-[#10221b] transition-all duration-300 shadow-md block rounded-sm"
-                    >
-                      EXPLORE {tour.destinationName}
-                    </Link>
-                  </div>
-                </div>
+            {/* Slide Position Indicator Dots */}
+            <div className="flex justify-center items-center gap-2 mt-4">
+              {Array.from({ length: maxIndex + 1 }).map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentIndex(i)}
+                  className={`rounded-full transition-all duration-300 ${
+                    currentIndex === i
+                      ? 'w-7 h-2 bg-[#27B8B1]'
+                      : 'w-2 h-2 bg-white/40 hover:bg-white/70'
+                  }`}
+                  aria-label={`Go to slide ${i + 1}`}
+                />
               ))}
             </div>
+
           </div>
 
         </div>

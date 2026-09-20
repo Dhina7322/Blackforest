@@ -449,88 +449,79 @@ export default function DestinationDetailPage({ forcedSlug }) {
           </svg>
         </div>
 
-        {/* Flock of Flying Birds (as in user Image 4) */}
-        <div className="absolute top-3 sm:top-5 left-1/4 sm:left-1/3 z-10 pointer-events-none opacity-80 select-none">
-          <svg className="w-64 sm:w-80 h-14 sm:h-18" viewBox="0 0 320 70" fill="#1b2a22">
-            {/* Bird 1 */}
-            <path d="M20,35 Q32,24 44,32 Q36,33 32,38 Q28,34 20,35 Z" />
-            {/* Bird 2 */}
-            <path d="M75,20 Q90,7 105,17 Q95,19 90,25 Q85,20 75,20 Z" />
-            {/* Bird 3 (higher center) */}
-            <path d="M140,10 Q158,-5 175,7 Q165,10 158,16 Q150,11 140,10 Z" />
-            {/* Bird 4 */}
-            <path d="M225,25 Q240,13 255,23 Q245,25 240,31 Q235,25 225,25 Z" />
-            {/* Bird 5 (small distant bird) */}
-            <path d="M275,42 Q285,35 295,41 Q288,43 285,47 Q282,43 275,42 Z" />
-            {/* Bird 6 (lower right) */}
-            <path d="M190,48 Q202,39 214,46 Q207,48 202,53 Q197,48 190,48 Z" />
+        {/* Flock of Flying Birds (as in user Image 2) */}
+        <div className="relative z-10 flex justify-center mb-6 pt-4">
+          <svg width="240" height="45" viewBox="0 0 240 45" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-44 sm:w-60 h-auto opacity-75">
+            <path d="M20 22 Q 28 10, 36 22 Q 44 10, 52 22" stroke="#2b3b33" strokeWidth="2.2" strokeLinecap="round" fill="none"/>
+            <path d="M75 16 Q 84 5, 93 16 Q 102 5, 111 16" stroke="#2b3b33" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
+            <path d="M135 12 Q 143 3, 151 12 Q 159 3, 167 12" stroke="#2b3b33" strokeWidth="2.2" strokeLinecap="round" fill="none"/>
+            <path d="M188 20 Q 195 10, 202 20 Q 209 10, 216 20" stroke="#2b3b33" strokeWidth="2.2" strokeLinecap="round" fill="none"/>
           </svg>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            {/* Left Side: Cursive Tagline, Heading, Paragraph, Brand Tag */}
-            <div className="lg:col-span-6 space-y-5">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+            {/* Left Side: Cursive Tagline, Heading, Paragraph */}
+            <div className="lg:col-span-6 space-y-4 text-left">
               <span
-                className="block text-2xl sm:text-3xl text-[#1dc5ce] tracking-wide font-normal"
-                style={{ fontFamily: "'Mansalva', cursive" }}
+                className="text-2xl sm:text-3xl lg:text-[32px] block font-medium tracking-wide"
+                style={{
+                  fontFamily: "var(--font-cursive, 'Caveat', 'Dancing Script', cursive, serif)",
+                  color: "#27B8B1"
+                }}
               >
                 {staticData.tagline || 'Your Island Story Begins Here'}
               </span>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#10221b] leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#10221b] leading-[1.15] font-sans">
                 {staticData.statsHeading || 'Escape to extraordinary islands'}
               </h2>
 
-              <p className="text-gray-600 text-sm sm:text-base leading-relaxed max-w-lg">
+              <p className="text-[#555555] font-light text-sm sm:text-base leading-relaxed max-w-md pt-2">
                 {staticData.statsDesc || 'From secluded beaches to unforgettable adventures, discover island journeys designed around you.'}
               </p>
-
-              {/* Brand Tag #ventura */}
-              <div className="pt-2 flex items-center gap-2 text-sm font-bold text-[#10221b]">
-                <span className="p-1 rounded bg-[#10221b] text-white">
-                  <Hash className="w-3.5 h-3.5" />
-                </span>
-                <span className="tracking-wide lowercase font-sans text-base">ventura</span>
-              </div>
             </div>
 
-            {/* Right Side: 3 Dark Circular Counters with Animated Counting */}
-            <div className="lg:col-span-6 space-y-6">
-              <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 sm:gap-6">
-                {/* Counter Circle 1: 50+ */}
-                <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[#10221b] text-white flex flex-col items-center justify-center text-center p-2 shadow-xl border-2 border-white/10 transition-transform hover:scale-105">
-                  <span className="text-xl sm:text-2xl font-bold font-serif text-white">
+            {/* Right Side: Clean Stat Numbers without Dark Circle Badges */}
+            <div className="lg:col-span-6 space-y-6 pt-2">
+              <div className="grid grid-cols-3 gap-4 sm:gap-6 items-start">
+                
+                {/* Stat 1: 50+ */}
+                <div className="text-left space-y-1">
+                  <span className="text-3xl sm:text-4xl lg:text-[46px] font-extrabold text-[#10221b] leading-none block">
                     <AnimatedCounter end={50} suffix="+" />
                   </span>
-                  <span className="text-[10px] sm:text-[11px] font-medium text-gray-200 mt-0.5 leading-tight">
-                    Island Destinations
+                  <span className="text-sm sm:text-base font-bold text-[#10221b] leading-snug block">
+                    Island <br />
+                    Destinations
                   </span>
                 </div>
 
-                {/* Counter Circle 2: 25 */}
-                <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[#10221b] text-white flex flex-col items-center justify-center text-center p-2 shadow-xl border-2 border-white/10 transition-transform hover:scale-105">
-                  <span className="text-xl sm:text-2xl font-bold font-serif text-white">
+                {/* Stat 2: 25 */}
+                <div className="text-left space-y-1">
+                  <span className="text-3xl sm:text-4xl lg:text-[46px] font-extrabold text-[#10221b] leading-none block">
                     <AnimatedCounter end={25} />
                   </span>
-                  <span className="text-[10px] sm:text-[11px] font-medium text-gray-200 mt-0.5 leading-tight">
+                  <span className="text-sm sm:text-base font-bold text-[#10221b] leading-snug block">
                     Countries
                   </span>
                 </div>
 
-                {/* Counter Circle 3: 150+ */}
-                <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[#10221b] text-white flex flex-col items-center justify-center text-center p-2 shadow-xl border-2 border-white/10 transition-transform hover:scale-105">
-                  <span className="text-xl sm:text-2xl font-bold font-serif text-white">
+                {/* Stat 3: 150+ */}
+                <div className="text-left space-y-1">
+                  <span className="text-3xl sm:text-4xl lg:text-[46px] font-extrabold text-[#10221b] leading-none block">
                     <AnimatedCounter end={150} suffix="+" />
                   </span>
-                  <span className="text-[10px] sm:text-[11px] font-medium text-gray-200 mt-0.5 leading-tight">
-                    Tailor-Made Journeys
+                  <span className="text-sm sm:text-base font-bold text-[#10221b] leading-snug block">
+                    Tailor-Made <br />
+                    Journeys
                   </span>
                 </div>
+
               </div>
 
-              {/* Sub-note text from Image 4 */}
-              <p className="text-xs text-gray-500 leading-relaxed max-w-md italic">
+              {/* Sub-note text */}
+              <p className="text-xs sm:text-[13px] text-gray-500 font-light leading-relaxed pt-4 border-t border-gray-200/80 italic max-w-lg">
                 For Blackforest Holidays, I recommend &ldquo;Curated Journeys&rdquo; instead of &ldquo;Tours&rdquo; because it sounds more premium and luxurious.
               </p>
             </div>
