@@ -172,7 +172,7 @@ export default function CoachTourPage() {
                 {packages.slice(activeIdx, activeIdx + 3).map((pkg, idx) => (
                   <Link 
                     key={pkg.id} 
-                    to={`/coach-tour/coach-tour-details?tour=${pkg.id}`}
+                    to="/coach-tour/coach-tour-details"
                     className="relative rounded-3xl overflow-hidden shadow-lg group cursor-pointer bg-[#10221b] h-[400px] sm:h-[480px] transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border border-gray-100 block"
                   >
                     {/* Full Card Image */}
@@ -213,6 +213,21 @@ export default function CoachTourPage() {
               </button>
             </div>
 
+          </div>
+
+          {/* Bottom Callout to Multi-Search Details */}
+          <div className="mt-12 pt-8 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+            <div>
+              <h4 className="text-xl font-bold text-[#10221b] font-serif">Looking for a specific route or departure date?</h4>
+              <p className="text-gray-500 text-sm font-light">Use our interactive Multi-Search tool to explore over 1,000+ guided coach itineraries across Europe and worldwide.</p>
+            </div>
+            <Link
+              to="/coach-tour/coach-tour-details"
+              className="px-8 py-3.5 rounded-full bg-[#5e963b] hover:bg-[#10221b] text-white text-xs uppercase font-bold tracking-widest transition-all duration-300 shadow-md hover:shadow-xl shrink-0 flex items-center gap-2"
+            >
+              <span>Explore All Coach Tours</span>
+              <ChevronRight className="w-4 h-4" />
+            </Link>
           </div>
 
         </div>
