@@ -3,30 +3,34 @@ import React from 'react';
 export default function AboutMemoriesSection() {
   return (
     <section className="relative py-16 sm:py-20 lg:py-24 bg-white overflow-hidden z-10">
-      {/* ── Background Mountain / Forest Silhouettes ── */}
-      <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.22] flex justify-between items-end overflow-hidden">
-        {/* Left mountain graphic */}
-        <div className="w-[320px] sm:w-[480px] h-[340px] -translate-x-12 translate-y-6">
-          <svg viewBox="0 0 500 350" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full object-cover">
-            <path d="M0 350L120 180L220 270L360 90L500 350H0Z" fill="#88a598" opacity="0.45" />
-            <path d="M40 350L180 140L300 240L420 80L500 350H40Z" fill="#587c6e" opacity="0.3" />
-            <image href="/pine-forest.webp" x="0" y="240" width="500" height="110" preserveAspectRatio="none" opacity="0.6" />
-          </svg>
-        </div>
+      {/* ── Background Mountain / Forest Silhouettes matching Image 3 ── */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none">
+        {/* Mountain contour outline across the section */}
+        <img 
+          src="/assets/images/home-intro-bg_d266ed.jpg" 
+          alt="" 
+          aria-hidden="true" 
+          className="absolute inset-0 w-full h-full object-cover object-top opacity-35"
+        />
 
-        {/* Right mountain graphic */}
-        <div className="w-[320px] sm:w-[480px] h-[340px] translate-x-12 translate-y-6">
-          <svg viewBox="0 0 500 350" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full object-cover scale-x-[-1]">
-            <path d="M0 350L120 180L220 270L360 90L500 350H0Z" fill="#88a598" opacity="0.45" />
-            <path d="M40 350L180 140L300 240L420 80L500 350H40Z" fill="#587c6e" opacity="0.3" />
-            <image href="/pine-forest.webp" x="0" y="240" width="500" height="110" preserveAspectRatio="none" opacity="0.6" />
-          </svg>
+        {/* Mountain silhouette with pine trees on the left */}
+        <div 
+          className="absolute bottom-0 -left-10 sm:-left-6 w-[340px] sm:w-[480px] lg:w-[560px] h-[380px] sm:h-[480px] opacity-25 hidden sm:block"
+          style={{
+            clipPath: "polygon(0% 100%, 0% 32%, 12% 28%, 22% 16%, 32% 12%, 46% 22%, 58% 24%, 72% 38%, 88% 44%, 100% 100%)"
+          }}
+        >
+          <img 
+            src="/assets/images/mask-pine.jpg" 
+            alt="" 
+            aria-hidden="true"
+            className="w-full h-full object-cover"
+          />
         </div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-
         {/* Main Content: Card on Left + Map Image on Right */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
@@ -37,8 +41,8 @@ export default function AboutMemoriesSection() {
               You create the memories.
             </h3>
             
-            {/* Golden underline */}
-            <div className="w-14 h-[3px] bg-[#c8860b] mb-6 rounded-full" />
+            {/* Teal/cyan underline matching Image 3 */}
+            <div className="w-16 h-[3px] bg-[#27B8B1] mb-6 rounded-full" />
 
             <div className="space-y-4 text-[#555555] text-[14.5px] sm:text-[15px] leading-[1.75] font-normal">
               <p>

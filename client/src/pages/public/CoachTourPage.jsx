@@ -169,11 +169,11 @@ export default function CoachTourPage() {
 
               {/* Cards Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
-                {packages.slice(activeIdx, activeIdx + 3).map((pkg) => (
-                  <div 
+                {packages.slice(activeIdx, activeIdx + 3).map((pkg, idx) => (
+                  <Link 
                     key={pkg.id} 
-                    onClick={() => openEnquiryModal({ destination: pkg.title })}
-                    className="relative rounded-3xl overflow-hidden shadow-lg group cursor-pointer bg-[#10221b] h-[400px] sm:h-[480px] transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border border-gray-100"
+                    to={`/coach-tour/coach-tour-details?tour=${pkg.id}`}
+                    className="relative rounded-3xl overflow-hidden shadow-lg group cursor-pointer bg-[#10221b] h-[400px] sm:h-[480px] transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border border-gray-100 block"
                   >
                     {/* Full Card Image */}
                     <img 
@@ -187,19 +187,19 @@ export default function CoachTourPage() {
                     
                     {/* Centered Content at Bottom */}
                     <div className="absolute inset-x-0 bottom-0 p-6 flex flex-col items-center text-center">
-                      <h3 className="font-bold text-white text-xl sm:text-2xl font-sans mb-1.5 drop-shadow-md group-hover:-translate-y-2 transition-transform duration-300">
+                      <h3 className="font-bold text-white text-xl sm:text-2xl font-sans mb-1.5 drop-shadow-md group-hover:-translate-y-1 transition-transform duration-300">
                         {pkg.title}
                       </h3>
-                      <p className="text-gray-300 text-xs sm:text-sm font-light tracking-wider group-hover:-translate-y-2 transition-transform duration-300 delay-75 mb-3">
+                      <p className="text-gray-300 text-xs sm:text-sm font-light tracking-wider group-hover:-translate-y-1 transition-transform duration-300 delay-75 mb-3">
                         {pkg.duration}
                       </p>
-                      {/* Explore Tour Button (Visible on Hover) */}
-                      <button className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 px-5 py-2.5 rounded-full bg-[#10221b]/80 border border-[#27B8B1] text-white text-[10px] sm:text-xs font-bold uppercase tracking-widest flex items-center gap-2 backdrop-blur-md hover:bg-[#27B8B1]">
+                      {/* Explore Tour Button matching Image 1 */}
+                      <span className="transform transition-all duration-300 px-5 py-2 rounded-full bg-[#10221b]/80 border border-[#27B8B1] text-white text-[10px] sm:text-xs font-bold uppercase tracking-widest flex items-center gap-2 backdrop-blur-md group-hover:bg-[#27B8B1] group-hover:border-[#27B8B1] shadow-lg">
                         <span>Explore Tour</span>
                         <ChevronRight className="w-3.5 h-3.5" />
-                      </button>
+                      </span>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
 

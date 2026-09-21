@@ -26,26 +26,24 @@ export default function ExpertiseSection() {
     <section className="py-20 bg-[#fbfaf8] text-center border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Title Area */}
+        {/* Title Area matching Image 2 */}
         <div className="mb-12">
-          <div className="flex items-center justify-center gap-2 text-[#c59b27] font-bold text-xs uppercase tracking-[0.25em] mb-2">
-            <span className="w-1.5 h-1.5 bg-[#c59b27] rotate-45 transform"></span>
-            OUR EXPERTISE
-            <span className="w-1.5 h-1.5 bg-[#c59b27] rotate-45 transform"></span>
+          <div className="flex items-center justify-center gap-2 text-[#c59b27] font-bold text-xs sm:text-sm uppercase tracking-[0.25em] mb-3">
+            <span>◆</span>
+            <span>OUR EXPERTISE</span>
+            <span>◆</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#10221b] mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#10221b] mb-4 tracking-tight font-sans">
             Knowledge Behind Every Journey
           </h2>
-          <p className="text-gray-500 text-sm sm:text-base max-w-2xl mx-auto font-normal leading-relaxed">
+          <p className="text-[#555555] text-sm sm:text-[15px] max-w-2xl mx-auto font-normal leading-relaxed">
             Our destination specialists continually expand their knowledge through tourism-board programmes, industry training and global certifications to design journeys you can trust.
           </p>
 
-          {/* Golden Center Flourish Ornament */}
-          <div className="flex justify-center mt-6">
-            <svg width="40" height="20" viewBox="0 0 40 20" fill="none" stroke="#c59b27" strokeWidth="1.5">
-              <path d="M20 10 C 14 2, 4 2, 4 10 C 4 18, 14 18, 20 10 Z" fill="none"/>
-              <path d="M20 10 C 26 2, 36 2, 36 10 C 36 18, 26 18, 20 10 Z" fill="none"/>
-              <circle cx="20" cy="10" r="2" fill="#c59b27" />
+          {/* Golden Infinity Loop Ornament matching Image 2 */}
+          <div className="flex justify-center mt-5">
+            <svg width="44" height="22" viewBox="0 0 44 22" fill="none" stroke="#c59b27" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M22 11C18 3 6 3 6 11C6 19 18 19 22 11C26 3 38 3 38 11C38 19 26 19 22 11Z" />
             </svg>
           </div>
         </div>

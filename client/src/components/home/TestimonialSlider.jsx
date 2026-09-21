@@ -71,15 +71,15 @@ export default function TestimonialSlider() {
     <section id="testimonials" className="py-20 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Title matching screenshot */}
-        <div className="text-center mb-14">
+        {/* Title matching Image 1 */}
+        <div className="text-center mb-12 sm:mb-14">
           <span 
-            className="text-2xl sm:text-3xl block mb-2 font-['Caveat',cursive,serif]"
-            style={{ color: "#27B8B1" }}
+            className="text-2xl sm:text-3xl md:text-[34px] block mb-2 text-[#27B8B1] tracking-wide"
+            style={{ fontFamily: "'Mansalva', cursive, sans-serif" }}
           >
             Client Testimonial
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-[42px] font-bold text-[#7cb342] leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#7cb342] leading-tight font-sans">
             Savoring your Taste Buds
           </h2>
         </div>

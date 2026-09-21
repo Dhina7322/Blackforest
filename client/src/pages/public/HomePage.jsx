@@ -7,6 +7,7 @@ import ValuePropsSection from '../../components/home/ValuePropsSection';
 import StatsSection from '../../components/home/StatsSection';
 import IndiaToursSection from '../../components/home/IndiaToursSection';
 import TestimonialSlider from '../../components/home/TestimonialSlider';
+import ExpertiseSection from '../../components/home/ExpertiseSection';
 import JournalSection from '../../components/home/JournalSection';
 
 export default function HomePage() {
@@ -24,19 +25,22 @@ export default function HomePage() {
       {/* 4. International Tour Packages */}
       <InternationalToursSection />
 
-      {/* 4. Services / Value Proposition */}
+      {/* 5. Services / Value Proposition */}
       <ValuePropsSection />
       
-      {/* 5. Statistics Circles */}
+      {/* 6. Statistics Circles */}
       <StatsSection />
 
-      {/* 6. Indian Tour Packages */}
+      {/* 7. Indian Tour Packages */}
       <IndiaToursSection />
 
-      {/* 7. Testimonials */}
+      {/* 8. Testimonials */}
       <TestimonialSlider />
 
-      {/* 8. Travel Journal */}
+      {/* 9. Expertise Section */}
+      <ExpertiseSection />
+
+      {/* 10. Travel Journal */}
       <JournalSection />
     </div>
   );

@@ -21,6 +21,7 @@ import ExperiencesPage from './pages/public/ExperiencesPage';
 import ConciergePage from './pages/public/ConciergePage';
 import CorporateTravelPage from './pages/public/CorporateTravelPage';
 import CoachTourPage from './pages/public/CoachTourPage';
+import CoachTourDetailPage from './pages/public/CoachTourDetailPage';
 import AboutPage from './pages/public/AboutPage';
 import ContactPage from './pages/public/ContactPage';
 import JournalPage from './pages/public/JournalPage';
@@ -79,6 +80,9 @@ export default function App() {
                 {/* Group & Corporate */}
                 <Route path="/corporate-travel" element={<CorporateTravelPage />} />
                 <Route path="/coach-tour" element={<CoachTourPage />} />
+                <Route path="/coach-tour/coach-tour-details" element={<CoachTourDetailPage />} />
+                <Route path="/coach-tour-details" element={<CoachTourDetailPage />} />
+                <Route path="/coach-tour/:id" element={<CoachTourDetailPage />} />
 
                 {/* Blog Pages (Direct display matching reference design) */}
                 <Route path="/blog" element={<ArticleDetailPage forcedSlug="safety-measures-for-safe-trekking-in-waterfalls" />} />
