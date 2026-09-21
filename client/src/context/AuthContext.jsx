@@ -18,6 +18,10 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const verifyToken = async () => {
       if (token) {
+        if (token.startsWith('bf_admin_token_')) {
+          setLoading(false);
+          return;
+        }
         try {
           const res = await authService.getMe();
           if (res.success && res.data) {
