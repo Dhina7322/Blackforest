@@ -26,15 +26,6 @@ export default function AboutMemoriesSection() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Top Quote in Mansalva cursive font */}
-        <div className="text-center mb-10 sm:mb-14">
-          <h2
-            className="text-2xl sm:text-3xl md:text-4xl text-[#23b0b2] tracking-wide"
-            style={{ fontFamily: "'Mansalva', cursive, sans-serif" }}
-          >
-            Travel is the only thing you buy that makes you richer
-          </h2>
-        </div>
 
         {/* Main Content: Card on Left + Map Image on Right */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
