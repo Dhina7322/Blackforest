@@ -172,50 +172,46 @@ export default function CruisesPage() {
       </section>
 
       {/* 3. Carousel Section (Matching Screenshot) */}
-      <section className="relative py-10 sm:py-14 bg-white overflow-hidden group">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex items-center justify-between gap-3 sm:gap-6 lg:gap-8">
-            <button
-              onClick={handlePrev}
-              className="z-20 flex items-center justify-center text-[#10221b] hover:text-[#5e963b] transition-all transform hover:scale-110 hover:-translate-x-1 shrink-0 cursor-pointer p-1 sm:p-2"
-              aria-label="Previous image"
-            >
-              <svg viewBox="0 0 100 40" className="w-12 sm:w-16 lg:w-20 h-6 sm:h-8 lg:h-10 stroke-current fill-none" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M90 20 Q 55 18 10 20" />
-                <path d="M 12 20 Q 25 12 30 7" />
-                <path d="M 12 20 Q 25 28 30 33" />
-              </svg>
-            </button>
+      <section className="relative py-8 sm:py-12 bg-white group">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <button
+            onClick={handlePrev}
+            className="absolute -left-3 sm:-left-8 md:-left-12 lg:-left-16 xl:-left-20 top-1/2 -translate-y-1/2 z-20 text-[#10221b] hover:text-[#5e963b] transition-all transform hover:scale-110 hover:-translate-x-1 cursor-pointer p-1 sm:p-2"
+            aria-label="Previous image"
+          >
+            <svg viewBox="0 0 100 40" className="w-10 sm:w-14 lg:w-16 h-5 sm:h-7 lg:h-8 stroke-current fill-none" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M90 20 Q 55 18 10 20" />
+              <path d="M 12 20 Q 25 12 30 7" />
+              <path d="M 12 20 Q 25 28 30 33" />
+            </svg>
+          </button>
 
-            <div className="flex-1 w-full overflow-hidden">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 w-full">
-                {getVisibleImages().map((img, idx) => (
-                  <div
-                    key={`${currentSlide}-${idx}`}
-                    className="w-full aspect-square overflow-hidden shadow-md bg-white group transition-all duration-300"
-                  >
-                    <img
-                      src={img}
-                      alt={`Cruise experience ${idx + 1}`}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 block"
-                    />
-                  </div>
-                ))}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 w-full">
+            {getVisibleImages().map((img, idx) => (
+              <div
+                key={`${currentSlide}-${idx}`}
+                className="w-full aspect-square overflow-hidden shadow-md bg-white group transition-all duration-300"
+              >
+                <img
+                  src={img}
+                  alt={`Cruise experience ${idx + 1}`}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 block"
+                />
               </div>
-            </div>
-
-            <button
-              onClick={handleNext}
-              className="z-20 flex items-center justify-center text-[#10221b] hover:text-[#5e963b] transition-all transform hover:scale-110 hover:translate-x-1 shrink-0 cursor-pointer p-1 sm:p-2"
-              aria-label="Next image"
-            >
-              <svg viewBox="0 0 100 40" className="w-12 sm:w-16 lg:w-20 h-6 sm:h-8 lg:h-10 stroke-current fill-none" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M10 20 Q 45 22 90 20" />
-                <path d="M 88 20 Q 75 12 70 7" />
-                <path d="M 88 20 Q 75 28 70 33" />
-              </svg>
-            </button>
+            ))}
           </div>
+
+          <button
+            onClick={handleNext}
+            className="absolute -right-3 sm:-right-8 md:-right-12 lg:-right-16 xl:-right-20 top-1/2 -translate-y-1/2 z-20 text-[#10221b] hover:text-[#5e963b] transition-all transform hover:scale-110 hover:translate-x-1 cursor-pointer p-1 sm:p-2"
+            aria-label="Next image"
+          >
+            <svg viewBox="0 0 100 40" className="w-10 sm:w-14 lg:w-16 h-5 sm:h-7 lg:h-8 stroke-current fill-none" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M10 20 Q 45 22 90 20" />
+              <path d="M 88 20 Q 75 12 70 7" />
+              <path d="M 88 20 Q 75 28 70 33" />
+            </svg>
+          </button>
         </div>
       </section>
 
