@@ -8,7 +8,7 @@ export default function Footer() {
   const { settings } = useSettings();
   const location = useLocation();
 
-  const isDestinationPage = 
+  const isDestinationPage =
     location.pathname.startsWith('/destinations') ||
     location.pathname === '/asian-countries' ||
     ['/africa', '/america', '/australia', '/europe', '/indian-ocean', '/indian_ocean', '/middle-east', '/middle_east_countries', '/south-asia'].includes(location.pathname);
@@ -69,24 +69,26 @@ export default function Footer() {
               {/* Email */}
               <div className="flex items-center gap-3.5 text-sm sm:text-[15px] text-gray-200 pt-1">
                 <Mail className="w-4 h-4 text-white shrink-0" />
-                <a
+                <p><a
                   href="mailto:info@blackforestholidays.com"
                   className="hover:text-[#27B8B1] transition-colors font-light"
                 >
                   info@blackforestholidays.com
-                </a>
+                </a></p>
               </div>
 
               {/* Phone (Formatted on two lines) */}
               <div className="flex items-start gap-3.5 text-sm sm:text-[15px] text-gray-200 pt-1">
                 <Phone className="w-4 h-4 text-white shrink-0 mt-1" />
                 <div className="font-light">
-                  <a href="tel:+919742877700" className="hover:text-[#27B8B1] transition-colors block">
-                    +91 9742877700 /
-                  </a>
-                  <a href="tel:9742977700" className="hover:text-[#27B8B1] transition-colors block">
-                    9742977700
-                  </a>
+                  <p>
+                    <a href="tel:+919742877700" className="hover:text-[#27B8B1] transition-colors block">
+                      +91 9742877700 /
+                    </a>
+                    <a href="tel:9742977700" className="hover:text-[#27B8B1] transition-colors block">
+                      9742977700
+                    </a>
+                  </p>
                 </div>
               </div>
 
@@ -158,6 +160,32 @@ export default function Footer() {
                   <p>Coimbatore – 641012</p>
                 </div>
               </div>
+
+              {/* Email */}
+              <div className="flex items-center gap-3.5 text-sm sm:text-[15px] text-gray-200 pt-1">
+                <Mail className="w-4 h-4 text-white shrink-0" />
+                <p><a
+                  href="mailto:info@blackforestholidays.com"
+                  className="hover:text-[#27B8B1] transition-colors font-light"
+                >
+                  info@blackforestholidays.com
+                </a></p>
+              </div>
+
+              {/* Phone (Formatted on two lines) */}
+              <div className="flex items-start gap-3.5 text-sm sm:text-[15px] text-gray-200 pt-1">
+                <Phone className="w-4 h-4 text-white shrink-0 mt-1" />
+                <div className="font-light">
+                  <p>
+                    <a href="tel:+919742877700" className="hover:text-[#27B8B1] transition-colors block">
+                      +91 9742877700 /
+                    </a>
+                    <a href="tel:9742977700" className="hover:text-[#27B8B1] transition-colors block">
+                      9742977700
+                    </a>
+                  </p>
+                </div>
+              </div>
             </div>
 
             {/* Column 3: Useful Links */}
@@ -165,43 +193,46 @@ export default function Footer() {
               <h3 className="text-2xl sm:text-[26px] font-bold text-white font-sans tracking-wide">
                 Useful Links
               </h3>
-              <ul className="space-y-2.5 text-sm sm:text-[15px] text-gray-300 font-light">
-                <li>
-                  <Link to="/about" className="hover:text-[#27B8B1] transition-colors">
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/journal" className="hover:text-[#27B8B1] transition-colors">
-                    Travel Journal
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/work-with-us" className="hover:text-[#27B8B1] transition-colors">
-                    Work With Us
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/privacy-policy" className="hover:text-[#27B8B1] transition-colors">
-                    Privacy Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/cancellation-refund-policy" className="hover:text-[#27B8B1] transition-colors">
-                    Cancellation & Refund Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/terms-conditions" className="hover:text-[#27B8B1] transition-colors">
-                    Terms & Conditions
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/contact" className="hover:text-[#27B8B1] transition-colors">
-                    Contact Us
-                  </Link>
-                </li>
-              </ul>
+              <p>
+                <ul className="space-y-2.5 text-sm sm:text-[15px] text-gray-300 font-light">
+                  <li>
+                    <Link to="/about" className="hover:text-[#27B8B1] transition-colors">
+                      About Us
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/journal" className="hover:text-[#27B8B1] transition-colors">
+                      Travel Journal
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/work-with-us" className="hover:text-[#27B8B1] transition-colors">
+                      Work With Us
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/privacy-policy" className="hover:text-[#27B8B1] transition-colors">
+                      Privacy Policy
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/cancellation-refund-policy" className="hover:text-[#27B8B1] transition-colors">
+                      Cancellation & Refund Policy
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/terms-conditions" className="hover:text-[#27B8B1] transition-colors">
+                      Terms & Conditions
+                    </Link>
+                  </li>
+                  <li><p>
+                    <Link to="/contact" className="hover:text-[#27B8B1] transition-colors">
+                      Contact Us
+                    </Link>
+                  </p>
+                  </li>
+                </ul>
+              </p>
             </div>
 
           </div>
