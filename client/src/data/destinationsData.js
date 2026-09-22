@@ -84,7 +84,7 @@ export const allDestinationsData = {
     },
     "parallaxBanner": {
       "eyebrow": "Start a trip now",
-      "title": "Discover India Through a Lens of Luxury",
+      "title": "Discover the World Through a Lens of Luxury",
       "subtitle": "Everything you need for an adventure.",
       "buttonText": "CONTACT US",
       "buttonLink": "/contact",
@@ -259,7 +259,7 @@ export const allDestinationsData = {
     },
     "parallaxBanner": {
       "eyebrow": "Start a trip now",
-      "title": "Discover India Through a Lens of Luxury",
+      "title": "Discover the World Through a Lens of Luxury",
       "subtitle": "Everything you need for an adventure.",
       "buttonText": "CONTACT US",
       "buttonLink": "/contact",
@@ -450,7 +450,7 @@ export const allDestinationsData = {
     },
     "parallaxBanner": {
       "eyebrow": "Start a trip now",
-      "title": "Discover India Through a Lens of Luxury",
+      "title": "Discover the World Through a Lens of Luxury",
       "subtitle": "Everything you need for an adventure.",
       "buttonText": "CONTACT US",
       "buttonLink": "/contact",
@@ -1105,7 +1105,7 @@ export const allDestinationsData = {
     },
     "parallaxBanner": {
       "eyebrow": "Start a trip now",
-      "title": "Discover India Through a Lens of Luxury",
+      "title": "Discover the World Through a Lens of Luxury",
       "subtitle": "Everything you need for an adventure.",
       "buttonText": "CONTACT US",
       "buttonLink": "/contact",

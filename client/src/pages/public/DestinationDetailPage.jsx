@@ -252,7 +252,7 @@ export default function DestinationDetailPage({ forcedSlug }) {
                 {intro.title}
               </h2>
               <div className="w-16 h-[3px] bg-[#27B8B1] mb-6 rounded-full"></div>
-              
+
               <div className="text-[#555555] font-light text-[20px] leading-relaxed space-y-4 font-sans">
                 <p>{intro.description}</p>
               </div>
@@ -310,11 +310,10 @@ export default function DestinationDetailPage({ forcedSlug }) {
                   className="flex-1 relative py-6 sm:py-7 px-3 sm:px-6 text-center cursor-pointer transition-colors duration-200 group focus:outline-none"
                 >
                   <span
-                    className={`block text-base sm:text-lg md:text-[20px] transition-colors leading-tight ${
-                      isActive
-                        ? 'text-[#10221b] font-bold drop-shadow-sm'
-                        : 'text-[#10221b]/90 hover:text-[#10221b] font-semibold'
-                    }`}
+                    className={`block text-base sm:text-lg md:text-[20px] transition-colors leading-tight ${isActive
+                      ? 'text-[#10221b] font-bold drop-shadow-sm'
+                      : 'text-[#10221b]/90 hover:text-[#10221b] font-semibold'
+                      }`}
                     style={{ fontFamily: "'Palanquin Dark', sans-serif" }}
                   >
                     {tab.label}
@@ -459,7 +458,7 @@ export default function DestinationDetailPage({ forcedSlug }) {
             {parallaxBanner?.eyebrow || 'START A TRIP NOW'}
           </span>
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-sans font-bold text-white mb-4 leading-tight drop-shadow-md">
-            {parallaxBanner?.title || 'Discover India Through a Lens of Luxury'}
+            {parallaxBanner?.title || 'Discover the World Through a Lens of Luxury'}
           </h2>
           <p className="text-base sm:text-lg text-gray-200 mb-8 font-sans italic tracking-wide">
             {parallaxBanner?.subtitle || 'Everything you need for an adventure.'}
@@ -624,7 +623,7 @@ export default function DestinationDetailPage({ forcedSlug }) {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-            
+
             {/* Left Side: Cursive Eyebrow, Heading, Paragraph */}
             <div className="lg:col-span-6 space-y-4 text-left">
               <span
@@ -646,7 +645,7 @@ export default function DestinationDetailPage({ forcedSlug }) {
             {/* Right Side: Clean Stat Numbers */}
             <div className="lg:col-span-6 space-y-6 pt-2">
               <div className="grid grid-cols-3 gap-4 sm:gap-6 items-start">
-                
+
                 {/* Stat 1: 500+ */}
                 <div className="text-left space-y-1">
                   <span className="text-3xl sm:text-4xl lg:text-[46px] font-extrabold text-[#10221b] leading-none block font-sans">
@@ -686,12 +685,12 @@ export default function DestinationDetailPage({ forcedSlug }) {
                 For BlackForest Holidays, I recommend &ldquo;Curated Journeys&rdquo; instead of &ldquo;Tours&rdquo; because it sounds more premium and luxurious.
               </p>
 
-              {/* Tag #ventura */}
+              {/* Tag #ventura
               <div className="pt-2">
                 <span className="text-xs font-bold uppercase tracking-widest text-[#27B8B1]">
                   #ventura
                 </span>
-              </div>
+              </div> */}
             </div>
 
           </div>

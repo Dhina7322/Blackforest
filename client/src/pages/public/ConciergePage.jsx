@@ -535,7 +535,7 @@ export default function ConciergePage() {
 
       {/* 4. Why Choose Us */}
       {data.whyChooseUs && (
-        <section className="py-24 bg-white relative z-10 overflow-hidden">
+        <section className="py-7 bg-white relative z-10 overflow-hidden">
           {data.whyChooseUs.bgImage && (
             <div className="absolute right-0 top-0 bottom-0 w-72 md:w-96 pointer-events-none opacity-25 z-0 overflow-hidden">
               <img
@@ -557,7 +557,7 @@ export default function ConciergePage() {
               {data.whyChooseUs.heading}
             </h2>
             <div className="w-16 h-[3px] bg-[#27B8B1] mb-12 rounded-full" />
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 max-w-4xl">
+            <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-10 max-w-full">
               {data.whyChooseUs.features.map((f, idx) => (
                 <div key={idx}>
                   <h4 className="text-[19px] sm:text-[20px] font-bold text-[#10221b] mb-2 font-sans">
