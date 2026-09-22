@@ -57,14 +57,18 @@ export default function App() {
                 <Route path="/destinations" element={<DestinationsPage />} />
                 <Route path="/destinations/asian-countries" element={<AsianCountriesPage />} />
                 <Route path="/destinations/:slug" element={<DestinationDetailPage />} />
-                <Route path="/africa" element={<DestinationDetailPage />} />
-                <Route path="/america" element={<DestinationDetailPage />} />
+                <Route path="/africa" element={<DestinationDetailPage forcedSlug="africa" />} />
+                <Route path="/america" element={<DestinationDetailPage forcedSlug="america" />} />
                 <Route path="/asian-countries" element={<AsianCountriesPage />} />
-                <Route path="/australia" element={<DestinationDetailPage />} />
-                <Route path="/europe" element={<DestinationDetailPage />} />
-                <Route path="/indian-ocean" element={<DestinationDetailPage />} />
-                <Route path="/middle-east" element={<DestinationDetailPage />} />
-                <Route path="/south-asia" element={<DestinationDetailPage />} />
+                <Route path="/australia" element={<DestinationDetailPage forcedSlug="australia" />} />
+                <Route path="/europe" element={<DestinationDetailPage forcedSlug="europe" />} />
+                <Route path="/indian-ocean" element={<DestinationDetailPage forcedSlug="indian-ocean" />} />
+                <Route path="/indian_ocean" element={<DestinationDetailPage forcedSlug="indian-ocean" />} />
+                <Route path="/destinations/indian_ocean" element={<DestinationDetailPage forcedSlug="indian-ocean" />} />
+                <Route path="/middle-east" element={<DestinationDetailPage forcedSlug="middle-east" />} />
+                <Route path="/middle_east_countries" element={<DestinationDetailPage forcedSlug="middle-east" />} />
+                <Route path="/destinations/middle_east_countries" element={<DestinationDetailPage forcedSlug="middle-east" />} />
+                <Route path="/south-asia" element={<DestinationDetailPage forcedSlug="south-asia" />} />
 
                 {/* Tours */}
                 <Route path="/international-tours" element={<ToursPage defaultCategory="international" />} />

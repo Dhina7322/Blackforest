@@ -1,5 +1,4 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { MapPin, Mail, Phone } from 'lucide-react';
 import { useSettings } from '../../context/SiteSettingsContext';
 import ExpertiseSection from '../home/ExpertiseSection';
@@ -7,14 +6,20 @@ import FaqSection from '../common/FaqSection';
 
 export default function Footer() {
   const { settings } = useSettings();
+  const location = useLocation();
+
+  const isDestinationPage = 
+    location.pathname.startsWith('/destinations') ||
+    location.pathname === '/asian-countries' ||
+    ['/africa', '/america', '/australia', '/europe', '/indian-ocean', '/indian_ocean', '/middle-east', '/middle_east_countries', '/south-asia'].includes(location.pathname);
 
   const logo = settings?.logo || '/assets/images/white_logo.png';
   const siteName = settings?.siteName || 'BlackForest Holidays';
 
   return (
     <>
-      {/* Global FAQ Section for all pages */}
-      <FaqSection />
+      {/* Global FAQ Section for all pages (suppressed on destination pages which have their own dedicated Quick Questions section) */}
+      {!isDestinationPage && <FaqSection />}
 
       {/* Global Expertise Section (Knowledge Behind Every Journey) */}
       <ExpertiseSection />

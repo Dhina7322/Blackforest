@@ -1,506 +1,1193 @@
 // Comprehensive destinations data for Blackforest Holidays
-// Matches exact content, online images, tabs, and flip-cards from blackforestholidays.com
+// Extracted directly from live WordPress / Elementor pages on blackforestholidays.com
 
 export const allDestinationsData = {
-  africa: {
-    name: 'Africa',
-    slug: 'africa',
-    heroImage: 'https://blackforestholidays.com/wp-content/uploads/2026/08/ChatGPT-Image-Aug-8-2026-11_48_04-PM.png',
-    tagline: 'Untamed Wilderness & Safaris',
-    statsHeading: 'Escape to extraordinary wild frontiers',
-    statsDesc: 'From untamed savannahs to secluded coastal lagoons, discover safari journeys designed around you.',
-    intro: {
-      title: "Luxury Escapes Across Africa's Untamed Wonders",
-      description: "Discover the diverse beauty of Africa with the best travel agency for Africa, where every destination offers a unique story waiting to be explored. From the vibrant cities and scenic coastlines of South Africa to the iconic wildlife safaris of Kenya and Tanzania, experience nature in its purest form. Step into history in Egypt’s ancient wonders, wander through Morocco’s colorful souks, or unwind in the tropical paradise of Mauritius and Seychelles. Explore the dramatic landscapes of Namibia, the rich wildlife of Botswana, the serene hills of Rwanda, and the majestic Victoria Falls in Zimbabwe. With expertly crafted journeys and personalized experiences, the best travel agency for Africa helps you discover the perfect blend of adventure, culture, and luxury like nowhere else.",
-      img1: '/assets/images/hendrik-cornelissen-qs4E9t0hJc0-unsplash-scaled.jpg',
-      img2: '/assets/images/ahmed-shabana-ADa9bb3tqR4-unsplash-scaled.jpg'
+  "africa": {
+    "name": "Africa",
+    "slug": "africa",
+    "heroImage": "https://blackforestholidays.com/wp-content/uploads/2026/08/ChatGPT-Image-Aug-8-2026-11_48_04-PM.png",
+    "tagline": "Untamed Wilderness & Safaris",
+    "intro": {
+      "eyebrow": "Where Every Horizon Tells a Story",
+      "title": "Luxury Escapes Across Africa\u2019s Untamed Wonders",
+      "description": "Discover the diverse beauty of Africa with the best travel agency for Africa, where every destination offers a unique story waiting to be explored. From the vibrant cities and scenic coastlines of South Africa to the iconic wildlife safaris of Kenya and Tanzania, experience nature in its purest form. Step into history in Egypt\u2019s ancient wonders, wander through Morocco\u2019s colorful souks, or unwind in the tropical paradise of Mauritius and Seychelles. Explore the dramatic landscapes of Namibia, the rich wildlife of Botswana, the serene hills of Rwanda, and the majestic Victoria Falls in Zimbabwe. With expertly crafted journeys and personalized experiences, the best travel agency for Africa helps you discover the perfect blend of adventure, culture, and luxury like nowhere else.",
+      "img1": "https://blackforestholidays.com/wp-content/uploads/2026/08/sutirta-budiman-kjOBqwMUnWw-unsplash-scaled.jpg",
+      "img2": "https://blackforestholidays.com/wp-content/uploads/2026/08/sean-robertson-5ftxFgXLtkI-unsplash-scaled.jpg"
     },
-    tabs: {
-      tab1: {
-        label: 'Why Blackforest Holidays?',
-        subtitle: 'Every Journey Feels Legendary',
-        title: 'Where Wild Safaris Meet Luxury Retreats',
-        description: 'At Black Forest Holidays, we go beyond just planning trips — we create unforgettable travel experiences. With personalized itineraries, expert guidance, and end-to-end travel services, we ensure every journey is seamless, exciting, and tailored to your needs. Backed by a passionate team and a strong network, we deliver trusted, value-driven holidays across India and the world.',
-        image: '/assets/images/sutirta-budiman-kjOBqwMUnWw-unsplash-scaled.jpg'
+    "tabs": {
+      "tab1": {
+        "label": "Why Blackforest Holidays?",
+        "subtitle": "Every Journey Feels Legendary",
+        "title": "Where Wild Safaris Meet Luxury Retreats",
+        "description": "At Black Forest Holidays, we go beyond just planning trips \u2014 we create unforgettable travel experiences. With personalized itineraries, expert guidance, and end-to-end travel services, we ensure every journey is seamless, exciting, and tailored to your needs. Backed by a passionate team and a strong network, we deliver trusted, value-driven holidays across India and the world.",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/hendrik-cornelissen-qs4E9t0hJc0-unsplash-scaled.jpg"
       },
-      tab2: {
-        label: 'Destinations',
-        subtitle: 'Our Curated Footprint',
-        title: 'Island Blues to Mountain Views : Your Next Dream Escape',
-        items: [
-          { name: 'South Africa', desc: 'A blend of vibrant cities, scenic coastlines, and wildlife safaris. Cape Town, Garden Route, and Big Five adventures.' },
-          { name: 'Kenya', desc: 'Home to iconic safaris and the Great Migration spectacle. Maasai Mara, rich culture, and vast savannahs.' },
-          { name: 'Tanzania', desc: 'Wild landscapes with Serengeti safaris and Mount Kilimanjaro. Zanzibar’s beaches and untamed natural beauty.' },
-          { name: 'Egypt', desc: 'Ancient wonders, pyramids, and timeless Nile River journeys. A destination rich in history, culture, and architectural marvels.' },
-          { name: 'Morocco', desc: 'Colorful souks, desert dunes, and stunning architecture. Marrakech, Sahara, and coastal charm.' },
-          { name: 'Mauritius', desc: 'A tropical paradise with white-sand beaches and luxury resorts. Perfect for relaxation and island escapes.' },
-          { name: 'Seychelles', desc: 'Pristine beaches, turquoise waters, and granite rock formations. An exclusive luxury getaway.' },
-          { name: 'Namibia', desc: 'Dramatic deserts, dunes, and unique wildlife landscapes. Sossusvlei, Etosha, and surreal natural beauty.' },
-          { name: 'Botswana', desc: 'Untouched wilderness and premium safari experiences. Okavango Delta and rich wildlife encounters.' }
+      "tab2": {
+        "label": "Destinations",
+        "subtitle": "Our Curated Footprint",
+        "title": "Island Blues to Mountain Views : Your Next Dream Escape",
+        "items": [
+          {
+            "name": "South Africa",
+            "desc": "A blend of vibrant cities, scenic coastlines, and wildlife safaris.Experience Cape Town, Garden Route, and Big Five adventures."
+          },
+          {
+            "name": "Kenya",
+            "desc": "A blend of vibrant cities, scenic coastlines, and wildlife safaris.Experience Cape Town, Garden Route, and Big Five adventures."
+          },
+          {
+            "name": "Tanzania",
+            "desc": "A blend of vibrant cities, scenic coastlines, and wildlife safaris.Experience Cape Town, Garden Route, and Big Five adventures."
+          },
+          {
+            "name": "Egypt",
+            "desc": "A blend of vibrant cities, scenic coastlines, and wildlife safaris.Experience Cape Town, Garden Route, and Big Five adventures."
+          },
+          {
+            "name": "Morocco",
+            "desc": "A blend of vibrant cities, scenic coastlines, and wildlife safaris.Experience Cape Town, Garden Route, and Big Five adventures."
+          },
+          {
+            "name": "Mauritius",
+            "desc": "A blend of vibrant cities, scenic coastlines, and wildlife safaris.Experience Cape Town, Garden Route, and Big Five adventures."
+          },
+          {
+            "name": "Seychelles",
+            "desc": "A blend of vibrant cities, scenic coastlines, and wildlife safaris.Experience Cape Town, Garden Route, and Big Five adventures."
+          },
+          {
+            "name": "Namibia",
+            "desc": "A blend of vibrant cities, scenic coastlines, and wildlife safaris.Experience Cape Town, Garden Route, and Big Five adventures."
+          },
+          {
+            "name": "Botswana",
+            "desc": "A blend of vibrant cities, scenic coastlines, and wildlife safaris.Experience Cape Town, Garden Route, and Big Five adventures."
+          }
         ],
-        image: '/assets/images/sergi-ferrete-YXwt-vJ3szA-unsplash-scaled.jpg'
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/ahmed-shabana-ADa9bb3tqR4-unsplash-scaled.jpg"
       },
-      tab3: {
-        label: 'Highlights',
-        subtitle: 'Signature Experiences',
-        title: 'Unforgettable Highlights',
-        highlights: [
-          '1. Cape Town views, Garden Route drives & Big Five safaris',
-          '2. Maasai Mara wildlife & the Great Migration spectacle',
-          '3. Serengeti safaris, Kilimanjaro peaks & Zanzibar beaches',
-          '4. Pyramids, Nile cruises & ancient wonders',
-          '5. White-sand beaches & luxury island resorts',
-          '6. Okavango Delta & untouched safari experiences',
-          '7. Gorilla trekking & lush green landscapes'
+      "tab3": {
+        "label": "Highlights",
+        "subtitle": "Signature Experiences",
+        "title": "Highlights",
+        "highlights": [
+          "1. Cape Town views, Garden Route drives & Big Five safaris",
+          "2. Maasai Mara wildlife & the Great Migration spectacle",
+          "3. Serengeti safaris, Kilimanjaro peaks & Zanzibar beaches",
+          "4. Pyramids, Nile cruises & ancient wonders",
+          "5.White-sand beaches & luxury island resorts",
+          "6.Okavango Delta & untouched safari experiences",
+          "7. Gorilla trekking & lush green landscapes"
         ],
-        image: '/assets/images/redcharlie-xtvo0ffGKlI-unsplash-scaled.jpg'
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/sergi-ferrete-YXwt-vJ3szA-unsplash-scaled.jpg"
       }
     },
-    countries: [
-      { name: 'South Africa', image: '/assets/images/redcharlie-xtvo0ffGKlI-unsplash-scaled.jpg', desc: 'Cape Town, Kruger & Wildlife Safaris' },
-      { name: 'Kenya', image: '/assets/images/what-is-the-wettest-month-in-tanzania-1710961205.jpeg', desc: 'Maasai Mara & Great Migration' },
-      { name: 'Tanzania', image: '/assets/images/Things-to-do-in-Tanzania_Zanzibar.jpeg', desc: 'Serengeti & Zanzibar Sands' },
-      { name: 'Egypt', image: '/assets/images/ibulski-sphinx-2987112-scaled.jpg', desc: 'Pyramids of Giza & Nile Cruises' },
-      { name: 'Morocco', image: '/assets/images/doing-business-morocco.jpg.webp', desc: 'Marrakech Souks & Sahara Dunes' },
-      { name: 'Mauritius', image: '/assets/images/xavier-coiffic-ByAHlRiTQjo-unsplash-scaled.jpg', desc: 'Tropical Luxury & Coral Reefs' },
-      { name: 'Seychelles', image: '/assets/images/magazine-unique-ecosystems-seychelles-beautiful-beach-blue-water-granite-conscious-explorer-scaled.webp', desc: 'Turquoise Waters & Granite Atolls' },
-      { name: 'Namibia', image: '/assets/images/ashim-d-silva-S2Q5mdOrrVc-unsplash-scaled.jpg', desc: 'Sossusvlei Dunes & Etosha' },
-      { name: 'Botswana', image: '/assets/images/pexels-timon-cornelissen-241844481-33231615-scaled.jpg', desc: 'Okavango Delta Wilderness' },
-      { name: 'Rwanda', image: '/assets/images/rwanda.jpg', desc: 'Mountain Gorilla Trekking' },
-      { name: 'Victoria Falls', image: '/assets/images/sammy-wong-QHH3WH1ZBsk-unsplash-scaled.jpg', desc: 'The Smoke That Thunders' }
-    ]
+    "parallaxBanner": {
+      "eyebrow": "Start a trip now",
+      "title": "Discover India Through a Lens of Luxury",
+      "subtitle": "Everything you need for an adventure.",
+      "buttonText": "CONTACT US",
+      "buttonLink": "/contact",
+      "bgImage": "https://blackforestholidays.com/wp-content/uploads/2026/07/4.png"
+    },
+    "countries": [
+      {
+        "name": "South Africa",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/redcharlie-xtvo0ffGKlI-unsplash-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in South Africa."
+      },
+      {
+        "name": "Kenya",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/what-is-the-wettest-month-in-tanzania-1710961205.jpeg",
+        "desc": "Explore signature retreats and curated journeys in Kenya."
+      },
+      {
+        "name": "Tanzania",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/Things-to-do-in-Tanzania_Zanzibar.jpeg",
+        "desc": "Explore signature retreats and curated journeys in Tanzania."
+      },
+      {
+        "name": "Egypt",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/ibulski-sphinx-2987112-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Egypt."
+      },
+      {
+        "name": "Seychelles",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/magazine-unique-ecosystems-seychelles-beautiful-beach-blue-water-granite-conscious-explorer-scaled.webp",
+        "desc": "Explore signature retreats and curated journeys in Seychelles."
+      },
+      {
+        "name": "Rwanda",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/rwanda.jpg",
+        "desc": "Explore signature retreats and curated journeys in Rwanda."
+      },
+      {
+        "name": "Morocco",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/doing-business-morocco.jpg.webp",
+        "desc": "Explore signature retreats and curated journeys in Morocco."
+      },
+      {
+        "name": "Namibia",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/ashim-d-silva-S2Q5mdOrrVc-unsplash-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Namibia."
+      },
+      {
+        "name": "Zimbabwe",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/sammy-wong-QHH3WH1ZBsk-unsplash-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Zimbabwe."
+      },
+      {
+        "name": "Mauritius",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/xavier-coiffic-ByAHlRiTQjo-unsplash-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Mauritius."
+      },
+      {
+        "name": "Botswana",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/pexels-timon-cornelissen-241844481-33231615-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Botswana."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "1. Are all adventures safe & monitored?",
+        "a": "Yes, all our adventure activities are carefully vetted, led by licensed and certified local guides, and adhere to strict safety protocols and international standards."
+      },
+      {
+        "q": "2. Custom plans for adventure available?",
+        "a": "Absolutely. We specialize in tailoring custom adventure itineraries to match your fitness level, travel preferences, and bucket-list goals."
+      },
+      {
+        "q": "3. Can activities be arranged with the trip?",
+        "a": "Yes, excursions, wildlife safaris, scuba diving, scenic helicopter flights, and private cultural tours can all be seamlessly bundled into your package."
+      },
+      {
+        "q": "4. Recommended activities for beginners?",
+        "a": "We offer a wide range of beginner-friendly experiences such as guided nature walks, gentle river cruises, introductory diving, cultural culinary classes, and leisurely scenic drives."
+      }
+    ],
+    "stats": {
+      "eyebrow": "Your Island Story Begins Here",
+      "title": "Escape to extraordinary islands",
+      "desc": "From secluded beaches to unforgettable adventures, discover island journeys designed around you.",
+      "bgImage": "https://blackforestholidays.com/wp-content/uploads/2021/07/number-counter-bg.png",
+      "counters": [
+        {
+          "value": 500,
+          "suffix": "+",
+          "label": "Island Destinations"
+        },
+        {
+          "value": 20,
+          "suffix": "+",
+          "label": "Countries"
+        },
+        {
+          "value": 1000,
+          "suffix": "+",
+          "label": "Tailor-Made Journeys"
+        }
+      ]
+    }
   },
-
-  america: {
-    name: 'America',
-    slug: 'america',
-    heroImage: 'https://blackforestholidays.com/wp-content/uploads/2026/08/bhargava-marripati-7LDBKPWAHJ4-unsplash-scaled.jpg',
-    tagline: 'From Coast to Coast',
-    statsHeading: 'Escape to extraordinary landscapes',
-    statsDesc: 'From vibrant iconic skylines to snow-capped Rockies and Caribbean shores, discover journeys designed around you.',
-    intro: {
-      title: 'From City Lights To Tropical Nights: Explore The Americas',
-      description: 'From the soaring skyline of New York to the pristine wilderness of Banff and the sun-drenched beaches of Rio and Cancun. Black Forest Holidays curates peerless journeys across North and South America, blending iconic urban luxury with unforgettable natural spectacles.',
-      img1: '/assets/images/john-lee-oMneOBYhJxY-unsplash-scaled.jpg',
-      img2: '/assets/images/gabriel-silva-suares-FIMZGAXhp_c-unsplash-scaled.jpg'
+  "america": {
+    "name": "America",
+    "slug": "america",
+    "heroImage": "https://blackforestholidays.com/wp-content/uploads/2026/08/bhargava-marripati-7LDBKPWAHJ4-unsplash-scaled.jpg",
+    "tagline": "From Coast to Coast",
+    "intro": {
+      "eyebrow": "Where Every Horizon Tells a Story",
+      "title": "From City Lights to Tropical Nights: Explore the Americas",
+      "description": "Explore the vibrant diversity of the Americas with Get the Best USA Tour Packages and discover unforgettable experiences. From the iconic cities and national parks of the USA to Canada\u2019s breathtaking landscapes, Mexico\u2019s rich heritage, and the vibrant cultures of Brazil and Argentina, every destination has something unique to offer. Discover Peru\u2019s ancient wonders, Chile\u2019s dramatic landscapes, and the tropical beauty of Costa Rica, Jamaica, the Bahamas, and the Dominican Republic.",
+      "img1": "https://blackforestholidays.com/wp-content/uploads/2026/08/john-lee-oMneOBYhJxY-unsplash-scaled.jpg",
+      "img2": "https://blackforestholidays.com/wp-content/uploads/2026/08/sidra-s-KHYCVWu-Tng-unsplash-scaled.jpg"
     },
-    tabs: {
-      tab1: {
-        label: 'Why Blackforest Holidays?',
-        subtitle: 'Every Journey Feels Legendary',
-        title: 'Where Adventure Meets Paradise',
-        description: 'At Black Forest Holidays, we go beyond just planning trips — we create unforgettable travel experiences. With personalized itineraries, expert guidance, and end-to-end travel services, we ensure every journey is seamless, exciting, and tailored to your needs.',
-        image: '/assets/images/andrew-ly-iJTXWlMmoOg-unsplash-1-scaled.jpg'
+    "tabs": {
+      "tab1": {
+        "label": "Why Blackforest Holidays?",
+        "subtitle": "Every Journey Feels Legendary",
+        "title": "Where Adventure Meets Paradise",
+        "description": "At Black Forest Holidays, we go beyond just planning trips \u2014 we create unforgettable travel experiences. With personalized itineraries, expert guidance, and end-to-end travel services, we ensure every journey is seamless, exciting, and tailored to your needs. Backed by a passionate team and a strong network, we deliver trusted, value-driven holidays across India and the world.",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/neil-rosenstech-_FpwbchiVls-unsplash-scaled.jpg"
       },
-      tab2: {
-        label: 'Destinations',
-        subtitle: 'Pan-American Escapes',
-        title: 'Sun, Sea & Stunning Escapes Across the Pacific',
-        items: [
-          { name: 'United States', desc: 'A mix of iconic cities, national parks, and diverse landscapes. Experience New York, California, and breathtaking road trips.' },
-          { name: 'Canada', desc: 'Vast wilderness, mountains, and scenic natural beauty. Explore Banff, Niagara Falls, and vibrant multicultural cities.' },
-          { name: 'Mexico', desc: 'Rich heritage, beaches, and colorful traditions. Discover Cancun, Mayan ruins, and lively culture.' },
-          { name: 'Brazil', desc: 'A vibrant blend of beaches, rainforests, and city life. Experience Rio, Amazon adventures, and Carnival energy.' },
-          { name: 'Argentina', desc: 'European charm meets stunning natural landscapes. Explore Buenos Aires, Patagonia, and wine regions.' },
-          { name: 'Peru', desc: 'Ancient history set against dramatic mountain scenery. Visit Machu Picchu and experience rich Incan culture.' }
+      "tab2": {
+        "label": "Destinations",
+        "subtitle": "Our Curated Footprint",
+        "title": "Sun, Sea & Stunning Escapes Across the Pacific",
+        "items": [
+          {
+            "name": "United States",
+            "desc": "A mix of iconic cities, national parks, and diverse landscapes.Experience New York, California, and breathtaking road trips."
+          },
+          {
+            "name": "Canada",
+            "desc": "A mix of iconic cities, national parks, and diverse landscapes.Experience New York, California, and breathtaking road trips."
+          },
+          {
+            "name": "Mexico",
+            "desc": "A mix of iconic cities, national parks, and diverse landscapes.Experience New York, California, and breathtaking road trips."
+          },
+          {
+            "name": "Brazil",
+            "desc": "A mix of iconic cities, national parks, and diverse landscapes.Experience New York, California, and breathtaking road trips."
+          },
+          {
+            "name": "Argentina",
+            "desc": "A mix of iconic cities, national parks, and diverse landscapes.Experience New York, California, and breathtaking road trips."
+          },
+          {
+            "name": "Peru",
+            "desc": "A mix of iconic cities, national parks, and diverse landscapes.Experience New York, California, and breathtaking road trips."
+          }
         ],
-        image: '/assets/images/neil-rosenstech-_FpwbchiVls-unsplash-scaled.jpg'
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/gabriel-silva-suares-FIMZGAXhp_c-unsplash-scaled.jpg"
       },
-      tab3: {
-        label: 'Highlights',
-        subtitle: 'Signature Experiences',
-        title: 'Americas Highlights',
-        highlights: [
-          '1. Iconic cities, national parks & diverse landscapes',
-          '2. Mountains, lakes & breathtaking Canadian wilderness',
-          '3. Rio vibes, Amazon rainforest & Carnival energy',
-          '4. Atacama Desert to Patagonia extremes',
-          '5. Turquoise waters & luxury Caribbean escapes',
-          '6. Punta Cana beaches & Caribbean charm',
-          '7. Machu Picchu sunrise & Incan heritage'
+      "tab3": {
+        "label": "Highlights",
+        "subtitle": "Signature Experiences",
+        "title": "Highlights",
+        "highlights": [
+          "1. Iconic cities, national parks & diverse landscapes",
+          "2. Mountains, lakes & breathtaking wilderness",
+          "3. Rio vibes, Amazon rainforest & Carnival energy",
+          "4. Atacama Desert to Patagonia extremes",
+          "5.Turquoise waters & luxury island escapes",
+          "6.Punta Cana beaches & Caribbean charm",
+          "7. Reggae, beaches & laid-back island life"
         ],
-        image: '/assets/images/willian-justen-de-vasconcellos-4hMET7vYTAQ-unsplash-scaled.jpg'
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/andrew-ly-iJTXWlMmoOg-unsplash-1-scaled.jpg"
       }
     },
-    countries: [
-      { name: 'United States', image: '/assets/images/willdwind-william-martret-lRrklMtueBg-unsplash-scaled.jpg', desc: 'New York, California & Grand Canyon' },
-      { name: 'Canada', image: '/assets/images/xavier-coiffic-ByAHlRiTQjo-unsplash-scaled.jpg', desc: 'Banff, Rocky Mountains & Niagara' },
-      { name: 'Mexico', image: '/assets/images/asset_9a8df372c2.jpg', desc: 'Cancun, Riviera Maya & Oaxaca' },
-      { name: 'Brazil', image: '/assets/images/sidra-s-KHYCVWu-Tng-unsplash-scaled.jpg', desc: 'Rio de Janeiro & Amazon Basin' },
-      { name: 'Chile', image: '/assets/images/john-lee-oMneOBYhJxY-unsplash-scaled.jpg', desc: 'Atacama Desert & Torres del Paine' },
-      { name: 'Bahamas', image: '/assets/images/gabriel-silva-suares-FIMZGAXhp_c-unsplash-scaled.jpg', desc: 'Crystal Lagoons & Exuma Cays' },
-      { name: 'Dominican Republic', image: '/assets/images/andrew-ly-iJTXWlMmoOg-unsplash-1-scaled.jpg', desc: 'Punta Cana Luxury Coast' },
-      { name: 'Jamaica', image: '/assets/images/neil-rosenstech-_FpwbchiVls-unsplash-scaled.jpg', desc: 'Montego Bay & Caribbean Rhythm' },
-      { name: 'Peru', image: '/assets/images/willian-justen-de-vasconcellos-4hMET7vYTAQ-unsplash-scaled.jpg', desc: 'Machu Picchu & Cusco Valley' },
-      { name: 'Argentina', image: '/assets/images/willdwind-william-martret-lRrklMtueBg-unsplash-scaled.jpg', desc: 'Buenos Aires & Patagonia Glaciers' }
-    ]
+    "parallaxBanner": {
+      "eyebrow": "Start a trip now",
+      "title": "Discover India Through a Lens of Luxury",
+      "subtitle": "Everything you need for an adventure.",
+      "buttonText": "CONTACT US",
+      "buttonLink": "/contact",
+      "bgImage": "https://blackforestholidays.com/wp-content/uploads/2026/07/4.png"
+    },
+    "countries": [
+      {
+        "name": "United States",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/maarten-van-den-heuvel-gZXx8lKAb7Y-unsplash-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in United States."
+      },
+      {
+        "name": "Canada",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/jacky-huang-6rC8fmNW3pk-unsplash-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Canada."
+      },
+      {
+        "name": "Mexico",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/jezael-melgoza-3snKY0XMKwg-unsplash-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Mexico."
+      },
+      {
+        "name": "Egypt",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/statue-Christ-the-Redeemer-Rio-de-Janiero-Brazil.webp",
+        "desc": "Explore signature retreats and curated journeys in Egypt."
+      },
+      {
+        "name": "Chile",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/olga-stalska-QaWRyEdlffY-unsplash-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Chile."
+      },
+      {
+        "name": "Bahamas",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/georgy-trofimov-jZ_TCbVxqEM-unsplash-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Bahamas."
+      },
+      {
+        "name": "Argentina",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/hector-ramon-perez-e7D8evFSyww-unsplash-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Argentina."
+      },
+      {
+        "name": "Costa Rica",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/atanas-malamov-4jgWVpKHO_4-unsplash-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Costa Rica."
+      },
+      {
+        "name": "Dominican Republic",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/asael-pena-uwIqm8Pe2to-unsplash-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Dominican Republic."
+      },
+      {
+        "name": "Peru",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/willian-justen-de-vasconcellos-4hMET7vYTAQ-unsplash-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Peru."
+      },
+      {
+        "name": "Jamaica",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/tom-podmore-CDTL4Wtyi8w-unsplash-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Jamaica."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "1. Are all adventures safe & monitored?",
+        "a": "Yes, all our adventure activities are carefully vetted, led by licensed and certified local guides, and adhere to strict safety protocols and international standards."
+      },
+      {
+        "q": "2. Custom plans for adventure available?",
+        "a": "Absolutely. We specialize in tailoring custom adventure itineraries to match your fitness level, travel preferences, and bucket-list goals."
+      },
+      {
+        "q": "3. Can activities be arranged with the trip?",
+        "a": "Yes, excursions, wildlife safaris, scuba diving, scenic helicopter flights, and private cultural tours can all be seamlessly bundled into your package."
+      },
+      {
+        "q": "4. Recommended activities for beginners?",
+        "a": "We offer a wide range of beginner-friendly experiences such as guided nature walks, gentle river cruises, introductory diving, cultural culinary classes, and leisurely scenic drives."
+      }
+    ],
+    "stats": {
+      "eyebrow": "Your Island Story Begins Here",
+      "title": "Escape to extraordinary islands",
+      "desc": "From secluded beaches to unforgettable adventures, discover island journeys designed around you.",
+      "bgImage": "https://blackforestholidays.com/wp-content/uploads/2021/07/number-counter-bg.png",
+      "counters": [
+        {
+          "value": 500,
+          "suffix": "+",
+          "label": "Island Destinations"
+        },
+        {
+          "value": 20,
+          "suffix": "+",
+          "label": "Countries"
+        },
+        {
+          "value": 1000,
+          "suffix": "+",
+          "label": "Tailor-Made Journeys"
+        }
+      ]
+    }
   },
-
-  'asian-countries': {
-    name: 'Asian Countries',
-    slug: 'asian-countries',
-    heroImage: 'https://blackforestholidays.com/wp-content/uploads/2026/08/ChatGPT-Image-Aug-1-2026-11_13_45-PM.png',
-    tagline: 'Where Every Horizon Tells a Story',
-    statsHeading: 'Escape to extraordinary islands',
-    statsDesc: 'From secluded beaches to unforgettable adventures, discover island journeys designed around you.',
-    intro: {
-      title: 'Where Every Horizon Tells a Story',
-      description: 'We fell in love with East Asia somewhere between the timeless traditions of Japan and the vibrant energy of South Korea. From the neon-lit streets of Tokyo to the serene temples of Kyoto, from Seoul’s cutting-edge culture to the ancient wonders of China, Asia offers a captivating blend of heritage, innovation, and elegance. Discover the dynamic charm of Hong Kong, the hidden beauty of Taiwan, and the spiritual tranquility of Bhutan and Nepal. With our Asia tour packages from India, you can explore these extraordinary destinations with carefully crafted itineraries and personalized experiences. As the Best travel agency for Asia, we make planning your perfect Asian journey simple, seamless, and unforgettable.',
-      img1: 'https://blackforestholidays.com/wp-content/uploads/2026/07/Untitled-design-17.png',
-      img2: 'https://blackforestholidays.com/wp-content/uploads/2026/07/himeji-castle-with-beautiful-cherry-blossom-spring-season-hyogo-near-osaka-japan-scaled.jpg'
+  "australia": {
+    "name": "Australia",
+    "slug": "australia",
+    "heroImage": "https://blackforestholidays.com/wp-content/uploads/2026/08/quentin-fahrner-TGF7gtpCJz0-unsplash-1-scaled.jpg",
+    "tagline": "Pacific Wonders & Island Shores",
+    "intro": {
+      "eyebrow": "Where Every Horizon Tells a Story",
+      "title": "Island Dreams & Ocean Blues Across the Pacific",
+      "description": "From Australia\u2019s vibrant cities and New Zealand\u2019s dramatic landscapes to the tropical charm of Fiji and Tahiti, this region offers a perfect blend of adventure, culture, and relaxation. Explore Bora Bora\u2019s iconic overwater luxury, the untouched beauty of the Cook Islands, and the natural wonders of Vanuatu and Samoa. Discover the rich island cultures of Tonga and the French-inspired elegance of New Caledonia, each offering crystal-clear waters and unforgettable experiences. With our Australia tour packages from India, experience carefully crafted journeys designed around your travel dreams. As the best travel agency for Australia, we make your journey seamless, memorable, and truly extraordinary.",
+      "img1": "https://blackforestholidays.com/wp-content/uploads/2026/08/zunnoon-ahmed-06Fc_R9hA8w-unsplash-scaled.jpg",
+      "img2": "https://blackforestholidays.com/wp-content/uploads/2026/08/behindthetmuna-DJ4PryNYBaI-unsplash-scaled.jpg"
     },
-    tabs: {
-      tab1: {
-        label: 'Why Blackforest Holidays?',
-        subtitle: 'East Asia Escapes',
-        title: 'Serene landscapes, pristine escapes, and refined natural beauty',
-        description: 'Where timeless traditions meet refined modern elegance across East Asia.',
-        items: [
-          { name: 'JAPAN', desc: 'Where timeless traditions meet refined modern elegance. From serene temples to futuristic cities, every moment feels perfectly curated.' },
-          { name: 'SOUTH KOREA', desc: 'A vibrant blend of innovation, culture, and dynamic city life. Experience trendsetting cities alongside rich heritage and scenic landscapes.' },
-          { name: 'CHINA', desc: 'A land of ancient wonders and grand imperial legacy. From the Great Wall to modern marvels, history and progress coexist beautifully.' },
-          { name: 'HONG KONG', desc: 'Where dazzling skylines meet world-class luxury. A fast-paced city offering iconic views, fine dining, and endless energy.' },
-          { name: 'TAIWAN', desc: 'A hidden gem of scenic beauty and rich cultural charm. Discover lush mountains, night markets, and warm local traditions.' },
-          { name: 'BHUTAN', desc: 'Discover serenity in the world’s last Himalayan kingdom. Peaceful monasteries, untouched nature, and happiness define every journey.' },
-          { name: 'NEPAL', desc: 'Where majestic peaks and spiritual journeys come alive. From Everest views to sacred temples, every path inspires awe.' }
-        ],
-        image: 'https://blackforestholidays.com/wp-content/uploads/2026/07/3d-rendering-chinese-great-wall-scaled.jpg'
+    "tabs": {
+      "tab1": {
+        "label": "Why Blackforest Holidays?",
+        "subtitle": "Every Journey Feels Legendary",
+        "title": "From Australia\u2019s Shores to Bora Bora\u2019s Paradise",
+        "description": "At Black Forest Holidays, we go beyond just planning trips \u2014 we create unforgettable travel experiences. With personalized itineraries, expert guidance, and end-to-end travel services, we ensure every journey is seamless, exciting, and tailored to your needs. Backed by a passionate team and a strong network, we deliver trusted, value-driven holidays across India and the world.",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/m_New_Zealand_country_images_1_l_798_1203.avif"
       },
-      tab2: {
-        label: 'Destinations',
-        subtitle: 'Tropical Escapes',
-        title: 'Our Destinations in South East Asia',
-        items: [
-          { name: 'BALI', desc: 'A tropical paradise of lush rice terraces, serene temples, and luxury resorts—perfect for relaxation, culture, and scenic beauty.' },
-          { name: 'THAILAND', desc: 'A vibrant blend of golden temples, bustling cities, and exotic islands, offering the perfect mix of culture, nightlife, and beach escapes.' },
-          { name: 'SINGAPORE', desc: 'A dynamic city of modern elegance, iconic skylines, and world-class experiences, where luxury meets innovation and culture. From the futuristic Gardens by the Bay to the vibrant streets of Chinatown and Little India, every corner tells a unique story.' },
-          { name: 'MALAYSIA', desc: 'A diverse destination of vibrant cities, rainforests, and pristine beaches, combining cultural richness with contemporary charm.' },
-          { name: 'VIETNAM', desc: 'A land of timeless beauty, from limestone karsts and lush landscapes to rich history and vibrant street culture.' },
-          { name: 'CAMBODIA', desc: 'Home to the majestic Angkor Wat, Cambodia offers ancient wonders, cultural depth, and a journey into history and heritage.' },
-          { name: 'PHILIPPINES', desc: 'An island paradise of crystal-clear waters, white-sand beaches, and hidden lagoons—perfect for tropical escapes and adventure.' }
+      "tab2": {
+        "label": "Destinations",
+        "subtitle": "Our Curated Footprint",
+        "title": "Sun, Sea & Stunning Escapes Across the Pacific",
+        "items": [
+          {
+            "name": "Australia",
+            "desc": "A vibrant mix of modern cities, beaches, and natural wonders.Experience Sydney, the Great Barrier Reef, and the Outback."
+          },
+          {
+            "name": "New Zealand",
+            "desc": "A vibrant mix of modern cities, beaches, and natural wonders.Experience Sydney, the Great Barrier Reef, and the Outback."
+          },
+          {
+            "name": "Fiji",
+            "desc": "A vibrant mix of modern cities, beaches, and natural wonders.Experience Sydney, the Great Barrier Reef, and the Outback."
+          },
+          {
+            "name": "Tahiti",
+            "desc": "A vibrant mix of modern cities, beaches, and natural wonders.Experience Sydney, the Great Barrier Reef, and the Outback."
+          },
+          {
+            "name": "Bora Bora",
+            "desc": "A vibrant mix of modern cities, beaches, and natural wonders.Experience Sydney, the Great Barrier Reef, and the Outback."
+          },
+          {
+            "name": "Cook Islands",
+            "desc": "A vibrant mix of modern cities, beaches, and natural wonders.Experience Sydney, the Great Barrier Reef, and the Outback."
+          },
+          {
+            "name": "Vanuatu",
+            "desc": "A vibrant mix of modern cities, beaches, and natural wonders.Experience Sydney, the Great Barrier Reef, and the Outback."
+          },
+          {
+            "name": "Samoa",
+            "desc": "A vibrant mix of modern cities, beaches, and natural wonders.Experience Sydney, the Great Barrier Reef, and the Outback."
+          },
+          {
+            "name": "Tonga",
+            "desc": "A vibrant mix of modern cities, beaches, and natural wonders.Experience Sydney, the Great Barrier Reef, and the Outback."
+          },
+          {
+            "name": "New Caledonia",
+            "desc": "A vibrant mix of modern cities, beaches, and natural wonders.Experience Sydney, the Great Barrier Reef, and the Outback."
+          }
         ],
-        image: 'https://blackforestholidays.com/wp-content/uploads/2026/07/Untitled-design-11.png'
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/leio-mclaren-ImhjEeh7pZg-unsplash.jpg"
       },
-      tab3: {
-        label: 'Highlights',
-        subtitle: 'Curated Encounters',
-        title: 'Highlights',
-        highlights: [
-          '1. Seamless blend of ancient traditions & futuristic cityscapes',
-          '2. Trendsetting culture, vibrant nightlife & modern experiences',
-          '3. Iconic landmarks, rich heritage & imperial history',
-          '4. Dazzling skylines, luxury shopping & harbour views',
-          '5. Scenic landscapes, night markets & cultural charm',
-          '6. Peaceful monasteries, Himalayan beauty & spiritual journeys',
-          '7. Majestic mountains, sacred temples & adventure experiences'
+      "tab3": {
+        "label": "Highlights",
+        "subtitle": "Signature Experiences",
+        "title": "Highlights",
+        "highlights": [
+          "1. Sydney icons, Great Barrier Reef & Outback adventures",
+          "2. Coral reefs, island hopping & luxury beach escapes",
+          "3.Lush islands, lagoons & Polynesian culture",
+          "4. Pristine beaches & laid-back island vibes",
+          "5.Volcanoes, blue lagoons & raw natural beauty",
+          "6.Whale watching & untouched island serenity",
+          "7. Coral lagoons, French charm & beach life"
         ],
-        image: 'https://blackforestholidays.com/wp-content/uploads/2026/07/picturesque-view-monastery-perched-cliff-with-prayer-flags-birds-flying-sky-scaled.jpg'
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/liam-pozz-HZvGtncWvyQ-unsplash-scaled.jpg"
       }
     },
-    countries: [
-      { name: 'Japan', image: 'https://blackforestholidays.com/wp-content/uploads/2026/07/cherry-blossoms-castle-himeji-japan-scaled.jpg', desc: 'Tokyo, Kyoto & Mt. Fuji' },
-      { name: 'South Korea', image: 'https://blackforestholidays.com/wp-content/uploads/2026/07/gyeongbukgung-maple-tree-autumn-korea-scaled.jpg', desc: 'Seoul, Busan & Jeju Island' },
-      { name: 'China', image: 'https://blackforestholidays.com/wp-content/uploads/2026/07/travelling-china-scaled.jpg', desc: 'The Great Wall & Forbidden City' },
-      { name: 'Hong Kong', image: 'https://blackforestholidays.com/wp-content/uploads/2026/07/junk-boat-hong-kong-victoria-harbour-scaled.jpg', desc: 'Victoria Harbour & Skyline' },
-      { name: 'Macau', image: 'https://blackforestholidays.com/wp-content/uploads/2026/07/beautiful-architecture-building-scaled.jpg', desc: 'Colonial Ruins & Luxury Resorts' },
-      { name: 'Taiwan', image: 'https://blackforestholidays.com/wp-content/uploads/2026/07/tourist-boat-ban-rak-thai-village-mae-hong-son-province-scaled.jpg', desc: 'Taipei 101 & Sun Moon Lake' },
-      { name: 'Mongolia', image: 'https://blackforestholidays.com/wp-content/uploads/2026/08/yang-v4It5Tvnet8-unsplash-scaled.jpg', desc: 'Nomadic Steppes & Gobi Desert' }
-    ]
+    "parallaxBanner": {
+      "eyebrow": "Start a trip now",
+      "title": "Discover India Through a Lens of Luxury",
+      "subtitle": "Everything you need for an adventure.",
+      "buttonText": "CONTACT US",
+      "buttonLink": "/contact",
+      "bgImage": "https://blackforestholidays.com/wp-content/uploads/2026/07/4.png"
+    },
+    "countries": [
+      {
+        "name": "Australia",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/pexels-parth-patel-2161339175-37930273-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Australia."
+      },
+      {
+        "name": "New Zealand",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/image_processing20190425-4-tttk81.jpg",
+        "desc": "Explore signature retreats and curated journeys in New Zealand."
+      },
+      {
+        "name": "Fiji",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/louise-smith-_n3uNLUh6hU-unsplash-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Fiji."
+      },
+      {
+        "name": "Tahiti",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/fabien-bellanger-pdjx5z2fpr0-unsplash-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Tahiti."
+      },
+      {
+        "name": "Vanuatu",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/seiji-seiji-JxL6t8iVri4-unsplash-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Vanuatu."
+      },
+      {
+        "name": "New Caledonia",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/quentin-fahrner-TGF7gtpCJz0-unsplash-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in New Caledonia."
+      },
+      {
+        "name": "Bora Bora",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/romeo-a-oSIoto5nhqU-unsplash-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Bora Bora."
+      },
+      {
+        "name": "Samoa",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/Pola_Islands_Tutuila_NPS-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Samoa."
+      },
+      {
+        "name": "Cook Islands",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/pexels-sarimphotos-16703837-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Cook Islands."
+      },
+      {
+        "name": "Tonga",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/premium_photo-1668883189361-9c754861dbd6-scaled.avif",
+        "desc": "Explore signature retreats and curated journeys in Tonga."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "1. Are all adventures safe & monitored?",
+        "a": "Yes, all our adventure activities are carefully vetted, led by licensed and certified local guides, and adhere to strict safety protocols and international standards."
+      },
+      {
+        "q": "2. Custom plans for adventure available?",
+        "a": "Absolutely. We specialize in tailoring custom adventure itineraries to match your fitness level, travel preferences, and bucket-list goals."
+      },
+      {
+        "q": "3. Can activities be arranged with the trip?",
+        "a": "Yes, excursions, wildlife safaris, scuba diving, scenic helicopter flights, and private cultural tours can all be seamlessly bundled into your package."
+      },
+      {
+        "q": "4. Recommended activities for beginners?",
+        "a": "We offer a wide range of beginner-friendly experiences such as guided nature walks, gentle river cruises, introductory diving, cultural culinary classes, and leisurely scenic drives."
+      }
+    ],
+    "stats": {
+      "eyebrow": "Your Island Story Begins Here",
+      "title": "Escape to extraordinary islands",
+      "desc": "From secluded beaches to unforgettable adventures, discover island journeys designed around you.",
+      "bgImage": "https://blackforestholidays.com/wp-content/uploads/2021/07/number-counter-bg.png",
+      "counters": [
+        {
+          "value": 500,
+          "suffix": "+",
+          "label": "Island Destinations"
+        },
+        {
+          "value": 20,
+          "suffix": "+",
+          "label": "Countries"
+        },
+        {
+          "value": 1000,
+          "suffix": "+",
+          "label": "Tailor-Made Journeys"
+        }
+      ]
+    }
   },
-
-  australia: {
-    name: 'Australia',
-    slug: 'australia',
-    heroImage: 'https://blackforestholidays.com/wp-content/uploads/2026/08/quentin-fahrner-TGF7gtpCJz0-unsplash-1-scaled.jpg',
-    tagline: 'Your Island Story Begins Here',
-    statsHeading: 'Escape to extraordinary ocean paradises',
-    statsDesc: 'From the Great Barrier Reef to New Zealand fjords and private Pacific atolls, discover journeys designed around you.',
-    intro: {
-      title: 'Island Dreams & Ocean Blues Across The Pacific',
-      description: 'Discover the untamed coastlines, sun-bleached coral reefs, and ancient desert landscapes of Australia, New Zealand, and the South Pacific islands. From the Sydney Opera House to the fjords of Milford Sound and private island atolls in Fiji, luxury meets boundless wonder.',
-      img1: '/assets/images/behindthetmuna-DJ4PryNYBaI-unsplash-scaled.jpg',
-      img2: '/assets/images/liam-pozz-HZvGtncWvyQ-unsplash-scaled.jpg'
+  "europe": {
+    "name": "Europe",
+    "slug": "europe",
+    "heroImage": "https://blackforestholidays.com/wp-content/uploads/2026/08/kristine-zale-macro-viewpoint-EZT6qusWOBQ-unsplash-scaled.jpg",
+    "tagline": "A Symphony of Culture & Heritage",
+    "intro": {
+      "eyebrow": "Where Every Horizon Tells a Story",
+      "title": "A Signature Journey Across Europe",
+      "description": "From the snow-capped peaks of Switzerland to the romantic streets of France and Italy, Europe is a timeless blend of elegance, culture, and iconic beauty. Explore the historic charm of Spain and Greece, experience the imperial grandeur of Austria and Germany, and discover the artistic soul of the Netherlands. With our Europe tour packages, experience carefully curated journeys filled with unforgettable moments, world-class cuisine, rich heritage, and modern luxury. As the best travel agency for Europe tour, we make every European journey seamless, memorable, and truly exceptional.",
+      "img1": "https://blackforestholidays.com/wp-content/uploads/2026/07/eiffel-tower-view-scaled.jpg",
+      "img2": "https://blackforestholidays.com/wp-content/uploads/2026/07/village-zermatt-with-matterhorn-mountain-background-sunset-switzerland-scaled.jpg"
     },
-    tabs: {
-      tab1: {
-        label: 'Why Blackforest Holidays?',
-        subtitle: 'Every Journey Feels Legendary',
-        title: "From Australia's Shores to Bora Bora's Paradise",
-        description: 'At Black Forest Holidays, we design tailor-made journeys across Oceania and the Pacific. Indulge in private reef yachts, helicopter tours over glaciers, and stays in the world’s most prestigious lodges.',
-        image: '/assets/images/zunnoon-ahmed-06Fc_R9hA8w-unsplash-scaled.jpg'
+    "tabs": {
+      "tab1": {
+        "label": "Why Blackforest Holidays?",
+        "subtitle": "Every Journey Feels Legendary",
+        "title": "Discover the World\u2019s Most Refined Escapes",
+        "description": "At Black Forest Holidays, we go beyond just planning trips \u2014 we create unforgettable travel experiences. With personalized itineraries, expert guidance, and end-to-end travel services, we ensure every journey is seamless, exciting, and tailored to your needs. Backed by a passionate team and a strong network, we deliver trusted, value-driven holidays across India and the world.",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/07/johan-mouchet-Z95viY3WaZs-unsplash-scaled.jpg"
       },
-      tab2: {
-        label: 'Destinations',
-        subtitle: 'Pacific Escapes',
-        title: 'Islands, Reefs & Dramatic Wilderness',
-        items: [
-          { name: 'Sydney & NSW', desc: 'World-famous harbour, iconic opera house, and golden Bondi beaches.' },
-          { name: 'Melbourne & Victoria', desc: 'Art-filled laneways, culinary culture, and Great Ocean Road vistas.' },
-          { name: 'Great Barrier Reef', desc: 'The world’s largest coral reef system, pristine islands, and marine wonder.' },
-          { name: 'New Zealand', desc: 'Snow-capped southern alps, crystalline lakes, and adrenaline-fueled Queenstown.' },
-          { name: 'Fiji Islands', desc: 'Secluded island sanctuaries, vibrant coral reefs, and warm Polynesian hospitality.' }
+      "tab2": {
+        "label": "Destinations",
+        "subtitle": "Our Curated Footprint",
+        "title": "Curated Escapes Across Timeless Destinations",
+        "items": [
+          {
+            "name": "GERMANY",
+            "desc": "Where fairytale castles meet cutting-edge modern design. Experience scenic landscapes, rich heritage, and refined cultural elegance."
+          },
+          {
+            "name": "SWITZERLAND",
+            "desc": "Where fairytale castles meet cutting-edge modern design. Experience scenic landscapes, rich heritage, and refined cultural elegance."
+          },
+          {
+            "name": "FRANCE",
+            "desc": "Where fairytale castles meet cutting-edge modern design. Experience scenic landscapes, rich heritage, and refined cultural elegance."
+          },
+          {
+            "name": "ITALY",
+            "desc": "Where fairytale castles meet cutting-edge modern design. Experience scenic landscapes, rich heritage, and refined cultural elegance."
+          },
+          {
+            "name": "GREECE",
+            "desc": "Where fairytale castles meet cutting-edge modern design. Experience scenic landscapes, rich heritage, and refined cultural elegance."
+          },
+          {
+            "name": "SPAIN",
+            "desc": "Where fairytale castles meet cutting-edge modern design. Experience scenic landscapes, rich heritage, and refined cultural elegance."
+          }
         ],
-        image: '/assets/images/m_New_Zealand_country_images_1_l_798_1203.avif'
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/07/jack-ward-rknrvCrfS1k-unsplash-1-scaled.jpg"
       },
-      tab3: {
-        label: 'Highlights',
-        subtitle: 'Down Under Highlights',
-        title: 'Signature Pacific Moments',
-        highlights: [
-          '1. Private catamaran sailing across the Great Barrier Reef',
-          '2. Sunset over Sydney Harbour with private opera box seats',
-          '3. Helicopter flights over New Zealand’s Milford Sound',
-          '4. Stargazing under pristine desert skies in Uluru',
-          '5. Luxury overwater bungalow escapes in Bora Bora & Fiji',
-          '6. Wine tasting through Barossa Valley and Marlborough',
-          '7. Wildlife encounters with kangaroos, koalas & marine life'
+      "tab3": {
+        "label": "Highlights",
+        "subtitle": "Signature Experiences",
+        "title": "Highlights",
+        "highlights": [
+          "1. Fairytale castles, rich heritage & modern culture.",
+          "2. Alpine luxury, train journeys & pristine landscapes",
+          "3. Timeless romance, landmarks & world-class cuisine.",
+          "4. A masterpiece of history, art & elegant living.",
+          "5. Sun-drenched islands & ancient wonders.",
+          "6. Stunning architecture & lively experiences.",
+          "7. Royal legacy, historic landmarks & cosmopolitan flair."
         ],
-        image: '/assets/images/jono-hirst-B_BcXW5UFjA-unsplash-scaled.jpg'
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/07/ChatGPT-Image-Jul-31-2026-04_21_01-PM.png"
       }
     },
-    countries: [
-      { name: 'Sydney & NSW', image: '/assets/images/joss-woodhead-3wFRlwS91yk-unsplash-1-scaled.jpg', desc: 'Opera House & Bondi' },
-      { name: 'Great Barrier Reef', image: '/assets/images/nikldn-t-6GW8T6Jsc-unsplash-scaled.jpg', desc: 'Whitsundays & Corals' },
-      { name: 'Melbourne', image: '/assets/images/asset_ada9439396.jpg', desc: 'Laneways & Coastal Roads' },
-      { name: 'New Zealand', image: '/assets/images/leio-mclaren-ImhjEeh7pZg-unsplash.jpg', desc: 'Queenstown & Fjords' },
-      { name: 'Fiji', image: '/assets/images/behindthetmuna-DJ4PryNYBaI-unsplash-scaled.jpg', desc: 'Private Coral Atolls' },
-      { name: 'Bora Bora', image: '/assets/images/liam-pozz-HZvGtncWvyQ-unsplash-scaled.jpg', desc: 'Overwater Bungalow Luxury' }
-    ]
+    "parallaxBanner": {
+      "eyebrow": "Start a trip now",
+      "title": "Where Elegance Meets Every Destination",
+      "subtitle": "Everything you need for an adventure.",
+      "buttonText": "CONTACT US",
+      "buttonLink": "/contact",
+      "bgImage": "https://blackforestholidays.com/wp-content/uploads/2026/07/4.png"
+    },
+    "countries": [
+      {
+        "name": "Switzerland",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/07/aerial-shot-snow-capped-mountains-with-calm-lake-daytime-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Switzerland."
+      },
+      {
+        "name": "France",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/07/famous-eiffel-tower-paris-with-gorgeous-colors-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in France."
+      },
+      {
+        "name": "Italy",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/07/man-is-riding-gondola-down-calm-canal-venice-italy-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Italy."
+      },
+      {
+        "name": "Greece",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/07/view-oia-town-santorini-greece-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Greece."
+      },
+      {
+        "name": "Norway",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/tobias-tullius-eJeEz6Paz-o-unsplash-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Norway."
+      },
+      {
+        "name": "Georgia",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/iman-gozal-5iQWgow3_S0-unsplash-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Georgia."
+      },
+      {
+        "name": "Spain",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/07/joan-oger-PWrNP4bQHB4-unsplash-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Spain."
+      },
+      {
+        "name": "Iceland",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/aurora-borealis-northern-lights-view-house-hamnoy-village-lofoten-islands-norway-landscape-winter-time-mountains-water-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Iceland."
+      },
+      {
+        "name": "Russia",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/dotzero-B_F3hj-Z_Sc-unsplash-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Russia."
+      },
+      {
+        "name": "Austria",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/joss-woodhead-3wFRlwS91yk-unsplash-1-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Austria."
+      },
+      {
+        "name": "Turkey",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/hagia-sophia-famous-landmark-istanbul-turkey-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Turkey."
+      },
+      {
+        "name": "Croatia",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/matthias-mullie-RvDc461s1EI-unsplash-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Croatia."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "1. Are all adventures safe & monitored?",
+        "a": "Yes, all our adventure activities are carefully vetted, led by licensed and certified local guides, and adhere to strict safety protocols and international standards."
+      },
+      {
+        "q": "2. Custom plans for adventure available?",
+        "a": "Absolutely. We specialize in tailoring custom adventure itineraries to match your fitness level, travel preferences, and bucket-list goals."
+      },
+      {
+        "q": "3. Can activities be arranged with the trip?",
+        "a": "Yes, excursions, wildlife safaris, scuba diving, scenic helicopter flights, and private cultural tours can all be seamlessly bundled into your package."
+      },
+      {
+        "q": "4. Recommended activities for beginners?",
+        "a": "We offer a wide range of beginner-friendly experiences such as guided nature walks, gentle river cruises, introductory diving, cultural culinary classes, and leisurely scenic drives."
+      }
+    ],
+    "stats": {
+      "eyebrow": "Your Island Story Begins Here",
+      "title": "Escape to extraordinary islands",
+      "desc": "From secluded beaches to unforgettable adventures, discover island journeys designed around you.",
+      "bgImage": "https://blackforestholidays.com/wp-content/uploads/2021/07/number-counter-bg.png",
+      "counters": [
+        {
+          "value": 500,
+          "suffix": "+",
+          "label": "Island Destinations"
+        },
+        {
+          "value": 20,
+          "suffix": "+",
+          "label": "Countries"
+        },
+        {
+          "value": 1000,
+          "suffix": "+",
+          "label": "Tailor-Made Journeys"
+        }
+      ]
+    }
   },
-
-  europe: {
-    name: 'Europe',
-    slug: 'europe',
-    heroImage: 'https://blackforestholidays.com/wp-content/uploads/2026/08/kristine-zale-macro-viewpoint-EZT6qusWOBQ-unsplash-scaled.jpg',
-    tagline: 'Alpine Wonder & Royal Heritage',
-    statsHeading: 'Escape to extraordinary European grandeur',
-    statsDesc: 'From scenic Swiss alpine rails to sunlit Mediterranean coastlines and royal capitals, discover journeys designed around you.',
-    intro: {
-      title: 'Timeless Grandeur & Alpine Elegance Across Europe',
-      description: 'Step into a world of fairytale castles, historic palaces, snow-dusted alpine summits, and Mediterranean coastlines. Whether traversing the Swiss Alps by panoramic train, savoring vintage wines in Tuscany, or exploring grand Parisian avenues, our bespoke European journeys embody elegance.',
-      img1: '/assets/images/eiffel-tower-view-scaled.jpg',
-      img2: '/assets/images/jack-ward-rknrvCrfS1k-unsplash-1-scaled.jpg'
+  "indian-ocean": {
+    "name": "Indian Ocean",
+    "slug": "indian-ocean",
+    "heroImage": "https://blackforestholidays.com/wp-content/uploads/2026/08/pexels-asadphoto-9149367-scaled.jpg",
+    "tagline": "Azure Waters & Secluded Atolls",
+    "intro": {
+      "eyebrow": "Where Every Horizon Tells a Story",
+      "title": "Fuel Your Wanderlust with Adventures - INDIA",
+      "description": "We fell in love with these destinations somewhere between the turquoise waters of the Maldives and the serene beauty of the Himalayas. From the pristine beaches of Seychelles and Mauritius to the cultural richness of Sri Lanka and the untouched charm of the Andaman & Nicobar Islands, this region offers a perfect blend of luxury, nature, and adventure. Explore our Maldives holiday packages, Mauritius travel packages, and Sri Lanka holiday packages, designed to create unforgettable experiences. Whether it\u2019s relaxing in an overwater villa, exploring lush tea plantations, or discovering vibrant marine life, our experts create seamless, personalized journeys tailored to your style.",
+      "img1": "https://blackforestholidays.com/wp-content/uploads/2026/08/aditya-siva-6rDbvXzIVpQ-unsplash-1-scaled.jpg",
+      "img2": "https://blackforestholidays.com/wp-content/uploads/2026/07/WhatsApp-Image-2026-07-29-at-23.46.36kj.jpeg"
     },
-    tabs: {
-      tab1: {
-        label: 'Why Blackforest Holidays?',
-        subtitle: 'Every Journey Feels Legendary',
-        title: 'Where Old World Charm Meets Bespoke Luxury',
-        description: 'From VIP museum viewings to private chauffeur drives across the Dolomites and reservations at Michelin-starred restaurants, Black Forest Holidays provides seamless European itineraries designed for discerning travelers.',
-        image: '/assets/images/johan-mouchet-Z95viY3WaZs-unsplash-scaled.jpg'
+    "tabs": {
+      "tab1": {
+        "label": "Why Blackforest Holidays?",
+        "subtitle": "Heritage to Himalayas",
+        "title": "In Every Corner of India",
+        "description": "At Black Forest Holidays, we go beyond just planning trips \u2014 we create unforgettable travel experiences. With personalized itineraries, expert guidance, and end-to-end travel services, we ensure every journey is seamless, exciting, and tailored to your needs. Backed by a passionate team and a strong network, we deliver trusted, value-driven holidays across India and the world.",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/07/WhatsApp-Image-2026-07-29-at-23.46.36.jpeg"
       },
-      tab2: {
-        label: 'Destinations',
-        subtitle: 'The Grand European Circuit',
-        title: 'Castles, Canals & Alpine Splendor',
-        items: [
-          { name: 'Switzerland', desc: 'Alpine peaks, scenic railways like Glacier Express, and pristine lakes in Lucerne & Interlaken.' },
-          { name: 'France', desc: 'The glamour of Paris, sun-drenched vineyards in Bordeaux, and azure waters of the French Riviera.' },
-          { name: 'Italy', desc: 'Timeless art in Rome and Florence, romantic gondolas in Venice, and dramatic cliffs of Amalfi.' },
-          { name: 'United Kingdom', desc: 'Royal London heritage, rolling Cotswolds countryside, and romantic Scottish Highlands.' },
-          { name: 'Greece', desc: 'Whitewashed Aegean villages, clifftop sunsets in Santorini, and ancient Acropolis ruins.' }
+      "tab2": {
+        "label": "Destinations",
+        "subtitle": "Our Curated Footprint",
+        "title": "Our Destinations in India",
+        "items": [
+          {
+            "name": "MALDIVES",
+            "desc": "The Maldives is the epitome of luxury and tranquility, offering crystal-clear turquoise waters, private overwater villas, and pristine white-sand beaches. Perfect for honeymooners and luxury travelers, it promises unmatched privacy and breathtaking ocean views. Indulge in world-class snorkeling and scuba diving, explore vibrant coral reefs, enjoy romantic sunset cruises, or simply unwind in a serene island setting."
+          },
+          {
+            "name": "MAURITIUS",
+            "desc": "The Maldives is the epitome of luxury and tranquility, offering crystal-clear turquoise waters, private overwater villas, and pristine white-sand beaches. Perfect for honeymooners and luxury travelers, it promises unmatched privacy and breathtaking ocean views. Indulge in world-class snorkeling and scuba diving, explore vibrant coral reefs, enjoy romantic sunset cruises, or simply unwind in a serene island setting."
+          },
+          {
+            "name": "HIMALAYAS",
+            "desc": "The Maldives is the epitome of luxury and tranquility, offering crystal-clear turquoise waters, private overwater villas, and pristine white-sand beaches. Perfect for honeymooners and luxury travelers, it promises unmatched privacy and breathtaking ocean views. Indulge in world-class snorkeling and scuba diving, explore vibrant coral reefs, enjoy romantic sunset cruises, or simply unwind in a serene island setting."
+          },
+          {
+            "name": "SEYCHELLES",
+            "desc": "The Maldives is the epitome of luxury and tranquility, offering crystal-clear turquoise waters, private overwater villas, and pristine white-sand beaches. Perfect for honeymooners and luxury travelers, it promises unmatched privacy and breathtaking ocean views. Indulge in world-class snorkeling and scuba diving, explore vibrant coral reefs, enjoy romantic sunset cruises, or simply unwind in a serene island setting."
+          },
+          {
+            "name": "ANDAMAN & NICOBAR",
+            "desc": "The Maldives is the epitome of luxury and tranquility, offering crystal-clear turquoise waters, private overwater villas, and pristine white-sand beaches. Perfect for honeymooners and luxury travelers, it promises unmatched privacy and breathtaking ocean views. Indulge in world-class snorkeling and scuba diving, explore vibrant coral reefs, enjoy romantic sunset cruises, or simply unwind in a serene island setting."
+          },
+          {
+            "name": "SRI LANKA",
+            "desc": "The Maldives is the epitome of luxury and tranquility, offering crystal-clear turquoise waters, private overwater villas, and pristine white-sand beaches. Perfect for honeymooners and luxury travelers, it promises unmatched privacy and breathtaking ocean views. Indulge in world-class snorkeling and scuba diving, explore vibrant coral reefs, enjoy romantic sunset cruises, or simply unwind in a serene island setting."
+          }
         ],
-        image: '/assets/images/ChatGPT-Image-Jul-31-2026-04_21_01-PM.png'
+        "image": "https://blackforestholidays.com/wp-content/uploads/2021/07/moosa-haleem-xbIEA8egHr4-unsplash-scaled.jpg"
       },
-      tab3: {
-        label: 'Highlights',
-        subtitle: 'European Highlights',
-        title: 'Unrivaled European Experiences',
-        highlights: [
-          '1. First-class Glacier Express journey across the Swiss Alps',
-          '2. Private sunset boat charters along the Amalfi Coast',
-          '3. VIP after-hours tours of the Louvre and Vatican Museums',
-          '4. Fairytale castle visits in Bavaria and the Loire Valley',
-          '5. Clifftop luxury suites overlooking Santorini caldera',
-          '6. Exclusive wine tastings in Tuscany, Bordeaux & Champagne',
-          '7. Chasing the Northern Lights in Finnish Lapland & Iceland'
+      "tab3": {
+        "label": "Highlights",
+        "subtitle": "Signature Experiences",
+        "title": "Highlights",
+        "highlights": [
+          "1. Exclusive Beaches & Private Island Escapes",
+          "2. Timeless Heritage & Royal Experiences",
+          "3. Breathtaking Landscapes in Ultimate Comfort",
+          "4. Luxury Resorts & Bespoke Stays",
+          "5. Curated Adventure & Premium Experiences",
+          "6. Exotic Wildlife & Scenic Elegance",
+          "7. Refined Culture, Cuisine & Elite Living"
         ],
-        image: '/assets/images/quentin-fahrner-TGF7gtpCJz0-unsplash-scaled.jpg'
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/07/WhatsApp-Image-2026-07-30-at-00.36.49.jpeg"
       }
     },
-    countries: [
-      { name: 'Switzerland', image: '/assets/images/matthias-mullie-RvDc461s1EI-unsplash-scaled.jpg', desc: 'Alps, Zermatt & Interlaken' },
-      { name: 'France', image: '/assets/images/luca-bravo-O453M2Liufs-unsplash-scaled.jpg', desc: 'Paris, Côte d’Azur & Provence' },
-      { name: 'Italy', image: '/assets/images/asset_fd072b807d.jpg', desc: 'Rome, Venice & Amalfi' },
-      { name: 'United Kingdom', image: '/assets/images/village-zermatt-with-matterhorn-mountain-background-sunset-switzerland-scaled.jpg', desc: 'London & Scottish Highlands' },
-      { name: 'Spain', image: '/assets/images/eiffel-tower-view-scaled.jpg', desc: 'Barcelona, Madrid & Seville' },
-      { name: 'Greece', image: '/assets/images/jack-ward-rknrvCrfS1k-unsplash-1-scaled.jpg', desc: 'Santorini & Athens Acropolis' },
-      { name: 'Austria', image: '/assets/images/johan-mouchet-Z95viY3WaZs-unsplash-scaled.jpg', desc: 'Vienna & Salzburg Alps' },
-      { name: 'Germany', image: '/assets/images/ChatGPT-Image-Jul-31-2026-04_21_01-PM.png', desc: 'Bavaria & The Black Forest' }
-    ]
+    "parallaxBanner": {
+      "eyebrow": "Start a trip now",
+      "title": "Island Escapes Crafted to Perfection",
+      "subtitle": "Everything you need for an adventure.",
+      "buttonText": "CONTACT US",
+      "buttonLink": "/contact",
+      "bgImage": "https://blackforestholidays.com/wp-content/uploads/2026/07/4.png"
+    },
+    "countries": [
+      {
+        "name": "Maldives",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/07/WhatsApp-Image-2026-07-29-at-23.55.37.jpeg",
+        "desc": "Explore signature retreats and curated journeys in Maldives."
+      },
+      {
+        "name": "Mauritius",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/07/WhatsApp-Image-2026-07-29-at-23.56.45.jpeg",
+        "desc": "Explore signature retreats and curated journeys in Mauritius."
+      },
+      {
+        "name": "Seychelles",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/graphic-node-yPSbirjJWzs-unsplash-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Seychelles."
+      },
+      {
+        "name": "Sri Lanka",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/07/WhatsApp-Image-2026-07-30-at-00.05.16.jpeg",
+        "desc": "Explore signature retreats and curated journeys in Sri Lanka."
+      },
+      {
+        "name": "R\u00e9union",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/willdwind-william-martret-lRrklMtueBg-unsplash-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in R\u00e9union."
+      },
+      {
+        "name": "Comoros",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/catherine-malofei-fm0l_Cggp94-unsplash-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Comoros."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "1. Are all adventures safe & monitored?",
+        "a": "Yes, all our adventure activities are carefully vetted, led by licensed and certified local guides, and adhere to strict safety protocols and international standards."
+      },
+      {
+        "q": "2. Custom plans for adventure available?",
+        "a": "Absolutely. We specialize in tailoring custom adventure itineraries to match your fitness level, travel preferences, and bucket-list goals."
+      },
+      {
+        "q": "3. Can activities be arranged with the trip?",
+        "a": "Yes, excursions, wildlife safaris, scuba diving, scenic helicopter flights, and private cultural tours can all be seamlessly bundled into your package."
+      },
+      {
+        "q": "4. Recommended activities for beginners?",
+        "a": "We offer a wide range of beginner-friendly experiences such as guided nature walks, gentle river cruises, introductory diving, cultural culinary classes, and leisurely scenic drives."
+      }
+    ],
+    "stats": {
+      "eyebrow": "Your Island Story Begins Here",
+      "title": "Escape to extraordinary islands",
+      "desc": "From secluded beaches to unforgettable adventures, discover island journeys designed around you.",
+      "bgImage": "https://blackforestholidays.com/wp-content/uploads/2021/07/number-counter-bg.png",
+      "counters": [
+        {
+          "value": 500,
+          "suffix": "+",
+          "label": "Island Destinations"
+        },
+        {
+          "value": 20,
+          "suffix": "+",
+          "label": "Countries"
+        },
+        {
+          "value": 1000,
+          "suffix": "+",
+          "label": "Tailor-Made Journeys"
+        }
+      ]
+    }
   },
-
-  'indian-ocean': {
-    name: 'Indian Ocean',
-    slug: 'indian-ocean',
-    heroImage: 'https://blackforestholidays.com/wp-content/uploads/2026/08/pexels-asadphoto-9149367-scaled.jpg',
-    tagline: 'Your Island Story Begins Here',
-    statsHeading: 'Escape to extraordinary islands',
-    statsDesc: 'From secluded beaches to unforgettable adventures, discover island journeys designed around you.',
-    intro: {
-      title: 'Turquoise Lagoons & Private Overwater Atolls',
-      description: 'Unwind in the zenith of tropical luxury across the Indian Ocean. From bespoke overwater bungalows in the Maldives to the granite boulders of Seychelles and the emerald peaks of Mauritius, each private sanctuary promises pure relaxation and barefoot opulence.',
-      img1: '/assets/images/matthias-mullie-RvDc461s1EI-unsplash-scaled.jpg',
-      img2: '/assets/images/luca-bravo-O453M2Liufs-unsplash-scaled.jpg'
+  "middle-east": {
+    "name": "Middle east",
+    "slug": "middle-east",
+    "heroImage": "https://blackforestholidays.com/wp-content/uploads/2026/08/metro-railway-glass-skyscrapers-dubai-traffic-street-dubai-museum-future-dubai-cityscape-skyline-urban-background-scaled.jpg",
+    "tagline": "Where Ancient Heritage Meets Modern Splendor",
+    "intro": {
+      "eyebrow": "Where Every Horizon Tells a Story",
+      "title": "The Middle East, Curated for the Discerning Traveler",
+      "description": "We fell in love with the Middle East somewhere between the golden dunes of Dubai and the timeless wonders of Petra in Jordan. Explore the region with our Middle East Tour Packages and discover the futuristic skylines of Abu Dhabi and Qatar, the rugged mountains of Oman, and the cultural crossroads of Turkey. Our Dubai Tour Package offers the perfect blend of luxury, adventure, and unforgettable experiences. From desert safaris under the Arabian stars to exploring Istanbul\u2019s rich heritage and experiencing Dubai\u2019s opulence, every journey is thoughtfully designed to be seamless, personalized, and truly unforgettable.",
+      "img1": "https://blackforestholidays.com/wp-content/uploads/2026/07/Untitled-design-15.png",
+      "img2": "https://blackforestholidays.com/wp-content/uploads/2026/07/jirayu-koontholjinda-uLl1ZckT5_k-unsplash-scaled.jpg"
     },
-    tabs: {
-      tab1: {
-        label: 'Why Blackforest Holidays?',
-        subtitle: 'Every Journey Feels Legendary',
-        title: 'The Pinnacle of Island Seclusion',
-        description: 'We curate private seaplane transfers, romantic candlelit sandbank dinners, and private yacht charters throughout the world’s most pristine ocean sanctuaries.',
-        image: '/assets/images/asset_fd072b807d.jpg'
+    "tabs": {
+      "tab1": {
+        "label": "Why Blackforest Holidays?",
+        "subtitle": "Every Journey Feels Legendary",
+        "title": "Explore the Middle East Beyond the Ordinary",
+        "description": "At Black Forest Holidays, we go beyond just planning trips \u2014 we create unforgettable travel experiences. With personalized itineraries, expert guidance, and end-to-end travel services, we ensure every journey is seamless, exciting, and tailored to your needs. Backed by a passionate team and a strong network, we deliver trusted, value-driven holidays across India and the world.",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/07/Untitled-design-13.png"
       },
-      tab2: {
-        label: 'Destinations',
-        subtitle: 'Ocean Sanctuaries',
-        title: 'Atolls of Pure Indulgence',
-        items: [
-          { name: 'Maldives', desc: 'World-renowned overwater villas, underwater restaurants, and luminous bioluminescent waters.' },
-          { name: 'Mauritius', desc: 'Championship golf resorts, dramatic waterfalls, and tranquil coral reefs.' },
-          { name: 'Seychelles', desc: 'Bespoke granite-lined beaches like Anse Source d’Argent and rare wildlife sanctuaries.' },
-          { name: 'Zanzibar', desc: 'Ancient spice markets in Stone Town combined with pristine white-sand shores.' }
+      "tab2": {
+        "label": "Destinations",
+        "subtitle": "Our Curated Footprint",
+        "title": "Explore the Middle East Beyond the Ordinary",
+        "items": [
+          {
+            "name": "DUBAI",
+            "desc": "A city of iconic skylines, luxury shopping, and desert adventures\u2014where innovation meets opulence.From Burj Khalifa views to thrilling desert safaris, every experience is larger than life."
+          },
+          {
+            "name": "ABU DHABI",
+            "desc": "A city of iconic skylines, luxury shopping, and desert adventures\u2014where innovation meets opulence.From Burj Khalifa views to thrilling desert safaris, every experience is larger than life."
+          },
+          {
+            "name": "QATAR",
+            "desc": "A city of iconic skylines, luxury shopping, and desert adventures\u2014where innovation meets opulence.From Burj Khalifa views to thrilling desert safaris, every experience is larger than life."
+          },
+          {
+            "name": "OMAN",
+            "desc": "A city of iconic skylines, luxury shopping, and desert adventures\u2014where innovation meets opulence.From Burj Khalifa views to thrilling desert safaris, every experience is larger than life."
+          },
+          {
+            "name": "TURKEY",
+            "desc": "A city of iconic skylines, luxury shopping, and desert adventures\u2014where innovation meets opulence.From Burj Khalifa views to thrilling desert safaris, every experience is larger than life."
+          },
+          {
+            "name": "JORDAN",
+            "desc": "A city of iconic skylines, luxury shopping, and desert adventures\u2014where innovation meets opulence.From Burj Khalifa views to thrilling desert safaris, every experience is larger than life."
+          }
         ],
-        image: '/assets/images/village-zermatt-with-matterhorn-mountain-background-sunset-switzerland-scaled.jpg'
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/07/Untitled-design-14.png"
       },
-      tab3: {
-        label: 'Highlights',
-        subtitle: 'Signature Moments',
-        title: 'Island Highlights',
-        highlights: [
-          '1. Seaplane arrivals over turquoise coral atolls',
-          '2. Dining 5 meters underwater surrounded by marine life',
-          '3. Private sunset dolphin cruises on traditional dhonis',
-          '4. Snorkeling with gentle manta rays and whale sharks',
-          '5. Luxury spa treatments over gently lapping ocean waves',
-          '6. Private desert island picnics on secluded sandbanks',
-          '7. Helipad transfers to private island residences'
+      "tab3": {
+        "label": "Highlights",
+        "subtitle": "Signature Experiences",
+        "title": "Highlights",
+        "highlights": [
+          "1. Stunning desert landscapes & luxury desert safaris",
+          "2. Futuristic skylines & world-class cities",
+          "3. Ancient wonders and historical landmarks",
+          "4. Perfect blend of luxury and authenticity",
+          "5. Ideal for luxury, leisure, and adventure travel",
+          "6.Premium shopping & vibrant souks",
+          "7. Rich cultural heritage and iconic architecture"
         ],
-        image: '/assets/images/eiffel-tower-view-scaled.jpg'
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/07/Untitled-design-16.png"
       }
     },
-    countries: [
-      { name: 'Maldives', image: '/assets/images/jack-ward-rknrvCrfS1k-unsplash-1-scaled.jpg', desc: 'Overwater Villa Luxury' },
-      { name: 'Mauritius', image: '/assets/images/johan-mouchet-Z95viY3WaZs-unsplash-scaled.jpg', desc: 'Coral Lagoons & Waterfalls' },
-      { name: 'Seychelles', image: '/assets/images/ChatGPT-Image-Jul-31-2026-04_21_01-PM.png', desc: 'Granite Boulders & Turquoise Bays' },
-      { name: 'Zanzibar', image: '/assets/images/quentin-fahrner-TGF7gtpCJz0-unsplash-scaled.jpg', desc: 'Spice Coast & White Sands' }
-    ]
+    "parallaxBanner": {
+      "eyebrow": "Start a trip now",
+      "title": "Luxury Journeys Through the Heart of the Middle East",
+      "subtitle": "Everything you need for an adventure.",
+      "buttonText": "CONTACT US",
+      "buttonLink": "/contact",
+      "bgImage": "https://blackforestholidays.com/wp-content/uploads/2026/07/4.png"
+    },
+    "countries": [
+      {
+        "name": "United Arab Emirates",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/darcey-beau-KTivTunp_lw-unsplash-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in United Arab Emirates."
+      },
+      {
+        "name": "Saudi Arabia",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/day-city-view-1-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Saudi Arabia."
+      },
+      {
+        "name": "Qatar",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/07/popup-agency-jJtqDVzozQY-unsplash-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Qatar."
+      },
+      {
+        "name": "Jordan",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/alex-vasey-5_Bu25SV6X8-unsplash-1-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Jordan."
+      },
+      {
+        "name": "Israel",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/raimond-klavins-030ZIU1Rook-unsplash-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Israel."
+      },
+      {
+        "name": "Bahrain",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/ondrej-bocek-wOlMEpBzwHs-unsplash-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Bahrain."
+      },
+      {
+        "name": "Kuwait",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/drone-photo-kuwait-city-kuwait-tower-from-sky-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Kuwait."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "1. Are all adventures safe & monitored?",
+        "a": "Yes, all our adventure activities are carefully vetted, led by licensed and certified local guides, and adhere to strict safety protocols and international standards."
+      },
+      {
+        "q": "2. Custom plans for adventure available?",
+        "a": "Absolutely. We specialize in tailoring custom adventure itineraries to match your fitness level, travel preferences, and bucket-list goals."
+      },
+      {
+        "q": "3. Can activities be arranged with the trip?",
+        "a": "Yes, excursions, wildlife safaris, scuba diving, scenic helicopter flights, and private cultural tours can all be seamlessly bundled into your package."
+      },
+      {
+        "q": "4. Recommended activities for beginners?",
+        "a": "We offer a wide range of beginner-friendly experiences such as guided nature walks, gentle river cruises, introductory diving, cultural culinary classes, and leisurely scenic drives."
+      }
+    ],
+    "stats": {
+      "eyebrow": "Your Island Story Begins Here",
+      "title": "Escape to extraordinary islands",
+      "desc": "From secluded beaches to unforgettable adventures, discover island journeys designed around you.",
+      "bgImage": "https://blackforestholidays.com/wp-content/uploads/2021/07/number-counter-bg.png",
+      "counters": [
+        {
+          "value": 500,
+          "suffix": "+",
+          "label": "Island Destinations"
+        },
+        {
+          "value": 20,
+          "suffix": "+",
+          "label": "Countries"
+        },
+        {
+          "value": 1000,
+          "suffix": "+",
+          "label": "Tailor-Made Journeys"
+        }
+      ]
+    }
   },
-
-  'middle-east': {
-    name: 'Middle East',
-    slug: 'middle-east',
-    heroImage: 'https://blackforestholidays.com/wp-content/uploads/2026/08/metro-railway-glass-skyscrapers-dubai-traffic-street-dubai-museum-future-dubai-cityscape-skyline-urban-background-scaled.jpg',
-    tagline: 'Desert Dunes & Gilded Skylines',
-    statsHeading: 'Escape to extraordinary Arabian wonders',
-    statsDesc: 'From futuristic architectural icons to starlit desert camps and ancient rock citadels, discover journeys designed around you.',
-    intro: {
-      title: 'Gilded Skylines & Desert Splendors Across Arabia',
-      description: 'Experience an enchanting world where ultra-modern architecture meets thousands of years of Arabian hospitality. From the world’s tallest marvels and luxury shopping in Dubai and Abu Dhabi to the red desert sands of Oman and the rose-red rock city of Petra.',
-      img1: '/assets/images/luca-bravo-O453M2Liufs-unsplash-scaled.jpg',
-      img2: '/assets/images/asset_fd072b807d.jpg'
+  "south-asia": {
+    "name": "South Asia",
+    "slug": "south-asia",
+    "heroImage": "https://blackforestholidays.com/wp-content/uploads/2026/08/ChatGPT-Image-Aug-8-2026-11_43_58-PM.png",
+    "tagline": "Rising Tides Across Dynamic Nations",
+    "intro": {
+      "eyebrow": "Where Every Horizon Tells a Story",
+      "title": "Rising Tides Across South Asia\u2019s Dynamic Nations",
+      "description": "South Asia continues to captivate travelers with its striking contrasts, where ancient traditions meet modern experiences and every destination offers something unique. From the pristine shores of the Maldives and its luxurious island escapes to Bhutan\u2019s serene landscapes, Sri Lanka\u2019s rich heritage, Nepal\u2019s majestic Himalayas, and India\u2019s vibrant culture, the region is full of unforgettable experiences. Explore these diverse destinations with our South East Asia Tour Packages and discover the perfect blend of adventure, culture, nature, and relaxation. For a luxurious tropical getaway, our Maldives holiday packages offer pristine beaches, world-class resorts, and unforgettable island experiences.",
+      "img1": "https://blackforestholidays.com/wp-content/uploads/2026/08/71h4GYMYp9S.jpg",
+      "img2": "https://blackforestholidays.com/wp-content/uploads/2026/08/abhinand-k-s-7RGzoC8gtto-unsplash-scaled.jpg"
     },
-    tabs: {
-      tab1: {
-        label: 'Why Blackforest Holidays?',
-        subtitle: 'Every Journey Feels Legendary',
-        title: 'Where Arabian Wonder Meets Modern Luxury',
-        description: 'Black Forest Holidays provides royal treatment: private luxury desert camps under starry skies, VIP dune buggy expeditions, and reservations at the most elite establishments in the Middle East.',
-        image: '/assets/images/village-zermatt-with-matterhorn-mountain-background-sunset-switzerland-scaled.jpg'
+    "tabs": {
+      "tab1": {
+        "label": "Why Blackforest Holidays?",
+        "subtitle": "Every Journey Feels Legendary",
+        "title": "Serene sustainability Where Growth Meets Glow",
+        "description": "At Black Forest Holidays, we go beyond just planning trips \u2014 we create unforgettable travel experiences. With personalized itineraries, expert guidance, and end-to-end travel services, we ensure every journey is seamless, exciting, and tailored to your needs. Backed by a passionate team and a strong network, we deliver trusted, value-driven holidays across India and the world.",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/tourists-take-boat-ban-rak-thai-village-mae-hong-son-province-thailand-scaled.jpg"
       },
-      tab2: {
-        label: 'Destinations',
-        subtitle: 'Arabian Jewels',
-        title: 'Desert Dunes & Futuristic Horizons',
-        items: [
-          { name: 'Dubai', desc: 'Burj Khalifa, private superyacht charters, indoor ski slopes, and the Palm Jumeirah.' },
-          { name: 'Abu Dhabi', desc: 'The magnificent Sheikh Zayed Grand Mosque, Louvre Abu Dhabi, and desert palaces.' },
-          { name: 'Oman', desc: 'Dramatically sculpted wadis, historic fortresses, and luxury glamping in Wahiba Sands.' },
-          { name: 'Jordan', desc: 'The ancient Nabataean wonder of Petra, Wadi Rum red dunes, and floating in the Dead Sea.' }
+      "tab2": {
+        "label": "Destinations",
+        "subtitle": "Our Curated Footprint",
+        "title": "Island Blues to Mountain Views : Your Next Dream Escape",
+        "items": [
+          {
+            "name": "MALDIVES",
+            "desc": "A dreamscape of turquoise lagoons and secluded island luxury.Unwind in sun-kissed serenity with world-class indulgence."
+          },
+          {
+            "name": "BHUTAN",
+            "desc": "A dreamscape of turquoise lagoons and secluded island luxury.Unwind in sun-kissed serenity with world-class indulgence."
+          },
+          {
+            "name": "SRI LANKA",
+            "desc": "A dreamscape of turquoise lagoons and secluded island luxury.Unwind in sun-kissed serenity with world-class indulgence."
+          },
+          {
+            "name": "NEPAL",
+            "desc": "A dreamscape of turquoise lagoons and secluded island luxury.Unwind in sun-kissed serenity with world-class indulgence."
+          },
+          {
+            "name": "INDIA",
+            "desc": "A dreamscape of turquoise lagoons and secluded island luxury.Unwind in sun-kissed serenity with world-class indulgence."
+          },
+          {
+            "name": "BANGLADESH",
+            "desc": "A dreamscape of turquoise lagoons and secluded island luxury.Unwind in sun-kissed serenity with world-class indulgence."
+          }
         ],
-        image: '/assets/images/eiffel-tower-view-scaled.jpg'
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/aerial-shot-beautiful-green-little-island-middle-ocean-scaled.jpg"
       },
-      tab3: {
-        label: 'Highlights',
-        subtitle: 'Signature Experiences',
-        title: 'Middle Eastern Highlights',
-        highlights: [
-          '1. VIP penthouse views from the Burj Khalifa peak',
-          '2. Luxury glamping in Oman’s Wahiba Sands with private campfire banquet',
-          '3. Candlelit walk through Petra’s Siq canyon by night',
-          '4. Private helicopter tour over Dubai’s Palm and world islands',
-          '5. Sunset yacht cruise along Dubai Marina and Arabian Gulf',
-          '6. Architecture tour of Sheikh Zayed Mosque and Louvre Abu Dhabi',
-          '7. Floating in the mineral-rich waters of the Dead Sea'
+      "tab3": {
+        "label": "Highlights",
+        "subtitle": "Signature Experiences",
+        "title": "Highlights",
+        "highlights": [
+          "1. Crystal-clear lagoons & luxury resorts",
+          "2. Sustainable tourism & peaceful culture",
+          "3. Beaches, wildlife safaris & heritage sites",
+          "4. Spiritual temples & mountain landscapes",
+          "5. Rivers, greenery & rich cultural heritage",
+          "6. Palaces, culture & vibrant diversity",
+          "7. Tiger\u2019s Nest Monastery & Himalayan views"
         ],
-        image: '/assets/images/jack-ward-rknrvCrfS1k-unsplash-1-scaled.jpg'
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/rayyu-maldives-xPsFXsbXJRg-unsplash-scaled.jpg"
       }
     },
-    countries: [
-      { name: 'Dubai', image: '/assets/images/johan-mouchet-Z95viY3WaZs-unsplash-scaled.jpg', desc: 'Burj Khalifa & Palm Marina' },
-      { name: 'Abu Dhabi', image: '/assets/images/ChatGPT-Image-Jul-31-2026-04_21_01-PM.png', desc: 'Grand Mosque & Saadiyat Island' },
-      { name: 'Oman', image: '/assets/images/quentin-fahrner-TGF7gtpCJz0-unsplash-scaled.jpg', desc: 'Muscat, Wadis & Wahiba Sands' },
-      { name: 'Jordan', image: '/assets/images/matthias-mullie-RvDc461s1EI-unsplash-scaled.jpg', desc: 'Ancient Petra & Wadi Rum' },
-      { name: 'Qatar', image: '/assets/images/luca-bravo-O453M2Liufs-unsplash-scaled.jpg', desc: 'Doha Skyline & Souq Waqif' }
-    ]
-  },
-
-  'south-asia': {
-    name: 'South Asia',
-    slug: 'south-asia',
-    heroImage: '/assets/images/asset_fd072b807d.jpg',
-    tagline: 'Heritage to Himalayas',
-    statsHeading: 'Escape to extraordinary peaks & palaces',
-    statsDesc: 'From the high Himalayas of Bhutan & Nepal to the tranquil backwaters of Kerala and Ceylon tea hills.',
-    intro: {
-      title: 'Sacred Peaks & Tropical Serenity Across South Asia',
-      description: 'Embark on a soulful odyssey across South Asia. From the misty tea hills and ancient Sigiriya citadel of Sri Lanka to the tranquil Himalayan monasteries of Bhutan and the soaring snowy pinnacles of Nepal, experience journeys steeped in spiritual grace and natural majesty.',
-      img1: '/assets/images/village-zermatt-with-matterhorn-mountain-background-sunset-switzerland-scaled.jpg',
-      img2: '/assets/images/eiffel-tower-view-scaled.jpg'
+    "parallaxBanner": {
+      "eyebrow": "Start a trip now",
+      "title": "Discover India Through a Lens of Luxury",
+      "subtitle": "Everything you need for an adventure.",
+      "buttonText": "CONTACT US",
+      "buttonLink": "/contact",
+      "bgImage": "https://blackforestholidays.com/wp-content/uploads/2026/07/4.png"
     },
-    tabs: {
-      tab1: {
-        label: 'Why Blackforest Holidays?',
-        subtitle: 'Every Journey Feels Legendary',
-        title: 'Spiritual Wonder & Unrivaled Serenity',
-        description: 'Our South Asian journeys connect you deeply with ancient roots while surrounding you in the refined luxury of boutique heritage retreats and private mountain sanctuaries.',
-        image: '/assets/images/jack-ward-rknrvCrfS1k-unsplash-1-scaled.jpg'
+    "countries": [
+      {
+        "name": "Maldives",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/maldives-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Maldives."
       },
-      tab2: {
-        label: 'Destinations',
-        subtitle: 'Himalayan & Tropical Realms',
-        title: 'Ancient Kingdoms & Serene Valleys',
-        items: [
-          { name: 'Sri Lanka', desc: 'Ancient rock citadels, scenic blue train rides through tea country, and leopard safaris.' },
-          { name: 'Bhutan', desc: 'The Kingdom of Gross National Happiness, cliffside Tiger’s Nest monastery, and sacred valleys.' },
-          { name: 'Nepal', desc: 'Mount Everest scenic flights, ancient temples in Kathmandu, and serene Pokhara lakeside.' },
-          { name: 'India', desc: 'Royal Rajasthan forts, Kerala backwaters, Kashmir snowscapes, and the Taj Mahal.' }
-        ],
-        image: '/assets/images/johan-mouchet-Z95viY3WaZs-unsplash-scaled.jpg'
+      {
+        "name": "Bhutan",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/bhutan-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Bhutan."
       },
-      tab3: {
-        label: 'Highlights',
-        subtitle: 'Soulful Highlights',
-        title: 'South Asian Wonders',
-        highlights: [
-          '1. Climbing the ancient sky palace of Sigiriya in Sri Lanka',
-          '2. Scenic blue train journey through Ella tea plantations',
-          '3. Hike to the sacred Paro Taktsang (Tiger’s Nest) in Bhutan',
-          '4. Scenic sunrise mountain flight over Mount Everest',
-          '5. Houseboat cruise on the tranquil backwaters of Kerala',
-          '6. Royal Maharaja palace stays across Rajasthan',
-          '7. Shikara boat rides on Dal Lake in Kashmir'
-        ],
-        image: '/assets/images/ChatGPT-Image-Jul-31-2026-04_21_01-PM.png'
+      {
+        "name": "Srilanka",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/srilanka-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Srilanka."
+      },
+      {
+        "name": "Nepal",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/nepal-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Nepal."
+      },
+      {
+        "name": "India",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/golden-temple-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in India."
+      },
+      {
+        "name": "Bangladesh",
+        "image": "https://blackforestholidays.com/wp-content/uploads/2026/08/pexels-rayhan-ahmed-2156107199-38311757-scaled.jpg",
+        "desc": "Explore signature retreats and curated journeys in Bangladesh."
       }
-    },
-    countries: [
-      { name: 'Sri Lanka', image: '/assets/images/quentin-fahrner-TGF7gtpCJz0-unsplash-scaled.jpg', desc: 'Sigiriya & Ceylon Tea Hills' },
-      { name: 'Bhutan', image: '/assets/images/matthias-mullie-RvDc461s1EI-unsplash-scaled.jpg', desc: 'Tiger’s Nest & Himalayan Valleys' },
-      { name: 'Nepal', image: '/assets/images/luca-bravo-O453M2Liufs-unsplash-scaled.jpg', desc: 'Everest Panoramas & Pokhara' },
-      { name: 'India', image: '/assets/images/asset_fd072b807d.jpg', desc: 'Taj Mahal & Royal Palaces' },
-      { name: 'Kerala', image: '/assets/images/village-zermatt-with-matterhorn-mountain-background-sunset-switzerland-scaled.jpg', desc: 'Backwaters & Spice Hills' },
-      { name: 'Kashmir', image: '/assets/images/eiffel-tower-view-scaled.jpg', desc: 'Dal Lake & Gulmarg Snow' }
-    ]
+    ],
+    "faqs": [
+      {
+        "q": "1. Are all adventures safe & monitored?",
+        "a": "Yes, all our adventure activities are carefully vetted, led by licensed and certified local guides, and adhere to strict safety protocols and international standards."
+      },
+      {
+        "q": "2. Custom plans for adventure available?",
+        "a": "Absolutely. We specialize in tailoring custom adventure itineraries to match your fitness level, travel preferences, and bucket-list goals."
+      },
+      {
+        "q": "3. Can activities be arranged with the trip?",
+        "a": "Yes, excursions, wildlife safaris, scuba diving, scenic helicopter flights, and private cultural tours can all be seamlessly bundled into your package."
+      },
+      {
+        "q": "4. Recommended activities for beginners?",
+        "a": "We offer a wide range of beginner-friendly experiences such as guided nature walks, gentle river cruises, introductory diving, cultural culinary classes, and leisurely scenic drives."
+      }
+    ],
+    "stats": {
+      "eyebrow": "Your Island Story Begins Here",
+      "title": "Escape to extraordinary islands",
+      "desc": "From secluded beaches to unforgettable adventures, discover island journeys designed around you.",
+      "bgImage": "https://blackforestholidays.com/wp-content/uploads/2021/07/number-counter-bg.png",
+      "counters": [
+        {
+          "value": 500,
+          "suffix": "+",
+          "label": "Island Destinations"
+        },
+        {
+          "value": 20,
+          "suffix": "+",
+          "label": "Countries"
+        },
+        {
+          "value": 1000,
+          "suffix": "+",
+          "label": "Tailor-Made Journeys"
+        }
+      ]
+    }
   }
 };
+
+// Helper aliases for slug variants
+allDestinationsData['indian_ocean'] = allDestinationsData['indian-ocean'];
+allDestinationsData['middle_east_countries'] = allDestinationsData['middle-east'];
+allDestinationsData['middle-east-countries'] = allDestinationsData['middle-east'];
