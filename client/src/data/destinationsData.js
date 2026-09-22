@@ -140,69 +140,71 @@ export const allDestinationsData = {
     name: 'Asian Countries',
     slug: 'asian-countries',
     heroImage: 'https://blackforestholidays.com/wp-content/uploads/2026/08/ChatGPT-Image-Aug-1-2026-11_13_45-PM.png',
-    tagline: 'Heritage to Himalayas',
-    statsHeading: 'Escape to extraordinary heritage & horizons',
-    statsDesc: 'From ancient Kyoto shrines to futuristic skylines, night markets, and tropical lagoons, discover journeys designed around you.',
+    tagline: 'Where Every Horizon Tells a Story',
+    statsHeading: 'Escape to extraordinary islands',
+    statsDesc: 'From secluded beaches to unforgettable adventures, discover island journeys designed around you.',
     intro: {
-      title: 'Serene Landscapes & Timeless Wonders Across Asia',
-      description: 'From serene bamboo groves and ancient Kyoto temples to futuristic skylines, bustling street food bazaars, and secluded tropical islands. Asia captivates the senses at every turn. Black Forest Holidays opens the door to bespoke cultural immersions and ultra-luxurious retreats across the Orient.',
-      img1: '/assets/images/asset_9a8df372c2.jpg',
-      img2: '/assets/images/sidra-s-KHYCVWu-Tng-unsplash-scaled.jpg'
+      title: 'Where Every Horizon Tells a Story',
+      description: 'We fell in love with East Asia somewhere between the timeless traditions of Japan and the vibrant energy of South Korea. From the neon-lit streets of Tokyo to the serene temples of Kyoto, from Seoul’s cutting-edge culture to the ancient wonders of China, Asia offers a captivating blend of heritage, innovation, and elegance. Discover the dynamic charm of Hong Kong, the hidden beauty of Taiwan, and the spiritual tranquility of Bhutan and Nepal. With our Asia tour packages from India, you can explore these extraordinary destinations with carefully crafted itineraries and personalized experiences. As the Best travel agency for Asia, we make planning your perfect Asian journey simple, seamless, and unforgettable.',
+      img1: 'https://blackforestholidays.com/wp-content/uploads/2026/07/Untitled-design-17.png',
+      img2: 'https://blackforestholidays.com/wp-content/uploads/2026/07/himeji-castle-with-beautiful-cherry-blossom-spring-season-hyogo-near-osaka-japan-scaled.jpg'
     },
     tabs: {
       tab1: {
         label: 'Why Blackforest Holidays?',
-        subtitle: 'Every Journey Feels Legendary',
-        title: 'Where Heritage Meets Modern Wonder',
-        description: 'At Black Forest Holidays, we go beyond just planning trips — we create unforgettable travel experiences. With personalized itineraries, expert guidance, and end-to-end travel services, we ensure every journey is seamless, exciting, and tailored to your needs.',
-        image: '/assets/images/john-lee-oMneOBYhJxY-unsplash-scaled.jpg'
+        subtitle: 'East Asia Escapes',
+        title: 'Serene landscapes, pristine escapes, and refined natural beauty',
+        description: 'Where timeless traditions meet refined modern elegance across East Asia.',
+        items: [
+          { name: 'JAPAN', desc: 'Where timeless traditions meet refined modern elegance. From serene temples to futuristic cities, every moment feels perfectly curated.' },
+          { name: 'SOUTH KOREA', desc: 'A vibrant blend of innovation, culture, and dynamic city life. Experience trendsetting cities alongside rich heritage and scenic landscapes.' },
+          { name: 'CHINA', desc: 'A land of ancient wonders and grand imperial legacy. From the Great Wall to modern marvels, history and progress coexist beautifully.' },
+          { name: 'HONG KONG', desc: 'Where dazzling skylines meet world-class luxury. A fast-paced city offering iconic views, fine dining, and endless energy.' },
+          { name: 'TAIWAN', desc: 'A hidden gem of scenic beauty and rich cultural charm. Discover lush mountains, night markets, and warm local traditions.' },
+          { name: 'BHUTAN', desc: 'Discover serenity in the world’s last Himalayan kingdom. Peaceful monasteries, untouched nature, and happiness define every journey.' },
+          { name: 'NEPAL', desc: 'Where majestic peaks and spiritual journeys come alive. From Everest views to sacred temples, every path inspires awe.' }
+        ],
+        image: 'https://blackforestholidays.com/wp-content/uploads/2026/07/3d-rendering-chinese-great-wall-scaled.jpg'
       },
       tab2: {
         label: 'Destinations',
-        subtitle: 'Serene landscapes & pristine escapes',
-        title: 'Our Destinations in Asia & South East Asia',
+        subtitle: 'Tropical Escapes',
+        title: 'Our Destinations in South East Asia',
         items: [
-          { name: 'Japan', desc: 'Where timeless traditions meet refined modern elegance. From serene temples to futuristic cities.' },
-          { name: 'South Korea', desc: 'A vibrant blend of innovation, culture, and dynamic city life alongside rich heritage.' },
-          { name: 'China', desc: 'A land of ancient wonders and grand imperial legacy from the Great Wall to modern marvels.' },
-          { name: 'Hong Kong', desc: 'Where dazzling skylines meet world-class luxury, fine dining, and endless energy.' },
-          { name: 'Singapore', desc: 'A dynamic city of modern elegance, iconic skylines, and world-class luxury.' },
-          { name: 'Thailand', desc: 'A vibrant blend of golden temples, bustling night markets, and exotic island sanctuaries.' },
-          { name: 'Bali', desc: 'A tropical paradise of lush rice terraces, serene temples, and ultra-luxury cliffside villas.' },
-          { name: 'Vietnam', desc: 'A land of timeless beauty, from limestone karsts in Ha Long Bay to rich street culture.' }
+          { name: 'BALI', desc: 'A tropical paradise of lush rice terraces, serene temples, and luxury resorts—perfect for relaxation, culture, and scenic beauty.' },
+          { name: 'THAILAND', desc: 'A vibrant blend of golden temples, bustling cities, and exotic islands, offering the perfect mix of culture, nightlife, and beach escapes.' },
+          { name: 'SINGAPORE', desc: 'A dynamic city of modern elegance, iconic skylines, and world-class experiences, where luxury meets innovation and culture. From the futuristic Gardens by the Bay to the vibrant streets of Chinatown and Little India, every corner tells a unique story.' },
+          { name: 'MALAYSIA', desc: 'A diverse destination of vibrant cities, rainforests, and pristine beaches, combining cultural richness with contemporary charm.' },
+          { name: 'VIETNAM', desc: 'A land of timeless beauty, from limestone karsts and lush landscapes to rich history and vibrant street culture.' },
+          { name: 'CAMBODIA', desc: 'Home to the majestic Angkor Wat, Cambodia offers ancient wonders, cultural depth, and a journey into history and heritage.' },
+          { name: 'PHILIPPINES', desc: 'An island paradise of crystal-clear waters, white-sand beaches, and hidden lagoons—perfect for tropical escapes and adventure.' }
         ],
-        image: '/assets/images/gabriel-silva-suares-FIMZGAXhp_c-unsplash-scaled.jpg'
+        image: 'https://blackforestholidays.com/wp-content/uploads/2026/07/Untitled-design-11.png'
       },
       tab3: {
         label: 'Highlights',
         subtitle: 'Curated Encounters',
-        title: 'Asian Highlights',
+        title: 'Highlights',
         highlights: [
           '1. Seamless blend of ancient traditions & futuristic cityscapes',
-          '2. Trendsetting culture, vibrant night markets & modern experiences',
+          '2. Trendsetting culture, vibrant nightlife & modern experiences',
           '3. Iconic landmarks, rich heritage & imperial history',
           '4. Dazzling skylines, luxury shopping & harbour views',
-          '5. Scenic landscapes, rice terraces & cultural charm',
+          '5. Scenic landscapes, night markets & cultural charm',
           '6. Peaceful monasteries, Himalayan beauty & spiritual journeys',
-          '7. Majestic mountains, sacred temples & tropical islands'
+          '7. Majestic mountains, sacred temples & adventure experiences'
         ],
-        image: '/assets/images/andrew-ly-iJTXWlMmoOg-unsplash-1-scaled.jpg'
+        image: 'https://blackforestholidays.com/wp-content/uploads/2026/07/picturesque-view-monastery-perched-cliff-with-prayer-flags-birds-flying-sky-scaled.jpg'
       }
     },
     countries: [
-      { name: 'Japan', image: '/assets/images/neil-rosenstech-_FpwbchiVls-unsplash-scaled.jpg', desc: 'Tokyo, Kyoto & Mt. Fuji' },
-      { name: 'South Korea', image: '/assets/images/willian-justen-de-vasconcellos-4hMET7vYTAQ-unsplash-scaled.jpg', desc: 'Seoul, Busan & Jeju Island' },
-      { name: 'China', image: '/assets/images/willdwind-william-martret-lRrklMtueBg-unsplash-scaled.jpg', desc: 'The Great Wall & Forbidden City' },
-      { name: 'Hong Kong', image: '/assets/images/xavier-coiffic-ByAHlRiTQjo-unsplash-scaled.jpg', desc: 'Victoria Harbour & Skyline' },
-      { name: 'Macau', image: '/assets/images/asset_9a8df372c2.jpg', desc: 'Colonial Ruins & Luxury Resorts' },
-      { name: 'Taiwan', image: '/assets/images/sidra-s-KHYCVWu-Tng-unsplash-scaled.jpg', desc: 'Taipei 101 & Sun Moon Lake' },
-      { name: 'Singapore', image: '/assets/images/john-lee-oMneOBYhJxY-unsplash-scaled.jpg', desc: 'Marina Bay & Sentosa Luxury' },
-      { name: 'Thailand', image: '/assets/images/gabriel-silva-suares-FIMZGAXhp_c-unsplash-scaled.jpg', desc: 'Bangkok Temples & Phuket Sands' },
-      { name: 'Bali', image: '/assets/images/andrew-ly-iJTXWlMmoOg-unsplash-1-scaled.jpg', desc: 'Ubud Terraces & Uluwatu Cliffs' },
-      { name: 'Malaysia', image: '/assets/images/neil-rosenstech-_FpwbchiVls-unsplash-scaled.jpg', desc: 'Kuala Lumpur & Langkawi' },
-      { name: 'Vietnam', image: '/assets/images/willian-justen-de-vasconcellos-4hMET7vYTAQ-unsplash-scaled.jpg', desc: 'Ha Long Bay & Da Nang' },
-      { name: 'Cambodia', image: '/assets/images/willdwind-william-martret-lRrklMtueBg-unsplash-scaled.jpg', desc: 'Majestic Temples of Angkor' },
-      { name: 'Philippines', image: '/assets/images/xavier-coiffic-ByAHlRiTQjo-unsplash-scaled.jpg', desc: 'Palawan Lagoons & Boracay' }
+      { name: 'Japan', image: 'https://blackforestholidays.com/wp-content/uploads/2026/07/cherry-blossoms-castle-himeji-japan-scaled.jpg', desc: 'Tokyo, Kyoto & Mt. Fuji' },
+      { name: 'South Korea', image: 'https://blackforestholidays.com/wp-content/uploads/2026/07/gyeongbukgung-maple-tree-autumn-korea-scaled.jpg', desc: 'Seoul, Busan & Jeju Island' },
+      { name: 'China', image: 'https://blackforestholidays.com/wp-content/uploads/2026/07/travelling-china-scaled.jpg', desc: 'The Great Wall & Forbidden City' },
+      { name: 'Hong Kong', image: 'https://blackforestholidays.com/wp-content/uploads/2026/07/junk-boat-hong-kong-victoria-harbour-scaled.jpg', desc: 'Victoria Harbour & Skyline' },
+      { name: 'Macau', image: 'https://blackforestholidays.com/wp-content/uploads/2026/07/beautiful-architecture-building-scaled.jpg', desc: 'Colonial Ruins & Luxury Resorts' },
+      { name: 'Taiwan', image: 'https://blackforestholidays.com/wp-content/uploads/2026/07/tourist-boat-ban-rak-thai-village-mae-hong-son-province-scaled.jpg', desc: 'Taipei 101 & Sun Moon Lake' },
+      { name: 'Mongolia', image: 'https://blackforestholidays.com/wp-content/uploads/2026/08/yang-v4It5Tvnet8-unsplash-scaled.jpg', desc: 'Nomadic Steppes & Gobi Desert' }
     ]
   },
 

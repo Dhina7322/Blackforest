@@ -18,7 +18,7 @@ export default function OfficesMapSection() {
     },
     coimbatore: {
       name: 'COIMBATORE',
-      area: 'Saibaba Colony',
+      area: 'Gandhipuram',
       cityState: 'Coimbatore, Tamil Nadu, India',
       fullAddress: '76, 1st floor, 8th Street, Crosscut Road, Gandhipuram, Coimbatore – 641012',
       googleMapsUrl: 'https://www.google.com/maps/search/?api=1&query=Black+Forest+Holidays+Crosscut+Road+Gandhipuram+Coimbatore+641012',
@@ -39,7 +39,7 @@ export default function OfficesMapSection() {
   return (
     <section className="bg-[#fbf9f5] py-16 sm:py-20 lg:py-24 border-t border-[#ede8e1] font-sans">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* 1. Header Matching Reference Design */}
         <div className="text-center mb-10 sm:mb-12">
           <div className="inline-block">
@@ -60,9 +60,9 @@ export default function OfficesMapSection() {
 
         {/* 2. Panoramic Regional Map Card (South India) */}
         <div className="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-[#e4dfd6] shadow-[0_4px_25px_rgba(0,0,0,0.06)] bg-[#bdd5e3] select-none">
-          
+
           {/* Outer Map SVG Container */}
-          <div 
+          <div
             className="w-full h-[360px] sm:h-[420px] md:h-[460px] relative overflow-hidden transition-transform duration-500 ease-out"
             style={{
               transform: `scale(${zoomLevel})`,
@@ -246,7 +246,7 @@ export default function OfficesMapSection() {
               </text>
 
               {/* ── OFFICE PIN 1: BENGALURU ── */}
-              <g 
+              <g
                 className="cursor-pointer transition-transform duration-300 hover:scale-105"
                 onClick={() => setSelectedOffice('bengaluru')}
                 filter="url(#pinShadow)"
@@ -317,7 +317,7 @@ export default function OfficesMapSection() {
               </g>
 
               {/* ── OFFICE PIN 2: COIMBATORE ── */}
-              <g 
+              <g
                 className="cursor-pointer transition-transform duration-300 hover:scale-105"
                 onClick={() => setSelectedOffice('coimbatore')}
                 filter="url(#pinShadow)"
@@ -444,15 +444,14 @@ export default function OfficesMapSection() {
 
         {/* 3. Office Location Cards (2 Columns Below the Map) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 mt-6 sm:mt-8">
-          
+
           {/* Card 1: BENGALURU */}
           <div
             onClick={() => setSelectedOffice('bengaluru')}
-            className={`bg-white rounded-2xl border p-6 sm:p-7 shadow-[0_2px_12px_rgba(0,0,0,0.03)] transition-all duration-300 relative overflow-hidden flex items-start justify-between cursor-pointer ${
-              selectedOffice === 'bengaluru'
+            className={`bg-white rounded-2xl border p-6 sm:p-7 shadow-[0_2px_12px_rgba(0,0,0,0.03)] transition-all duration-300 relative overflow-hidden flex items-start justify-between cursor-pointer ${selectedOffice === 'bengaluru'
                 ? 'border-[#10221b] ring-1 ring-[#10221b]/20 shadow-md'
                 : 'border-[#e8e4dc] hover:border-[#10221b]/40 hover:shadow-md'
-            }`}
+              }`}
           >
             <div className="flex items-start gap-4 sm:gap-5 z-10">
               {/* Location Pin Icon in Warm Beige Circle */}
@@ -471,7 +470,7 @@ export default function OfficesMapSection() {
                 <p className="text-gray-600 text-sm font-light leading-relaxed mb-4">
                   Bengaluru, Karnataka, India
                 </p>
-                
+
                 <a
                   href={offices.bengaluru.googleMapsUrl}
                   target="_blank"
@@ -499,11 +498,10 @@ export default function OfficesMapSection() {
           {/* Card 2: COIMBATORE */}
           <div
             onClick={() => setSelectedOffice('coimbatore')}
-            className={`bg-white rounded-2xl border p-6 sm:p-7 shadow-[0_2px_12px_rgba(0,0,0,0.03)] transition-all duration-300 relative overflow-hidden flex items-start justify-between cursor-pointer ${
-              selectedOffice === 'coimbatore'
+            className={`bg-white rounded-2xl border p-6 sm:p-7 shadow-[0_2px_12px_rgba(0,0,0,0.03)] transition-all duration-300 relative overflow-hidden flex items-start justify-between cursor-pointer ${selectedOffice === 'coimbatore'
                 ? 'border-[#10221b] ring-1 ring-[#10221b]/20 shadow-md'
                 : 'border-[#e8e4dc] hover:border-[#10221b]/40 hover:shadow-md'
-            }`}
+              }`}
           >
             <div className="flex items-start gap-4 sm:gap-5 z-10">
               {/* Location Pin Icon in Warm Beige Circle */}
@@ -522,7 +520,7 @@ export default function OfficesMapSection() {
                 <p className="text-gray-600 text-sm font-light leading-relaxed mb-4">
                   Coimbatore, Tamil Nadu, India
                 </p>
-                
+
                 <a
                   href={offices.coimbatore.googleMapsUrl}
                   target="_blank"

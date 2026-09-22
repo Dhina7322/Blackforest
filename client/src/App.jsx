@@ -13,6 +13,7 @@ import AdminLayout from './components/layout/AdminLayout';
 
 // Public Pages
 import HomePage from './pages/public/HomePage';
+import AsianCountriesPage from './pages/public/AsianCountriesPage';
 import DestinationsPage from './pages/public/DestinationsPage';
 import DestinationDetailPage from './pages/public/DestinationDetailPage';
 import ToursPage from './pages/public/ToursPage';
@@ -54,10 +55,11 @@ export default function App() {
 
                 {/* Destinations */}
                 <Route path="/destinations" element={<DestinationsPage />} />
+                <Route path="/destinations/asian-countries" element={<AsianCountriesPage />} />
                 <Route path="/destinations/:slug" element={<DestinationDetailPage />} />
                 <Route path="/africa" element={<DestinationDetailPage />} />
                 <Route path="/america" element={<DestinationDetailPage />} />
-                <Route path="/asian-countries" element={<DestinationDetailPage />} />
+                <Route path="/asian-countries" element={<AsianCountriesPage />} />
                 <Route path="/australia" element={<DestinationDetailPage />} />
                 <Route path="/europe" element={<DestinationDetailPage />} />
                 <Route path="/indian-ocean" element={<DestinationDetailPage />} />

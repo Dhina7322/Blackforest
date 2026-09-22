@@ -95,29 +95,97 @@ export default function ExpertiseLogosSection() {
           ))}
         </div>
 
-        {/* Dark Green Banner */}
-        <div className="bg-[#10221b] rounded-2xl p-8 lg:p-12 text-white shadow-xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {benefits.map((b, idx) => {
-              const Icon = b.icon;
-              return (
-                <div key={idx} className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full border border-gray-600 flex items-center justify-center text-[#f29727]">
-                    <Icon className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h5 className="font-bold text-xs uppercase tracking-wider mb-2">{b.title}</h5>
-                    <p className="text-gray-400 text-[11px] leading-relaxed">{b.desc}</p>
-                  </div>
-                </div>
-              );
-            })}
+        {/* Dark Green Pill Bar with 4 Benefits matching Image 2 */}
+        <div className="mt-14 bg-[#0a1e16] text-white rounded-[22px] p-6 sm:p-8 lg:p-9 shadow-2xl max-w-6xl mx-auto border-[1.5px] border-[#9b7b38]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 lg:divide-x divide-[#9b7b38]/40 text-left">
+            
+            {/* Item 1 */}
+            <div className="flex items-center gap-4 py-4 sm:py-2 lg:py-0 lg:px-6 first:lg:pl-2">
+              <div className="w-12 h-12 rounded-full border-[1.5px] border-[#9b7b38] flex items-center justify-center text-[#c59b27] flex-shrink-0">
+                <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#c59b27]" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 3.5a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" />
+                  <path d="M9.5 9.5h5" />
+                  <path d="M10 9.5l-1.5 8h7l-1.5-8" />
+                  <path d="M7 19.5h10" />
+                </svg>
+              </div>
+              <div>
+                <h4 className="font-bold text-[13px] sm:text-[14px] uppercase tracking-wider text-white font-sans leading-tight">
+                  EXPERT<br className="hidden sm:inline" /> KNOWLEDGE
+                </h4>
+                <p className="text-[12px] sm:text-[13px] text-[#cfc9be] font-light leading-snug mt-1 font-sans">
+                  Destination training and global insights
+                </p>
+              </div>
+            </div>
+
+            {/* Item 2 */}
+            <div className="flex items-center gap-4 py-4 sm:py-2 lg:py-0 lg:px-6">
+              <div className="w-12 h-12 rounded-full border-[1.5px] border-[#9b7b38] flex items-center justify-center text-[#c59b27] flex-shrink-0">
+                <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#c59b27]" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 4.5l-7 5.5v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-8l-7-5.5z" />
+                </svg>
+              </div>
+              <div>
+                <h4 className="font-bold text-[13px] sm:text-[14px] uppercase tracking-wider text-white font-sans leading-tight">
+                  TRUSTED<br className="hidden sm:inline" /> EXPERTISE
+                </h4>
+                <p className="text-[12px] sm:text-[13px] text-[#cfc9be] font-light leading-snug mt-1 font-sans">
+                  Certified by leading tourism boards and industry bodies
+                </p>
+              </div>
+            </div>
+
+            {/* Item 3 */}
+            <div className="flex items-center gap-4 py-4 sm:py-2 lg:py-0 lg:px-6">
+              <div className="w-12 h-12 rounded-full border-[1.5px] border-[#9b7b38] flex items-center justify-center text-[#c59b27] flex-shrink-0">
+                <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#c59b27]" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="7.5" />
+                  <circle cx="12" cy="12" r="3.5" />
+                </svg>
+              </div>
+              <div>
+                <h4 className="font-bold text-[13px] sm:text-[14px] uppercase tracking-wider text-white font-sans leading-tight">
+                  BETTER JOURNEYS
+                </h4>
+                <p className="text-[12px] sm:text-[13px] text-[#cfc9be] font-light leading-snug mt-1 font-sans">
+                  Knowledge that creates meaningful and enriching experiences
+                </p>
+              </div>
+            </div>
+
+            {/* Item 4 */}
+            <div className="flex items-center gap-4 py-4 sm:py-2 lg:py-0 lg:px-6 last:lg:pr-2">
+              <div className="w-12 h-12 rounded-full border-[1.5px] border-[#9b7b38] flex items-center justify-center text-[#c59b27] flex-shrink-0">
+                <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#c59b27]" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 20.25S4.5 15.5 4.5 9.75A4.75 4.75 0 0 1 12 6.2a4.75 4.75 0 0 1 7.5 3.55c0 5.75-7.5 10.5-7.5 10.5z" />
+                </svg>
+              </div>
+              <div>
+                <h4 className="font-bold text-[13px] sm:text-[14px] uppercase tracking-wider text-white font-sans leading-tight">
+                  COMMITTED TO YOU
+                </h4>
+                <p className="text-[12px] sm:text-[13px] text-[#cfc9be] font-light leading-snug mt-1 font-sans">
+                  Continuous learning for travellers, always
+                </p>
+              </div>
+            </div>
+
           </div>
-          <div className="mt-12 pt-6 border-t border-gray-800 text-center flex items-center justify-center gap-4 text-[10px] text-gray-400 uppercase tracking-widest">
-             <div className="w-12 h-[1px] bg-gray-700"></div>
-             Our partnerships reflect our commitment to providing authentic experiences and exceptional journeys worldwide.
-             <div className="w-12 h-[1px] bg-gray-700"></div>
+        </div>
+
+        {/* Footer Commitment Note flanked by golden horizontal lines */}
+        <div className="mt-10 flex items-center justify-center gap-3 sm:gap-6 max-w-4xl mx-auto px-4">
+          <div className="flex-1 max-w-[80px] sm:max-w-[140px] h-[1.5px] bg-[#c59b27]/60" />
+          
+          <div className="flex items-center gap-2.5 text-xs sm:text-[13.5px] text-gray-600 font-sans text-center">
+            <svg viewBox="0 0 24 24" className="w-4 h-4 text-gray-700 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 7.5a2.5 2.5 0 1 0-2.5-2.5A2.5 2.5 0 0 0 12 7.5zm0 9a2.5 2.5 0 1 0 2.5 2.5 2.5 2.5 0 0 0-2.5-2.5zm-4.5-4.5a2.5 2.5 0 1 0-2.5 2.5 2.5 2.5 0 0 0 2.5-2.5zm9 0a2.5 2.5 0 1 0 2.5-2.5 2.5 2.5 0 0 0-2.5 2.5z" />
+            </svg>
+            <span>Our partnerships reflect our commitment to providing authentic experiences and exceptional journeys worldwide.</span>
           </div>
+
+          <div className="flex-1 max-w-[80px] sm:max-w-[140px] h-[1.5px] bg-[#c59b27]/60" />
         </div>
 
       </div>
