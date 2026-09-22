@@ -5,40 +5,40 @@ import { Link } from 'react-router-dom';
 
 function HandDrawnLeftArrow({ className = "w-12 h-6" }) {
   return (
-    <svg 
-      viewBox="0 0 54 22" 
-      fill="none" 
+    <svg
+      viewBox="0 0 54 22"
+      fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
       {/* Hand-drawn shaft */}
-      <path 
-        d="M50 11C35 10.5 20 11.2 3 11" 
-        stroke="currentColor" 
-        strokeWidth="2.2" 
-        strokeLinecap="round" 
+      <path
+        d="M50 11C35 10.5 20 11.2 3 11"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
       />
       {/* Top angled barb stroke */}
-      <path 
-        d="M17 3.5C12 6.5 7 9 2.5 11" 
-        stroke="currentColor" 
-        strokeWidth="2.2" 
-        strokeLinecap="round" 
+      <path
+        d="M17 3.5C12 6.5 7 9 2.5 11"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
       />
       {/* Bottom angled barb stroke */}
-      <path 
-        d="M17 18.5C12 15.5 7 13 2.5 11" 
-        stroke="currentColor" 
-        strokeWidth="2.2" 
-        strokeLinecap="round" 
+      <path
+        d="M17 18.5C12 15.5 7 13 2.5 11"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
       />
       {/* Subtle sketchy double stroke */}
-      <path 
-        d="M46 12C32 11.6 18 12.1 6 11.8" 
-        stroke="currentColor" 
-        strokeWidth="1.2" 
-        strokeLinecap="round" 
-        opacity="0.5" 
+      <path
+        d="M46 12C32 11.6 18 12.1 6 11.8"
+        stroke="currentColor"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+        opacity="0.5"
       />
     </svg>
   );
@@ -46,40 +46,40 @@ function HandDrawnLeftArrow({ className = "w-12 h-6" }) {
 
 function HandDrawnRightArrow({ className = "w-12 h-6" }) {
   return (
-    <svg 
-      viewBox="0 0 54 22" 
-      fill="none" 
+    <svg
+      viewBox="0 0 54 22"
+      fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
       {/* Hand-drawn shaft */}
-      <path 
-        d="M4 11C19 10.5 34 11.2 51 11" 
-        stroke="currentColor" 
-        strokeWidth="2.2" 
-        strokeLinecap="round" 
+      <path
+        d="M4 11C19 10.5 34 11.2 51 11"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
       />
       {/* Top angled barb stroke */}
-      <path 
-        d="M37 3.5C42 6.5 47 9 51.5 11" 
-        stroke="currentColor" 
-        strokeWidth="2.2" 
-        strokeLinecap="round" 
+      <path
+        d="M37 3.5C42 6.5 47 9 51.5 11"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
       />
       {/* Bottom angled barb stroke */}
-      <path 
-        d="M37 18.5C42 15.5 47 13 51.5 11" 
-        stroke="currentColor" 
-        strokeWidth="2.2" 
-        strokeLinecap="round" 
+      <path
+        d="M37 18.5C42 15.5 47 13 51.5 11"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
       />
       {/* Subtle sketchy double stroke */}
-      <path 
-        d="M8 12C22 11.6 36 12.1 48 11.8" 
-        stroke="currentColor" 
-        strokeWidth="1.2" 
-        strokeLinecap="round" 
-        opacity="0.5" 
+      <path
+        d="M8 12C22 11.6 36 12.1 48 11.8"
+        stroke="currentColor"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+        opacity="0.5"
       />
     </svg>
   );
@@ -113,7 +113,7 @@ export default function CorporateTravelPage() {
 
   return (
     <div className="bg-white font-sans text-gray-800 animate-fadeIn overflow-x-hidden">
-      
+
       {/* 1. Hero Section */}
       <section className="relative h-[55vh] min-h-[460px] flex flex-col justify-end">
         <div className="absolute inset-0 z-0 bg-[#0a1712]">
@@ -123,7 +123,7 @@ export default function CorporateTravelPage() {
             className="w-full h-full object-cover opacity-70"
           />
         </div>
-        
+
         <div className="relative z-10 text-white mt-16 flex flex-col items-center pb-28">
           <h1 className="text-4xl md:text-5xl lg:text-[56px] font-sans font-bold tracking-tight mb-4 drop-shadow-xl text-center">
             Corporate & Group Travel
@@ -140,26 +140,26 @@ export default function CorporateTravelPage() {
       {/* 2. Main Content Section - Two columns: Left 60%, Right 40% with overlapping framed images */}
       <section className="py-16 sm:py-24 bg-white relative z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
-            
+
             {/* Left Column (60%) - Typography and Services List */}
             <div className="w-full lg:w-[60%] space-y-6">
               <div>
-                <span 
+                <span
                   className="text-2xl sm:text-3xl block mb-2 text-[#27B8B1] tracking-wide font-cursive"
                   style={{ fontFamily: "var(--font-cursive, 'Mansalva', cursive)" }}
                 >
                   Corporate Travel
                 </span>
-                
+
                 <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-sans font-bold text-[#7cb342] leading-[1.15] mb-4">
                   Seamless Travel Solutions for Teams & Businesses
                 </h2>
 
                 <div className="w-16 h-[3px] bg-[#27B8B1] mb-8 rounded-full"></div>
               </div>
-              
+
               <div className="space-y-6 text-[#555555] font-light leading-relaxed text-[20px] font-sans">
                 <p>
                   At BlackForest Holidays, we understand that corporate travel is more than simply booking flights and hotels. Our corporate tour packages are designed to keep your people moving efficiently, comfortably, and confidently while giving your organisation complete control over every journey.
@@ -167,7 +167,7 @@ export default function CorporateTravelPage() {
                 <p>
                   From business trips and executive travel to corporate meetings, conferences, incentives, and group movements, our dedicated travel solutions are designed to make every business journey seamless.
                 </p>
-                
+
                 <div className="pt-4">
                   <h3 className="font-bold text-[#10221b] text-xl sm:text-2xl mb-3 font-sans">
                     Your Business. Our Expertise.
@@ -203,19 +203,19 @@ export default function CorporateTravelPage() {
               <div className="relative w-full max-w-[480px] mx-auto lg:ml-auto">
                 {/* Back image - Two business women with luggage and teal border */}
                 <div className="w-[88%] ml-auto aspect-[4/3] rounded-2xl overflow-hidden shadow-xl border-[8px] sm:border-[10px] border-[#27B8B1] relative z-10">
-                  <img 
-                    src="/assets/images/corporate-travel.jpg" 
-                    alt="Corporate business travel executives walking in airport" 
-                    className="w-full h-full object-cover" 
+                  <img
+                    src="/assets/images/corporate-travel.jpg"
+                    alt="Corporate business travel executives walking in airport"
+                    className="w-full h-full object-cover"
                   />
                 </div>
 
                 {/* Front overlapping image - Laptop visa application form */}
                 <div className="w-[74%] -mt-24 sm:-mt-28 lg:-mt-32 relative z-20 rounded-xl overflow-hidden shadow-2xl border-4 border-white">
-                  <img 
-                    src="/assets/images/Untitled-design-23.png" 
-                    alt="Visa application form on laptop" 
-                    className="w-full h-auto object-cover block" 
+                  <img
+                    src="/assets/images/Untitled-design-23.png"
+                    alt="Visa application form on laptop"
+                    className="w-full h-auto object-cover block"
                   />
                 </div>
               </div>
@@ -228,10 +228,10 @@ export default function CorporateTravelPage() {
 
       {/* 3. Corporate Travel Across The World Carousel Section with Hand-Drawn Arrows - matching Image 5 */}
       <section className="py-16 sm:py-24 bg-[#faf9f6] border-t border-gray-100 overflow-hidden">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+        <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
+
           <div className="mb-10 sm:mb-14">
-            <span 
+            <span
               className="text-2xl sm:text-3xl block mb-2 text-[#27B8B1] tracking-wide font-cursive"
               style={{ fontFamily: "var(--font-cursive, 'Mansalva', cursive)" }}
             >
@@ -249,7 +249,7 @@ export default function CorporateTravelPage() {
           {/* Carousel Slider with Hand-Drawn Arrows */}
           <div className="relative flex items-center justify-between gap-3 sm:gap-6 lg:gap-8">
             {/* Left Hand-Drawn Arrow */}
-            <button 
+            <button
               onClick={prevSlide}
               aria-label="Previous image"
               className="text-[#182c20] hover:text-[#5e963b] transition-transform hover:scale-110 p-1 sm:p-2 cursor-pointer focus:outline-none flex-shrink-0"
@@ -260,14 +260,14 @@ export default function CorporateTravelPage() {
             {/* 3 Images Grid */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 w-full">
               {visibleImages.map((img, idx) => (
-                <div 
-                  key={idx} 
+                <div
+                  key={idx}
                   className="aspect-[4/5] overflow-hidden rounded-sm shadow-md bg-white group transition-all duration-300"
                 >
-                  <img 
-                    src={img.src} 
-                    alt={img.alt} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 block" 
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 block"
                     loading="lazy"
                   />
                 </div>
@@ -275,7 +275,7 @@ export default function CorporateTravelPage() {
             </div>
 
             {/* Right Hand-Drawn Arrow */}
-            <button 
+            <button
               onClick={nextSlide}
               aria-label="Next image"
               className="text-[#182c20] hover:text-[#5e963b] transition-transform hover:scale-110 p-1 sm:p-2 cursor-pointer focus:outline-none flex-shrink-0"
@@ -290,9 +290,9 @@ export default function CorporateTravelPage() {
       {/* 4. Why Choose Grid */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="mb-14 max-w-3xl">
-            <span 
+            <span
               className="text-2xl sm:text-3xl block mb-2 text-[#27B8B1] tracking-wide font-cursive"
               style={{ fontFamily: "var(--font-cursive, 'Mansalva', cursive)" }}
             >
@@ -305,27 +305,27 @@ export default function CorporateTravelPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14">
-            
+
             <div className="space-y-3">
               <h3 className="font-bold text-[#10221b] text-xl sm:text-2xl leading-snug font-sans">Dedicated Travel Management</h3>
               <p className="text-[#555555] font-light leading-relaxed text-[20px] font-sans">Our focused strategy provides you the best routing and the most efficient fares.</p>
             </div>
-            
+
             <div className="space-y-3">
               <h3 className="font-bold text-[#10221b] text-xl sm:text-2xl leading-snug font-sans">Cost-Conscious Solutions</h3>
               <p className="text-[#555555] font-light leading-relaxed text-[20px] font-sans">We leverage extensive supplier relationships and technology to optimize costs without compromising quality.</p>
             </div>
-            
+
             <div className="space-y-3">
               <h3 className="font-bold text-[#10221b] text-xl sm:text-2xl leading-snug font-sans">Seamless Coordination</h3>
               <p className="text-[#555555] font-light leading-relaxed text-[20px] font-sans">Flight bookings, ground transfers, hotel stays and meetings—we coordinate everything seamlessly from start to finish.</p>
             </div>
-            
+
             <div className="space-y-3">
               <h3 className="font-bold text-[#10221b] text-xl sm:text-2xl leading-snug font-sans">24/7 Global Support</h3>
               <p className="text-[#555555] font-light leading-relaxed text-[20px] font-sans">Our dedicated consultants are available around the clock to support you with changes, cancellations, or emergencies wherever you are.</p>
             </div>
-            
+
           </div>
         </div>
       </section>
@@ -334,11 +334,11 @@ export default function CorporateTravelPage() {
       <section className="py-20 md:py-32 relative bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-            
+
             {/* Left Content */}
             <div className="space-y-8">
               <div>
-                <span 
+                <span
                   className="text-2xl sm:text-3xl block mb-2 text-[#27B8B1] tracking-wide font-cursive"
                   style={{ fontFamily: "var(--font-cursive, 'Mansalva', cursive)" }}
                 >
@@ -351,7 +351,7 @@ export default function CorporateTravelPage() {
                 </h2>
                 <div className="w-16 h-[3px] bg-[#27B8B1] mt-6 mb-8 rounded-full"></div>
               </div>
-              
+
               <div className="text-[#555555] font-light leading-relaxed text-[20px] font-sans">
                 <p>Let Blackforest Holidays elevate your business travel experience. To partner with us and leverage our strategic travel management solutions to achieve better control over your travel expenditures, enhance traveler satisfaction, and drive overall business success.</p>
               </div>

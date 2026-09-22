@@ -1,20 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSettings } from '../../context/SiteSettingsContext';
-import HeroWave from '../../components/common/HeroWave';
+
+import img5 from '../../assets/uploads/Cruise_images/2009180841458359.jpg';
+import img6 from '../../assets/uploads/Cruise_images/20120304414770.jpg';
+import img7 from '../../assets/uploads/Cruise_images/2012030441483467.jpg';
+import img8 from '../../assets/uploads/Cruise_images/2012030441484284.jpg';
+import img9 from '../../assets/uploads/Cruise_images/2012250605258841.jpg';
+import img10 from '../../assets/uploads/Cruise_images/2012250625472923.jpg';
+import img11 from '../../assets/uploads/Cruise_images/20170303171617.png';
+import img12 from '../../assets/uploads/Cruise_images/20170314130600.png';
+import img13 from '../../assets/uploads/Cruise_images/20170503184757.png';
+import img14 from '../../assets/uploads/Cruise_images/20170504112032.png';
 
 const CDN = 'https://blackforestholidays.com/wp-content/uploads';
+
+const cruiseUploadImages = [
+  img1, img2, img3, img4, img5, img6, img7,
+  img8, img9, img10, img11, img12, img13, img14
+];
 
 export default function CruisesPage() {
   const { openEnquiryModal } = useSettings();
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const carouselImages = [
-    `${CDN}/2026/08/Untitled-design-54.png`,
-    `${CDN}/2026/08/Untitled-design-52.png`,
-    `${CDN}/2026/08/Untitled-design-51.png`,
-    `${CDN}/2026/08/Untitled-design-53.png`,
-  ];
+  const carouselImages = cruiseUploadImages;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -157,11 +167,7 @@ export default function CruisesPage() {
       </section>
 
       {/* 3. Carousel Section (Matching Screenshot) */}
-      <section className="relative py-20 overflow-hidden group">
-        <div className="absolute inset-0 w-full h-full flex z-0 pointer-events-none">
-          <div className="w-[30%] h-full bg-[#f6f6f6]" />
-          <div className="w-[70%] h-full bg-white" />
-        </div>
+      <section className="relative py-20 bg-white overflow-hidden group">
 
         <div className="max-w-[1600px] w-full mx-auto px-4 sm:px-6 relative z-10 flex items-center justify-between gap-4 md:gap-8">
           <button
@@ -224,7 +230,7 @@ export default function CruisesPage() {
           </h2>
           <div className="w-16 h-[3px] bg-[#27B8B1] mb-12 rounded-full" />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 max-w-4xl">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 max-w-full">
             <div>
               <h4 className="text-[19px] sm:text-[20px] font-bold text-[#10221b] mb-2 font-sans">
                 Expert Cruise Selection
