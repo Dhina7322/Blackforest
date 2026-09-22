@@ -57,18 +57,18 @@ const CARDS = [
   },
 ];
 
-const PER_VIEW      = 3;
-const MAX_INDEX     = CARDS.length - PER_VIEW;   // 3
-const AUTO_MS       = 3500;
-const DRAG_THRESH   = 60;
+const PER_VIEW = 3;
+const MAX_INDEX = CARDS.length - PER_VIEW;   // 3
+const AUTO_MS = 3500;
+const DRAG_THRESH = 60;
 
 export default function IntroSection() {
-  const [idx, setIdx]         = useState(0);
-  const [delta, setDelta]     = useState(0);
+  const [idx, setIdx] = useState(0);
+  const [delta, setDelta] = useState(0);
   const [dragging, setDragging] = useState(false);
-  const startX  = useRef(0);
-  const isDown  = useRef(false);
-  const timer   = useRef(null);
+  const startX = useRef(0);
+  const isDown = useRef(false);
+  const timer = useRef(null);
 
   /* ── auto-slide ── */
   const startAuto = useCallback(() => {
@@ -86,9 +86,9 @@ export default function IntroSection() {
   };
 
   /* ── drag ── */
-  const down  = (x) => { isDown.current = true; startX.current = x; setDelta(0); clearInterval(timer.current); };
-  const move  = (x) => { if (!isDown.current) return; const d = x - startX.current; if (Math.abs(d) > 6) setDragging(true); setDelta(d); };
-  const up    = (x) => {
+  const down = (x) => { isDown.current = true; startX.current = x; setDelta(0); clearInterval(timer.current); };
+  const move = (x) => { if (!isDown.current) return; const d = x - startX.current; if (Math.abs(d) > 6) setDragging(true); setDelta(d); };
+  const up = (x) => {
     if (!isDown.current) return;
     isDown.current = false;
     const d = x - startX.current;
@@ -101,11 +101,15 @@ export default function IntroSection() {
   const centreIdx = idx + 1; // which CARDS[] entry is currently in the centre slot
 
   return (
-    <section className="relative py-14 sm:py-18 lg:py-24 overflow-hidden z-10 bg-[#f5f5f5]">
-      {/* Left white strip */}
-      <div className="absolute inset-0 z-0 pointer-events-none flex">
-        <div className="w-[32%] bg-white h-full" />
-        <div className="flex-1 bg-[#f5f5f5] h-full" />
+    <section className="relative py-14 sm:py-18 lg:py-24 overflow-hidden z-10 bg-white">
+      {/* Slowly rotating compass watermark on top of cards in right side corner */}
+      <div className="absolute -right-20 sm:-right-12 md:right-0 lg:right-2 top-4 sm:top-8 md:top-12 z-(-1) pointer-events-none select-none overflow-visible">
+        <img
+          src="/assets/images/carousel-compass.jpg"
+          alt="Compass Rose"
+          className="w-[340px] sm:w-[420px] md:w-[480px] lg:w-[540px] h-auto object-contain animate-spin-slow mix-blend-multiply opacity-80"
+          draggable={false}
+        />
       </div>
 
       <div className="relative z-10 max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -121,13 +125,13 @@ export default function IntroSection() {
         <div
           className="overflow-hidden"
           style={{ cursor: dragging ? 'grabbing' : 'grab', userSelect: 'none' }}
-          onMouseDown ={(e) => down(e.clientX)}
-          onMouseMove ={(e) => move(e.clientX)}
-          onMouseUp   ={(e) => up(e.clientX)}
+          onMouseDown={(e) => down(e.clientX)}
+          onMouseMove={(e) => move(e.clientX)}
+          onMouseUp={(e) => up(e.clientX)}
           onMouseLeave={(e) => { if (isDown.current) up(e.clientX); }}
           onTouchStart={(e) => down(e.touches[0].clientX)}
-          onTouchMove ={(e) => { e.preventDefault(); move(e.touches[0].clientX); }}
-          onTouchEnd  ={(e) => up(e.changedTouches[0].clientX)}
+          onTouchMove={(e) => { e.preventDefault(); move(e.touches[0].clientX); }}
+          onTouchEnd={(e) => up(e.changedTouches[0].clientX)}
         >
           <div
             className="flex"
@@ -148,22 +152,22 @@ export default function IntroSection() {
                   <div
                     className="bg-white flex flex-col items-center pt-8 pb-9 px-6 transition-all duration-500"
                     style={{
-                      borderRadius   : '16px',
-                      border         : `1.5px solid ${isCentre ? '#d0d0d0' : '#e8e8e8'}`,
-                      boxShadow      : isCentre ? '0 10px 40px rgba(0,0,0,0.13)' : '0 2px 10px rgba(0,0,0,0.05)',
-                      transform      : isCentre ? 'scale(1.03)' : 'scale(0.97)',
-                      minHeight      : '500px',          // taller cards
-                      pointerEvents  : dragging ? 'none' : 'auto',
+                      borderRadius: '16px',
+                      border: `1.5px solid ${isCentre ? '#d0d0d0' : '#e8e8e8'}`,
+                      boxShadow: isCentre ? '0 10px 40px rgba(0,0,0,0.13)' : '0 2px 10px rgba(0,0,0,0.05)',
+                      transform: isCentre ? 'scale(1.03)' : 'scale(0.97)',
+                      minHeight: '500px',          // taller cards
+                      pointerEvents: dragging ? 'none' : 'auto',
                     }}
                   >
                     {/* Circular image */}
                     <div
                       className="rounded-full overflow-hidden mb-7 shrink-0"
                       style={{
-                        width    : '195px',
-                        height   : '195px',
-                        minWidth : '195px',
-                        border   : '2.5px solid #eeeeee',
+                        width: '195px',
+                        height: '195px',
+                        minWidth: '195px',
+                        border: '2.5px solid #eeeeee',
                       }}
                     >
                       <img
@@ -213,10 +217,10 @@ export default function IntroSection() {
                 onClick={() => goTo(Math.max(0, Math.min(i - 1, MAX_INDEX)))}
                 className="rounded-full transition-all duration-300 focus:outline-none"
                 style={{
-                  width           : active ? '11px' : '8px',
-                  height          : active ? '11px' : '8px',
-                  backgroundColor : active ? '#18b5c9' : '#5a5a5a',
-                  opacity         : active ? 1 : 0.6,
+                  width: active ? '11px' : '8px',
+                  height: active ? '11px' : '8px',
+                  backgroundColor: active ? '#18b5c9' : '#5a5a5a',
+                  opacity: active ? 1 : 0.6,
                 }}
                 aria-label={`Slide ${i + 1}`}
               />
