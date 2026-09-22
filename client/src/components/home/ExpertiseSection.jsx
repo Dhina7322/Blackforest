@@ -109,9 +109,9 @@ export default function ExpertiseSection() {
                 <h4 className="font-bold text-[15px] sm:text-[15px] uppercase tracking-wider text-white font-sans leading-tight">
                   EXPERT<br className="hidden sm:inline" /> KNOWLEDGE
                 </h4>
-                <p className="text-[12px] sm:text-[13px] text-[#cfc9be] font-light leading-snug mt-1 font-sans">
+                <span className="text-[12px] sm:text-[13px] text-[#cfc9be] font-light leading-snug mt-1 font-sans">
                   Destination training and global insights
-                </p>
+                </span>
               </div>
             </div>
 
@@ -126,9 +126,9 @@ export default function ExpertiseSection() {
                 <h4 className="font-bold text-[15px] sm:text-[15px] uppercase tracking-wider text-white font-sans leading-tight">
                   TRUSTED<br className="hidden sm:inline" /> EXPERTISE
                 </h4>
-                <p className="text-[12px] sm:text-[13px] text-[#cfc9be] font-light leading-snug mt-1 font-sans">
+                <span className="text-[12px] sm:text-[13px] text-[#cfc9be] font-light leading-snug mt-1 font-sans">
                   Certified by leading tourism boards and industry bodies
-                </p>
+                </span >
               </div>
             </div>
 
@@ -144,9 +144,9 @@ export default function ExpertiseSection() {
                 <h4 className="font-bold text-[15px] sm:text-[15px] uppercase tracking-wider text-white font-sans leading-tight">
                   BETTER JOURNEYS
                 </h4>
-                <p className="text-[12px] sm:text-[13px] text-[#cfc9be] font-light leading-snug mt-1 font-sans">
+                <span className="text-[12px] sm:text-[13px] text-[#cfc9be] font-light leading-snug mt-1 font-sans">
                   Knowledge that creates meaningful and enriching experiences
-                </p>
+                </span >
               </div>
             </div>
 
@@ -161,9 +161,9 @@ export default function ExpertiseSection() {
                 <h4 className="font-bold text-[15px] sm:text-[15px] uppercase tracking-wider text-white font-sans leading-tight">
                   COMMITTED TO YOU
                 </h4>
-                <p className="text-[12px] sm:text-[13px] text-[#cfc9be] font-light leading-snug mt-1 font-sans">
+                <span className="text-[12px] sm:text-[13px] text-[#cfc9be] font-light leading-snug mt-1 font-sans">
                   Continuous learning for travellers, always
-                </p>
+                </span >
               </div>
             </div>
 
