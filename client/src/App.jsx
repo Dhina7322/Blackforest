@@ -70,6 +70,11 @@ export default function App() {
                 {/* Experiences */}
                 <Route path="/experiences" element={<ExperiencesPage />} />
                 <Route path="/experiences/:slug" element={<ExperiencesPage />} />
+                <Route path="/adventure-nature" element={<ExperiencesPage forcedSlug="adventure-nature" />} />
+                <Route path="/island-holidays" element={<ExperiencesPage forcedSlug="island-holidays" />} />
+                <Route path="/family-holidays" element={<ExperiencesPage forcedSlug="family-holidays" />} />
+                <Route path="/honeymoon-escapes" element={<ExperiencesPage forcedSlug="honeymoon-escapes" />} />
+                <Route path="/luxury-escapes" element={<ExperiencesPage forcedSlug="luxury-escapes" />} />
 
                 {/* Concierge & Specialized Services */}
                 <Route path="/concierge" element={<ConciergePage />} />
