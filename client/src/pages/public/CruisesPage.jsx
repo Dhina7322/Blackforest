@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSettings } from '../../context/SiteSettingsContext';
+import HeroWave from '../../components/common/HeroWave';
 
+import img1 from '../../assets/uploads/Cruise_images/1912240620312026.jpg';
+import img2 from '../../assets/uploads/Cruise_images/2002260756529264.jpg';
+import img3 from '../../assets/uploads/Cruise_images/2002260804071560.jpg';
+import img4 from '../../assets/uploads/Cruise_images/2002260815352706.jpg';
 import img5 from '../../assets/uploads/Cruise_images/2009180841458359.jpg';
 import img6 from '../../assets/uploads/Cruise_images/20120304414770.jpg';
 import img7 from '../../assets/uploads/Cruise_images/2012030441483467.jpg';
@@ -167,42 +172,50 @@ export default function CruisesPage() {
       </section>
 
       {/* 3. Carousel Section (Matching Screenshot) */}
-      <section className="relative py-20 bg-white overflow-hidden group">
+      <section className="relative py-10 sm:py-14 bg-white overflow-hidden group">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="flex items-center justify-between gap-3 sm:gap-6 lg:gap-8">
+            <button
+              onClick={handlePrev}
+              className="z-20 flex items-center justify-center text-[#10221b] hover:text-[#5e963b] transition-all transform hover:scale-110 hover:-translate-x-1 shrink-0 cursor-pointer p-1 sm:p-2"
+              aria-label="Previous image"
+            >
+              <svg viewBox="0 0 100 40" className="w-12 sm:w-16 lg:w-20 h-6 sm:h-8 lg:h-10 stroke-current fill-none" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M90 20 Q 55 18 10 20" />
+                <path d="M 12 20 Q 25 12 30 7" />
+                <path d="M 12 20 Q 25 28 30 33" />
+              </svg>
+            </button>
 
-        <div className="max-w-[1600px] w-full mx-auto px-4 sm:px-6 relative z-10 flex items-center justify-between gap-4 md:gap-8">
-          <button
-            onClick={handlePrev}
-            className="z-20 flex items-center justify-center text-[#10221b] hover:text-[#5e963b] transition-all transform hover:scale-110 hover:-translate-x-2 shrink-0 cursor-pointer"
-            aria-label="Previous image"
-          >
-            <svg viewBox="0 0 100 40" className="w-16 h-16 sm:w-24 sm:h-24 stroke-current fill-none" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M90 20 Q 55 18 10 20" />
-              <path d="M 12 20 Q 25 12 30 7" />
-              <path d="M 12 20 Q 25 28 30 33" />
-            </svg>
-          </button>
-
-          <div className="flex-1 overflow-hidden px-2">
-            <div className="flex justify-center gap-4 sm:gap-6 md:gap-10 transition-all duration-700 ease-in-out">
-              {getVisibleImages().map((img, idx) => (
-                <div key={`${currentSlide}-${idx}`} className="w-1/3 max-w-[400px] aspect-square overflow-hidden shadow-lg animate-fadeIn flex-shrink-0">
-                  <img src={img} alt={`Slide ${idx + 1}`} className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105" />
-                </div>
-              ))}
+            <div className="flex-1 w-full overflow-hidden">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 w-full">
+                {getVisibleImages().map((img, idx) => (
+                  <div
+                    key={`${currentSlide}-${idx}`}
+                    className="w-full aspect-square overflow-hidden shadow-md bg-white group transition-all duration-300"
+                  >
+                    <img
+                      src={img}
+                      alt={`Cruise experience ${idx + 1}`}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 block"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
 
-          <button
-            onClick={handleNext}
-            className="z-20 flex items-center justify-center text-[#10221b] hover:text-[#5e963b] transition-all transform hover:scale-110 hover:translate-x-2 shrink-0 cursor-pointer"
-            aria-label="Next image"
-          >
-            <svg viewBox="0 0 100 40" className="w-16 h-16 sm:w-24 sm:h-24 stroke-current fill-none" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M10 20 Q 45 22 90 20" />
-              <path d="M 88 20 Q 75 12 70 7" />
-              <path d="M 88 20 Q 75 28 70 33" />
-            </svg>
-          </button>
+            <button
+              onClick={handleNext}
+              className="z-20 flex items-center justify-center text-[#10221b] hover:text-[#5e963b] transition-all transform hover:scale-110 hover:translate-x-1 shrink-0 cursor-pointer p-1 sm:p-2"
+              aria-label="Next image"
+            >
+              <svg viewBox="0 0 100 40" className="w-12 sm:w-16 lg:w-20 h-6 sm:h-8 lg:h-10 stroke-current fill-none" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M10 20 Q 45 22 90 20" />
+                <path d="M 88 20 Q 75 12 70 7" />
+                <path d="M 88 20 Q 75 28 70 33" />
+              </svg>
+            </button>
+          </div>
         </div>
       </section>
 
