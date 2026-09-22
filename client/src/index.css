@@ -1,25 +1,34 @@
 @import "tailwindcss";
 
 @theme {
-  --font-serif: 'Palanquin Dark', serif;
+  --font-serif: 'Jost', sans-serif;
   --font-sans: 'Jost', sans-serif;
   --font-cursive: 'Mansalva', cursive;
+
+  /* Typography Scale Derived from Home Page */
+  --text-h1: 3.5rem;
+  --text-h2: 2.375rem;
+  --text-h3: 1.1875rem;
+  --text-body: 0.9375rem;
+  --text-body-sm: 0.8125rem;
+  --text-eyebrow: 0.6875rem;
 
   --color-forest: #10221b;
   --color-forest-dark: #0a1712;
   --color-forest-light: #1c382e;
-  --color-forest-muted: #2c443b;
+  --color-forest-accent: #23483b;
 
-  --color-amber: #f29727;
-  --color-amber-hover: #db841a;
-  --color-amber-light: #fef5e9;
+  --color-gold: #c8860b;
+  --color-gold-light: #df9b20;
+  --color-gold-dark: #a06800;
 
-  --color-champagne: #f3efe8;
-  --color-stone-bg: #f7f9f8;
-  --color-stone-dark: #24221e;
-  --color-sage: #e6eee5;
-  --color-cyan: #27B8B1;
-  --color-cyan-light: #1dc5ce;
+  --color-sand: #f5f0eb;
+  --color-sand-light: #faf7f5;
+  --color-sand-dark: #e8ded4;
+
+  --color-terracotta: #c06346;
+  --color-clay: #8c7365;
+  --color-stone-bg: #f8f7f5;
 }
 
 @layer base {
@@ -32,10 +41,90 @@
     background-color: var(--color-stone-bg);
     color: #483E3E;
     overflow-x: hidden;
+    font-family: var(--font-sans);
   }
 
-  h1, h2, h3, .font-serif {
-    font-family: var(--font-serif);
+  h1, h2, h3, h4, h5, h6, .font-serif, .font-sans {
+    font-family: var(--font-sans);
+  }
+}
+
+@layer utilities {
+  /* Standardized Typography Classes Matching Home Page Single Source of Truth */
+  .typo-h1 {
+    font-family: var(--font-sans);
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  .typo-h2-modern {
+    font-family: var(--font-sans);
+    font-size: clamp(1.5rem, 4vw, 2.375rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1.15;
+    letter-spacing: 0.05em;
+  }
+
+  .typo-h2-editorial {
+    font-family: var(--font-sans);
+    font-size: clamp(1.75rem, 4vw, 2.625rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  .typo-h3 {
+    font-family: var(--font-sans);
+    font-size: clamp(1rem, 2vw, 1.1875rem);
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  .typo-eyebrow-cursive {
+    font-family: var(--font-cursive);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    line-height: 1.2;
+    letter-spacing: 0.025em;
+  }
+
+  .typo-eyebrow-tag {
+    font-family: var(--font-sans);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+  }
+
+  .typo-body {
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  .typo-body-sm {
+    font-family: var(--font-sans);
+    font-size: 0.84375rem;
+    font-weight: 300;
+    line-height: 1.65;
+  }
+
+  .typo-btn {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+
+  .typo-nav {
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    letter-spacing: 0.025em;
   }
 }
 

@@ -86,7 +86,7 @@ export default function EnquiryModal() {
         <div className="bg-[#10221b] text-white px-6 py-5 flex items-center justify-between">
           <div>
             <span className="text-xs uppercase tracking-widest text-[#f29727] font-semibold">Bespoke Travel Planning</span>
-            <h3 className="text-2xl font-serif font-bold text-white tracking-wide">
+            <h3 className="text-2xl font-sans font-bold text-white tracking-wide">
               {enquiryPrefill.title ? `Inquire: ${enquiryPrefill.title}` : 'Plan Your Journey'}
             </h3>
           </div>
@@ -103,7 +103,7 @@ export default function EnquiryModal() {
             <div className="w-16 h-16 mx-auto mb-4 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600">
               <CheckCircle2 className="w-10 h-10" />
             </div>
-            <h4 className="text-2xl font-serif font-bold text-[#10221b] mb-2">Thank You!</h4>
+            <h4 className="text-2xl font-sans font-bold text-[#10221b] mb-2">Thank You!</h4>
             <p className="text-gray-600 max-w-md mx-auto mb-6">
               Thank you. Our travel specialist will review your preferences and contact you shortly with a personalized itinerary.
             </p>

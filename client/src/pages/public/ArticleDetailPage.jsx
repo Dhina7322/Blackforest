@@ -128,7 +128,7 @@ export default function ArticleDetailPage({ forcedSlug }) {
       <div className="min-h-screen flex items-center justify-center bg-[#ffffff]">
         <div className="flex items-center gap-3 text-[#10221b]">
           <span className="w-8 h-8 border-3 border-[#f29727] border-t-transparent rounded-full animate-spin"></span>
-          <span className="font-serif text-lg">Loading article...</span>
+          <span className="font-sans text-lg">Loading article...</span>
         </div>
       </div>
     );
@@ -138,7 +138,7 @@ export default function ArticleDetailPage({ forcedSlug }) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center text-center p-6 bg-[#ffffff]">
         <BookOpen className="w-16 h-16 text-gray-300 mb-4" />
-        <h2 className="text-3xl font-serif font-bold text-[#10221b] mb-2">Article Not Found</h2>
+        <h2 className="text-3xl font-sans font-bold text-[#10221b] mb-2">Article Not Found</h2>
         <p className="text-gray-500 text-sm mb-6 max-w-md">This blog story could not be located or has been archived.</p>
         <Link
           to="/"
@@ -383,7 +383,7 @@ export default function ArticleDetailPage({ forcedSlug }) {
         <div className="space-y-6 text-gray-700 text-base leading-[1.85]">
           {/* Paragraph 1 with Drop Cap */}
           <p className="leading-relaxed clear-both text-gray-800">
-            <span className="float-left text-6xl font-serif font-bold text-[#10221b] leading-none pt-1 pr-3 select-none">
+            <span className="float-left text-6xl font-sans font-bold text-[#10221b] leading-none pt-1 pr-3 select-none">
               {firstLetter}
             </span>
             {restOfFirstParagraph}
@@ -443,8 +443,8 @@ export default function ArticleDetailPage({ forcedSlug }) {
 
             {/* Testimonial Quote with Large Amber Quotation Mark */}
             <div className="bg-[#fbfaf8] p-6 sm:p-8 rounded-2xl border-l-4 border-[#f29727] shadow-xs">
-              <div className="text-[#f29727] text-4xl font-serif leading-none mb-2 select-none">“</div>
-              <blockquote className="text-[#10221b] font-serif italic text-base sm:text-lg mb-3 leading-relaxed">
+              <div className="text-[#f29727] text-4xl font-sans leading-none mb-2 select-none">“</div>
+              <blockquote className="text-[#10221b] font-sans italic text-base sm:text-lg mb-3 leading-relaxed">
                 Vel saepe possimus sit corporis ipsa et quia fugit vel magnam iure rem voluptate voluptas ut earum tempora.
               </blockquote>
               <div className="text-xs font-bold uppercase tracking-wider text-[#10221b]">
@@ -470,7 +470,7 @@ export default function ArticleDetailPage({ forcedSlug }) {
               <span className="text-[11px] text-[#f29727] font-bold uppercase tracking-wider block mb-1">
                 &larr; Previous Story
               </span>
-              <h4 className="font-serif text-sm font-bold text-white line-clamp-2 group-hover:text-[#f29727] transition-colors">
+              <h4 className="font-sans text-sm font-bold text-white line-clamp-2 group-hover:text-[#f29727] transition-colors">
                 10 Tips for best winter hiking experience
               </h4>
             </div>
@@ -481,7 +481,7 @@ export default function ArticleDetailPage({ forcedSlug }) {
             <span className="text-[11px] text-gray-400 font-bold uppercase tracking-wider mb-1">
               Next Story &rarr;
             </span>
-            <span className="font-serif text-sm font-bold text-gray-500">
+            <span className="font-sans text-sm font-bold text-gray-500">
               No story to show!
             </span>
           </div>
@@ -489,7 +489,7 @@ export default function ArticleDetailPage({ forcedSlug }) {
 
         {/* 7. Comments Section */}
         <section id="comments" className="pt-12 mt-12 border-t border-gray-200">
-          <h3 className="text-2xl font-serif font-bold text-[#10221b] mb-6">
+          <h3 className="text-2xl font-sans font-bold text-[#10221b] mb-6">
             Comments ( {Array.isArray(article.comments) ? article.comments.length : 1} )
           </h3>
 
@@ -535,7 +535,7 @@ export default function ArticleDetailPage({ forcedSlug }) {
 
           {/* Leave a Reply Form */}
           <div className="bg-[#f8f9f8] p-6 sm:p-8 rounded-2xl border border-gray-200">
-            <h4 className="text-xl font-serif font-bold text-[#10221b] mb-2">Leave a Reply</h4>
+            <h4 className="text-xl font-sans font-bold text-[#10221b] mb-2">Leave a Reply</h4>
             <p className="text-xs text-gray-500 mb-6">
               Your email address will not be published. Required fields are marked *
             </p>
@@ -599,7 +599,7 @@ export default function ArticleDetailPage({ forcedSlug }) {
 
         {/* 8. Related Posts Section (Exact 3 Cards from Image 3) */}
         <section className="pt-16 mt-16 border-t border-gray-200">
-          <h3 className="text-3xl font-serif font-bold text-[#10221b] text-center mb-10">
+          <h3 className="text-3xl font-sans font-bold text-[#10221b] text-center mb-10">
             Related Posts
           </h3>
 
@@ -622,7 +622,7 @@ export default function ArticleDetailPage({ forcedSlug }) {
                     <span className="text-[11px] font-bold uppercase tracking-wider text-[#f29727] block mb-1">
                       {post.category}
                     </span>
-                    <h4 className="font-serif font-bold text-[#10221b] text-lg group-hover:text-[#f29727] transition-colors line-clamp-2 mb-2 leading-snug">
+                    <h4 className="font-sans font-bold text-[#10221b] text-lg group-hover:text-[#f29727] transition-colors line-clamp-2 mb-2 leading-snug">
                       <Link to="/safety-measures-for-safe-trekking-in-waterfalls">{post.title}</Link>
                     </h4>
                     <p className="text-xs text-gray-600 line-clamp-3 leading-relaxed mb-4">

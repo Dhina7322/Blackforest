@@ -63,7 +63,7 @@ export default function ExperiencesPage() {
         
         {/* Content with breadcrumb perfectly centered */}
         <div className="relative z-10 text-white flex flex-col items-center text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-[60px] font-bold tracking-wider mb-4 drop-shadow-xl font-serif">
+          <h1 className="text-4xl md:text-5xl lg:text-[60px] font-bold tracking-tight mb-4 drop-shadow-xl font-sans">
             {data.title}
           </h1>
           <div className="flex items-center justify-center gap-2 text-sm md:text-base font-light drop-shadow-md tracking-wider">
@@ -88,16 +88,16 @@ export default function ExperiencesPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start mb-16">
             <div className="space-y-8 lg:pr-4">
               <div>
-                <span className="text-[#10221b] font-bold text-[16px] uppercase tracking-wider block mb-4">
+                <span className="text-[#10221b] font-bold text-xs uppercase tracking-[0.2em] block mb-3">
                   {data.title}
                 </span>
-                <h1 className="text-4xl md:text-5xl lg:text-[54px] font-bold text-[#10221b] leading-[1.1] mb-8">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-sans font-bold text-[#10221b] leading-[1.15] mb-6">
                   {data.intro?.title}
-                </h1>
-                <div className="w-24 h-[1px] bg-[#10221b] mb-10"></div>
+                </h2>
+                <div className="w-24 h-[1.5px] bg-[#10221b] mb-8"></div>
               </div>
 
-              <div className="space-y-8 text-gray-500 text-[18px] md:text-[20px] leading-[1.8] font-light">
+              <div className="space-y-6 text-gray-600 text-[15px] sm:text-[16px] leading-[1.75] font-light">
                 <p>{data.intro?.text1}</p>
                 <p>{data.intro?.text2}</p>
               </div>
@@ -114,22 +114,22 @@ export default function ExperiencesPage() {
           </div>
 
           {/* Row 2: Subsequent Content (Full Width) */}
-          <div className="space-y-12">
+          <div className="space-y-10">
             {data.section2?.title && (
               <div>
-                <h3 className="text-[22px] md:text-[24px] font-bold text-[#10221b] mb-4">{data.section2?.title}</h3>
-                <p className="text-gray-500 text-[18px] md:text-[20px] leading-[1.8] font-light">{data.section2?.text}</p>
+                <h3 className="text-xl sm:text-2xl font-sans font-bold text-[#10221b] mb-3">{data.section2?.title}</h3>
+                <p className="text-gray-600 text-[15px] sm:text-[16px] leading-[1.75] font-light">{data.section2?.text}</p>
               </div>
             )}
 
             {data.experiencesList?.items && (
               <div>
-                <h3 className="text-[22px] md:text-[24px] font-bold text-[#10221b] mb-6">
+                <h3 className="text-xl sm:text-2xl font-sans font-bold text-[#10221b] mb-4">
                   {data.experiencesList?.includesHeading || `Our ${data.title} Include:`}
                 </h3>
-                <ul className="space-y-4">
+                <ul className="space-y-3">
                   {data.experiencesList.items.map((item, idx) => (
-                    <li key={idx} className="text-[18px] md:text-[20px] text-gray-500 font-light leading-[1.8]">
+                    <li key={idx} className="text-[15px] sm:text-[16px] text-gray-600 font-light leading-[1.75]">
                       <span className="text-gray-800 font-bold">{idx + 1}. {item.title}</span> — {item.desc}
                     </li>
                   ))}
@@ -139,10 +139,10 @@ export default function ExperiencesPage() {
 
             {(data.destinations?.heading || data.destinations?.text) && (
               <div>
-                <h3 className="text-[22px] md:text-[24px] font-bold text-[#10221b] mb-4">
+                <h3 className="text-xl sm:text-2xl font-sans font-bold text-[#10221b] mb-3">
                   {data.destinations?.heading}
                 </h3>
-                <p className="text-gray-500 text-[18px] md:text-[20px] leading-[1.8] font-light">
+                <p className="text-gray-600 text-[15px] sm:text-[16px] leading-[1.75] font-light">
                   {data.destinations?.text}
                 </p>
               </div>
@@ -194,15 +194,15 @@ export default function ExperiencesPage() {
       <section className="py-24 bg-white relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-          <h2 className="text-3xl md:text-4xl font-bold text-[#5e963b] mb-12">
+          <h2 className="text-3xl md:text-4xl font-sans font-bold text-[#5e963b] mb-12">
             {data.whyChooseUs?.heading || 'Why Choose BlackForest Holidays?'}
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-24">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
             {data.whyChooseUs?.features?.map((feature, idx) => (
               <div key={idx}>
-                <h4 className="text-[18px] font-bold text-[#10221b] mb-3">{feature.title}</h4>
-                <p className="text-gray-500 text-[16px] font-light leading-[1.8]">{feature.desc}</p>
+                <h4 className="text-[17px] font-bold text-[#10221b] mb-2 font-sans">{feature.title}</h4>
+                <p className="text-gray-600 text-[14px] sm:text-[14.5px] font-light leading-[1.7]">{feature.desc}</p>
               </div>
             ))}
           </div>
@@ -211,23 +211,23 @@ export default function ExperiencesPage() {
 
             <div className="space-y-8">
               <div>
-                <h3 className="text-4xl md:text-[42px] font-bold text-[#5e963b] leading-tight mb-4">
+                <h3 className="text-3xl md:text-[38px] font-sans font-bold text-[#5e963b] leading-tight mb-4">
                   {data.cta?.heading}
                 </h3>
                 <div className="w-16 h-[2px] bg-[#f29727]"></div>
               </div>
 
-              <p className="text-gray-600 text-[18px] md:text-[20px] leading-[1.8] font-light max-w-md">
+              <p className="text-gray-600 text-[15px] sm:text-[16px] leading-[1.75] font-light max-w-md">
                 {data.closing?.text}
               </p>
 
               <div>
-                <h4 className="text-sm font-bold text-[#10221b] uppercase tracking-wider mb-4">
+                <h4 className="text-xs font-bold text-[#10221b] uppercase tracking-[0.2em] mb-4">
                   {data.closing?.heading}
                 </h4>
                 <button
                   onClick={() => openEnquiryModal({ title: `${data.title} Enquiry` })}
-                  className="bg-[#10221b] text-white px-8 py-3.5 text-xs font-bold uppercase tracking-widest hover:bg-[#5e963b] transition-colors"
+                  className="bg-[#10221b] text-white px-8 py-3.5 text-xs font-bold uppercase tracking-widest hover:bg-[#5e963b] transition-colors shadow-md rounded-sm cursor-pointer"
                 >
                   {data.cta?.buttonText || 'Enquire Now'} &rarr;
                 </button>

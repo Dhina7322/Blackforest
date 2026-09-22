@@ -27,7 +27,7 @@ export default function HomePage() {
 
       {/* 5. Services / Value Proposition */}
       <ValuePropsSection />
-      
+
       {/* 6. Statistics Circles */}
       <StatsSection />
 
@@ -37,8 +37,8 @@ export default function HomePage() {
       {/* 8. Testimonials */}
       <TestimonialSlider />
 
-      {/* 9. Expertise Section */}
-      <ExpertiseSection />
+      {/* 9. Expertise Section
+      <ExpertiseSection /> */}
 
       {/* 10. Travel Journal */}
       <JournalSection />

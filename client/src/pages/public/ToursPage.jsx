@@ -46,7 +46,7 @@ export default function ToursPage({ defaultCategory = 'international' }) {
           <span className="text-xs uppercase font-bold tracking-widest text-[#f29727] block mb-2">
             {isIndia ? 'Incredible India Escapes' : 'International Expeditions'}
           </span>
-          <h1 className="text-4xl sm:text-5xl font-serif font-bold text-white mb-4">
+          <h1 className="text-4xl sm:text-5xl font-sans font-bold text-white mb-4">
             {isIndia ? 'Indian Tour Packages' : 'International Tour Packages'}
           </h1>
           <p className="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto">
@@ -103,7 +103,7 @@ export default function ToursPage({ defaultCategory = 'international' }) {
         ) : tours.length === 0 ? (
           <div className="text-center py-20 bg-white rounded-2xl border border-gray-200">
             <Compass className="w-12 h-12 text-gray-300 mx-auto mb-3" />
-            <h3 className="text-lg font-serif font-bold text-gray-700">No tour packages found</h3>
+            <h3 className="text-lg font-sans font-bold text-gray-700">No tour packages found</h3>
             <p className="text-xs text-gray-500 mt-1">Try modifying your search keywords</p>
           </div>
         ) : (
@@ -146,7 +146,7 @@ export default function ToursPage({ defaultCategory = 'international' }) {
                         <span className="truncate">{tour.location}</span>
                       </div>
                     )}
-                    <h3 className="text-xl font-serif font-bold text-[#10221b] group-hover:text-[#f29727] transition-colors line-clamp-2 mb-2">
+                    <h3 className="text-xl font-sans font-bold text-[#10221b] group-hover:text-[#f29727] transition-colors line-clamp-2 mb-2">
                       {tour.title}
                     </h3>
                     <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed mb-4">

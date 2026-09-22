@@ -58,7 +58,7 @@ export default function JournalPage() {
           <span className="text-xs uppercase font-bold tracking-widest text-[#f29727] block mb-3">
             The Blackforest Journal
           </span>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-sans font-bold text-white mb-4">
             Curated Stories For Curious Travelers
           </h1>
           <p className="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
@@ -100,7 +100,7 @@ export default function JournalPage() {
         {filtered.length === 0 ? (
           <div className="text-center py-20 bg-[#fbfaf8] rounded-2xl border border-gray-200">
             <BookOpen className="w-12 h-12 text-gray-300 mx-auto mb-3" />
-            <h3 className="text-lg font-serif font-bold text-gray-700">No articles found</h3>
+            <h3 className="text-lg font-sans font-bold text-gray-700">No articles found</h3>
             <p className="text-xs text-gray-500 mt-1">Try another search query or select all dispatches.</p>
           </div>
         ) : (
@@ -128,7 +128,7 @@ export default function JournalPage() {
                       <span>{art.date || 'July 10, 2021'}</span>
                     </div>
 
-                    <h3 className="text-xl font-serif font-bold text-[#10221b] group-hover:text-[#f29727] transition-colors line-clamp-2 mb-3">
+                    <h3 className="text-xl font-sans font-bold text-[#10221b] group-hover:text-[#f29727] transition-colors line-clamp-2 mb-3">
                       <Link to={`/journal/${art.slug}`}>{art.title}</Link>
                     </h3>
 

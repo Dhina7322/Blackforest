@@ -24,7 +24,7 @@ export default function IslandSection() {
             <span className="text-xs uppercase tracking-widest text-[#f29727] font-bold block">
               Bespoke Atoll Hideaways
             </span>
-            <h2 className="text-3xl sm:text-5xl font-serif font-bold text-white leading-tight">
+            <h2 className="text-3xl sm:text-5xl font-sans font-bold text-white leading-tight">
               Your Island Story <br />
               <span className="italic text-[#f29727]">Begins Here</span>
             </h2>

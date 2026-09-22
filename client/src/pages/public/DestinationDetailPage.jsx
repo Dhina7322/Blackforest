@@ -149,7 +149,7 @@ export default function DestinationDetailPage({ forcedSlug }) {
         <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#f29727] mb-2 block">
           Destination Unavailable
         </span>
-        <h1 className="text-3xl sm:text-4xl font-serif font-bold text-[#10221b] mb-4">
+        <h1 className="text-3xl sm:text-4xl font-sans font-bold text-[#10221b] mb-4">
           {name} is Currently Unpublished
         </h1>
         <p className="text-gray-600 text-sm sm:text-base max-w-md mx-auto mb-8 leading-relaxed">
@@ -193,7 +193,7 @@ export default function DestinationDetailPage({ forcedSlug }) {
 
         {/* Hero Content — show REGION name (Africa, Europe…) */}
         <div className="relative z-10 text-center px-4 mt-6 max-w-4xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-3 drop-shadow-[0_4px_12px_rgba(0,0,0,0.7)] capitalize tracking-tight leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-sans font-bold text-white mb-3 drop-shadow-[0_4px_12px_rgba(0,0,0,0.7)] capitalize tracking-tight leading-tight">
             {regionName}
           </h1>
           <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-medium tracking-wide text-white/95 drop-shadow-md">
@@ -244,7 +244,7 @@ export default function DestinationDetailPage({ forcedSlug }) {
                 {staticData.tagline || 'Heritage to Himalayas'}
               </span>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#5ba14a] leading-[1.15] mb-6">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold text-[#5ba14a] leading-[1.15] mb-6">
                 {intro.title}
               </h2>
               <div className="text-gray-700 leading-relaxed text-sm sm:text-base space-y-4 font-normal">
@@ -344,7 +344,7 @@ export default function DestinationDetailPage({ forcedSlug }) {
               <span className="text-xs uppercase font-bold tracking-[0.25em] text-[#10221b] block">
                 {tabs.tab1.subtitle}
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#5ba14a] leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold text-[#5ba14a] leading-tight">
                 {tabs.tab1.title}
               </h2>
               <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
@@ -379,13 +379,13 @@ export default function DestinationDetailPage({ forcedSlug }) {
               <span className="text-xs uppercase font-bold tracking-[0.25em] text-[#10221b] block">
                 {tabs.tab2.subtitle}
               </span>
-              <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#5ba14a] leading-tight">
+              <h2 className="text-3xl sm:text-4xl font-sans font-bold text-[#5ba14a] leading-tight">
                 {tabs.tab2.title}
               </h2>
               <div className="space-y-4 pt-2">
                 {tabs.tab2.items.map((item, idx) => (
                   <div key={idx} className="border-b border-gray-200/80 pb-3.5">
-                    <h4 className="text-base font-bold text-[#10221b] mb-1 font-serif">
+                    <h4 className="text-base font-bold text-[#10221b] mb-1 font-sans">
                       {item.name}
                     </h4>
                     <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
@@ -414,7 +414,7 @@ export default function DestinationDetailPage({ forcedSlug }) {
               <span className="text-xs uppercase font-bold tracking-[0.25em] text-[#10221b] block">
                 {tabs.tab3.subtitle}
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#5ba14a] leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold text-[#5ba14a] leading-tight">
                 {tabs.tab3.title}
               </h2>
               <div className="space-y-3 pt-2">
@@ -463,13 +463,7 @@ export default function DestinationDetailPage({ forcedSlug }) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
             {/* Left Side: Cursive Tagline, Heading, Paragraph */}
             <div className="lg:col-span-6 space-y-4 text-left">
-              <span
-                className="text-2xl sm:text-3xl lg:text-[32px] block font-medium tracking-wide"
-                style={{
-                  fontFamily: "var(--font-cursive, 'Caveat', 'Dancing Script', cursive, serif)",
-                  color: "#27B8B1"
-                }}
-              >
+              <span className="text-2xl sm:text-3xl lg:text-[32px] block font-medium tracking-wide font-cursive text-[#27B8B1]">
                 {staticData.tagline || 'Your Island Story Begins Here'}
               </span>
 
@@ -532,7 +526,7 @@ export default function DestinationDetailPage({ forcedSlug }) {
       {/* 6. "Our Destinations" Section with Compact Cards (Exact Image 5 Proportions) */}
       <section id="our-destinations" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 pb-24">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#5ba14a] mb-3">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold text-[#5ba14a] mb-3">
             Our Destinations
           </h2>
           <p className="text-sm text-gray-500 max-w-xl mx-auto">
@@ -604,10 +598,10 @@ export default function DestinationDetailPage({ forcedSlug }) {
           <span className="text-[#5ba14a] font-bold text-xs sm:text-sm tracking-[0.3em] uppercase mb-3 block">
             START A TRIP NOW
           </span>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-white mb-4 leading-tight drop-shadow-md">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-sans font-bold text-white mb-4 leading-tight drop-shadow-md">
             Discover India Through a Lens of Luxury
           </h2>
-          <p className="text-base sm:text-lg text-gray-200 mb-8 font-serif italic tracking-wide">
+          <p className="text-base sm:text-lg text-gray-200 mb-8 font-sans italic tracking-wide">
             Everything you need for an adventure.
           </p>
           <Link

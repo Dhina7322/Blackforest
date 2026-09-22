@@ -317,14 +317,12 @@ export default function ConciergePage() {
         </div>
 
         <div className="relative z-10 text-white mt-32 md:mt-40 flex flex-col items-center pb-24">
-          <h1 className="text-5xl md:text-7xl lg:text-[80px] font-bold tracking-wide mb-6 drop-shadow-2xl text-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-sans font-bold tracking-tight mb-4 drop-shadow-2xl text-center">
             {data.title}
           </h1>
-          <div className="flex items-center justify-center gap-3 text-lg md:text-2xl font-light drop-shadow-md">
+          <div className="flex items-center justify-center gap-2 text-sm md:text-base font-light drop-shadow-md tracking-wider">
             <Link to="/" className="hover:text-gray-200 transition-colors">Home</Link>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" className="opacity-80 rotate-[-45deg] mt-1">
-              <path d="M24 24H0L24 0V24Z" />
-            </svg>
+            <span className="text-gray-300">»</span>
             <span>{data.title}</span>
           </div>
         </div>
@@ -343,14 +341,14 @@ export default function ConciergePage() {
 
             <div className="space-y-8 lg:pr-8">
               <div>
-                <span className="text-[#10221b] font-bold text-[20px] block mb-3">{data.caption}</span>
-                <h2 className="text-4xl md:text-[46px] lg:text-[54px] font-bold text-[#5e963b] leading-[1.1] mb-6">
+                <span className="text-[#10221b] font-bold text-xs uppercase tracking-[0.2em] block mb-3">{data.caption}</span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-sans font-bold text-[#5e963b] leading-[1.15] mb-6">
                   {data.intro.heading}
                 </h2>
                 <div className="w-16 h-[2px] bg-gray-300 mb-8" />
               </div>
 
-              <div className="space-y-6 text-gray-600 text-[20px] leading-[1.8] font-light">
+              <div className="space-y-6 text-gray-600 text-[15px] sm:text-[16px] leading-[1.75] font-light">
                 {data.intro.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
               </div>
             </div>

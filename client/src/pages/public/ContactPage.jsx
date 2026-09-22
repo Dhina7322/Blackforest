@@ -81,16 +81,16 @@ export default function ContactPage() {
 
         {/* Hero Content */}
         <div className="relative z-10 text-center px-4 max-w-3xl mx-auto text-white">
-          <div className="text-[#27B8B1] font-bold text-xl md:text-2xl mb-2" style={{ fontFamily: "var(--font-cursive, 'Caveat', cursive, sans-serif)" }}>
+          <div className="text-[#27B8B1] font-cursive text-2xl md:text-3xl mb-2">
             Reach Out to Our Specialists
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-4">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-4 font-sans">
             Contact Us
           </h1>
-          <div className="flex items-center justify-center space-x-2 text-sm text-gray-300">
+          <div className="flex items-center justify-center space-x-2 text-sm text-gray-300 font-light">
             <a href="/" className="hover:text-white transition-colors">Home</a>
             <span>•</span>
-            <span className="text-[#27B8B1]">Contact</span>
+            <span className="text-[#27B8B1] font-medium">Contact</span>
           </div>
         </div>
 
@@ -108,10 +108,10 @@ export default function ContactPage() {
             {/* Left Column: Form Card (7 Cols) */}
             <div className="lg:col-span-7 bg-white p-8 sm:p-10 rounded-2xl border border-gray-200/80 shadow-[0_8px_30px_rgba(0,0,0,0.04)]">
               <div className="mb-8">
-                <span className="text-[#27B8B1] font-medium text-lg block mb-1" style={{ fontFamily: "var(--font-cursive, 'Caveat', cursive, sans-serif)" }}>
+                <span className="text-[#27B8B1] font-cursive text-2xl block mb-1">
                   Talk to us
                 </span>
-                <h2 className="text-3xl sm:text-4xl font-extrabold text-[#10221b] tracking-tight">
+                <h2 className="text-3xl sm:text-4xl font-extrabold text-[#10221b] tracking-tight font-sans">
                   Get in Touch
                 </h2>
               </div>
@@ -433,13 +433,10 @@ export default function ContactPage() {
           {/* Office Maps Section */}
           <div className="mt-16 pt-12 border-t border-gray-200/80">
             <div className="text-center max-w-xl mx-auto mb-8">
-              <span
-                className="text-[#27B8B1] font-bold text-xl md:text-2xl block mb-1"
-                style={{ fontFamily: "var(--font-cursive, 'Caveat', cursive, sans-serif)" }}
-              >
+              <span className="text-[#27B8B1] font-cursive text-2xl md:text-3xl block mb-1">
                 Locate Us
               </span>
-              <h3 className="text-2xl sm:text-3xl font-bold text-[#10221b]">
+              <h3 className="text-2xl sm:text-3xl font-bold text-[#10221b] font-sans">
                 Our Office Locations
               </h3>
             </div>

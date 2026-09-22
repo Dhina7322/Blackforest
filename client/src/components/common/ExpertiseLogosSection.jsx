@@ -35,8 +35,8 @@ export default function ExpertiseLogosSection() {
             OUR EXPERTISE
             <span className="w-1.5 h-1.5 bg-[#c59b27] rotate-45 transform"></span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#10221b]">
-            Knowledge Behind Every Journey
+          <h2 className="text-4xl md:text-5xl font-sans font-bold text-[#10221b]">
+            Certified Excellence & Industry Partnerships
           </h2>
           <p className="text-gray-600 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto pt-2">
             We are well-traveled consultants continually expanding through tourism board programmes, industry training, and global partnerships to design journeys you can trust.

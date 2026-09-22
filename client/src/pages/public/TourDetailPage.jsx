@@ -72,7 +72,7 @@ export default function TourDetailPage() {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center text-center p-6 bg-[#fbfaf8]">
         <Compass className="w-16 h-16 text-gray-300 mb-4" />
-        <h2 className="text-2xl font-serif font-bold text-[#10221b] mb-2">Tour Not Found</h2>
+        <h2 className="text-2xl font-sans font-bold text-[#10221b] mb-2">Tour Not Found</h2>
         <p className="text-gray-500 text-sm mb-6">The tour package you are looking for is unavailable or has expired.</p>
         <Link
           to="/international-tours"
@@ -120,7 +120,7 @@ export default function TourDetailPage() {
             </div>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-serif font-bold text-white mb-4 leading-tight">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-sans font-bold text-white mb-4 leading-tight">
             {tour.title}
           </h1>
 
@@ -143,7 +143,7 @@ export default function TourDetailPage() {
               <span className="text-xs uppercase font-bold tracking-widest text-[#f29727] block mb-2">
                 Experience Overview
               </span>
-              <h2 className="text-3xl font-serif font-bold text-[#10221b] mb-4">
+              <h2 className="text-3xl font-sans font-bold text-[#10221b] mb-4">
                 About This Journey
               </h2>
               <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
@@ -157,7 +157,7 @@ export default function TourDetailPage() {
                 <span className="text-xs uppercase font-bold tracking-widest text-[#f29727] block mb-2">
                   Trip Essentials
                 </span>
-                <h3 className="text-2xl font-serif font-bold text-[#10221b] mb-6">
+                <h3 className="text-2xl font-sans font-bold text-[#10221b] mb-6">
                   Signature Highlights
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -177,7 +177,7 @@ export default function TourDetailPage() {
                 <span className="text-xs uppercase font-bold tracking-widest text-[#f29727] block mb-2">
                   Daily Program
                 </span>
-                <h3 className="text-2xl font-serif font-bold text-[#10221b] mb-6">
+                <h3 className="text-2xl font-sans font-bold text-[#10221b] mb-6">
                   Day-by-Day Itinerary
                 </h3>
 
@@ -201,7 +201,7 @@ export default function TourDetailPage() {
                               <span className="text-[11px] font-bold uppercase tracking-wider text-[#f29727]">
                                 Day {dayItem.day}
                               </span>
-                              <h4 className="text-base sm:text-lg font-serif font-bold text-[#10221b]">
+                              <h4 className="text-base sm:text-lg font-sans font-bold text-[#10221b]">
                                 {dayItem.title}
                               </h4>
                             </div>
@@ -259,7 +259,7 @@ export default function TourDetailPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Inclusions */}
               <div className="bg-emerald-50/50 p-6 rounded-2xl border border-emerald-200">
-                <div className="flex items-center gap-2 mb-4 text-emerald-800 font-serif font-bold text-lg">
+                <div className="flex items-center gap-2 mb-4 text-emerald-800 font-sans font-bold text-lg">
                   <CheckCircle2 className="w-5 h-5 text-emerald-600" />
                   <h4>Package Inclusions</h4>
                 </div>
@@ -275,7 +275,7 @@ export default function TourDetailPage() {
 
               {/* Exclusions */}
               <div className="bg-rose-50/50 p-6 rounded-2xl border border-rose-200">
-                <div className="flex items-center gap-2 mb-4 text-rose-800 font-serif font-bold text-lg">
+                <div className="flex items-center gap-2 mb-4 text-rose-800 font-sans font-bold text-lg">
                   <XCircle className="w-5 h-5 text-rose-600" />
                   <h4>Package Exclusions</h4>
                 </div>
@@ -310,7 +310,7 @@ export default function TourDetailPage() {
                 <span className="text-xs uppercase font-bold tracking-widest text-[#f29727] block mb-2">
                   Common Inquiries
                 </span>
-                <h3 className="text-2xl font-serif font-bold text-[#10221b] mb-6">
+                <h3 className="text-2xl font-sans font-bold text-[#10221b] mb-6">
                   Frequently Asked Questions
                 </h3>
                 <div className="space-y-3">

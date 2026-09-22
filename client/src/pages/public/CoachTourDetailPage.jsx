@@ -107,7 +107,7 @@ export default function CoachTourDetailPage() {
           <span className="text-[#27B8B1] text-xs uppercase font-bold tracking-[0.25em] mb-2 drop-shadow">
             Multi-Search Escorted Tours
           </span>
-          <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold tracking-wider mb-4 drop-shadow-xl font-serif">
+          <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold tracking-wider mb-4 drop-shadow-xl font-sans">
             Coach Tour Details
           </h1>
           <div className="flex items-center justify-center gap-2.5 text-sm md:text-base font-light drop-shadow-md tracking-wider">

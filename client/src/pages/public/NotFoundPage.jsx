@@ -12,8 +12,8 @@ export default function NotFoundPage() {
         <span className="text-xs uppercase font-bold tracking-widest text-[#f29727] block">
           404 Error
         </span>
-        <h1 className="text-4xl sm:text-5xl font-serif font-bold text-[#10221b]">
-          Off The Map
+        <h1 className="text-4xl sm:text-5xl font-sans font-bold text-[#10221b]">
+          Page Not Found
         </h1>
         <p className="text-gray-600 text-sm leading-relaxed">
           The travel destination or itinerary page you are seeking does not exist or has been relocated in our catalog.

@@ -12,7 +12,7 @@ export default function AdventureSection() {
         <span className="text-xs uppercase tracking-widest text-[#f29727] font-bold block mb-2">
           Want em’ Pack em’
         </span>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-6">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-bold text-white mb-6">
           Adventure Essentials
         </h2>
         <p className="text-gray-300 text-base max-w-2xl mx-auto mb-8 leading-relaxed">

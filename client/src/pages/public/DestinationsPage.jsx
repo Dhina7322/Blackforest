@@ -79,7 +79,7 @@ export default function DestinationsPage() {
           <span className="text-xs uppercase font-bold tracking-widest text-[#f29727] block mb-2">
             Global Destinations Portfolio
           </span>
-          <h1 className="text-4xl sm:text-5xl font-serif font-bold text-white mb-4">
+          <h1 className="text-4xl sm:text-5xl font-sans font-bold text-white mb-4">
             Discover Your Next Horizon
           </h1>
           <p className="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto">
@@ -127,7 +127,7 @@ export default function DestinationsPage() {
         ) : destinations.length === 0 ? (
           <div className="text-center py-20 bg-white rounded-2xl border border-gray-200">
             <Compass className="w-12 h-12 text-gray-300 mx-auto mb-3" />
-            <h3 className="text-lg font-serif font-bold text-gray-700">No destinations found</h3>
+            <h3 className="text-lg font-sans font-bold text-gray-700">No destinations found</h3>
             <p className="text-xs text-gray-500 mt-1">Try resetting your filter or search query</p>
           </div>
         ) : (
@@ -161,7 +161,7 @@ export default function DestinationsPage() {
 
                 <div className="p-6 flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="text-xl font-serif font-bold text-[#10221b] group-hover:text-[#f29727] transition-colors mb-2">
+                    <h3 className="text-xl font-sans font-bold text-[#10221b] group-hover:text-[#f29727] transition-colors mb-2">
                       {d.name}
                     </h3>
                     <p className="text-xs text-gray-600 line-clamp-3 leading-relaxed mb-6">

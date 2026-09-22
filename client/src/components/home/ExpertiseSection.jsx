@@ -137,7 +137,7 @@ export default function ExpertiseSection() {
         </div>
 
         {/* Footer Commitment Note */}
-        <div className="mt-8 flex items-center justify-center gap-2 text-xs text-gray-500 max-w-2xl mx-auto italic font-serif">
+        <div className="mt-8 flex items-center justify-center gap-2 text-xs text-gray-500 max-w-2xl mx-auto italic font-sans">
           <span className="text-[#c59b27]">♧</span>
           <span>Our partnerships reflect our commitment to providing authentic experiences and exceptional journeys worldwide.</span>
         </div>

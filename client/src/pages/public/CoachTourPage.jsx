@@ -116,7 +116,7 @@ export default function CoachTourPage() {
           <span className="text-[#f29727] text-xs uppercase font-bold tracking-[0.25em] mb-2">
             Escorted Group Journeys
           </span>
-          <h1 className="text-4xl md:text-5xl lg:text-[60px] font-bold tracking-wider mb-4 drop-shadow-xl font-serif">
+          <h1 className="text-4xl md:text-5xl lg:text-[60px] font-bold tracking-tight mb-4 drop-shadow-xl font-sans">
             Coach Tours
           </h1>
           <div className="flex items-center justify-center gap-2 text-sm md:text-base font-light drop-shadow-md tracking-wider">
@@ -138,17 +138,11 @@ export default function CoachTourPage() {
             
             {/* Left Title & Intro */}
             <div className="lg:col-span-1 space-y-5">
-              <span 
-                className="text-2xl sm:text-[26px] block mb-1"
-                style={{
-                  fontFamily: "var(--font-cursive, 'Caveat', cursive, serif)",
-                  color: "#27B8B1"
-                }}
-              >
+              <span className="text-2xl sm:text-[26px] block mb-1 font-cursive text-[#27B8B1]">
                 European Panorama
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#5e963b] leading-tight font-serif">
-                Popular<br/>Packages
+              <h2 className="text-3xl md:text-4xl font-bold text-[#5e963b] leading-tight font-sans">
+                Popular Coach Tour Packages
               </h2>
               <div className="w-12 h-[2px] bg-[#f29727]"></div>
               <p className="text-gray-600 text-sm font-light leading-relaxed pt-2">
@@ -218,7 +212,7 @@ export default function CoachTourPage() {
           {/* Bottom Callout to Multi-Search Details */}
           <div className="mt-12 pt-8 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
             <div>
-              <h4 className="text-xl font-bold text-[#10221b] font-serif">Looking for a specific route or departure date?</h4>
+              <h4 className="text-xl font-bold text-[#10221b] font-sans">Looking for a specific route or departure date?</h4>
               <p className="text-gray-500 text-sm font-light">Use our interactive Multi-Search tool to explore over 1,000+ guided coach itineraries across Europe and worldwide.</p>
             </div>
             <Link

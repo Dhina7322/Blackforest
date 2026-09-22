@@ -60,8 +60,8 @@ export default function AboutPage() {
         
         {/* Title & Breadcrumb Centered */}
         <div className="relative z-10 text-white flex flex-col items-center justify-center text-center mt-auto mb-auto pt-16">
-          <h1 className="text-4xl sm:text-5xl lg:text-[58px] font-bold tracking-tight mb-3 drop-shadow-lg font-serif">
-            About
+          <h1 className="text-4xl sm:text-5xl lg:text-[58px] font-bold tracking-tight mb-3 drop-shadow-lg font-sans">
+            About Us
           </h1>
           <div className="flex items-center justify-center gap-2 text-sm md:text-base font-light tracking-wide text-gray-100">
             <Link to="/" className="hover:text-white transition-colors">Home</Link>
@@ -102,12 +102,12 @@ export default function AboutPage() {
           {/* Centered Top Headings */}
           <div className="text-center mb-14 md:mb-16">
             <span 
-              className="text-2xl sm:text-3xl block mb-1 font-['Caveat',cursive,serif]"
+              className="text-2xl sm:text-3xl block mb-1 font-cursive"
               style={{ color: "#27B8B1" }}
             >
               Travel Dream Begins
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-[#7cb342] leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-[#7cb342] leading-tight font-sans">
               Redefining the Way You Explore the World
             </h2>
           </div>
@@ -292,12 +292,12 @@ export default function AboutPage() {
           {/* Centered Heading */}
           <div className="text-center mb-14">
             <span 
-              className="text-2xl sm:text-3xl block mb-1 font-['Caveat',cursive,serif]"
+              className="text-2xl sm:text-3xl block mb-1 font-cursive"
               style={{ color: "#27B8B1" }}
             >
               Client Testimonial
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-[#7cb342] leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#7cb342] leading-tight font-sans">
               Savoring your Taste Buds
             </h2>
           </div>

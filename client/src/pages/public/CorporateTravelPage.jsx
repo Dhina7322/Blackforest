@@ -125,12 +125,12 @@ export default function CorporateTravelPage() {
         </div>
         
         <div className="relative z-10 text-white mt-16 flex flex-col items-center pb-28">
-          <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold tracking-wider mb-4 drop-shadow-xl text-center">
-            Corporate Travel
+          <h1 className="text-4xl md:text-5xl lg:text-[56px] font-sans font-bold tracking-tight mb-4 drop-shadow-xl text-center">
+            Corporate & Group Travel
           </h1>
           <div className="flex items-center justify-center gap-2 text-sm md:text-base font-light drop-shadow-md tracking-wider">
             <Link to="/" className="hover:text-gray-200 transition-colors">Home</Link>
-            <span className="text-gray-300">&gt;</span>
+            <span className="text-gray-300">»</span>
             <span>Corporate Travel</span>
           </div>
         </div>
@@ -145,20 +145,18 @@ export default function CorporateTravelPage() {
             
             {/* Left Column (60%) - Typography and Services List */}
             <div className="w-full lg:w-[60%] space-y-6">
-              <span className="text-[#111827] font-bold text-[18px] sm:text-[19px] tracking-wide block uppercase">
+              <span className="text-[#111827] font-bold text-xs uppercase tracking-[0.2em] block">
                 Corporate Travel
               </span>
               
-              <h2 className="text-[36px] sm:text-[44px] md:text-[50px] font-bold text-[#5e963b] leading-[1.15] font-sans">
-                Business Travel,
-                <br />
-                Thoughtfully Managed
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-bold text-[#5e963b] leading-[1.15]">
+                Seamless Travel Solutions for Teams & Businesses
               </h2>
 
               {/* Light green accent bar matching Image 3 */}
               <div className="h-[3px] w-24 bg-[#a5d6a7] mt-3 mb-8"></div>
               
-              <div className="text-[#374151] text-[16.5px] sm:text-[18px] font-light leading-[1.9] space-y-6 font-sans">
+              <div className="text-gray-600 text-[15px] sm:text-[16px] font-light leading-[1.75] space-y-6">
                 <p>
                   At BlackForest Holidays, we understand that corporate travel is more than simply booking flights and hotels. Our corporate tour packages are designed to keep your people moving efficiently, comfortably, and confidently while giving your organisation complete control over every journey.
                 </p>
@@ -167,7 +165,7 @@ export default function CorporateTravelPage() {
                 </p>
                 
                 <div className="pt-4">
-                  <h3 className="font-bold text-[#111827] text-[20px] sm:text-[22px] mb-2 font-sans">
+                  <h3 className="font-bold text-[#111827] text-lg sm:text-xl mb-2 font-sans">
                     Your Business. Our Expertise.
                   </h3>
                   <p>

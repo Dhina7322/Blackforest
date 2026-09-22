@@ -13,7 +13,7 @@ export default function IndiaToursSection() {
       duration: '6 Days',
       rating: 'Rated 4.89 / 5 by past travellers',
       description: "A curated route through Kerala's backwaters, coastline and heritage palaces, blending relaxation with royal history.",
-      coverImage: '/assets/images/abhinand-k-s-7RGzoC8gtto-unsplash-scaled.jpg'
+      coverImage: '/assets/images/asset_e9bf19bf84.jpg'
     },
     {
       id: 2,
@@ -24,7 +24,7 @@ export default function IndiaToursSection() {
       duration: '4 Days',
       rating: 'Rated 4.82 / 5 by past travellers',
       description: "Tea gardens, misty hill roads and colonial charm across two of the Nilgiris' most loved hill towns.",
-      coverImage: '/assets/images/road-trip-with-raj-sELcHR_bGVs-unsplash-scaled.jpg'
+      coverImage: '/assets/images/asset_a4a423a58d.jpg'
     },
     {
       id: 3,
@@ -35,7 +35,7 @@ export default function IndiaToursSection() {
       duration: '6 Days',
       rating: 'Rated 4.93 / 5 by past travellers',
       description: 'White-sand beaches and turquoise waters designed as an intimate island escape for couples.',
-      coverImage: '/assets/images/10776551-beach-4852830-scaled.jpg'
+      coverImage: '/assets/images/asset_e33b83aa7a.jpg'
     },
     {
       id: 4,
@@ -46,7 +46,7 @@ export default function IndiaToursSection() {
       duration: '3 Days',
       rating: 'Rated 4.75 / 5 by past travellers',
       description: 'Lakeside walks, pine forests and cool hill-station air on a short, scenic escape to Kodaikanal.',
-      coverImage: '/assets/images/chris-lawton-duQ1ulzTJbM-unsplash-scaled.jpg'
+      coverImage: '/assets/images/asset_900c3d2c3a.jpg'
     },
     {
       id: 5,
@@ -57,7 +57,7 @@ export default function IndiaToursSection() {
       duration: '4 Days',
       rating: 'Rated 4.88 / 5 by past travellers',
       description: "Misty plantations, wildlife trails and waterfalls through Kerala's green, unhurried Western Ghats district.",
-      coverImage: '/assets/images/ashim-d-silva-S2Q5mdOrrVc-unsplash-scaled.jpg'
+      coverImage: '/assets/images/asset_652f40bc47.jpg'
     },
     {
       id: 6,
@@ -68,7 +68,7 @@ export default function IndiaToursSection() {
       duration: '10 Days',
       rating: 'Rated 4.91 / 5 by past travellers',
       description: 'The full island circuit — Port Blair, Havelock and Neil Island — for travellers who want to see it all.',
-      coverImage: '/assets/images/golden-temple-scaled.jpg'
+      coverImage: '/assets/images/asset_782ddf32ee.jpg'
     }
   ];
 
@@ -117,13 +117,14 @@ export default function IndiaToursSection() {
   }, [nextSlide, isPaused]);
 
   return (
-    <section className="relative py-16 sm:py-20 lg:py-24 overflow-hidden bg-[#10221b]">
+    <section className="relative py-16 sm:py-20 lg:py-24 overflow-hidden bg-[#181818]">
       {/* Background Image overlay */}
       <div 
-        className="absolute inset-0 z-0 bg-cover bg-center opacity-30 mix-blend-luminosity pointer-events-none"
+        className="absolute inset-0 z-0 bg-cover bg-bottom pointer-events-none"
         style={{ backgroundImage: "url('/assets/images/aditya-siva-6rDbvXzIVpQ-unsplash-1-scaled.jpg')" }}
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#10221b]/95 via-[#10221b]/85 to-[#10221b]/65 z-0 pointer-events-none" />
+      {/* Dark overlay: ensures readable text while preserving the vibrant colors of Hawa Mahal and Jaipur street */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/45 z-0 pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
