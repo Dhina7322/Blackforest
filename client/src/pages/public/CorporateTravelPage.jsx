@@ -145,18 +145,22 @@ export default function CorporateTravelPage() {
             
             {/* Left Column (60%) - Typography and Services List */}
             <div className="w-full lg:w-[60%] space-y-6">
-              <span className="text-[#111827] font-bold text-xs uppercase tracking-[0.2em] block">
-                Corporate Travel
-              </span>
-              
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-bold text-[#5e963b] leading-[1.15]">
-                Seamless Travel Solutions for Teams & Businesses
-              </h2>
+              <div>
+                <span 
+                  className="text-2xl sm:text-3xl block mb-2 text-[#27B8B1] tracking-wide font-cursive"
+                  style={{ fontFamily: "var(--font-cursive, 'Mansalva', cursive)" }}
+                >
+                  Corporate Travel
+                </span>
+                
+                <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-sans font-bold text-[#7cb342] leading-[1.15] mb-4">
+                  Seamless Travel Solutions for Teams & Businesses
+                </h2>
 
-              {/* Light green accent bar matching Image 3 */}
-              <div className="h-[3px] w-24 bg-[#a5d6a7] mt-3 mb-8"></div>
+                <div className="w-16 h-[3px] bg-[#27B8B1] mb-8 rounded-full"></div>
+              </div>
               
-              <div className="text-gray-600 text-[15px] sm:text-[16px] font-light leading-[1.75] space-y-6">
+              <div className="space-y-6 text-[#555555] font-light leading-relaxed text-[20px] font-sans">
                 <p>
                   At BlackForest Holidays, we understand that corporate travel is more than simply booking flights and hotels. Our corporate tour packages are designed to keep your people moving efficiently, comfortably, and confidently while giving your organisation complete control over every journey.
                 </p>
@@ -165,30 +169,30 @@ export default function CorporateTravelPage() {
                 </p>
                 
                 <div className="pt-4">
-                  <h3 className="font-bold text-[#111827] text-lg sm:text-xl mb-2 font-sans">
+                  <h3 className="font-bold text-[#10221b] text-xl sm:text-2xl mb-3 font-sans">
                     Your Business. Our Expertise.
                   </h3>
-                  <p>
+                  <p className="text-[#555555] font-light leading-relaxed text-[20px] font-sans">
                     We combine personalised service, travel expertise, and efficient coordination to create corporate travel programmes that work around your organisation's requirements.
                   </p>
                 </div>
 
                 <div className="pt-4">
-                  <h3 className="font-bold text-[#111827] text-[20px] sm:text-[22px] mb-5 font-sans">
+                  <h3 className="font-bold text-[#10221b] text-xl sm:text-2xl mb-5 font-sans">
                     Our Corporate Travel Services
                   </h3>
-                  <ol className="space-y-3.5 text-[#374151] text-[16px] sm:text-[17.5px] leading-[1.85]">
-                    <li><strong>1. Business Travel Management</strong> – Efficient flight, hotel, and transportation arrangements for business travellers.</li>
-                    <li><strong>2. Executive Travel</strong> – Premium travel solutions designed for senior executives and VIP travellers.</li>
-                    <li><strong>3. Corporate Hotel Bookings</strong> – Carefully selected business hotels and premium accommodation worldwide.</li>
-                    <li><strong>4. Flight Reservations</strong> – Domestic and international flight bookings with flexible options to suit business schedules.</li>
-                    <li><strong>5. Visa Assistance</strong> – Professional visa guidance and documentation support for international business travel.</li>
-                    <li><strong>6. Airport Transfers</strong> – Reliable airport transfers and ground transportation for stress-free journeys.</li>
-                    <li><strong>7. Meetings & Conferences</strong> – End-to-end travel coordination for meetings, conferences, exhibitions, and corporate events.</li>
-                    <li><strong>8. Corporate Group Travel</strong> – Seamless travel arrangements for teams, delegations, and large corporate groups.</li>
-                    <li><strong>9. Incentive Travel</strong> – Inspiring incentive trips designed to reward, motivate, and bring teams together.</li>
-                    <li><strong>10. Travel Policy Support</strong> – Travel solutions aligned with your company's policies, budgets, and approval processes.</li>
-                    <li><strong>11. 24/7 Travel Assistance</strong> – Dedicated support to help manage changes, disruptions, and urgent travel requirements.</li>
+                  <ol className="space-y-4 text-[#555555] font-light leading-relaxed text-[20px] font-sans">
+                    <li><strong className="font-bold text-[#10221b]">1. Business Travel Management</strong> – Efficient flight, hotel, and transportation arrangements for business travellers.</li>
+                    <li><strong className="font-bold text-[#10221b]">2. Executive Travel</strong> – Premium travel solutions designed for senior executives and VIP travellers.</li>
+                    <li><strong className="font-bold text-[#10221b]">3. Corporate Hotel Bookings</strong> – Carefully selected business hotels and premium accommodation worldwide.</li>
+                    <li><strong className="font-bold text-[#10221b]">4. Flight Reservations</strong> – Domestic and international flight bookings with flexible options to suit business schedules.</li>
+                    <li><strong className="font-bold text-[#10221b]">5. Visa Assistance</strong> – Professional visa guidance and documentation support for international business travel.</li>
+                    <li><strong className="font-bold text-[#10221b]">6. Airport Transfers</strong> – Reliable airport transfers and ground transportation for stress-free journeys.</li>
+                    <li><strong className="font-bold text-[#10221b]">7. Meetings & Conferences</strong> – End-to-end travel coordination for meetings, conferences, exhibitions, and corporate events.</li>
+                    <li><strong className="font-bold text-[#10221b]">8. Corporate Group Travel</strong> – Seamless travel arrangements for teams, delegations, and large corporate groups.</li>
+                    <li><strong className="font-bold text-[#10221b]">9. Incentive Travel</strong> – Inspiring incentive trips designed to reward, motivate, and bring teams together.</li>
+                    <li><strong className="font-bold text-[#10221b]">10. Travel Policy Support</strong> – Travel solutions aligned with your company's policies, budgets, and approval processes.</li>
+                    <li><strong className="font-bold text-[#10221b]">11. 24/7 Travel Assistance</strong> – Dedicated support to help manage changes, disruptions, and urgent travel requirements.</li>
                   </ol>
                 </div>
               </div>
@@ -227,10 +231,17 @@ export default function CorporateTravelPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="mb-10 sm:mb-14">
-            <h3 className="text-2xl sm:text-[30px] font-bold text-[#111827] mb-3 font-sans">
+            <span 
+              className="text-2xl sm:text-3xl block mb-2 text-[#27B8B1] tracking-wide font-cursive"
+              style={{ fontFamily: "var(--font-cursive, 'Mansalva', cursive)" }}
+            >
+              Global Hubs
+            </span>
+            <h3 className="text-3xl sm:text-4xl font-bold text-[#7cb342] leading-tight font-sans mb-4">
               Corporate Travel Across The World
             </h3>
-            <p className="text-[16.5px] sm:text-[18px] text-[#4b5563] leading-[1.8] max-w-4xl font-light font-sans">
+            <div className="w-16 h-[3px] bg-[#27B8B1] mb-6 rounded-full"></div>
+            <p className="text-[#555555] font-light leading-relaxed text-[20px] font-sans max-w-4xl">
               Whether your team is travelling within India or across international business hubs in Asia, Europe, the Middle East, Africa, Australia, and the Americas, we coordinate every element of the journey with precision.
             </p>
           </div>
@@ -281,31 +292,38 @@ export default function CorporateTravelPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="mb-14 max-w-3xl">
-            <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-[#5e963b] mb-4 font-sans">
+            <span 
+              className="text-2xl sm:text-3xl block mb-2 text-[#27B8B1] tracking-wide font-cursive"
+              style={{ fontFamily: "var(--font-cursive, 'Mansalva', cursive)" }}
+            >
+              Why Choose Us
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-[#7cb342] leading-tight font-sans mb-4">
               Why Choose BlackForest Holidays?
             </h2>
+            <div className="w-16 h-[3px] bg-[#27B8B1] mb-10 rounded-full"></div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14">
             
             <div className="space-y-3">
-              <h3 className="font-bold text-[#10221b] text-[22px] sm:text-[24px] leading-snug font-sans">Dedicated Travel Management</h3>
-              <p className="text-gray-600 text-[16.5px] sm:text-[18px] font-light leading-[1.8] font-sans">Our focused strategy provides you the best routing and the most efficient fares.</p>
+              <h3 className="font-bold text-[#10221b] text-xl sm:text-2xl leading-snug font-sans">Dedicated Travel Management</h3>
+              <p className="text-[#555555] font-light leading-relaxed text-[20px] font-sans">Our focused strategy provides you the best routing and the most efficient fares.</p>
             </div>
             
             <div className="space-y-3">
-              <h3 className="font-bold text-[#10221b] text-[22px] sm:text-[24px] leading-snug font-sans">Cost-Conscious Solutions</h3>
-              <p className="text-gray-600 text-[16.5px] sm:text-[18px] font-light leading-[1.8] font-sans">We leverage extensive supplier relationships and technology to optimize costs without compromising quality.</p>
+              <h3 className="font-bold text-[#10221b] text-xl sm:text-2xl leading-snug font-sans">Cost-Conscious Solutions</h3>
+              <p className="text-[#555555] font-light leading-relaxed text-[20px] font-sans">We leverage extensive supplier relationships and technology to optimize costs without compromising quality.</p>
             </div>
             
             <div className="space-y-3">
-              <h3 className="font-bold text-[#10221b] text-[22px] sm:text-[24px] leading-snug font-sans">Seamless Coordination</h3>
-              <p className="text-gray-600 text-[16.5px] sm:text-[18px] font-light leading-[1.8] font-sans">Flight bookings, ground transfers, hotel stays and meetings—we coordinate everything seamlessly from start to finish.</p>
+              <h3 className="font-bold text-[#10221b] text-xl sm:text-2xl leading-snug font-sans">Seamless Coordination</h3>
+              <p className="text-[#555555] font-light leading-relaxed text-[20px] font-sans">Flight bookings, ground transfers, hotel stays and meetings—we coordinate everything seamlessly from start to finish.</p>
             </div>
             
             <div className="space-y-3">
-              <h3 className="font-bold text-[#10221b] text-[22px] sm:text-[24px] leading-snug font-sans">24/7 Global Support</h3>
-              <p className="text-gray-600 text-[16.5px] sm:text-[18px] font-light leading-[1.8] font-sans">Our dedicated consultants are available around the clock to support you with changes, cancellations, or emergencies wherever you are.</p>
+              <h3 className="font-bold text-[#10221b] text-xl sm:text-2xl leading-snug font-sans">24/7 Global Support</h3>
+              <p className="text-[#555555] font-light leading-relaxed text-[20px] font-sans">Our dedicated consultants are available around the clock to support you with changes, cancellations, or emergencies wherever you are.</p>
             </div>
             
           </div>
@@ -319,28 +337,36 @@ export default function CorporateTravelPage() {
             
             {/* Left Content */}
             <div className="space-y-8">
-              <h2 className="text-4xl md:text-[46px] font-bold text-[#5e963b] leading-tight font-sans">
-                Travel Smarter.
-                <br />
-                Move Further.
-                <div className="h-1 w-24 bg-[#a5d6a7] mt-6"></div>
-              </h2>
+              <div>
+                <span 
+                  className="text-2xl sm:text-3xl block mb-2 text-[#27B8B1] tracking-wide font-cursive"
+                  style={{ fontFamily: "var(--font-cursive, 'Mansalva', cursive)" }}
+                >
+                  Elevate Your Business
+                </span>
+                <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-[#7cb342] leading-tight font-sans">
+                  Travel Smarter.
+                  <br />
+                  Move Further.
+                </h2>
+                <div className="w-16 h-[3px] bg-[#27B8B1] mt-6 mb-8 rounded-full"></div>
+              </div>
               
-              <div className="text-gray-700 text-[18px] sm:text-[20px] lg:text-[21px] font-light leading-[1.85] font-sans">
+              <div className="text-[#555555] font-light leading-relaxed text-[20px] font-sans">
                 <p>Let Blackforest Holidays elevate your business travel experience. To partner with us and leverage our strategic travel management solutions to achieve better control over your travel expenditures, enhance traveler satisfaction, and drive overall business success.</p>
               </div>
 
               <div className="bg-white border border-gray-100 p-8 shadow-xl mt-12 rounded max-w-sm">
-                <h3 className="text-xl font-bold text-[#10221b] mb-8 leading-tight">
+                <h3 className="text-xl sm:text-2xl font-bold text-[#10221b] mb-8 leading-tight font-sans">
                   Your Business Stays
                   <br />
                   Further Ahead.
                   <br />
                   Your Travel Support.
                 </h3>
-                <a href="/contact" className="inline-block bg-[#10221b] text-white px-6 py-3 text-xs font-bold uppercase tracking-widest hover:bg-[#7cb342] transition-colors shadow-md rounded-sm">
+                <Link to="/contact" className="inline-block bg-[#10221b] text-white px-8 py-3.5 text-xs font-bold uppercase tracking-widest hover:bg-[#7cb342] transition-colors shadow-md rounded-sm">
                   Start Your Journey
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -360,7 +386,7 @@ export default function CorporateTravelPage() {
                     <img src="/assets/images/how-corporate-travel-can-sail-through-uncertain-times-1920x1274-1.jpg" alt="Airport lounge" className="w-full h-full object-cover" />
                   </div>
                   <div className="pt-8 pl-4">
-                    <h3 className="text-2xl md:text-3xl font-bold text-[#7cb342] leading-tight">
+                    <h3 className="text-2xl sm:text-3xl font-bold text-[#7cb342] leading-tight font-sans">
                       A Vision
                       <br />Created For
                       <br />The Activities
