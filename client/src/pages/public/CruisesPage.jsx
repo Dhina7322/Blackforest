@@ -77,16 +77,19 @@ export default function CruisesPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start mb-16">
             <div className="space-y-8 lg:pr-4">
               <div>
-                <span className="text-[#10221b] font-bold text-xs uppercase tracking-[0.2em] block mb-3">
-                  Cruises
+                <span
+                  className="text-2xl sm:text-3xl block mb-2 text-[#27B8B1] tracking-wide font-cursive"
+                  style={{ fontFamily: "var(--font-cursive, 'Mansalva', cursive)" }}
+                >
+                  Luxury Ocean Journeys
                 </span>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-sans font-bold text-[#5e963b] leading-[1.15] mb-6">
+                <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-[#7cb342] leading-tight font-sans mb-6">
                   Discover the World, One Extraordinary Journey at a Time
                 </h2>
-                <div className="w-24 h-[1.5px] bg-[#18c4c7] mb-8" />
+                <div className="w-16 h-[3px] bg-[#27B8B1] mb-8 rounded-full" />
               </div>
 
-              <div className="space-y-6 text-gray-600 font-light leading-relaxed text-[20px]">
+              <div className="space-y-6 text-[#555555] font-light leading-relaxed text-[20px] font-sans">
                 <p>
                   Set sail on unforgettable journeys across the world’s most spectacular coastlines and destinations with our cruise ticket booking services. BlackForest Holidays creates personalised cruise holidays that combine exceptional accommodation, fine dining, entertainment, and extraordinary experiences, allowing you to explore multiple destinations in one seamless and memorable journey.
                 </p>
@@ -210,44 +213,50 @@ export default function CruisesPage() {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h2 className="text-3xl md:text-4xl font-sans font-bold text-[#5e963b] mb-4">
+          <span
+            className="text-2xl sm:text-3xl block mb-2 text-[#27B8B1] tracking-wide font-cursive"
+            style={{ fontFamily: "var(--font-cursive, 'Mansalva', cursive)" }}
+          >
+            Why Choose Us
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-[#7cb342] leading-tight font-sans mb-4">
             Why Choose BlackForest Holidays?
           </h2>
-          <div className="w-16 h-[2px] bg-[#18c4c7] mb-12" />
+          <div className="w-16 h-[3px] bg-[#27B8B1] mb-12 rounded-full" />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 max-w-4xl">
             <div>
-              <h4 className="text-[19px] font-bold text-[#10221b] mb-2 font-sans">
+              <h4 className="text-[19px] sm:text-[20px] font-bold text-[#10221b] mb-2 font-sans">
                 Expert Cruise Selection
               </h4>
-              <p className="text-gray-600 font-light leading-relaxed text-[20px]">
+              <p className="text-[#555555] font-light leading-relaxed text-[20px] font-sans">
                 We help you choose the right cruise line, ship, itinerary, and cabin based on your preferences.
               </p>
             </div>
 
             <div>
-              <h4 className="text-[19px] font-bold text-[#10221b] mb-2 font-sans">
+              <h4 className="text-[19px] sm:text-[20px] font-bold text-[#10221b] mb-2 font-sans">
                 Personalised Planning
               </h4>
-              <p className="text-gray-600 font-light leading-relaxed text-[20px]">
+              <p className="text-[#555555] font-light leading-relaxed text-[20px] font-sans">
                 Every cruise journey can be tailored with flights, hotels, transfers, excursions, and pre- or post-cruise stays.
               </p>
             </div>
 
             <div>
-              <h4 className="text-[19px] font-bold text-[#10221b] mb-2 font-sans">
+              <h4 className="text-[19px] sm:text-[20px] font-bold text-[#10221b] mb-2 font-sans">
                 Complete Travel Support
               </h4>
-              <p className="text-gray-600 font-light leading-relaxed text-[20px]">
+              <p className="text-[#555555] font-light leading-relaxed text-[20px] font-sans">
                 From booking to boarding, our team helps coordinate the essential details of your journey.
               </p>
             </div>
 
             <div>
-              <h4 className="text-[19px] font-bold text-[#10221b] mb-2 font-sans">
+              <h4 className="text-[19px] sm:text-[20px] font-bold text-[#10221b] mb-2 font-sans">
                 Curated Experiences
               </h4>
-              <p className="text-gray-600 font-light leading-relaxed text-[20px]">
+              <p className="text-[#555555] font-light leading-relaxed text-[20px] font-sans">
                 Make the most of every destination with carefully selected shore excursions and travel experiences.
               </p>
             </div>
@@ -263,23 +272,29 @@ export default function CruisesPage() {
             {/* Column 1: Left - Heading, Text, CTA (Span 4) */}
             <div className="lg:col-span-4 space-y-6">
               <div>
-                <h3 className="text-3xl md:text-[36px] font-sans font-bold text-[#5e963b] leading-tight mb-4">
+                <span
+                  className="text-2xl sm:text-3xl block mb-1 text-[#27B8B1] tracking-wide font-cursive"
+                  style={{ fontFamily: "var(--font-cursive, 'Mansalva', cursive)" }}
+                >
+                  Ocean Voyages
+                </span>
+                <h3 className="text-3xl sm:text-4xl font-bold text-[#7cb342] leading-tight font-sans mb-4">
                   Your Journey Begins at Sea
                 </h3>
-                <div className="w-16 h-[2px] bg-[#18c4c7]" />
+                <div className="w-16 h-[3px] bg-[#27B8B1] mb-6 rounded-full" />
               </div>
 
-              <p className="text-gray-600 font-light leading-relaxed text-[20px]">
+              <p className="text-[#555555] font-light leading-relaxed text-[20px] font-sans">
                 Whether you’re dreaming of a romantic Mediterranean voyage, a family cruise through the Caribbean, a luxury river journey through Europe, or an expedition to the world’s remote corners, BlackForest Holidays helps turn your cruise dreams into an extraordinary journey.
               </p>
 
               <div className="pt-4">
-                <h4 className="text-sm font-bold text-[#10221b] uppercase tracking-[0.15em] mb-4">
+                <h4 className="text-sm font-bold text-[#10221b] uppercase tracking-[0.15em] mb-4 font-sans">
                   Sail Further, Discover More.
                 </h4>
                 <button
                   onClick={() => openEnquiryModal({ title: 'Cruise Holidays Enquiry' })}
-                  className="bg-[#10221b] text-white px-7 py-3.5 text-xs font-bold uppercase tracking-widest hover:bg-[#5e963b] transition-colors shadow-md rounded-sm cursor-pointer"
+                  className="bg-[#10221b] text-white px-8 py-3.5 text-xs font-bold uppercase tracking-widest hover:bg-[#7cb342] transition-colors shadow-md rounded-sm cursor-pointer"
                 >
                   Explore Cruise Holidays &rarr;
                 </button>
@@ -319,7 +334,7 @@ export default function CruisesPage() {
                 />
               </div>
               <div className="relative z-10 pt-2">
-                <h4 className="text-[#5e963b] text-2xl sm:text-[28px] font-bold leading-tight font-sans">
+                <h4 className="text-[#7cb342] text-2xl sm:text-[28px] font-bold leading-tight font-sans">
                   A Vision Created For The Activities To Make Sure You Enjoy &amp; Get Thrilled.
                 </h4>
               </div>

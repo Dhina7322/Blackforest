@@ -27,6 +27,7 @@ import AboutPage from './pages/public/AboutPage';
 import ContactPage from './pages/public/ContactPage';
 import JournalPage from './pages/public/JournalPage';
 import ArticleDetailPage from './pages/public/ArticleDetailPage';
+import PolicyPage from './pages/public/PolicyPage';
 import NotFoundPage from './pages/public/NotFoundPage';
 
 // Admin Pages
@@ -91,10 +92,11 @@ export default function App() {
                 <Route path="/coach-tour-details" element={<CoachTourDetailPage />} />
                 <Route path="/coach-tour/:id" element={<CoachTourDetailPage />} />
 
-                {/* Blog Pages (Direct display matching reference design) */}
+                {/* Blog & Journal Pages */}
                 <Route path="/blog" element={<ArticleDetailPage forcedSlug="safety-measures-for-safe-trekking-in-waterfalls" />} />
                 <Route path="/blogs" element={<ArticleDetailPage forcedSlug="safety-measures-for-safe-trekking-in-waterfalls" />} />
                 <Route path="/journal" element={<ArticleDetailPage forcedSlug="safety-measures-for-safe-trekking-in-waterfalls" />} />
+                <Route path="/travel-journal" element={<ArticleDetailPage forcedSlug="safety-measures-for-safe-trekking-in-waterfalls" />} />
                 <Route path="/journal/:slug" element={<ArticleDetailPage />} />
                 <Route path="/blog/:slug" element={<ArticleDetailPage />} />
                 <Route path="/safety-measures-for-safe-trekking-in-waterfalls" element={<ArticleDetailPage forcedSlug="safety-measures-for-safe-trekking-in-waterfalls" />} />
@@ -102,6 +104,17 @@ export default function App() {
                 {/* Company Pages */}
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/contact" element={<ContactPage />} />
+                <Route path="/work-with-us" element={<ContactPage />} />
+
+                {/* Legal & Policy Pages */}
+                <Route path="/privacy-policy" element={<PolicyPage policyKey="privacy-policy" />} />
+                <Route path="/cancellation-refund-policy" element={<PolicyPage policyKey="cancellation-refund-policy" />} />
+                <Route path="/refund-policy" element={<PolicyPage policyKey="cancellation-refund-policy" />} />
+                <Route path="/cancellation-&-refund-policy" element={<PolicyPage policyKey="cancellation-refund-policy" />} />
+                <Route path="/terms-conditions" element={<PolicyPage policyKey="terms-conditions" />} />
+                <Route path="/terms" element={<PolicyPage policyKey="terms-conditions" />} />
+                <Route path="/terms-&-conditions" element={<PolicyPage policyKey="terms-conditions" />} />
+                <Route path="/terms-and-conditions" element={<PolicyPage policyKey="terms-conditions" />} />
 
                 {/* Catch-all 404 */}
                 <Route path="*" element={<NotFoundPage />} />

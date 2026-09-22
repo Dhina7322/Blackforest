@@ -172,7 +172,7 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/contact" className="hover:text-[#27B8B1] transition-colors">
+                  <Link to="/work-with-us" className="hover:text-[#27B8B1] transition-colors">
                     Work With Us
                   </Link>
                 </li>
@@ -182,12 +182,12 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/refund-policy" className="hover:text-[#27B8B1] transition-colors">
+                  <Link to="/cancellation-refund-policy" className="hover:text-[#27B8B1] transition-colors">
                     Cancellation & Refund Policy
                   </Link>
                 </li>
                 <li>
-                  <Link to="/terms" className="hover:text-[#27B8B1] transition-colors">
+                  <Link to="/terms-conditions" className="hover:text-[#27B8B1] transition-colors">
                     Terms & Conditions
                   </Link>
                 </li>

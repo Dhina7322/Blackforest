@@ -81,7 +81,10 @@ export default function StatsSection() {
             </span>
 
             {/* Main Heading */}
-
+            <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#10221b] leading-[1.15] font-sans">
+              Escape to extraordinary <br className="hidden sm:block" />
+              islands
+            </h2>
 
             {/* Description */}
             <p className="text-[#555555] font-light text-sm sm:text-base leading-relaxed max-w-md pt-2">

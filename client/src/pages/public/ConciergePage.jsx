@@ -19,7 +19,7 @@ export default function ConciergePage() {
   const details = {
     flights: {
       title: 'Flight Booking',
-      caption: 'Flight Booking, Airport Transfers & Travel Insurance',
+      cursiveSubtitle: 'Flight Booking, Airport Transfers & Travel Insurance',
       heroImage: `${CDN}/2026/08/—Pngtree—worldwide-flight-adventure-a-3d_5773140-scaled.jpg`,
 
       intro: {
@@ -32,7 +32,7 @@ export default function ConciergePage() {
 
       extraBlocks: [
         {
-          caption: 'Flight Booking',
+          cursiveSubtitle: 'Flight Booking',
           icon: 'plane',
           heading: 'Flights Made Simple',
           text: 'Find the right flight for your journey with personalised assistance for domestic and international travel. We help you compare suitable flight options, schedules, fares, and travel requirements based on your preferences.',
@@ -69,6 +69,7 @@ export default function ConciergePage() {
       ],
 
       whyChooseUs: {
+        cursiveSubtitle: 'Why Choose Us',
         heading: 'Why Choose BlackForest Holidays?',
         bgImage: `${CDN}/2026/08/contact-pine-bg-2.jpg`,
         features: [
@@ -80,6 +81,7 @@ export default function ConciergePage() {
       },
 
       midSection: {
+        cursiveSubtitle: 'Fly Further',
         heading: 'Explore The World With Peace Of Mind',
         text: "Whether you're seeking the thrill of a mountain expedition, the serenity of a rainforest, the excitement of a safari, or simply a deeper connection with nature, BlackForest Holidays creates journeys that inspire you to explore further.",
         ctaLabel: 'Go Further and Explore More.',
@@ -88,7 +90,7 @@ export default function ConciergePage() {
       },
 
       secondaryFeature: {
-        caption: 'Airport Transfers',
+        cursiveSubtitle: 'Airport Transfers',
         icon: 'car',
         heading: 'Arrive Smoothly. Travel Comfortably.',
         text: 'Start and finish your journey with reliable airport transportation. We arrange airport transfers tailored to your destination, schedule, group size, and travel requirements.',
@@ -98,7 +100,7 @@ export default function ConciergePage() {
       },
 
       tertiaryFeature: {
-        caption: 'Travel Insurance',
+        cursiveSubtitle: 'Travel Insurance',
         icon: 'shield',
         heading: 'Travel With Confidence',
         paragraphs: [
@@ -108,6 +110,7 @@ export default function ConciergePage() {
       },
 
       finalSection: {
+        cursiveSubtitle: 'Travel Assistance',
         heading: 'Travel With Confidence, Travel With Protection',
         text: "Don't let complicated paperwork stand between you and your next destination. Let BlackForest Holidays help you prepare your visa application with greater clarity, confidence, and peace of mind.",
         ctaLabel: 'Need Travel Assistance?',
@@ -124,7 +127,7 @@ export default function ConciergePage() {
 
     visas: {
       title: 'Visa Assistance',
-      caption: 'Visa Assistance',
+      cursiveSubtitle: 'Visa Assistance',
       heroImage: `${CDN}/2026/08/ChatGPT-Image-Aug-8-2026-06_30_11-PM-2.png`,
 
       intro: {
@@ -174,6 +177,7 @@ export default function ConciergePage() {
       ],
 
       whyChooseUs: {
+        cursiveSubtitle: 'Why Choose Us',
         heading: 'Why Choose BlackForest Holidays?',
         bgImage: `${CDN}/2026/08/contact-pine-bg-2.jpg`,
         features: [
@@ -185,6 +189,7 @@ export default function ConciergePage() {
       },
 
       finalSection: {
+        cursiveSubtitle: 'Visa Support',
         heading: 'Start Your Visa Journey With Confidence',
         text: "Don't let complicated paperwork stand between you and your next destination. Let BlackForest Holidays help you prepare your visa application with greater clarity, confidence, and peace of mind.",
         ctaLabel: 'Need Visa Assistance?',
@@ -201,7 +206,7 @@ export default function ConciergePage() {
 
     cruises: {
       title: 'Cruises',
-      caption: 'Cruises',
+      cursiveSubtitle: 'Cruises',
       heroImage: `${CDN}/2026/08/pexels-g-isle-px-210751289-11820070-scaled.jpg`,
 
       intro: {
@@ -245,6 +250,7 @@ export default function ConciergePage() {
       ],
 
       whyChooseUs: {
+        cursiveSubtitle: 'Why Choose Us',
         heading: 'Why Choose BlackForest Holidays?',
         bgImage: `${CDN}/2026/08/contact-pine-bg-2.jpg`,
         features: [
@@ -256,6 +262,7 @@ export default function ConciergePage() {
       },
 
       midSection: {
+        cursiveSubtitle: 'Begin Your Voyage',
         heading: 'Your Journey Begins at Sea',
         text: "Whether you're dreaming of a romantic Mediterranean voyage, a family cruise through the Caribbean, a luxury river journey through Europe, or an expedition to the world's remote corners, BlackForest Holidays helps turn your cruise dreams into an extraordinary journey.",
         ctaLabel: 'Sail Further. Discover More.',
@@ -341,18 +348,23 @@ export default function ConciergePage() {
 
             <div className="space-y-8 lg:pr-4">
               <div>
-                <span className="text-[#10221b] font-bold text-xs uppercase tracking-[0.2em] block mb-3">
-                  {data.caption}
+                <span
+                  className="text-2xl sm:text-3xl block mb-2 text-[#27B8B1] tracking-wide font-cursive"
+                  style={{ fontFamily: "var(--font-cursive, 'Mansalva', cursive)" }}
+                >
+                  {data.cursiveSubtitle}
                 </span>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-sans font-bold text-[#5e963b] leading-[1.15] mb-6">
+                <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-[#7cb342] leading-tight font-sans mb-6">
                   {data.intro.heading}
                 </h2>
-                <div className="w-24 h-[1.5px] bg-[#18c4c7] mb-8" />
+                <div className="w-16 h-[3px] bg-[#27B8B1] mb-8 rounded-full" />
               </div>
 
-              <div className="space-y-6 text-gray-600 font-light leading-relaxed text-[20px]">
+              <div className="space-y-6">
                 {data.intro.paragraphs.map((p, i) => (
-                  <p key={i}>{p}</p>
+                  <p key={i} className="text-[#555555] font-light leading-relaxed text-[20px] font-sans">
+                    {p}
+                  </p>
                 ))}
               </div>
             </div>
@@ -371,23 +383,25 @@ export default function ConciergePage() {
           {/* Extra sub-blocks */}
           {(data.extraBlocks || []).map((block, i) => (
             <div key={i} className="max-w-7xl pt-10">
-              {block.caption ? (
+              {block.cursiveSubtitle ? (
                 <div>
-                  <div className="flex items-center gap-2 text-[#10221b] font-bold text-xs uppercase tracking-[0.2em] mb-3">
-                    <IconFor icon={block.icon || 'plane'} />
-                    <span>{block.caption}</span>
-                  </div>
-                  <h2 className="text-3xl md:text-4xl font-sans font-bold text-[#5e963b] mb-4">
+                  <span
+                    className="text-2xl sm:text-3xl block mb-1 text-[#27B8B1] tracking-wide font-cursive"
+                    style={{ fontFamily: "var(--font-cursive, 'Mansalva', cursive)" }}
+                  >
+                    {block.cursiveSubtitle}
+                  </span>
+                  <h2 className="text-3xl sm:text-4xl font-bold text-[#7cb342] leading-tight font-sans mb-4">
                     {block.heading}
                   </h2>
-                  <div className="w-16 h-[2px] bg-[#18c4c7] mb-6" />
+                  <div className="w-16 h-[3px] bg-[#27B8B1] mb-6 rounded-full" />
                 </div>
               ) : (
-                <h3 className="text-xl sm:text-2xl font-sans font-bold text-[#10221b] mb-3">
+                <h3 className="text-xl sm:text-2xl font-bold text-[#10221b] font-sans mb-3">
                   {block.icon ? `${block.icon} ` : ''}{block.heading}
                 </h3>
               )}
-              <p className="text-gray-600 font-light leading-relaxed text-[20px]">
+              <p className="text-[#555555] font-light leading-relaxed text-[20px] font-sans">
                 {block.text}
               </p>
             </div>
@@ -396,7 +410,7 @@ export default function ConciergePage() {
           {/* Services list — two-column / numbered / numbered-dash / dash */}
           {data.servicesList && (
             <div className="max-w-7xl pt-10">
-              <h3 className="text-xl sm:text-2xl font-sans font-bold text-[#10221b] mb-4">
+              <h3 className="text-xl sm:text-2xl font-bold text-[#10221b] font-sans mb-4">
                 {data.servicesList.heading}
               </h3>
 
@@ -404,14 +418,14 @@ export default function ConciergePage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-3">
                   <ul className="space-y-3">
                     {data.servicesList.items.slice(0, Math.ceil(data.servicesList.items.length / 2)).map((item, idx) => (
-                      <li key={idx} className="text-gray-600 font-light leading-relaxed text-[20px]">
+                      <li key={idx} className="text-[#555555] font-light leading-relaxed text-[20px] font-sans">
                         • {item}
                       </li>
                     ))}
                   </ul>
                   <ul className="space-y-3">
                     {data.servicesList.items.slice(Math.ceil(data.servicesList.items.length / 2)).map((item, idx) => (
-                      <li key={idx} className="text-gray-600 font-light leading-relaxed text-[20px]">
+                      <li key={idx} className="text-[#555555] font-light leading-relaxed text-[20px] font-sans">
                         • {item}
                       </li>
                     ))}
@@ -422,7 +436,7 @@ export default function ConciergePage() {
               {data.servicesList.type === 'numbered-dash' && (
                 <ul className="space-y-3">
                   {data.servicesList.items.map((item, idx) => (
-                    <li key={idx} className="text-gray-600 font-light leading-relaxed text-[20px]">
+                    <li key={idx} className="text-[#555555] font-light leading-relaxed text-[20px] font-sans">
                       {idx + 1}. <span className="text-gray-900 font-bold">{item.title}</span> – {item.desc}
                     </li>
                   ))}
@@ -432,7 +446,7 @@ export default function ConciergePage() {
               {data.servicesList.type === 'dash' && (
                 <ul className="space-y-3">
                   {data.servicesList.items.map((item, idx) => (
-                    <li key={idx} className="text-gray-600 font-light leading-relaxed text-[20px]">
+                    <li key={idx} className="text-[#555555] font-light leading-relaxed text-[20px] font-sans">
                       <span className="text-gray-900 font-bold">{item.title}</span> – {item.desc}
                     </li>
                   ))}
@@ -444,16 +458,16 @@ export default function ConciergePage() {
           {/* Popular Visa Destinations */}
           {data.popularDestinations && (
             <div className="max-w-7xl pt-10">
-              <h3 className="text-xl sm:text-2xl font-sans font-bold text-[#10221b] mb-3">
+              <h3 className="text-xl sm:text-2xl font-bold text-[#10221b] font-sans mb-3">
                 {data.popularDestinations.heading}
               </h3>
-              <p className="text-gray-600 font-light leading-relaxed text-[20px] mb-3">
+              <p className="text-[#555555] font-light leading-relaxed text-[20px] font-sans mb-3">
                 {data.popularDestinations.intro}
               </p>
-              <p className="text-[#10221b] font-bold text-[20px] mb-3">
+              <p className="text-[#10221b] font-bold text-[20px] font-sans mb-3">
                 {data.popularDestinations.list.join(' | ')}
               </p>
-              <p className="text-gray-600 font-light leading-relaxed text-[20px]">
+              <p className="text-[#555555] font-light leading-relaxed text-[20px] font-sans">
                 {data.popularDestinations.outro}
               </p>
             </div>
@@ -462,10 +476,10 @@ export default function ConciergePage() {
           {/* Destinations paragraph block */}
           {data.destinations && (
             <div className="max-w-7xl pt-10 pb-6">
-              <h3 className="text-xl sm:text-2xl font-sans font-bold text-[#10221b] mb-3">
+              <h3 className="text-xl sm:text-2xl font-bold text-[#10221b] font-sans mb-3">
                 {data.destinations.heading}
               </h3>
-              <p className="text-gray-600 font-light leading-relaxed text-[20px]">
+              <p className="text-[#555555] font-light leading-relaxed text-[20px] font-sans">
                 {data.destinations.text}
               </p>
             </div>
@@ -519,7 +533,7 @@ export default function ConciergePage() {
         </section>
       )}
 
-      {/* 4. Why Choose Us (4-up, faint background texture) */}
+      {/* 4. Why Choose Us */}
       {data.whyChooseUs && (
         <section className="py-24 bg-white relative z-10 overflow-hidden">
           {data.whyChooseUs.bgImage && (
@@ -533,17 +547,23 @@ export default function ConciergePage() {
             </div>
           )}
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <h2 className="text-3xl md:text-4xl font-sans font-bold text-[#5e963b] mb-4">
+            <span
+              className="text-2xl sm:text-3xl block mb-2 text-[#27B8B1] tracking-wide font-cursive"
+              style={{ fontFamily: "var(--font-cursive, 'Mansalva', cursive)" }}
+            >
+              {data.whyChooseUs.cursiveSubtitle || 'Why Choose Us'}
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-[#7cb342] leading-tight font-sans mb-4">
               {data.whyChooseUs.heading}
             </h2>
-            <div className="w-16 h-[2px] bg-[#18c4c7] mb-12" />
+            <div className="w-16 h-[3px] bg-[#27B8B1] mb-12 rounded-full" />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 max-w-4xl">
               {data.whyChooseUs.features.map((f, idx) => (
                 <div key={idx}>
                   <h4 className="text-[19px] sm:text-[20px] font-bold text-[#10221b] mb-2 font-sans">
                     {f.title}
                   </h4>
-                  <p className="text-gray-600 font-light leading-relaxed text-[20px]">
+                  <p className="text-[#555555] font-light leading-relaxed text-[20px] font-sans">
                     {f.desc}
                   </p>
                 </div>
@@ -560,21 +580,29 @@ export default function ConciergePage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-6">
                 <div>
-                  <h2 className="text-3xl md:text-4xl font-sans font-bold text-[#5e963b] leading-tight mb-4">
+                  {data.midSection.cursiveSubtitle && (
+                    <span
+                      className="text-2xl sm:text-3xl block mb-1 text-[#27B8B1] tracking-wide font-cursive"
+                      style={{ fontFamily: "var(--font-cursive, 'Mansalva', cursive)" }}
+                    >
+                      {data.midSection.cursiveSubtitle}
+                    </span>
+                  )}
+                  <h2 className="text-3xl sm:text-4xl font-bold text-[#7cb342] leading-tight font-sans mb-4">
                     {data.midSection.heading}
                   </h2>
-                  <div className="w-16 h-[2px] bg-[#18c4c7]" />
+                  <div className="w-16 h-[3px] bg-[#27B8B1] mb-6 rounded-full" />
                 </div>
-                <p className="text-gray-600 font-light leading-relaxed text-[20px] max-w-md">
+                <p className="text-[#555555] font-light leading-relaxed text-[20px] font-sans max-w-md">
                   {data.midSection.text}
                 </p>
                 <div className="pt-4">
-                  <h4 className="text-sm font-bold text-[#10221b] uppercase tracking-[0.15em] mb-4">
+                  <h4 className="text-sm font-bold text-[#10221b] uppercase tracking-[0.15em] mb-4 font-sans">
                     {data.midSection.ctaLabel}
                   </h4>
                   <button
                     onClick={() => openEnquiryModal({ title: `${data.title} Enquiry` })}
-                    className="bg-[#10221b] text-white px-8 py-3.5 text-xs font-bold uppercase tracking-widest hover:bg-[#5e963b] transition-colors shadow-md rounded-sm cursor-pointer"
+                    className="bg-[#10221b] text-white px-8 py-3.5 text-xs font-bold uppercase tracking-widest hover:bg-[#7cb342] transition-colors shadow-md rounded-sm cursor-pointer"
                   >
                     {data.midSection.buttonText} &rarr;
                   </button>
@@ -597,30 +625,32 @@ export default function ConciergePage() {
       {data.secondaryFeature && (
         <section className="py-20 bg-white relative z-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center gap-2 text-[#10221b] font-bold text-xs uppercase tracking-[0.2em] mb-3">
-              <IconFor icon={data.secondaryFeature.icon} />
-              <span>{data.secondaryFeature.caption}</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-sans font-bold text-[#5e963b] mb-4">
+            <span
+              className="text-2xl sm:text-3xl block mb-1 text-[#27B8B1] tracking-wide font-cursive"
+              style={{ fontFamily: "var(--font-cursive, 'Mansalva', cursive)" }}
+            >
+              {data.secondaryFeature.cursiveSubtitle || 'Airport Transfers'}
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#7cb342] leading-tight font-sans mb-4">
               {data.secondaryFeature.heading}
             </h2>
-            <div className="w-16 h-[2px] bg-[#18c4c7] mb-6" />
-            <p className="text-gray-600 font-light leading-relaxed text-[20px] mb-8">
+            <div className="w-16 h-[3px] bg-[#27B8B1] mb-6 rounded-full" />
+            <p className="text-[#555555] font-light leading-relaxed text-[20px] font-sans mb-8">
               {data.secondaryFeature.text}
             </p>
 
-            <h3 className="text-xl sm:text-2xl font-sans font-bold text-[#10221b] mb-4">
+            <h3 className="text-xl sm:text-2xl font-bold text-[#10221b] font-sans mb-4">
               {data.secondaryFeature.listHeading}
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-3">
               <ul className="space-y-3">
                 {data.secondaryFeature.itemsLeft.map((item, idx) => (
-                  <li key={idx} className="text-gray-600 font-light leading-relaxed text-[20px]">• {item}</li>
+                  <li key={idx} className="text-[#555555] font-light leading-relaxed text-[20px] font-sans">• {item}</li>
                 ))}
               </ul>
               <ul className="space-y-3">
                 {data.secondaryFeature.itemsRight.map((item, idx) => (
-                  <li key={idx} className="text-gray-600 font-light leading-relaxed text-[20px]">• {item}</li>
+                  <li key={idx} className="text-[#555555] font-light leading-relaxed text-[20px] font-sans">• {item}</li>
                 ))}
               </ul>
             </div>
@@ -632,17 +662,19 @@ export default function ConciergePage() {
       {data.tertiaryFeature && (
         <section className="py-20 bg-white relative z-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center gap-2 text-[#10221b] font-bold text-xs uppercase tracking-[0.2em] mb-3">
-              <IconFor icon={data.tertiaryFeature.icon} />
-              <span>{data.tertiaryFeature.caption}</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-sans font-bold text-[#5e963b] mb-4">
+            <span
+              className="text-2xl sm:text-3xl block mb-1 text-[#27B8B1] tracking-wide font-cursive"
+              style={{ fontFamily: "var(--font-cursive, 'Mansalva', cursive)" }}
+            >
+              {data.tertiaryFeature.cursiveSubtitle || 'Travel Insurance'}
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#7cb342] leading-tight font-sans mb-4">
               {data.tertiaryFeature.heading}
             </h2>
-            <div className="w-16 h-[2px] bg-[#18c4c7] mb-6" />
+            <div className="w-16 h-[3px] bg-[#27B8B1] mb-6 rounded-full" />
             <div className="space-y-4">
               {data.tertiaryFeature.paragraphs.map((p, i) => (
-                <p key={i} className="text-gray-600 font-light leading-relaxed text-[20px]">{p}</p>
+                <p key={i} className="text-[#555555] font-light leading-relaxed text-[20px] font-sans">{p}</p>
               ))}
             </div>
           </div>
@@ -657,23 +689,29 @@ export default function ConciergePage() {
 
               <div className="space-y-8">
                 <div>
-                  <h3 className="text-3xl md:text-[36px] font-sans font-bold text-[#5e963b] leading-tight mb-4">
+                  <span
+                    className="text-2xl sm:text-3xl block mb-1 text-[#27B8B1] tracking-wide font-cursive"
+                    style={{ fontFamily: "var(--font-cursive, 'Mansalva', cursive)" }}
+                  >
+                    {data.finalSection.cursiveSubtitle || 'Travel Assistance'}
+                  </span>
+                  <h3 className="text-3xl sm:text-4xl font-bold text-[#7cb342] leading-tight font-sans mb-4">
                     {data.finalSection.heading}
                   </h3>
-                  <div className="w-16 h-[2px] bg-[#18c4c7]" />
+                  <div className="w-16 h-[3px] bg-[#27B8B1] mb-6 rounded-full" />
                 </div>
 
-                <p className="text-gray-600 font-light leading-relaxed text-[20px] max-w-md">
+                <p className="text-[#555555] font-light leading-relaxed text-[20px] font-sans max-w-md">
                   {data.finalSection.text}
                 </p>
 
                 <div className="pt-2">
-                  <h4 className="text-sm font-bold text-[#10221b] uppercase tracking-[0.15em] mb-4">
+                  <h4 className="text-sm font-bold text-[#10221b] uppercase tracking-[0.15em] mb-4 font-sans">
                     {data.finalSection.ctaLabel}
                   </h4>
                   <button
                     onClick={() => openEnquiryModal({ title: `${data.title} Enquiry` })}
-                    className="bg-[#10221b] text-white px-8 py-3.5 text-xs font-bold uppercase tracking-widest hover:bg-[#5e963b] transition-colors shadow-md rounded-sm cursor-pointer"
+                    className="bg-[#10221b] text-white px-8 py-3.5 text-xs font-bold uppercase tracking-widest hover:bg-[#7cb342] transition-colors shadow-md rounded-sm cursor-pointer"
                   >
                     {data.finalSection.buttonText} &rarr;
                   </button>
@@ -701,7 +739,7 @@ export default function ConciergePage() {
                       <img src={data.finalSection.collageImages[2]} alt="Collage 3" className="w-full h-[400px] object-cover hover:scale-105 transition-transform duration-700" />
                     </div>
                     <div className="mt-8">
-                      <h4 className="text-[#5e963b] text-2xl sm:text-[28px] font-bold leading-tight font-sans">
+                      <h4 className="text-[#7cb342] text-2xl sm:text-[28px] font-bold leading-tight font-sans">
                         {data.finalSection.quote}
                       </h4>
                     </div>
@@ -733,7 +771,7 @@ export default function ConciergePage() {
                   <div className="overflow-hidden rounded-sm shadow-md">
                     <img src={data.trailingCollage.images[1]} alt="Cruise" className="w-full h-[220px] object-cover hover:scale-105 transition-transform duration-700" />
                   </div>
-                  <h4 className="text-[#5e963b] text-2xl sm:text-[28px] font-bold leading-tight font-sans">
+                  <h4 className="text-[#7cb342] text-2xl sm:text-[28px] font-bold leading-tight font-sans">
                     {data.trailingCollage.quote}
                   </h4>
                 </div>
