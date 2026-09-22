@@ -9,7 +9,7 @@
   --text-h1: 3.5rem;
   --text-h2: 2.375rem;
   --text-h3: 1.1875rem;
-  --text-body: 0.9375rem;
+  --text-body: 20px;
   --text-body-sm: 0.8125rem;
   --text-eyebrow: 0.6875rem;
 
@@ -44,12 +44,48 @@
     font-family: var(--font-sans);
   }
 
-  h1, h2, h3, h4, h5, h6, .font-serif, .font-sans {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .font-serif,
+  .font-sans {
     font-family: var(--font-sans);
+  }
+
+  p {
+    font-size: 20px !important;
+    line-height: 1.75 !important;
   }
 }
 
 @layer utilities {
+  /* All paragraph text to 20px - explicitly ensuring text-sm and body sizes on p are 20px */
+  p,
+  p.text-sm,
+  p.sm\:text-sm,
+  p.md\:text-sm,
+  p.lg\:text-sm,
+  p.text-base,
+  p.sm\:text-base,
+  p.md\:text-base,
+  p.lg\:text-base,
+  p.text-\[13px\],
+  p.text-\[13\.5px\],
+  p.text-\[14px\],
+  p.text-\[14\.5px\],
+  p.text-\[15px\],
+  p.text-\[16px\],
+  p.text-\[16\.5px\],
+  p.text-\[17px\],
+  p.text-\[18px\],
+  .typo-body {
+    font-size: 20px !important;
+    line-height: 1.75 !important;
+  }
+
   /* Standardized Typography Classes Matching Home Page Single Source of Truth */
   .typo-h1 {
     font-family: var(--font-sans);
@@ -100,7 +136,7 @@
 
   .typo-body {
     font-family: var(--font-sans);
-    font-size: 0.9375rem;
+    font-size: 20px;
     font-weight: 300;
     line-height: 1.75;
   }
@@ -133,13 +169,16 @@
   width: 8px;
   height: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: #f1ede7;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #c7beaf;
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #10221b;
 }
@@ -148,6 +187,7 @@
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -157,20 +197,25 @@
 .perspective-1000 {
   perspective: 1000px;
 }
+
 .transform-style-preserve-3d {
   transform-style: preserve-3d;
 }
+
 .backface-hidden {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
+
 .rotate-y-180 {
   transform: rotateY(180deg);
 }
+
 .flip-card-inner {
   transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
   transform-style: preserve-3d;
 }
+
 .group:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
@@ -180,6 +225,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

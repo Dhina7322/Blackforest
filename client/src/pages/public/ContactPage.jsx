@@ -4,6 +4,7 @@ import { useToast } from '../../context/ToastContext';
 import { enquiryService } from '../../services/allServices';
 import { useSettings } from '../../context/SiteSettingsContext';
 import HeroWave from '../../components/common/HeroWave';
+import OfficesMapSection from '../../components/contact/OfficesMapSection';
 
 export default function ContactPage() {
   const { settings } = useSettings();
@@ -429,53 +430,11 @@ export default function ContactPage() {
             </div>
 
           </div>
-
-          {/* Office Maps Section */}
-          <div className="mt-16 pt-12 border-t border-gray-200/80">
-            <div className="text-center max-w-xl mx-auto mb-8">
-              <span className="text-[#27B8B1] font-cursive text-2xl md:text-3xl block mb-1">
-                Locate Us
-              </span>
-              <h3 className="text-2xl sm:text-3xl font-bold text-[#10221b] font-sans">
-                Our Office Locations
-              </h3>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              
-              {/* Bengaluru Office Map */}
-              <div className="w-full h-80 sm:h-96 rounded-2xl overflow-hidden shadow-md">
-                <iframe 
-                  title="Bengaluru Office Map"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.026778432321!2d77.6401!3d12.9784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae16a75f1b1b1b%3A0x1b1b1b1b1b1b1b1b!2sIndiranagar%2C%20Bengaluru%2C%20Karnataka%20560038!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
-                  width="100%" 
-                  height="100%" 
-                  style={{ border: 0 }} 
-                  allowFullScreen="" 
-                  loading="lazy" 
-                  referrerPolicy="no-referrer-when-downgrade"
-                />
-              </div>
-
-              {/* Coimbatore Office Map */}
-              <div className="w-full h-80 sm:h-96 rounded-2xl overflow-hidden shadow-md">
-                <iframe 
-                  title="Coimbatore Office Map"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.1437877209865!2d76.9535091!3d11.0278146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba858f69d356885%3A0x6b87611636c7a979!2sSaibaba%20Colony%2C%20Coimbatore%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
-                  width="100%" 
-                  height="100%" 
-                  style={{ border: 0 }} 
-                  allowFullScreen="" 
-                  loading="lazy" 
-                  referrerPolicy="no-referrer-when-downgrade"
-                />
-              </div>
-
-            </div>
-          </div>
-
         </div>
       </section>
+
+      {/* 3. New Custom Illustrated Regional Office Map Section (Matching User Image 2) */}
+      <OfficesMapSection />
 
     </div>
   );

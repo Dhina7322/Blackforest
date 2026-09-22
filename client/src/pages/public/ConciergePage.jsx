@@ -2,6 +2,7 @@ import React from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { Plane, ShieldCheck, Car } from 'lucide-react';
 import { useSettings } from '../../context/SiteSettingsContext';
+import HeroWave from '../../components/common/HeroWave';
 
 const CDN = 'https://blackforestholidays.com/wp-content/uploads';
 
@@ -15,20 +16,11 @@ export default function ConciergePage() {
   else if (path.includes('cruises')) serviceKey = 'cruises';
   else if (path.includes('flight-booking')) serviceKey = 'flights';
 
-  // ------------------------------------------------------------------
-  // DATA — copy and image URLs pulled directly from the live pages:
-  // blackforestholidays.com/flight-booking | /visa-assistance | /cruises
-  //
-  // NOTE: hero background photos are set via CSS background-image on the
-  // live site, so they could not be extracted automatically. Replace the
-  // heroImage value below with the real URL (right-click the hero on the
-  // live page -> "Copy image address") to match exactly.
-  // ------------------------------------------------------------------
   const details = {
     flights: {
       title: 'Flight Booking',
       caption: 'Flight Booking, Airport Transfers & Travel Insurance',
-      heroImage: `${CDN}/2026/08/alexey-starki-91ykdj2WQeg-unsplash-scaled.jpg`, // TODO: replace with real hero URL
+      heroImage: `${CDN}/2026/08/—Pngtree—worldwide-flight-adventure-a-3d_5773140-scaled.jpg`,
 
       intro: {
         heading: 'Everything You Need for a Seamless Journey',
@@ -133,7 +125,7 @@ export default function ConciergePage() {
     visas: {
       title: 'Visa Assistance',
       caption: 'Visa Assistance',
-      heroImage: `${CDN}/2026/08/freepik__make-an-image-on-visitor-visa-add-a-flight-a-passp__37353.jpeg.webp`, // TODO: replace with real hero URL
+      heroImage: `${CDN}/2026/08/ChatGPT-Image-Aug-8-2026-06_30_11-PM-2.png`,
 
       intro: {
         heading: 'Visa Assistance Made Simple',
@@ -181,6 +173,17 @@ export default function ConciergePage() {
         `${CDN}/2026/07/WhatsApp-Image-2026-08-06-at-16.30.00.jpeg`,
       ],
 
+      whyChooseUs: {
+        heading: 'Why Choose BlackForest Holidays?',
+        bgImage: `${CDN}/2026/08/contact-pine-bg-2.jpg`,
+        features: [
+          { title: 'Expert Visa Guidance', desc: 'We provide clear, structured guidance to help you navigate specific visa requirements with confidence.' },
+          { title: 'Document Verification', desc: 'Thorough review of your paperwork to help identify missing details or inconsistencies before submission.' },
+          { title: 'End-to-End Support', desc: 'From initial consultation to appointment scheduling and status updates, we support you at every stage.' },
+          { title: 'Global Reach', desc: 'Assisting travellers with tourist, business, and visit visas for popular destinations worldwide.' },
+        ],
+      },
+
       finalSection: {
         heading: 'Start Your Visa Journey With Confidence',
         text: "Don't let complicated paperwork stand between you and your next destination. Let BlackForest Holidays help you prepare your visa application with greater clarity, confidence, and peace of mind.",
@@ -199,7 +202,7 @@ export default function ConciergePage() {
     cruises: {
       title: 'Cruises',
       caption: 'Cruises',
-      heroImage: `${CDN}/2026/08/ChatGPT-Image-Aug-8-2026-06_20_36-PM.png`, // TODO: replace with real hero URL
+      heroImage: `${CDN}/2026/08/pexels-g-isle-px-210751289-11820070-scaled.jpg`,
 
       intro: {
         heading: 'Discover the World, One Extraordinary Journey at a Time',
@@ -310,92 +313,107 @@ export default function ConciergePage() {
     <div className="animate-fadeIn bg-white font-sans text-gray-800 overflow-x-hidden">
 
       {/* 1. Hero */}
-      <section className="relative h-[65vh] min-h-[500px] flex flex-col justify-end">
+      <section className="relative h-[65vh] min-h-[500px] flex flex-col items-center justify-center">
         <div className="absolute inset-0 z-0">
           <img src={data.heroImage} alt={data.title} className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-black/30" />
+          <div className="absolute inset-0 bg-black/35 z-0" />
         </div>
 
-        <div className="relative z-10 text-white mt-32 md:mt-40 flex flex-col items-center pb-24">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-sans font-bold tracking-tight mb-4 drop-shadow-2xl text-center">
+        <div className="relative z-10 text-white flex flex-col items-center text-center px-4">
+          <h1 className="text-4xl md:text-5xl lg:text-[60px] font-bold tracking-tight mb-4 drop-shadow-xl font-sans">
             {data.title}
           </h1>
           <div className="flex items-center justify-center gap-2 text-sm md:text-base font-light drop-shadow-md tracking-wider">
             <Link to="/" className="hover:text-gray-200 transition-colors">Home</Link>
-            <span className="text-gray-300">»</span>
-            <span>{data.title}</span>
+            <span className="text-[10px] opacity-80">▾</span>
+            <span className="text-white">{data.title}</span>
           </div>
         </div>
 
-        <div className="relative z-10 w-full text-white mt-auto">
-          <svg viewBox="0 0 1920 120" fill="currentColor" preserveAspectRatio="none" className="w-full h-auto max-h-[120px] block">
-            <path d="M0,120 L1920,120 L1920,80 C1700,140 1400,20 1000,80 C600,140 300,20 0,80 Z" />
-          </svg>
-        </div>
+        {/* Hero Wave Divider */}
+        <HeroWave />
       </section>
 
       {/* 2. Intro */}
-      <section className="bg-white -mt-2 pb-4 relative z-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start pt-16">
+      <section className="bg-white -mt-2 pb-16 relative z-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start mb-16">
 
-            <div className="space-y-8 lg:pr-8">
+            <div className="space-y-8 lg:pr-4">
               <div>
-                <span className="text-[#10221b] font-bold text-xs uppercase tracking-[0.2em] block mb-3">{data.caption}</span>
+                <span className="text-[#10221b] font-bold text-xs uppercase tracking-[0.2em] block mb-3">
+                  {data.caption}
+                </span>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-sans font-bold text-[#5e963b] leading-[1.15] mb-6">
                   {data.intro.heading}
                 </h2>
-                <div className="w-16 h-[2px] bg-gray-300 mb-8" />
+                <div className="w-24 h-[1.5px] bg-[#18c4c7] mb-8" />
               </div>
 
-              <div className="space-y-6 text-gray-600 text-[15px] sm:text-[16px] leading-[1.75] font-light">
-                {data.intro.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
+              <div className="space-y-6 text-gray-600 font-light leading-relaxed text-[20px]">
+                {data.intro.paragraphs.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
               </div>
             </div>
 
-            <div className="relative pt-4 lg:pt-0">
-              <div className="absolute top-8 left-8 right-[-1rem] bottom-[-1rem] border-[6px] border-[#27B8B1] z-0" />
-              <div className="relative z-10 bg-white p-2">
-                <img src={data.intro.image} alt={data.title} className="w-full h-auto object-cover aspect-[4/3] shadow-lg" />
-              </div>
+            <div className="relative pl-6 pt-6 mt-8 lg:mt-0 w-full max-w-lg mx-auto lg:ml-auto">
+              <div className="absolute top-0 left-0 w-[95%] h-[95%] border-[3px] border-[#18c4c7] z-0" />
+              <img
+                src={data.intro.image}
+                alt={data.title}
+                className="relative z-10 w-full h-auto object-cover shadow-sm bg-white p-2 aspect-[4/3]"
+              />
             </div>
 
           </div>
 
-          {/* Extra bold sub-blocks */}
+          {/* Extra sub-blocks */}
           {(data.extraBlocks || []).map((block, i) => (
             <div key={i} className="max-w-7xl pt-10">
               {block.caption ? (
                 <div>
-                  <div className="flex items-center gap-2 text-[#10221b] font-bold text-[20px] mb-3">
+                  <div className="flex items-center gap-2 text-[#10221b] font-bold text-xs uppercase tracking-[0.2em] mb-3">
                     <IconFor icon={block.icon || 'plane'} />
                     <span>{block.caption}</span>
                   </div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-[#5e963b] mb-4">{block.heading}</h2>
-                  <div className="w-16 h-[2px] bg-gray-300 mb-6" />
+                  <h2 className="text-3xl md:text-4xl font-sans font-bold text-[#5e963b] mb-4">
+                    {block.heading}
+                  </h2>
+                  <div className="w-16 h-[2px] bg-[#18c4c7] mb-6" />
                 </div>
               ) : (
-                <h3 className="text-xl font-bold text-[#10221b] mb-3">{block.icon ? `${block.icon} ` : ''}{block.heading}</h3>
+                <h3 className="text-xl sm:text-2xl font-sans font-bold text-[#10221b] mb-3">
+                  {block.icon ? `${block.icon} ` : ''}{block.heading}
+                </h3>
               )}
-              <p className="text-gray-600 text-[20px] leading-[1.8] font-light">{block.text}</p>
+              <p className="text-gray-600 font-light leading-relaxed text-[20px]">
+                {block.text}
+              </p>
             </div>
           ))}
 
           {/* Services list — two-column / numbered / numbered-dash / dash */}
           {data.servicesList && (
             <div className="max-w-7xl pt-10">
-              <h3 className="text-[20px] font-bold text-[#10221b] mb-4">{data.servicesList.heading}</h3>
+              <h3 className="text-xl sm:text-2xl font-sans font-bold text-[#10221b] mb-4">
+                {data.servicesList.heading}
+              </h3>
 
               {(data.servicesList.type === 'two-column' || data.servicesList.type === 'numbered') && (
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-2">
-                  <ul className="space-y-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-3">
+                  <ul className="space-y-3">
                     {data.servicesList.items.slice(0, Math.ceil(data.servicesList.items.length / 2)).map((item, idx) => (
-                      <li key={idx} className="text-[20px] text-gray-600 font-light">• {item}</li>
+                      <li key={idx} className="text-gray-600 font-light leading-relaxed text-[20px]">
+                        • {item}
+                      </li>
                     ))}
                   </ul>
-                  <ul className="space-y-2">
+                  <ul className="space-y-3">
                     {data.servicesList.items.slice(Math.ceil(data.servicesList.items.length / 2)).map((item, idx) => (
-                      <li key={idx} className="text-[20px] text-gray-600 font-light">• {item}</li>
+                      <li key={idx} className="text-gray-600 font-light leading-relaxed text-[20px]">
+                        • {item}
+                      </li>
                     ))}
                   </ul>
                 </div>
@@ -404,7 +422,7 @@ export default function ConciergePage() {
               {data.servicesList.type === 'numbered-dash' && (
                 <ul className="space-y-3">
                   {data.servicesList.items.map((item, idx) => (
-                    <li key={idx} className="text-[20px] text-gray-600 font-light">
+                    <li key={idx} className="text-gray-600 font-light leading-relaxed text-[20px]">
                       {idx + 1}. <span className="text-gray-900 font-bold">{item.title}</span> – {item.desc}
                     </li>
                   ))}
@@ -414,7 +432,7 @@ export default function ConciergePage() {
               {data.servicesList.type === 'dash' && (
                 <ul className="space-y-3">
                   {data.servicesList.items.map((item, idx) => (
-                    <li key={idx} className="text-[20px] text-gray-600 font-light">
+                    <li key={idx} className="text-gray-600 font-light leading-relaxed text-[20px]">
                       <span className="text-gray-900 font-bold">{item.title}</span> – {item.desc}
                     </li>
                   ))}
@@ -426,18 +444,30 @@ export default function ConciergePage() {
           {/* Popular Visa Destinations */}
           {data.popularDestinations && (
             <div className="max-w-7xl pt-10">
-              <h3 className="text-xl font-bold text-[#10221b] mb-3">{data.popularDestinations.heading}</h3>
-              <p className="text-gray-600 text-[20px] leading-[1.8] font-light mb-3">{data.popularDestinations.intro}</p>
-              <p className="text-gray-900 text-[20px] font-bold mb-3">{data.popularDestinations.list.join(' | ')}</p>
-              <p className="text-gray-600 text-[20px] leading-[1.8] font-light">{data.popularDestinations.outro}</p>
+              <h3 className="text-xl sm:text-2xl font-sans font-bold text-[#10221b] mb-3">
+                {data.popularDestinations.heading}
+              </h3>
+              <p className="text-gray-600 font-light leading-relaxed text-[20px] mb-3">
+                {data.popularDestinations.intro}
+              </p>
+              <p className="text-[#10221b] font-bold text-[20px] mb-3">
+                {data.popularDestinations.list.join(' | ')}
+              </p>
+              <p className="text-gray-600 font-light leading-relaxed text-[20px]">
+                {data.popularDestinations.outro}
+              </p>
             </div>
           )}
 
           {/* Destinations paragraph block */}
           {data.destinations && (
             <div className="max-w-7xl pt-10 pb-6">
-              <h3 className="text-xl font-bold text-[#10221b] mb-3">{data.destinations.heading}</h3>
-              <p className="text-gray-600 text-[20px] leading-[1.8] font-light">{data.destinations.text}</p>
+              <h3 className="text-xl sm:text-2xl font-sans font-bold text-[#10221b] mb-3">
+                {data.destinations.heading}
+              </h3>
+              <p className="text-gray-600 font-light leading-relaxed text-[20px]">
+                {data.destinations.text}
+              </p>
             </div>
           )}
         </div>
@@ -452,7 +482,11 @@ export default function ConciergePage() {
           </div>
 
           <div className="max-w-[1600px] w-full mx-auto px-4 sm:px-6 relative z-10 flex items-center justify-between gap-4 md:gap-8">
-            <button onClick={handlePrev} aria-label="Previous" className="z-20 flex items-center justify-center text-[#10221b] hover:text-[#5e963b] transition-all transform hover:scale-110 hover:-translate-x-2 shrink-0">
+            <button
+              onClick={handlePrev}
+              aria-label="Previous"
+              className="z-20 flex items-center justify-center text-[#10221b] hover:text-[#5e963b] transition-all transform hover:scale-110 hover:-translate-x-2 shrink-0 cursor-pointer"
+            >
               <svg viewBox="0 0 100 40" className="w-16 h-16 sm:w-24 sm:h-24 stroke-current fill-none" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M90 20 Q 55 18 10 20" />
                 <path d="M 12 20 Q 25 12 30 7" />
@@ -470,7 +504,11 @@ export default function ConciergePage() {
               </div>
             </div>
 
-            <button onClick={handleNext} aria-label="Next" className="z-20 flex items-center justify-center text-[#10221b] hover:text-[#5e963b] transition-all transform hover:scale-110 hover:translate-x-2 shrink-0">
+            <button
+              onClick={handleNext}
+              aria-label="Next"
+              className="z-20 flex items-center justify-center text-[#10221b] hover:text-[#5e963b] transition-all transform hover:scale-110 hover:translate-x-2 shrink-0 cursor-pointer"
+            >
               <svg viewBox="0 0 100 40" className="w-16 h-16 sm:w-24 sm:h-24 stroke-current fill-none" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M10 20 Q 45 22 90 20" />
                 <path d="M 88 20 Q 75 12 70 7" />
@@ -483,23 +521,31 @@ export default function ConciergePage() {
 
       {/* 4. Why Choose Us (4-up, faint background texture) */}
       {data.whyChooseUs && (
-        <section className="pt-4 pb-16 bg-white relative z-10 overflow-hidden">
+        <section className="py-24 bg-white relative z-10 overflow-hidden">
           {data.whyChooseUs.bgImage && (
-            <img
-              src={data.whyChooseUs.bgImage}
-              alt=""
-              aria-hidden="true"
-              className="absolute inset-0 w-full h-full object-cover opacity-[0.05] pointer-events-none select-none"
-            />
+            <div className="absolute right-0 top-0 bottom-0 w-72 md:w-96 pointer-events-none opacity-25 z-0 overflow-hidden">
+              <img
+                src={data.whyChooseUs.bgImage}
+                alt=""
+                aria-hidden="true"
+                className="w-full h-full object-cover object-left"
+              />
+            </div>
           )}
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#5e963b] mb-2">{data.whyChooseUs.heading}</h2>
-            <div className="w-16 h-[2px] bg-gray-300 mb-12" />
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
+            <h2 className="text-3xl md:text-4xl font-sans font-bold text-[#5e963b] mb-4">
+              {data.whyChooseUs.heading}
+            </h2>
+            <div className="w-16 h-[2px] bg-[#18c4c7] mb-12" />
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 max-w-4xl">
               {data.whyChooseUs.features.map((f, idx) => (
                 <div key={idx}>
-                  <h4 className="text-[20px] font-bold text-[#10221b] mb-3">{f.title}</h4>
-                  <p className="text-gray-500 text-[20px] font-light leading-relaxed">{f.desc}</p>
+                  <h4 className="text-[19px] sm:text-[20px] font-bold text-[#10221b] mb-2 font-sans">
+                    {f.title}
+                  </h4>
+                  <p className="text-gray-600 font-light leading-relaxed text-[20px]">
+                    {f.desc}
+                  </p>
                 </div>
               ))}
             </div>
@@ -509,27 +555,39 @@ export default function ConciergePage() {
 
       {/* 5. Mid section: heading + text + CTA button + single image */}
       {data.midSection && (
-        <section className="py-16 bg-white relative z-10">
+        <section className="py-24 bg-white relative z-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-6">
                 <div>
-                  <h2 className="text-4xl md:text-[42px] font-bold text-[#5e963b] leading-tight mb-4">{data.midSection.heading}</h2>
-                  <div className="w-16 h-[2px] bg-gray-300" />
+                  <h2 className="text-3xl md:text-4xl font-sans font-bold text-[#5e963b] leading-tight mb-4">
+                    {data.midSection.heading}
+                  </h2>
+                  <div className="w-16 h-[2px] bg-[#18c4c7]" />
                 </div>
-                <p className="text-gray-600 text-[20px] leading-[1.8] font-light max-w-md">{data.midSection.text}</p>
-                <div>
-                  <h4 className="text-[20px] font-bold text-[#10221b] mb-4">{data.midSection.ctaLabel}</h4>
+                <p className="text-gray-600 font-light leading-relaxed text-[20px] max-w-md">
+                  {data.midSection.text}
+                </p>
+                <div className="pt-4">
+                  <h4 className="text-sm font-bold text-[#10221b] uppercase tracking-[0.15em] mb-4">
+                    {data.midSection.ctaLabel}
+                  </h4>
                   <button
                     onClick={() => openEnquiryModal({ title: `${data.title} Enquiry` })}
-                    className="bg-[#10221b] text-white px-8 py-3.5 text-[15px] font-bold uppercase tracking-widest hover:bg-[#5e963b] transition-colors"
+                    className="bg-[#10221b] text-white px-8 py-3.5 text-xs font-bold uppercase tracking-widest hover:bg-[#5e963b] transition-colors shadow-md rounded-sm cursor-pointer"
                   >
                     {data.midSection.buttonText} &rarr;
                   </button>
                 </div>
               </div>
 
-              <img src={data.midSection.image} alt={data.title} className="w-full h-[340px] object-cover shadow-lg" />
+              <div className="overflow-hidden rounded-sm shadow-md">
+                <img
+                  src={data.midSection.image}
+                  alt={data.title}
+                  className="w-full h-[380px] object-cover hover:scale-105 transition-transform duration-700"
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -537,26 +595,32 @@ export default function ConciergePage() {
 
       {/* 6. Secondary feature block with two-column list (Airport Transfers) */}
       {data.secondaryFeature && (
-        <section className="py-16 bg-white relative z-10">
+        <section className="py-20 bg-white relative z-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center gap-2 text-[#10221b] font-bold text-[20px] mb-3">
+            <div className="flex items-center gap-2 text-[#10221b] font-bold text-xs uppercase tracking-[0.2em] mb-3">
               <IconFor icon={data.secondaryFeature.icon} />
               <span>{data.secondaryFeature.caption}</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#5e963b] mb-4">{data.secondaryFeature.heading}</h2>
-            <div className="w-16 h-[2px] bg-gray-300 mb-6" />
-            <p className="text-gray-600 text-[20px] leading-[1.8] font-light mb-8">{data.secondaryFeature.text}</p>
+            <h2 className="text-3xl md:text-4xl font-sans font-bold text-[#5e963b] mb-4">
+              {data.secondaryFeature.heading}
+            </h2>
+            <div className="w-16 h-[2px] bg-[#18c4c7] mb-6" />
+            <p className="text-gray-600 font-light leading-relaxed text-[20px] mb-8">
+              {data.secondaryFeature.text}
+            </p>
 
-            <h3 className="text-[20px] font-bold text-[#10221b] mb-4">{data.secondaryFeature.listHeading}</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-2">
-              <ul className="space-y-2">
+            <h3 className="text-xl sm:text-2xl font-sans font-bold text-[#10221b] mb-4">
+              {data.secondaryFeature.listHeading}
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-3">
+              <ul className="space-y-3">
                 {data.secondaryFeature.itemsLeft.map((item, idx) => (
-                  <li key={idx} className="text-[20px] text-gray-600 font-light">• {item}</li>
+                  <li key={idx} className="text-gray-600 font-light leading-relaxed text-[20px]">• {item}</li>
                 ))}
               </ul>
-              <ul className="space-y-2">
+              <ul className="space-y-3">
                 {data.secondaryFeature.itemsRight.map((item, idx) => (
-                  <li key={idx} className="text-[20px] text-gray-600 font-light">• {item}</li>
+                  <li key={idx} className="text-gray-600 font-light leading-relaxed text-[20px]">• {item}</li>
                 ))}
               </ul>
             </div>
@@ -566,17 +630,19 @@ export default function ConciergePage() {
 
       {/* 7. Tertiary feature block, text only (Travel Insurance) */}
       {data.tertiaryFeature && (
-        <section className="py-16 bg-white relative z-10">
+        <section className="py-20 bg-white relative z-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center gap-2 text-[#10221b] font-bold text-[20px] mb-3">
+            <div className="flex items-center gap-2 text-[#10221b] font-bold text-xs uppercase tracking-[0.2em] mb-3">
               <IconFor icon={data.tertiaryFeature.icon} />
               <span>{data.tertiaryFeature.caption}</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#5e963b] mb-4">{data.tertiaryFeature.heading}</h2>
-            <div className="w-16 h-[2px] bg-gray-300 mb-6" />
+            <h2 className="text-3xl md:text-4xl font-sans font-bold text-[#5e963b] mb-4">
+              {data.tertiaryFeature.heading}
+            </h2>
+            <div className="w-16 h-[2px] bg-[#18c4c7] mb-6" />
             <div className="space-y-4">
               {data.tertiaryFeature.paragraphs.map((p, i) => (
-                <p key={i} className="text-gray-600 text-[20px] leading-[1.8] font-light">{p}</p>
+                <p key={i} className="text-gray-600 font-light leading-relaxed text-[20px]">{p}</p>
               ))}
             </div>
           </div>
@@ -585,27 +651,29 @@ export default function ConciergePage() {
 
       {/* 8. Final section — heading, text, CTA button, collage + watermark + quote */}
       {data.finalSection && (
-        <section className="py-16 bg-white relative z-10">
+        <section className="py-24 bg-white relative z-10 overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
               <div className="space-y-8">
                 <div>
-                  <h3 className="text-4xl md:text-[42px] font-bold text-[#5e963b] leading-tight mb-4">
+                  <h3 className="text-3xl md:text-[36px] font-sans font-bold text-[#5e963b] leading-tight mb-4">
                     {data.finalSection.heading}
                   </h3>
-                  <div className="w-16 h-[2px] bg-[#f29727]" />
+                  <div className="w-16 h-[2px] bg-[#18c4c7]" />
                 </div>
 
-                <p className="text-gray-600 text-[20px] leading-[1.8] font-light max-w-md">
+                <p className="text-gray-600 font-light leading-relaxed text-[20px] max-w-md">
                   {data.finalSection.text}
                 </p>
 
-                <div>
-                  <h4 className="text-[20px] font-bold text-[#10221b] uppercase tracking-wider mb-4">{data.finalSection.ctaLabel}</h4>
+                <div className="pt-2">
+                  <h4 className="text-sm font-bold text-[#10221b] uppercase tracking-[0.15em] mb-4">
+                    {data.finalSection.ctaLabel}
+                  </h4>
                   <button
                     onClick={() => openEnquiryModal({ title: `${data.title} Enquiry` })}
-                    className="bg-[#10221b] text-white px-8 py-3.5 text-[15px] font-bold uppercase tracking-widest hover:bg-[#5e963b] transition-colors"
+                    className="bg-[#10221b] text-white px-8 py-3.5 text-xs font-bold uppercase tracking-widest hover:bg-[#5e963b] transition-colors shadow-md rounded-sm cursor-pointer"
                   >
                     {data.finalSection.buttonText} &rarr;
                   </button>
@@ -614,22 +682,26 @@ export default function ConciergePage() {
 
               <div className="relative">
                 {data.finalSection.watermark && (
-                  <img
-                    src={data.finalSection.watermark}
-                    alt=""
-                    aria-hidden="true"
-                    className="absolute top-[-8%] right-[-8%] w-[120%] h-[120%] opacity-[0.05] z-0 pointer-events-none select-none object-contain"
+                  <div
+                    className="absolute top-[-8%] right-[-8%] w-[120%] h-[120%] opacity-15 pointer-events-none bg-contain bg-no-repeat z-0"
+                    style={{ backgroundImage: `url('${data.finalSection.watermark}')` }}
                   />
                 )}
                 <div className="grid grid-cols-2 gap-4 relative z-10">
                   <div className="space-y-4 pt-12">
-                    <img src={data.finalSection.collageImages[0]} alt="Collage 1" className="w-full h-48 object-cover" />
-                    <img src={data.finalSection.collageImages[1]} alt="Collage 2" className="w-full h-56 object-cover" />
+                    <div className="overflow-hidden rounded-sm shadow-sm">
+                      <img src={data.finalSection.collageImages[0]} alt="Collage 1" className="w-full h-48 object-cover hover:scale-105 transition-transform duration-700" />
+                    </div>
+                    <div className="overflow-hidden rounded-sm shadow-sm">
+                      <img src={data.finalSection.collageImages[1]} alt="Collage 2" className="w-full h-56 object-cover hover:scale-105 transition-transform duration-700" />
+                    </div>
                   </div>
                   <div>
-                    <img src={data.finalSection.collageImages[2]} alt="Collage 3" className="w-full h-[400px] object-cover" />
+                    <div className="overflow-hidden rounded-sm shadow-md">
+                      <img src={data.finalSection.collageImages[2]} alt="Collage 3" className="w-full h-[400px] object-cover hover:scale-105 transition-transform duration-700" />
+                    </div>
                     <div className="mt-8">
-                      <h4 className="text-[#5e963b] text-2xl font-bold leading-tight pr-4">
+                      <h4 className="text-[#5e963b] text-2xl sm:text-[28px] font-bold leading-tight font-sans">
                         {data.finalSection.quote}
                       </h4>
                     </div>
@@ -644,22 +716,26 @@ export default function ConciergePage() {
 
       {/* 9. Trailing collage (cruises) — two photos + watermark + quote, no CTA */}
       {data.trailingCollage && (
-        <section className="pb-16 bg-white relative z-10">
+        <section className="pb-24 bg-white relative z-10 overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="relative">
               {data.trailingCollage.watermark && (
-                <img
-                  src={data.trailingCollage.watermark}
-                  alt=""
-                  aria-hidden="true"
-                  className="absolute top-[-8%] right-[-8%] w-[60%] h-[120%] opacity-[0.05] z-0 pointer-events-none select-none object-contain"
+                <div
+                  className="absolute top-[-8%] right-[-8%] w-[60%] h-[120%] opacity-15 pointer-events-none bg-contain bg-no-repeat z-0"
+                  style={{ backgroundImage: `url('${data.trailingCollage.watermark}')` }}
                 />
               )}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 items-center relative z-10">
-                <img src={data.trailingCollage.images[0]} alt="Cruise" className="w-full h-[320px] object-cover shadow-lg" />
+                <div className="overflow-hidden rounded-sm shadow-md">
+                  <img src={data.trailingCollage.images[0]} alt="Cruise" className="w-full h-[320px] object-cover hover:scale-105 transition-transform duration-700" />
+                </div>
                 <div className="space-y-6">
-                  <img src={data.trailingCollage.images[1]} alt="Cruise" className="w-full h-[220px] object-cover shadow-lg" />
-                  <h4 className="text-[#5e963b] text-2xl font-bold leading-tight">{data.trailingCollage.quote}</h4>
+                  <div className="overflow-hidden rounded-sm shadow-md">
+                    <img src={data.trailingCollage.images[1]} alt="Cruise" className="w-full h-[220px] object-cover hover:scale-105 transition-transform duration-700" />
+                  </div>
+                  <h4 className="text-[#5e963b] text-2xl sm:text-[28px] font-bold leading-tight font-sans">
+                    {data.trailingCollage.quote}
+                  </h4>
                 </div>
               </div>
             </div>

@@ -19,6 +19,7 @@ import ToursPage from './pages/public/ToursPage';
 import TourDetailPage from './pages/public/TourDetailPage';
 import ExperiencesPage from './pages/public/ExperiencesPage';
 import ConciergePage from './pages/public/ConciergePage';
+import CruisesPage from './pages/public/CruisesPage';
 import CorporateTravelPage from './pages/public/CorporateTravelPage';
 import CoachTourPage from './pages/public/CoachTourPage';
 import CoachTourDetailPage from './pages/public/CoachTourDetailPage';
@@ -80,7 +81,8 @@ export default function App() {
                 <Route path="/concierge" element={<ConciergePage />} />
                 <Route path="/concierge/flight-booking" element={<ConciergePage />} />
                 <Route path="/concierge/visa-assistance" element={<ConciergePage />} />
-                <Route path="/concierge/cruises" element={<ConciergePage />} />
+                <Route path="/concierge/cruises" element={<CruisesPage />} />
+                <Route path="/cruises" element={<CruisesPage />} />
 
                 {/* Group & Corporate */}
                 <Route path="/corporate-travel" element={<CorporateTravelPage />} />
