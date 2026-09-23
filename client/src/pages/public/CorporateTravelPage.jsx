@@ -246,46 +246,53 @@ export default function CorporateTravelPage() {
             </p>
           </div>
 
-          {/* Carousel Slider with Hand-Drawn Arrows */}
-          <div className="relative flex items-center justify-between gap-3 sm:gap-6 lg:gap-8 max-w-[150%]">
-            {/* Left Hand-Drawn Arrow
-            <button
-              onClick={prevSlide}
-              aria-label="Previous image"
-              className="text-[#182c20] hover:text-[#5e963b] transition-transform hover:scale-110 p-1 sm:p-2 cursor-pointer focus:outline-none flex-shrink-0"
-            >
-              <HandDrawnLeftArrow className="w-10 sm:w-14 h-5 sm:h-7" />
-            </button> */}
-
-            {/* 3 Images Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
-              {visibleImages.map((img, idx) => (
-                <div
-                  key={idx}
-                  className="aspect-[4/5] overflow-hidden rounded-sm shadow-md bg-white group transition-all duration-300"
-                >
-                  <img
-                    src={img.src}
-                    alt={img.alt}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 block"
-                    loading="lazy"
-                  />
-                </div>
-              ))}
-            </div>
-
-            {/* Right Hand-Drawn Arrow */}
-            {/* <button
-              onClick={nextSlide}
-              aria-label="Next image"
-              className="text-[#182c20] hover:text-[#5e963b] transition-transform hover:scale-110 p-1 sm:p-2 cursor-pointer focus:outline-none flex-shrink-0"
-            >
-              <HandDrawnRightArrow className="w-10 sm:w-14 h-5 sm:h-7" />
-            </button> */}
-          </div>
-
         </div>
       </section>
+
+
+
+      <section className="flex items-center justify-center">
+
+        {/* Carousel Slider with Hand-Drawn Arrows */}
+        <div className="relative flex items-center justify-between gap-3 sm:gap-6 lg:gap-8 max-w-9xl">
+          {/* Left Hand-Drawn Arrow */}
+          <button
+            onClick={prevSlide}
+            aria-label="Previous image"
+            className="text-[#182c20] hover:text-[#5e963b] transition-transform hover:scale-110 p-1 sm:p-2 cursor-pointer focus:outline-none flex-shrink-0"
+          >
+            <HandDrawnLeftArrow className="w-10 sm:w-14 h-5 sm:h-7" />
+          </button>
+
+          {/* 3 Images Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
+            {visibleImages.map((img, idx) => (
+              <div
+                key={idx}
+                className="aspect-[4/5] overflow-hidden rounded-sm shadow-md bg-white group transition-all duration-300"
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 block"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* Right Hand-Drawn Arrow */}
+          <button
+            onClick={nextSlide}
+            aria-label="Next image"
+            className="text-[#182c20] hover:text-[#5e963b] transition-transform hover:scale-110 p-1 sm:p-2 cursor-pointer focus:outline-none flex-shrink-0"
+          >
+            <HandDrawnRightArrow className="w-10 sm:w-14 h-5 sm:h-7" />
+          </button>
+        </div>
+
+      </section>
+
 
       {/* 4. Why Choose Grid */}
       <section className="py-20 bg-white">
