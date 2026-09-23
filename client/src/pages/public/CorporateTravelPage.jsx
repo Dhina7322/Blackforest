@@ -228,7 +228,7 @@ export default function CorporateTravelPage() {
 
       {/* 3. Corporate Travel Across The World Carousel Section with Hand-Drawn Arrows - matching Image 5 */}
       <section className="py-16 sm:py-24 bg-[#faf9f6] border-t border-gray-100 overflow-hidden">
-        <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <div className="mb-10 sm:mb-14">
             <span
@@ -247,18 +247,18 @@ export default function CorporateTravelPage() {
           </div>
 
           {/* Carousel Slider with Hand-Drawn Arrows */}
-          <div className="relative flex items-center justify-between gap-3 sm:gap-6 lg:gap-8">
-            {/* Left Hand-Drawn Arrow */}
+          <div className="relative flex items-center justify-between gap-3 sm:gap-6 lg:gap-8 max-w-[150%]">
+            {/* Left Hand-Drawn Arrow
             <button
               onClick={prevSlide}
               aria-label="Previous image"
               className="text-[#182c20] hover:text-[#5e963b] transition-transform hover:scale-110 p-1 sm:p-2 cursor-pointer focus:outline-none flex-shrink-0"
             >
               <HandDrawnLeftArrow className="w-10 sm:w-14 h-5 sm:h-7" />
-            </button>
+            </button> */}
 
             {/* 3 Images Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 w-full">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
               {visibleImages.map((img, idx) => (
                 <div
                   key={idx}
@@ -275,13 +275,13 @@ export default function CorporateTravelPage() {
             </div>
 
             {/* Right Hand-Drawn Arrow */}
-            <button
+            {/* <button
               onClick={nextSlide}
               aria-label="Next image"
               className="text-[#182c20] hover:text-[#5e963b] transition-transform hover:scale-110 p-1 sm:p-2 cursor-pointer focus:outline-none flex-shrink-0"
             >
               <HandDrawnRightArrow className="w-10 sm:w-14 h-5 sm:h-7" />
-            </button>
+            </button> */}
           </div>
 
         </div>
